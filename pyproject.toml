@@ -1,0 +1,118 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geepers"
+version = "1.0.0"
+description = "Multi-agent orchestration system with MCP tools and Claude Code plugin agents"
+authors = [{name = "Luke Steuber", email = "luke@lukesteuber.com"}]
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.8"
+keywords = ["mcp", "orchestration", "multi-agent", "llm", "claude-code", "geepers"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "dr-eamer-ai-shared>=1.0.0",  # Core shared library for LLM providers, orchestration, data fetching
+    "python-dotenv>=1.0.0",
+    "pyyaml>=6.0.0",
+    "aiohttp>=3.9.0",
+    "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+# LLM Providers
+anthropic = ["anthropic>=0.18.0"]
+openai = ["openai>=1.0.0"]
+xai = ["openai>=1.0.0"]
+mistral = ["requests>=2.31.0"]
+cohere = ["cohere>=5.0.0"]
+gemini = ["google-generativeai>=0.3.0"]
+perplexity = ["openai>=1.0.0"]
+groq = ["groq>=0.4.0"]
+huggingface = ["huggingface-hub>=0.19.0"]
+
+# Data Sources
+arxiv = ["arxiv>=2.0.0"]
+wikipedia = ["wikipedia>=1.4.0"]
+youtube = ["google-api-python-client>=2.0.0"]
+
+# Utilities
+tts = ["gtts>=2.5.0"]
+citations = ["bibtexparser>=1.4.0"]
+redis = ["redis>=5.0.0"]
+documents = [
+    "reportlab>=4.0.0",
+    "python-docx>=1.0.0",
+    "markdown>=3.5.0",
+]
+
+# Telemetry
+telemetry = [
+    "opentelemetry-api>=1.20.0",
+    "opentelemetry-sdk>=1.20.0",
+]
+
+# Full installation
+all = [
+    "anthropic>=0.18.0",
+    "openai>=1.0.0",
+    "cohere>=5.0.0",
+    "google-generativeai>=0.3.0",
+    "groq>=0.4.0",
+    "huggingface-hub>=0.19.0",
+    "arxiv>=2.0.0",
+    "wikipedia>=1.4.0",
+    "google-api-python-client>=2.0.0",
+    "gtts>=2.5.0",
+    "bibtexparser>=1.4.0",
+    "redis>=5.0.0",
+    "reportlab>=4.0.0",
+    "python-docx>=1.0.0",
+    "markdown>=3.5.0",
+    "opentelemetry-api>=1.20.0",
+    "opentelemetry-sdk>=1.20.0",
+]
+
+[project.urls]
+Homepage = "https://dr.eamer.dev/geepers/"
+Repository = "https://github.com/lukeslp/geepers"
+Issues = "https://github.com/lukeslp/geepers/issues"
+Documentation = "https://dr.eamer.dev/geepers/"
+
+[project.scripts]
+geepers-unified = "geepers.mcp.stdio_servers.unified_stdio:main"
+geepers-providers = "geepers.mcp.stdio_servers.providers_stdio:main"
+geepers-data = "geepers.mcp.stdio_servers.data_stdio:main"
+geepers-cache = "geepers.mcp.stdio_servers.cache_stdio:main"
+geepers-utility = "geepers.mcp.stdio_servers.utility_stdio:main"
+geepers-websearch = "geepers.mcp.stdio_servers.web_search_stdio:main"
+
+[tool.setuptools]
+packages = [
+    "geepers",
+    "geepers.mcp",
+    "geepers.mcp.stdio_servers",
+    "geepers.mcp.tools",
+    "geepers.orchestrators",
+    "geepers.orchestrators.enterprise",
+    "geepers.parser",
+    "geepers.naming",
+]
+
+[tool.setuptools.package-data]
+"*" = ["*.yaml", "*.json", "*.md"]
+
+[tool.setuptools.exclude-package-data]
+"*" = ["logs/*", "reports/*", "recommendations/*", "status/*", "archive/*"]
