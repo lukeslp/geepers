@@ -1,0 +1,154 @@
+{
+  "marketplaces": [
+    {
+      "name": "anthropics/claude-plugins-official",
+      "type": "official",
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "installation": "/plugin install {plugin-name}@claude-plugin-directory",
+      "submission": {
+        "method": "GitHub PR",
+        "target_directory": "/external_plugins/{plugin-name}/",
+        "has_contributing_md": false,
+        "review_time": "weeks to months",
+        "requirements": [
+          "Valid plugin.json with metadata",
+          "Comprehensive README",
+          "LICENSE file",
+          "No hardcoded secrets",
+          "Quality and security standards"
+        ]
+      },
+      "plugins": {
+        "internal": 13,
+        "external": 15,
+        "total": 28
+      },
+      "open_prs": 10,
+      "priority": "high"
+    },
+    {
+      "name": "jeremylongshore/claude-code-plugins-plus",
+      "type": "community",
+      "url": "https://github.com/jeremylongshore/claude-code-plugins-plus",
+      "plugins": 243,
+      "submission": {
+        "method": "GitHub PR",
+        "target_directory": "plugins/community/{plugin-name}/",
+        "has_contributing_md": true,
+        "steps": [
+          "Fork repository",
+          "Add plugin to plugins/community/",
+          "Update .claude-plugin/marketplace.extended.json",
+          "Run pnpm run sync-marketplace",
+          "Submit PR"
+        ],
+        "requirements": [
+          "Valid plugin.json",
+          "README.md with examples",
+          "LICENSE (MIT or Apache-2.0 preferred)",
+          "Tested and functioning",
+          "No hardcoded secrets",
+          "Executable scripts (chmod +x)"
+        ],
+        "contact": "jeremy@intentsolutions.io"
+      },
+      "priority": "high"
+    },
+    {
+      "name": "ananddtyagi/claude-code-marketplace",
+      "type": "community",
+      "url": "https://github.com/ananddtyagi/claude-code-marketplace",
+      "stars": 539,
+      "submission": {
+        "method": "Web form",
+        "urls": {
+          "commands": "https://claudecodecommands.directory/submit",
+          "agents": "https://claudecodecommands.directory/submit-agent"
+        },
+        "features": "Auto-sync from database",
+        "requirements": "See PLUGIN_SCHEMA.md"
+      },
+      "priority": "high"
+    },
+    {
+      "name": "bandofai/puerto",
+      "type": "community",
+      "url": "https://github.com/bandofai/puerto",
+      "status": "already_submitted",
+      "installation": "/plugin install {name}@puerto",
+      "submission": {
+        "documentation": ".claude/skills/plugin-management/SKILL.md"
+      },
+      "priority": "complete"
+    }
+  ],
+  "awesome_lists": [
+    {
+      "name": "hesreallyhim/awesome-claude-code",
+      "url": "https://github.com/hesreallyhim/awesome-claude-code",
+      "stars": 18238,
+      "focus": "General commands, files, workflows",
+      "priority": 1
+    },
+    {
+      "name": "ComposioHQ/awesome-claude-skills",
+      "url": "https://github.com/ComposioHQ/awesome-claude-skills",
+      "stars": 7663,
+      "focus": "Skills and resources",
+      "priority": 2
+    },
+    {
+      "name": "VoltAgent/awesome-claude-code-subagents",
+      "url": "https://github.com/VoltAgent/awesome-claude-code-subagents",
+      "stars": 5960,
+      "focus": "Subagents",
+      "priority": 3
+    },
+    {
+      "name": "travisvn/awesome-claude-skills",
+      "url": "https://github.com/travisvn/awesome-claude-skills",
+      "stars": 2855,
+      "focus": "Skills, resources, tools",
+      "priority": 4
+    },
+    {
+      "name": "ccplugins/awesome-claude-code-plugins",
+      "url": "https://github.com/ccplugins/awesome-claude-code-plugins",
+      "stars": 87,
+      "focus": "Plugins specific",
+      "priority": 5
+    }
+  ],
+  "infrastructure_repos": [
+    {
+      "name": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "stars": 21732,
+      "type": "Official Agent Skills"
+    },
+    {
+      "name": "wshobson/agents",
+      "url": "https://github.com/wshobson/agents",
+      "stars": 22972,
+      "type": "Multi-agent orchestration"
+    },
+    {
+      "name": "SuperClaude-Org/SuperClaude_Framework",
+      "url": "https://github.com/SuperClaude-Org/SuperClaude_Framework",
+      "stars": 19248,
+      "type": "Configuration framework"
+    },
+    {
+      "name": "ruvnet/claude-flow",
+      "url": "https://github.com/ruvnet/claude-flow",
+      "stars": 10701,
+      "type": "Agent orchestration platform"
+    },
+    {
+      "name": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers",
+      "stars": 10166,
+      "type": "Core skills library"
+    }
+  ]
+}
