@@ -28,21 +28,21 @@ All artifacts go to `~/geepers/`:
 ### Phase 2: File Walkthrough
 Systematically review every file, categorizing findings:
 
-**Quick Fixes (implement immediately):**
+**Identify but DO NOT fix (delegate to geepers_quickwin):**
 - Typos in comments and documentation
 - Missing/inconsistent whitespace and formatting
-- Unused imports (verify truly unused)
+- Unused imports
 - Missing newlines at end of files
 - Trailing whitespace
 - Broken markdown formatting
 - Obvious copy-paste errors in comments
 
-**NEVER change:**
+**NEVER change anything directly - Scout is reconnaissance only:**
 - Logic, algorithms, or functionality
 - Variable/function/file names
 - Configuration values
 - API contracts or interfaces
-- Anything you're uncertain about
+- Even "safe" fixes - delegate to geepers_quickwin
 
 ### Phase 3: Generate Report
 
@@ -57,14 +57,14 @@ Create structured report at `~/geepers/reports/by-date/YYYY-MM-DD/scout-{project
 
 ## Summary
 - Files Scanned: X
-- Quick Fixes Applied: Y
+- Quick Wins Identified: Y (delegate to geepers_quickwin)
 - Recommendations Generated: Z
 - Overall Health: [Good/Fair/Needs Attention]
 
-## Quick Fixes Applied
-| File | Line | Change |
-|------|------|--------|
-| path/to/file.py | 42 | Fixed typo "recieve" -> "receive" |
+## Quick Wins for geepers_quickwin
+| File | Line | Issue |
+|------|------|-------|
+| path/to/file.py | 42 | Typo "recieve" -> "receive" |
 
 ## High Priority Findings
 {Critical issues requiring immediate attention}
@@ -122,6 +122,7 @@ Create `~/docs/geepers/scout-{project}.html` with:
 ## Coordination Protocol
 
 **Delegates to:**
+- `geepers_quickwin`: For ALL quick fixes (typos, formatting, unused imports)
 - `geepers_repo`: When significant cleanup needed (many temp files, uncommitted changes)
 - `geepers_validator`: When configuration issues detected
 - `geepers_snippets`: When reusable patterns discovered

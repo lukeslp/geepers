@@ -25,11 +25,13 @@ Use orchestrators when you need multiple agents coordinated:
 |-------------|----------|-------------|
 | **@geepers_conductor** | Unsure where to start, need intelligent routing | All agents |
 | **@geepers_orchestrator_checkpoint** | End of session, taking a break | scout, repo, status, snippets, janitor |
-| **@geepers_orchestrator_deploy** | Deploying, infrastructure changes | validator, caddy, services, canary |
-| **@geepers_orchestrator_quality** | Code review, pre-release audit | a11y, perf, api, deps, critic |
-| **@geepers_orchestrator_fullstack** | Building features end-to-end | Backend + frontend agents |
-| **@geepers_orchestrator_research** | Gathering data, investigating | data, links, diag, citations |
-| **@geepers_orchestrator_web** | Web application work | flask, react, design, a11y, critic |
+| **@geepers_orchestrator_deploy** | Deploying, infrastructure changes | validator, caddy, services, canary, security |
+| **@geepers_orchestrator_quality** | Code review, pre-release audit | a11y, perf, api, deps, critic, testing, security |
+| **@geepers_orchestrator_frontend** | Pure frontend work (no backend) | css, typescript, motion, webperf, design, uxpert |
+| **@geepers_orchestrator_fullstack** | Node.js/Express full-stack | api, db, express + design, a11y, react |
+| **@geepers_orchestrator_web** | Flask web applications | flask, react, design, a11y, critic |
+| **@geepers_orchestrator_hive** | Build features from plans | planner, builder, quickwin, integrator, refactor |
+| **@geepers_orchestrator_research** | Gathering data, investigating | fetcher, searcher, data, links, diag, citations |
 | **@geepers_orchestrator_python** | Python project work | flask, pycli, api, deps |
 | **@geepers_orchestrator_games** | Game development | gamedev, game, react, godot |
 | **@geepers_orchestrator_corpus** | Linguistics/NLP projects | corpus, corpus_ux, db |
@@ -40,11 +42,12 @@ Run these regularly to keep projects healthy:
 
 | Agent | Use When | What It Does |
 |-------|----------|--------------|
-| **@geepers_scout** | Starting work, checkpoints | Reconnaissance, quick fixes, NOSY reports |
+| **@geepers_scout** | Starting work, checkpoints | Reconnaissance, identifies issues (recon only) |
 | **@geepers_repo** | Before commits, cleanup time | Git hygiene, file organization |
 | **@geepers_status** | Logging work, tracking progress | Updates ~/geepers/status/ dashboard |
 | **@geepers_snippets** | Found reusable code | Harvests patterns to snippet library |
 | **@geepers_janitor** | Project is messy, need deep clean | Aggressive cleanup, removes cruft |
+| **@geepers_git** | Git conflicts, history cleanup | Git operations, branch management |
 
 ### 🏗️ Infrastructure
 
@@ -68,6 +71,8 @@ For auditing and improving code:
 | **@geepers_perf** | Things are slow | Performance profiling |
 | **@geepers_api** | Designing/reviewing APIs | REST design review |
 | **@geepers_deps** | Security audit, updating packages | Dependency vulnerabilities |
+| **@geepers_testing** | Need tests, coverage gaps | Test strategy and coverage |
+| **@geepers_security** | Security review needed | OWASP Top 10, secure coding |
 
 ### 📊 Data & Research
 
@@ -87,10 +92,14 @@ For specific tech stacks:
 | Agent | Use When | What It Does |
 |-------|----------|--------------|
 | **@geepers_flask** | Flask web apps | Flask patterns, blueprints, deployment |
+| **@geepers_express** | Express/Node.js backends | Express, tRPC, middleware |
 | **@geepers_pycli** | Python CLI tools | Click/typer/argparse best practices |
 | **@geepers_react** | React development | Components, state, hooks |
 | **@geepers_design** | Design systems, typography | Swiss design, visual consistency |
+| **@geepers_uxpert** | UX patterns, forms, nav | Interaction design, user flows |
 | **@geepers_scalpel** | Precise code changes | Surgical edits to complex files |
+| **@geepers_refactor** | Code restructuring | Refactoring without changing behavior |
+| **@geepers_docs** | Documentation needed | README, API docs, code docs |
 
 ### 🎮 Games & Interactive
 
@@ -132,15 +141,25 @@ What do you need?
 │
 ├─► "Deploy this" ──────────────► @geepers_orchestrator_deploy
 │
-├─► "Build a feature" ──────────► @geepers_orchestrator_fullstack
+├─► "Build a feature" ──────────► @geepers_orchestrator_hive
 │
-├─► "Web app work" ─────────────► @geepers_orchestrator_web
+├─► "Frontend work (no backend)" ► @geepers_orchestrator_frontend
+│
+├─► "Flask web app" ────────────► @geepers_orchestrator_web
+│
+├─► "Express/Node.js app" ──────► @geepers_orchestrator_fullstack
 │
 ├─► "Python project" ───────────► @geepers_orchestrator_python
 │
 ├─► "End of session" ───────────► @geepers_orchestrator_checkpoint
 │
-├─► "What's wrong with UX?" ────► @geepers_critic
+├─► "What's wrong with UX?" ────► @geepers_critic or @geepers_uxpert
+│
+├─► "Write tests" ──────────────► @geepers_testing
+│
+├─► "Security review" ──────────► @geepers_security
+│
+├─► "Need documentation" ───────► @geepers_docs
 │
 ├─► "Find information" ─────────► @geepers_orchestrator_research
 │
