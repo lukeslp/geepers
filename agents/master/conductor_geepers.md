@@ -21,15 +21,16 @@ Dispatch work to these topic orchestrators:
 
 | Orchestrator | Scope | Use When |
 |-------------|-------|----------|
-| `geepers_orchestrator_product` | business_plan, prd, fullstack_dev, intern_pool, code_checker, docs | Idea to implementation pipeline |
 | `geepers_orchestrator_checkpoint` | scout, repo, status, snippets, janitor | Session boundaries, routine maintenance |
-| `geepers_orchestrator_deploy` | validator, caddy, services, canary | Deployment, infrastructure changes |
-| `geepers_orchestrator_quality` | a11y, perf, api, deps, critic | Code quality, audits, reviews |
-| `geepers_orchestrator_fullstack` | api, db, services + design, a11y, react | Full-stack feature development |
-| `geepers_orchestrator_research` | data, links, diag, citations, swarm_research + web | Information gathering, API data collection |
+| `geepers_orchestrator_deploy` | validator, caddy, services, canary, security | Deployment, infrastructure changes |
+| `geepers_orchestrator_quality` | a11y, perf, api, deps, critic, testing, security | Code quality, audits, reviews |
+| `geepers_orchestrator_fullstack` | api, db, services, express + design, a11y, react | Full-stack with NON-Flask backends (Express, tRPC, Node.js) |
+| `geepers_orchestrator_frontend` | css, typescript, motion, webperf + react, design, a11y, uxpert | Pure frontend work (no backend changes) |
+| `geepers_orchestrator_hive` | planner, builder, quickwin, integrator, refactor | Build from plans, execute backlogs, refactoring |
+| `geepers_orchestrator_research` | fetcher, searcher, data, links, diag, citations | Information gathering, API data collection |
 | `geepers_orchestrator_games` | gamedev, game, react, godot | Game development, gamification |
 | `geepers_orchestrator_corpus` | corpus, corpus_ux, db | Linguistics projects, NLP work |
-| `geepers_orchestrator_web` | flask, react, design, a11y, critic | Web application development |
+| `geepers_orchestrator_web` | flask, react, design, a11y, critic | Flask-specific web applications (Jinja or Flask+React) |
 | `geepers_orchestrator_python` | flask, pycli, api, deps | Python project development |
 
 ## Direct Agent Access
@@ -37,11 +38,15 @@ Dispatch work to these topic orchestrators:
 For simple, specific tasks, dispatch directly to individual agents rather than orchestrators:
 
 **Core**: geepers_scout, geepers_repo, geepers_status, geepers_snippets, geepers_janitor
-**Infrastructure**: geepers_caddy, geepers_services, geepers_validator, geepers_canary
-**Product**: geepers_business_plan, geepers_prd, geepers_fullstack_dev, geepers_intern_pool, geepers_code_checker, geepers_docs
-**Specialists**: geepers_api, geepers_a11y, geepers_perf, geepers_db, geepers_deps, geepers_diag, geepers_data, geepers_links, geepers_dashboard, geepers_scalpel, geepers_critic, geepers_citations, geepers_flask, geepers_pycli, geepers_swarm_research
+**Infrastructure**: geepers_caddy, geepers_services, geepers_validator, geepers_canary, geepers_dashboard
+**Quality**: geepers_api, geepers_a11y, geepers_perf, geepers_deps, geepers_critic, geepers_testing, geepers_security
+**Backend**: geepers_flask, geepers_express, geepers_db, geepers_pycli
+**Frontend**: geepers_css, geepers_typescript, geepers_motion, geepers_webperf, geepers_design, geepers_uxpert, geepers_react
+**Hive**: geepers_planner, geepers_builder, geepers_quickwin, geepers_integrator, geepers_refactor
+**Research**: geepers_fetcher, geepers_searcher, geepers_data, geepers_links, geepers_diag, geepers_citations
+**Standalone**: geepers_scalpel, geepers_docs, geepers_git
 **System**: geepers_system_help, geepers_system_onboard, geepers_system_diag
-**Domain**: geepers_corpus, geepers_corpus_ux, geepers_design, geepers_game, geepers_gamedev, geepers_react, geepers_godot
+**Domain**: geepers_corpus, geepers_corpus_ux, geepers_game, geepers_gamedev, geepers_godot
 
 ## Decision Matrix
 
@@ -55,27 +60,6 @@ For simple, specific tasks, dispatch directly to individual agents rather than o
 ### Session End / Checkpoint
 ```
 Dispatch: geepers_orchestrator_checkpoint
-```
-
-### New Product / Idea to Code
-```
-Dispatch: geepers_orchestrator_product
-Pipeline: business_plan → prd → fullstack_dev/intern_pool → code_checker
-```
-
-### Business Plan Only
-```
-Dispatch: geepers_business_plan
-```
-
-### PRD / Requirements Only
-```
-Dispatch: geepers_prd
-```
-
-### Code from Requirements
-```
-Dispatch: geepers_fullstack_dev (quality) or geepers_intern_pool (budget)
 ```
 
 ### Deployment / Infrastructure Changes
@@ -118,6 +102,16 @@ Dispatch: geepers_orchestrator_web
 Dispatch: geepers_orchestrator_python
 ```
 
+### Frontend / UI Development
+```
+Dispatch: geepers_orchestrator_frontend
+```
+
+### Build From Plans / Execute Backlog
+```
+Dispatch: geepers_orchestrator_hive
+```
+
 ### Quick Health Check
 ```
 Dispatch: geepers_canary (fast, lightweight)
@@ -152,12 +146,6 @@ Dispatch: geepers_system_help
 
 | Request Pattern | Dispatch To |
 |----------------|-------------|
-| "new product / idea" | geepers_orchestrator_product |
-| "business plan / business model" | geepers_business_plan |
-| "PRD / requirements document" | geepers_prd |
-| "build from spec / generate code" | geepers_fullstack_dev |
-| "budget code generation" | geepers_intern_pool |
-| "check/validate code" | geepers_code_checker |
 | "check accessibility" | geepers_a11y |
 | "optimize performance" | geepers_perf |
 | "review API design" | geepers_api |
@@ -173,16 +161,30 @@ Dispatch: geepers_system_help
 | "build feature end-to-end" | geepers_orchestrator_fullstack |
 | "gather data from APIs" | geepers_orchestrator_research |
 | "research/investigate" | geepers_orchestrator_research |
-| "deep research / swarm" | geepers_swarm_research |
-| "generate docs / README" | geepers_docs |
 | "clean up / janitor" | geepers_janitor |
 | "quick health check" | geepers_canary |
 | "UX critique / what's wrong" | geepers_critic |
 | "verify citations / data" | geepers_citations |
 | "Flask app" | geepers_flask |
+| "Express / Node.js backend" | geepers_express |
 | "CLI tool / argparse" | geepers_pycli |
-| "web app" | geepers_orchestrator_web |
+| "Flask web app" | geepers_orchestrator_web |
+| "Node.js/Express web app" | geepers_orchestrator_fullstack |
 | "Python project" | geepers_orchestrator_python |
+| "frontend/UI work (no backend)" | geepers_orchestrator_frontend |
+| "CSS/styling" | geepers_css |
+| "TypeScript/types" | geepers_typescript |
+| "animations/motion" | geepers_motion |
+| "web performance" | geepers_webperf |
+| "UX patterns / forms / nav" | geepers_uxpert |
+| "build from plan" | geepers_orchestrator_hive |
+| "quick wins / low hanging fruit" | geepers_quickwin |
+| "refactor / restructure code" | geepers_refactor |
+| "work through TODO" | geepers_orchestrator_hive |
+| "write tests / coverage" | geepers_testing |
+| "security audit / OWASP" | geepers_security |
+| "documentation / README" | geepers_docs |
+| "git operations / conflicts" | geepers_git |
 | "what agents / help" | geepers_system_help |
 | "understand this project" | geepers_system_onboard |
 | "full system check" | geepers_system_diag |

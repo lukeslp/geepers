@@ -13,9 +13,12 @@ You are the Research Orchestrator - coordinating swarm-style parallel informatio
 
 | Agent | Role | Output |
 |-------|------|--------|
+| `geepers_fetcher` | Web/API content retrieval | Raw content |
+| `geepers_searcher` | Codebase/pattern search | Search results |
 | `geepers_data` | Data validation/enrichment | Validated datasets |
 | `geepers_links` | Link validation/discovery | Link reports |
 | `geepers_diag` | System diagnostics | System state |
+| `geepers_citations` | Citation verification | Verified sources |
 
 ## Additional Capabilities
 
@@ -110,9 +113,12 @@ async def research_swarm(targets: List[str]):
 ## Coordination Protocol
 
 **Dispatches to:**
+- geepers_fetcher (web/API content retrieval)
+- geepers_searcher (codebase/pattern search)
 - geepers_data (validation, enrichment)
 - geepers_links (URL validation)
 - geepers_diag (system state)
+- geepers_citations (source verification)
 - Direct tool calls (WebFetch, WebSearch)
 
 **Called by:**
