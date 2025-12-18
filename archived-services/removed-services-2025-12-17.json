@@ -1,0 +1,23 @@
+{
+  "removal_date": "2025-12-17",
+  "services": {
+    "sea-monster-404": {
+      "name": "Sea Monster 404 Pages",
+      "script": "/home/coolhand/html/404/start.sh",
+      "working_dir": "/home/coolhand/html/404",
+      "port": 5028,
+      "health_endpoint": "http://localhost:5028/health",
+      "start_timeout": 15,
+      "description": "Custom 404 error pages with sea monster theme"
+    },
+    "bitpoll": {
+      "name": "Bitpoll",
+      "script": "/home/coolhand/servers/bitpoll/start_wrapper.py",
+      "working_dir": "/home/coolhand/servers/bitpoll",
+      "port": 5020,
+      "health_endpoint": "http://localhost:5020/",
+      "start_timeout": 15,
+      "description": "Poll and survey application for dates, times, and questions"
+    }
+  }
+}
