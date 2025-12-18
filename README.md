@@ -1,17 +1,8 @@
 # Geepers
 
-Multi-agent orchestration system with MCP tools and Claude Code plugin agents.
+Multi-agent orchestration system with specialized Claude Code plugin agents.
 
 ## Installation
-
-### From PyPI (MCP tools)
-```bash
-pip install geepers
-
-# With optional dependencies
-pip install geepers[all]
-pip install geepers[anthropic,openai]
-```
 
 ### As Claude Code Plugin (agents)
 ```bash
@@ -20,7 +11,7 @@ pip install geepers[anthropic,openai]
 
 ## What's Included
 
-### 43 Specialized Agents
+### 63 Specialized Agents
 
 Markdown-defined agents for Claude Code that provide specialized workflows:
 
@@ -29,80 +20,60 @@ Markdown-defined agents for Claude Code that provide specialized workflows:
 | **Master** | conductor_geepers | Intelligent routing to specialists |
 | **Checkpoint** | scout, repo, status, snippets, orchestrator | Session maintenance |
 | **Deploy** | caddy, services, validator, orchestrator | Infrastructure |
-| **Quality** | a11y, perf, api, deps, critic, orchestrator | Code audits |
-| **Fullstack** | db, design, react, orchestrator | End-to-end features |
-| **Research** | data, links, diag, citations, orchestrator | Data gathering |
+| **Quality** | a11y, perf, api, deps, critic, security, testing, orchestrator | Code audits |
+| **Frontend** | css, design, motion, typescript, uxpert, webperf, orchestrator | UI/UX development |
+| **Fullstack** | db, react, orchestrator | End-to-end features |
+| **Hive** | builder, planner, integrator, quickwin, refactor, orchestrator | Task execution |
+| **Research** | data, links, diag, citations, fetcher, searcher, orchestrator | Data gathering |
 | **Games** | game, gamedev, godot, orchestrator | Game development |
 | **Corpus** | corpus, corpus_ux, orchestrator | Linguistics/NLP |
-| **Web** | flask, orchestrator | Web applications |
+| **Web** | flask, express, orchestrator | Web applications |
 | **Python** | pycli, orchestrator | Python projects |
+| **Standalone** | api, scalpel, dashboard, canary, janitor, docs, git | Specialized tasks |
+| **System** | help, onboard, diag | System utilities |
 
-### 90+ MCP Tools
+## Related: MCP-Dreamwalker
 
-Six specialized MCP servers expose tools for:
+For programmatic orchestration with LLM providers and data clients, see [MCP-Dreamwalker](https://github.com/lukeslp/mcp-dreamwalker):
 
-- **geepers-unified** - All tools in one server
-- **geepers-providers** - 13 LLM providers (Anthropic, OpenAI, xAI, etc.)
-- **geepers-data** - 29+ data sources (Census, arXiv, GitHub, NASA, etc.)
-- **geepers-cache** - Redis-backed caching
-- **geepers-utility** - Document parsing, citations, TTS
-- **geepers-websearch** - Multi-engine web search
-
-## Configuration
-
-### Claude Code MCP Config
-
-Add to `~/.config/claude/claude_desktop_config.json`:
-
-```json
-{
-  "mcpServers": {
-    "geepers": {
-      "command": "geepers-unified"
-    }
-  }
-}
-```
-
-### Environment Variables
-
-```bash
-# LLM Providers
-ANTHROPIC_API_KEY=...
-OPENAI_API_KEY=...
-XAI_API_KEY=...
-
-# Data Sources
-GITHUB_TOKEN=...
-NASA_API_KEY=...
-CENSUS_API_KEY=...
-```
+- **Dream Cascade** - Hierarchical 3-tier research orchestration
+- **Dream Swarm** - Multi-domain parallel search
+- **12 LLM Providers** - Anthropic, OpenAI, xAI, Gemini, Mistral, Cohere, etc.
+- **17 Data Clients** - Census, arXiv, GitHub, NASA, Wikipedia, etc.
 
 ## Usage
 
-### Using Agents in Claude Code
+Agents are available via Claude Code's Task tool with `subagent_type`:
 
 ```
-@geepers_scout          # Quick project reconnaissance
-@geepers_caddy          # Caddy configuration changes
-@geepers_orchestrator_checkpoint  # End-of-session cleanup
+# Quick reconnaissance
+Task with subagent_type="geepers_scout"
+
+# Infrastructure changes
+Task with subagent_type="geepers_caddy"
+
+# End-of-session cleanup
+Task with subagent_type="geepers_orchestrator_checkpoint"
+
+# Full-stack development
+Task with subagent_type="geepers_orchestrator_fullstack"
+
+# Frontend work
+Task with subagent_type="geepers_orchestrator_frontend"
 ```
 
-### Using MCP Tools
+## Agent Categories
 
-Once configured, tools are available via the MCP protocol.
+See [AGENT_DOMAINS.md](agents/AGENT_DOMAINS.md) for the full routing guide.
 
-## Development
-
-```bash
-# Clone and install in dev mode
-git clone https://github.com/lukeslp/geepers
-cd geepers
-pip install -e .
-
-# Run tests
-pytest
-```
+**Orchestrators** coordinate multiple specialists:
+- `conductor_geepers` - Master router
+- `geepers_orchestrator_frontend` - CSS, React, design, motion
+- `geepers_orchestrator_fullstack` - Backend + frontend
+- `geepers_orchestrator_hive` - Build from plans and TODOs
+- `geepers_orchestrator_quality` - Audits and reviews
+- `geepers_orchestrator_deploy` - Infrastructure changes
+- `geepers_orchestrator_checkpoint` - Session maintenance
 
 ## License
 
