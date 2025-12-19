@@ -6,13 +6,13 @@
     "url": "https://dr.eamer.dev"
   },
   "metadata": {
-    "description": "Multi-agent orchestration system for development workflows. 51 specialized agents covering product development, code quality, deployment, research, games, and more.",
-    "version": "1.0.0",
+    "description": "Multi-agent orchestration system for development workflows. 59 specialized agents covering product development, code quality, deployment, research, games, data visualization, and more.",
+    "version": "1.0.1",
     "homepage": "https://dr.eamer.dev/geepers/",
     "repository": "https://github.com/lukeslp/geepers",
     "pluginRoot": "./agents",
-    "totalPlugins": 51,
-    "lastUpdated": "2025-12-15"
+    "totalPlugins": 59,
+    "lastUpdated": "2025-12-18"
   },
   "plugins": [
     {
@@ -360,6 +360,54 @@
       "keywords": ["corpus", "ux", "kwic", "concordance"]
     },
     {
+      "name": "geepers_orchestrator_datavis",
+      "source": "./agents/datavis/geepers_orchestrator_datavis.md",
+      "description": "Data visualization orchestrator - D3.js, color, narrative, mathematical elegance.",
+      "version": "1.0.0",
+      "category": "datavis",
+      "keywords": ["datavis", "orchestrator", "d3", "visualization"]
+    },
+    {
+      "name": "geepers_datavis_viz",
+      "source": "./agents/datavis/geepers_datavis_viz.md",
+      "description": "D3.js and visualization pattern expertise - force graphs, timelines, maps.",
+      "version": "1.0.0",
+      "category": "datavis",
+      "keywords": ["d3", "visualization", "charts", "svg"]
+    },
+    {
+      "name": "geepers_datavis_color",
+      "source": "./agents/datavis/geepers_datavis_color.md",
+      "description": "Color theory, palette design, perceptual uniformity for visualizations.",
+      "version": "1.0.0",
+      "category": "datavis",
+      "keywords": ["color", "palette", "colorblind", "accessibility"]
+    },
+    {
+      "name": "geepers_datavis_story",
+      "source": "./agents/datavis/geepers_datavis_story.md",
+      "description": "Narrative design and emotional resonance in data visualization.",
+      "version": "1.0.0",
+      "category": "datavis",
+      "keywords": ["narrative", "storytelling", "emotional", "metaphor"]
+    },
+    {
+      "name": "geepers_datavis_math",
+      "source": "./agents/datavis/geepers_datavis_math.md",
+      "description": "Mathematical elegance - scales, transforms, encodings, perceptual accuracy.",
+      "version": "1.0.0",
+      "category": "datavis",
+      "keywords": ["math", "scales", "transforms", "encodings"]
+    },
+    {
+      "name": "geepers_datavis_data",
+      "source": "./agents/datavis/geepers_datavis_data.md",
+      "description": "Data collection, validation, pipelines for visualizations - Census, SEC, APIs.",
+      "version": "1.0.0",
+      "category": "datavis",
+      "keywords": ["data", "pipeline", "census", "api"]
+    },
+    {
       "name": "geepers_system_help",
       "source": "./agents/system/geepers_system_help.md",
       "description": "Reference guide for all geepers agents, generates documentation.",
@@ -422,6 +470,30 @@
       "version": "1.0.0",
       "category": "standalone",
       "keywords": ["dashboard", "admin", "persistence", "services"]
+    },
+    {
+      "name": "geepers_git",
+      "source": "./agents/standalone/geepers_git.md",
+      "description": "Git operations, branch management, merge conflict resolution, workflow optimization.",
+      "version": "1.0.0",
+      "category": "standalone",
+      "keywords": ["git", "branches", "merge", "workflow"]
+    },
+    {
+      "name": "geepers_todoist",
+      "source": "./agents/standalone/geepers_todoist.md",
+      "description": "Todoist integration for task management, project sync, and productivity workflows.",
+      "version": "1.0.0",
+      "category": "standalone",
+      "keywords": ["todoist", "tasks", "productivity", "integration"]
+    },
+    {
+      "name": "geepers_docs_standalone",
+      "source": "./agents/standalone/geepers_docs.md",
+      "description": "Documentation generator - README, API docs, guides, inline comments.",
+      "version": "1.0.0",
+      "category": "standalone",
+      "keywords": ["documentation", "readme", "api-docs", "guides"]
     }
   ]
 }
