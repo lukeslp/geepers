@@ -1,8 +1,8 @@
 {
   "name": "geepers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "displayName": "Geepers",
-  "description": "Multi-agent orchestration system with MCP tools and Claude Code plugin agents. 51 specialized agents for development workflows, code quality, deployment, research, and more.",
+  "description": "Multi-agent orchestration system with MCP tools and Claude Code plugin agents. 59 specialized agents for development workflows, code quality, deployment, research, data visualization, and more.",
   "author": "Luke Steuber",
   "license": "MIT",
   "homepage": "https://dr.eamer.dev/geepers/",
@@ -81,6 +81,11 @@
       "id": "product",
       "name": "Product Orchestrator",
       "description": "Product development: business plan, PRD, fullstack dev, code checker"
+    },
+    {
+      "id": "datavis",
+      "name": "Data Visualization Orchestrator",
+      "description": "Data visualization: D3.js, color theory, mathematical elegance, narrative design"
     }
   ],
   "agents": [
@@ -127,6 +132,12 @@
     {"id": "geepers_orchestrator_corpus", "source": "./agents/corpus/geepers_orchestrator_corpus.md"},
     {"id": "geepers_corpus", "source": "./agents/corpus/geepers_corpus.md"},
     {"id": "geepers_corpus_ux", "source": "./agents/corpus/geepers_corpus_ux.md"},
+    {"id": "geepers_orchestrator_datavis", "source": "./agents/datavis/geepers_orchestrator_datavis.md"},
+    {"id": "geepers_datavis_viz", "source": "./agents/datavis/geepers_datavis_viz.md"},
+    {"id": "geepers_datavis_color", "source": "./agents/datavis/geepers_datavis_color.md"},
+    {"id": "geepers_datavis_story", "source": "./agents/datavis/geepers_datavis_story.md"},
+    {"id": "geepers_datavis_math", "source": "./agents/datavis/geepers_datavis_math.md"},
+    {"id": "geepers_datavis_data", "source": "./agents/datavis/geepers_datavis_data.md"},
     {"id": "geepers_system_help", "source": "./agents/system/geepers_system_help.md"},
     {"id": "geepers_system_onboard", "source": "./agents/system/geepers_system_onboard.md"},
     {"id": "geepers_system_diag", "source": "./agents/system/geepers_system_diag.md"},
@@ -134,7 +145,10 @@
     {"id": "geepers_scalpel", "source": "./agents/standalone/geepers_scalpel.md"},
     {"id": "geepers_janitor", "source": "./agents/standalone/geepers_janitor.md"},
     {"id": "geepers_canary", "source": "./agents/standalone/geepers_canary.md"},
-    {"id": "geepers_dashboard", "source": "./agents/standalone/geepers_dashboard.md"}
+    {"id": "geepers_dashboard", "source": "./agents/standalone/geepers_dashboard.md"},
+    {"id": "geepers_git", "source": "./agents/standalone/geepers_git.md"},
+    {"id": "geepers_todoist", "source": "./agents/standalone/geepers_todoist.md"},
+    {"id": "geepers_docs_standalone", "source": "./agents/standalone/geepers_docs.md"}
   ],
   "requirements": {
     "python": ">=3.8",
