@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart.js + SocketIO Real-Time Dashboard</title>
+
+    <!-- SocketIO Client -->
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-value {
+            font-size: 2em;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .stat-label {
+            color: #718096;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #2d3748;
+        }
+
+        @media (max-width: 768px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Real-Time Dashboard</h1>
+            <p>Live updates via SocketIO + Chart.js</p>
+        </div>
+
+        <!-- Statistics Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="stat-total">0</div>
+                <div class="stat-label">Total Items</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-rate">0</div>
+                <div class="stat-label">Items/Minute</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-category-a">0</div>
+                <div class="stat-label">Category A</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-category-b">0</div>
+                <div class="stat-label">Category B</div>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="charts-grid">
+            <div class="card">
+                <h2>Distribution (Pie Chart)</h2>
+                <canvas id="pieChart"></canvas>
+            </div>
+
+            <div class="card">
+                <h2>Trends Over Time (Line Chart)</h2>
+                <canvas id="lineChart"></canvas>
+            </div>
+
+            <div class="card">
+                <h2>Real-Time Counts (Bar Chart)</h2>
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * Chart.js + SocketIO Real-Time Dashboard
+         *
+         * Pattern: Initialize charts, connect to SocketIO, update charts on events
+         *
+         * Use Cases:
+         * - Real-time analytics dashboards
+         * - Live monitoring systems
+         * - Social media sentiment tracking
+         * - IoT sensor visualization
+         *
+         * Notes:
+         * - Charts update incrementally without redrawing entire chart
+         * - Maintains fixed window for time-series data
+         * - Smooth animations with Chart.js update()
+         * - Escapes HTML in user-generated content
+         */
+
+        const socket = io();
+        let pieChart, lineChart, barChart;
+
+        // ===== Chart Initialization =====
+
+        function initCharts() {
+            // Pie Chart - Shows distribution
+            const pieCtx = document.getElementById('pieChart').getContext('2d');
+            pieChart = new Chart(pieCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Category A', 'Category B', 'Category C'],
+                    datasets: [{
+                        data: [0, 0, 0],
+                        backgroundColor: ['#48bb78', '#f56565', '#4299e1'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            // Line Chart - Shows trends over time
+            const lineCtx = document.getElementById('lineChart').getContext('2d');
+            lineChart = new Chart(lineCtx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: [
+                        {
+                            label: 'Category A',
+                            data: [],
+                            borderColor: '#48bb78',
+                            backgroundColor: 'rgba(72, 187, 120, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        },
+                        {
+                            label: 'Category B',
+                            data: [],
+                            borderColor: '#f56565',
+                            backgroundColor: 'rgba(245, 101, 101, 0.1)',
+                            tension: 0.4,
+                            fill: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        },
+                        x: {
+                            display: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            // Bar Chart - Shows current values
+            const barCtx = document.getElementById('barChart').getContext('2d');
+            barChart = new Chart(barCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Category A', 'Category B', 'Category C'],
+                    datasets: [{
+                        label: 'Count',
+                        data: [0, 0, 0],
+                        backgroundColor: ['#48bb78', '#f56565', '#4299e1']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    }
+                }
+            });
+        }
+
+        // ===== Update Functions =====
+
+        function updatePieChart(data) {
+            // Update pie chart with new distribution data
+            pieChart.data.datasets[0].data = [
+                data.category_a || 0,
+                data.category_b || 0,
+                data.category_c || 0
+            ];
+            pieChart.update();
+        }
+
+        function updateLineChart(history) {
+            // Update line chart with time-series data
+            // Keep only last 30 points for readability
+            const recentHistory = history.slice(-30);
+
+            lineChart.data.labels = recentHistory.map((_, i) => i + 1);
+            lineChart.data.datasets[0].data = recentHistory.map(h => h.category_a || 0);
+            lineChart.data.datasets[1].data = recentHistory.map(h => h.category_b || 0);
+            lineChart.update();
+        }
+
+        function updateBarChart(data) {
+            // Update bar chart with current counts
+            barChart.data.datasets[0].data = [
+                data.category_a || 0,
+                data.category_b || 0,
+                data.category_c || 0
+            ];
+            barChart.update();
+        }
+
+        function updateStatCards(data) {
+            // Update statistics display
+            document.getElementById('stat-total').textContent =
+                (data.total || 0).toLocaleString();
+            document.getElementById('stat-rate').textContent =
+                (data.rate || 0).toLocaleString();
+            document.getElementById('stat-category-a').textContent =
+                (data.category_a || 0).toLocaleString();
+            document.getElementById('stat-category-b').textContent =
+                (data.category_b || 0).toLocaleString();
+        }
+
+        // ===== SocketIO Event Handlers =====
+
+        socket.on('connect', () => {
+            console.log('Connected to server');
+            // Request initial data
+            fetch('/api/stats')
+                .then(r => r.json())
+                .then(loadInitialData);
+        });
+
+        socket.on('stats_update', (data) => {
+            // Real-time statistics update
+            updateStatCards(data);
+            updatePieChart(data);
+            updateBarChart(data);
+
+            // Update line chart if history is included
+            if (data.history) {
+                updateLineChart(data.history);
+            }
+        });
+
+        socket.on('new_item', (item) => {
+            // Handle individual new items
+            console.log('New item:', item);
+        });
+
+        socket.on('disconnect', () => {
+            console.log('Disconnected from server');
+        });
+
+        // ===== Initialization =====
+
+        function loadInitialData(data) {
+            // Load initial state from API
+            updateStatCards(data);
+            updatePieChart(data);
+            updateBarChart(data);
+
+            if (data.history) {
+                updateLineChart(data.history);
+            }
+        }
+
+        // Initialize on page load
+        window.addEventListener('load', () => {
+            initCharts();
+        });
+
+        // ===== Utility Functions =====
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>
+
+<!--
+Backend Flask/SocketIO Pattern:
+
+from flask import Flask, jsonify
+from flask_socketio import SocketIO
+import threading
+import time
+
+app = Flask(__name__)
+socketio = SocketIO(app, cors_allowed_origins="*")
+
+# State
+state = {
+    'total': 0,
+    'rate': 0,
+    'category_a': 0,
+    'category_b': 0,
+    'category_c': 0,
+    'history': []
+}
+
+@app.route('/api/stats')
+def get_stats():
+    return jsonify(state)
+
+def background_worker():
+    """Simulate data updates"""
+    while True:
+        time.sleep(1)
+
+        # Update state
+        state['category_a'] += 1
+        state['total'] += 1
+
+        # Add history point
+        state['history'].append({
+            'category_a': state['category_a'],
+            'category_b': state['category_b']
+        })
+
+        # Keep only last 60 points
+        state['history'] = state['history'][-60:]
+
+        # Emit update to all clients
+        socketio.emit('stats_update', state)
+
+if __name__ == '__main__':
+    threading.Thread(target=background_worker, daemon=True).start()
+    socketio.run(app, port=5000)
+-->

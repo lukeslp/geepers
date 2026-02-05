@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>LAEME: A Linguistic Atlas of Early Middle English</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+  <link rel="stylesheet" href="lib/css/jquery-ui.min.css"  type="text/css"/>
+  <link rel="stylesheet" href="lib/css/jquery-ui.theme.min.css"  type="text/css"/>
+    <link rel="stylesheet" href="lib/css/bootstrapCustom.css" type="text/css"/> 
+    <link rel="stylesheet" href="lib/css/home.css" type="text/css"/> 
+  <link rel="icon" href="http://www.amc.lel.ed.ac.uk/wp-content/uploads/2015/02/faviconversion.png">
+</head>
+<body>
+        <nav class="navbar navbar-default chmLightGreen" >
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <span id="corpusTitle" class="navbar-brand navbar-light bold darkGrey" >LAEME: A Linguistic Atlas of Early Middle English</span>
+                </div>
+                <ul class="nav nav-pills">
+                <li class="nav-item dropdown">
+                    <a id="searchDataBtn" class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:;" role="button" aria-haspopup="true" aria-expanded="false">Corpus</a>
+                    <div class="dropdown-menu">
+                        <a id="goSearch" class="dropdown-item" href="./search.html" target="_blank">Search</a>
+                        <a id="mapSearch" class="dropdown-item" href="./map.html" target="_blank">Maps</a>
+                        <a id="textCurr" class="dropdown-item" href="./texts.html" target="_blank">Text list</a>
+                        <a id="lexelCurr" class="dropdown-item" href="./lexels.html" target="_blank">Lexel list</a>
+                        <a id="grammelCurr" class="dropdown-item" href="./grammels.html" target="_blank">Grammel list</a>
+                        <a id="formCurr" class="dropdown-item" href="./forms.html" target="_blank">Form list</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a id="dataBtn" class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:;" role="button" aria-haspopup="true" aria-expanded="false">Documentation</a>
+                    <div class="dropdown-menu">
+                        <a id="origDocs" class="dropdown-item divpages" href="javascript:;">Original Documentation</a>
+                        <a id="downloadCorpus" class="dropdown-item" href="./lib/datafiles/LAEME-corpus.zip" download>Download corpus</a>
+                        <a id="xml" class="dropdown-item divpages" href="javascript:;">XML structure</a>
+                        <a id="howto" class="dropdown-item divpages" href="javascript:;">How to Search</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a id="infoBtn" class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:;" role="button" aria-haspopup="true" aria-expanded="false">Project Information</a>
+                    <div class="dropdown-menu">
+                        <a id="about" class="dropdown-item divpages" href="javascript:;">About</a>
+                        <a id="people" class="dropdown-item divpages" href="javascript:;">History and People</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a id="informationBtn" class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:;" role="button" aria-haspopup="true" aria-expanded="false">Legacy links</a>
+                    <div class="dropdown-menu">
+                        <a id="oldlaeme" class="dropdown-item" href="http://www.lel.ed.ac.uk/ihd/laeme2/laeme2_framesZ.html" target="_blank">Old LAEME website</a>
+                    </div>         
+                </li>
+                <li class="nav-item dropdown liMargR">
+                    <a id="resourcesBtn" class="nav-link dropdown-toggle" data-toggle="dropdown" href="javascript:;" role="button" aria-haspopup="true" aria-expanded="false">Resources</a>
+                    <div class="dropdown-menu">
+                        <a id="amchome" class="dropdown-item" href="http://www.amc.lel.ed.ac.uk/" target="_blank">Angus McIntosh Centre</a>
+                        <a id="amccorpora" class="dropdown-item" href="http://www.amc.lel.ed.ac.uk/amc-projects-hub/project/" target="_blank">AMC corpora</a>
+                        <a id="otherResources" class="dropdown-item divpages" href="javascript:;">Other resources</a>
+                    </div>
+                </li>
+                </ul>
+            </div>
+        </nav>
+    <div id="materialContainer">
+        <img id="chmLogo" class="mx-auto d-block" src="lib/images/LAEME2_TitlePic.png" alt="corpus logo"/>
+        <div id="textContainer">
+        </div><br/>
+        <div class="imgDiv">
+            <a href="http://www.amc.lel.ed.ac.uk/" target="_blank"><img id="amcLogo" src="lib/images/AMC_BANNER.jpg" alt="angus macintish centre logo"/></a>
+        </div>
+    </div>
+    <div id="fullpage"></div>
+</body>
+<script type="text/javascript" src="lib/javascript/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="lib/javascript/jquery-ui.min.js"></script>
+<script src="lib/javascript/bootstrap.min.js"></script>
+<script src="lib/javascript/fontawesome-all.js"></script>
+<script type="module" src="lib/javascript/home.js"></script>
+</html>

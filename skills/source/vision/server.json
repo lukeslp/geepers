@@ -1,0 +1,37 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.lukeslp/geepers-vision",
+  "description": "Enterprise Computer Vision MCP: OSHA safety, schematics, alt-text. Supports GPT-4o and Grok-2.",
+  "repository": {
+    "url": "https://github.com/lukeslp/kernel",
+    "source": "github",
+    "subfolder": "geepers/skills/source/vision"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "pypi",
+      "identifier": "geepers-vision",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "description": "API Key for OpenAI (or xAI)",
+          "isRequired": true,
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Optional API Key for xAI (Grok-2)",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": true,
+          "name": "XAI_API_KEY"
+        }
+      ]
+    }
+  ]
+}

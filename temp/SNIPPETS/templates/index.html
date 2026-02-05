@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Snippets Library</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: #161b22;
+            border-bottom: 1px solid #30363d;
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header h1 {
+            color: #58a6ff;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: #8b949e;
+            font-size: 0.95rem;
+        }
+
+        .search-container {
+            background: #161b22;
+            border-bottom: 1px solid #30363d;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 89px;
+            z-index: 99;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 600px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            color: #c9d1d9;
+            font-size: 1rem;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: #58a6ff;
+        }
+
+        .stats {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            color: #8b949e;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stat-number {
+            color: #58a6ff;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .category {
+            margin-bottom: 3rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #30363d;
+        }
+
+        .category-header h2 {
+            color: #58a6ff;
+            font-size: 1.5rem;
+        }
+
+        .category-count {
+            background: #30363d;
+            color: #8b949e;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .snippets-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .snippet-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .snippet-card:hover {
+            border-color: #58a6ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .snippet-header {
+            margin-bottom: 1rem;
+        }
+
+        .snippet-title {
+            color: #c9d1d9;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .snippet-filename {
+            color: #8b949e;
+            font-size: 0.85rem;
+            font-family: 'Monaco', 'Courier New', monospace;
+        }
+
+        .snippet-description {
+            color: #8b949e;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .snippet-meta {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .meta-tag {
+            background: #21262d;
+            color: #58a6ff;
+            padding: 0.25rem 0.65rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal.active {
+            display: block;
+        }
+
+        .modal-content {
+            background: #0d1117;
+            max-width: 1200px;
+            margin: 2rem auto;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+        }
+
+        .modal-header {
+            background: #161b22;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #30363d;
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+        }
+
+        .modal-title-section h3 {
+            color: #c9d1d9;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-subtitle {
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+
+        .close-btn {
+            background: #21262d;
+            color: #c9d1d9;
+            border: 1px solid #30363d;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .close-btn:hover {
+            background: #30363d;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .info-section {
+            margin-bottom: 2rem;
+        }
+
+        .info-section h4 {
+            color: #58a6ff;
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .info-section ul {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .info-section li {
+            color: #8b949e;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-section li::before {
+            content: "→ ";
+            color: #58a6ff;
+            margin-right: 0.5rem;
+        }
+
+        .code-section {
+            position: relative;
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #161b22;
+            padding: 0.75rem 1rem;
+            border: 1px solid #30363d;
+            border-bottom: none;
+            border-radius: 6px 6px 0 0;
+        }
+
+        .code-header span {
+            color: #8b949e;
+            font-size: 0.85rem;
+        }
+
+        .copy-btn {
+            background: #238636;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: #2ea043;
+        }
+
+        .copy-btn.copied {
+            background: #58a6ff;
+        }
+
+        .code-container {
+            position: relative;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .code-container pre {
+            margin: 0;
+            border-radius: 0 0 6px 6px;
+            border: 1px solid #30363d;
+        }
+
+        .code-container code {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #8b949e;
+        }
+
+        .no-results h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .snippets-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-content {
+                margin: 1rem;
+            }
+
+            .search-container {
+                top: 77px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Code Snippets Library</h1>
+        <p>Production-ready patterns from real-world AI development projects</p>
+    </div>
+
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search snippets by name, description, use case, or code...">
+        </div>
+        <div class="stats">
+            <div class="stat">
+                <span>Total Snippets:</span>
+                <span class="stat-number">{{ total_snippets }}</span>
+            </div>
+            <div class="stat">
+                <span>Categories:</span>
+                <span class="stat-number">{{ categories|length }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="mainContainer">
+        {% for category_name, category_data in categories.items() %}
+        <div class="category" data-category="{{ category_data.slug }}">
+            <div class="category-header">
+                <h2>{{ category_name }}</h2>
+                <span class="category-count">{{ category_data.snippets|length }}</span>
+            </div>
+            <div class="snippets-grid">
+                {% for snippet in category_data.snippets %}
+                <div class="snippet-card" onclick="showSnippet('{{ snippet.path }}')">
+                    <div class="snippet-header">
+                        <div class="snippet-title">{{ snippet.title }}</div>
+                        <div class="snippet-filename">{{ snippet.filename }}</div>
+                    </div>
+                    {% if snippet.description %}
+                    <div class="snippet-description">{{ snippet.description[:150] }}{% if snippet.description|length > 150 %}...{% endif %}</div>
+                    {% endif %}
+                    <div class="snippet-meta">
+                        <span class="meta-tag">{{ snippet.language }}</span>
+                        {% if snippet.dependencies %}
+                        <span class="meta-tag">{{ snippet.dependencies|length }} deps</span>
+                        {% endif %}
+                        {% if snippet.use_cases %}
+                        <span class="meta-tag">{{ snippet.use_cases|length }} use cases</span>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="modal" id="snippetModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title-section">
+                    <h3 id="modalTitle"></h3>
+                    <div class="modal-subtitle" id="modalSubtitle"></div>
+                </div>
+                <button class="close-btn" onclick="closeModal()">Close</button>
+            </div>
+            <div class="modal-body">
+                <div id="modalInfo"></div>
+                <div class="code-section">
+                    <div class="code-header">
+                        <span id="codeLanguage"></span>
+                        <button class="copy-btn" onclick="copyCode()">Copy to Clipboard</button>
+                    </div>
+                    <div class="code-container">
+                        <pre><code id="codeContent" class="language-python"></code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSnippetContent = '';
+
+        async function showSnippet(path) {
+            try {
+                const response = await fetch(`/api/snippet/${path}`);
+                const snippet = await response.json();
+
+                document.getElementById('modalTitle').textContent = snippet.title;
+                document.getElementById('modalSubtitle').textContent = snippet.filename;
+                document.getElementById('codeLanguage').textContent = snippet.language.toUpperCase();
+                document.getElementById('codeContent').className = `language-${snippet.language}`;
+                document.getElementById('codeContent').textContent = snippet.content;
+
+                let infoHTML = '';
+                if (snippet.description) {
+                    infoHTML += `
+                        <div class="info-section">
+                            <h4>Description</h4>
+                            <p style="color: #8b949e;">${snippet.description}</p>
+                        </div>
+                    `;
+                }
+                if (snippet.use_cases && snippet.use_cases.length > 0) {
+                    infoHTML += `
+                        <div class="info-section">
+                            <h4>Use Cases</h4>
+                            <ul>
+                                ${snippet.use_cases.map(uc => `<li>${uc}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `;
+                }
+                if (snippet.dependencies && snippet.dependencies.length > 0) {
+                    infoHTML += `
+                        <div class="info-section">
+                            <h4>Dependencies</h4>
+                            <ul>
+                                ${snippet.dependencies.map(dep => `<li>${dep}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `;
+                }
+                document.getElementById('modalInfo').innerHTML = infoHTML;
+
+                currentSnippetContent = snippet.content;
+
+                hljs.highlightElement(document.getElementById('codeContent'));
+
+                document.getElementById('snippetModal').classList.add('active');
+            } catch (error) {
+                console.error('Error loading snippet:', error);
+                alert('Failed to load snippet');
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('snippetModal').classList.remove('active');
+        }
+
+        function copyCode() {
+            navigator.clipboard.writeText(currentSnippetContent).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy to Clipboard';
+                    btn.classList.remove('copied');
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                alert('Failed to copy to clipboard');
+            });
+        }
+
+        // Close modal on background click
+        document.getElementById('snippetModal').addEventListener('click', (e) => {
+            if (e.target.id === 'snippetModal') {
+                closeModal();
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Search functionality
+        let searchTimeout;
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            clearTimeout(searchTimeout);
+            const query = e.target.value.trim();
+
+            if (!query) {
+                location.reload();
+                return;
+            }
+
+            searchTimeout = setTimeout(() => {
+                performSearch(query);
+            }, 300);
+        });
+
+        async function performSearch(query) {
+            try {
+                const response = await fetch(`/api/search?q=${encodeURIComponent(query)}`);
+                const data = await response.json();
+
+                displaySearchResults(data.results, query);
+            } catch (error) {
+                console.error('Search error:', error);
+            }
+        }
+
+        function displaySearchResults(results, query) {
+            const container = document.getElementById('mainContainer');
+
+            if (results.length === 0) {
+                container.innerHTML = `
+                    <div class="no-results">
+                        <h3>No snippets found</h3>
+                        <p>Try a different search term</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = `
+                <div class="category">
+                    <div class="category-header">
+                        <h2>Search Results for "${query}"</h2>
+                        <span class="category-count">${results.length}</span>
+                    </div>
+                    <div class="snippets-grid">
+                        ${results.map(snippet => `
+                            <div class="snippet-card" onclick="showSnippet('${snippet.path}')">
+                                <div class="snippet-header">
+                                    <div class="snippet-title">${snippet.title}</div>
+                                    <div class="snippet-filename">${snippet.filename}</div>
+                                </div>
+                                ${snippet.description ? `
+                                    <div class="snippet-description">${snippet.description.substring(0, 150)}${snippet.description.length > 150 ? '...' : ''}</div>
+                                ` : ''}
+                                <div class="snippet-meta">
+                                    <span class="meta-tag">${snippet.language}</span>
+                                    <span class="meta-tag">${snippet.category_name}</span>
+                                    ${snippet.dependencies && snippet.dependencies.length > 0 ? `
+                                        <span class="meta-tag">${snippet.dependencies.length} deps</span>
+                                    ` : ''}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

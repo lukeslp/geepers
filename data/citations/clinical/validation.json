@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-01-05T09:53:16.328058",
+  "project": "clinical-reference",
+  "total_citations": 2222,
+  "total_validated": 60,
+  "summary": {
+    "valid": 24,
+    "invalid_malformed": 36,
+    "invalid_other": 0,
+    "open_access": 18,
+    "with_citation_counts": 22,
+    "avg_citation_count": 174.1
+  },
+  "issues": {
+    "markdown_artifacts": {
+      "count": 36,
+      "severity": "critical",
+      "description": "DOI fields contain markdown link syntax artifacts",
+      "pattern": "](https://doi.org/...)",
+      "fix": "Clean extraction regex in unified_citation_extractor.py"
+    },
+    "url_encoding": {
+      "count": 2,
+      "severity": "minor",
+      "description": "URL-encoded characters in DOI fields",
+      "pattern": "%28 and %29 instead of parentheses",
+      "fix": "Add URL decoding to extraction pipeline"
+    }
+  },
+  "progress": {
+    "validated_percentage": 2.7,
+    "remaining": 2162,
+    "estimated_runtime_hours": 2.16
+  }
+}

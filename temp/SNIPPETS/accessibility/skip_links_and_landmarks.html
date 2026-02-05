@@ -1,0 +1,464 @@
+<!--
+Skip Links and Landmark Navigation Pattern
+
+Description: Comprehensive pattern for implementing skip navigation links and
+proper HTML5 landmark regions for keyboard and screen reader accessibility.
+
+Use Cases:
+- WCAG 2.1 compliance (Success Criterion 2.4.1 Bypass Blocks)
+- Keyboard navigation efficiency
+- Screen reader navigation
+- Long pages with repeated navigation
+- Complex layouts with multiple sections
+- Single page applications with dynamic content
+
+Dependencies:
+- HTML5 support
+- CSS for visual styling
+- JavaScript for focus management (optional)
+
+Notes:
+- Skip links allow keyboard users to bypass repeated content
+- Visible on focus for keyboard users, hidden otherwise
+- Landmarks (nav, main, aside, footer) provide structure
+- Use aria-label to differentiate multiple nav regions
+- tabindex="-1" on targets ensures focus works in all browsers
+- High contrast focus indicators are critical
+- Skip links should be first focusable element on page
+
+WCAG Requirements:
+- 2.4.1 Bypass Blocks (Level A): Provide mechanism to bypass blocks
+- 2.4.6 Headings and Labels (Level AA): Descriptive labels
+- 4.1.3 Status Messages (Level AA): Announce dynamic changes
+
+Related Snippets:
+- accessibility/keyboard_navigation_pattern.js - Keyboard shortcuts
+- accessibility/screen_reader_announcements.js - ARIA announcements
+- accessibility/focus_management.js - Focus trap and restoration
+
+Source Attribution:
+- Extracted from: /home/coolhand/html/accessibility/index.html
+- Author: Luke Steuber
+- Project: Accessibility Resource Platform (dr.eamer.dev/accessibility)
+- Pattern used extensively for WCAG 2.1 Level AA compliance
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skip Links and Landmark Navigation Pattern</title>
+
+  <style>
+    /* ========================================================================
+       SKIP LINK STYLES
+       ======================================================================== */
+
+    /*
+     * Skip links are positioned absolutely off-screen by default,
+     * then slide into view when focused. This makes them visible only
+     * to keyboard users while keeping them accessible to screen readers.
+     */
+    .skip-link {
+      position: absolute;
+      top: -100px;  /* Hidden above viewport */
+      left: 0;
+      background: #ffff00;  /* High contrast yellow */
+      color: #000000;
+      padding: 12px 24px;
+      text-decoration: none;
+      z-index: 9999;  /* Above all other content */
+      font-weight: 700;
+      border: 3px solid #000000;
+      font-size: 1rem;
+    }
+
+    /*
+     * On focus, skip link appears at top of page
+     * CRITICAL: Must have strong visual indicator
+     */
+    .skip-link:focus {
+      top: 0;
+      outline: 4px solid #ff00ff;  /* High contrast magenta outline */
+      outline-offset: 2px;
+    }
+
+    /*
+     * Alternative: Skip links always visible (more accessible)
+     * Some designers prefer this approach for maximum accessibility
+     */
+    .skip-link-always-visible {
+      position: static;
+      display: inline-block;
+      margin: 1rem;
+      background: #ffff00;
+      color: #000000;
+      padding: 8px 16px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 2px solid #000000;
+    }
+
+    .skip-link-always-visible:focus {
+      outline: 4px solid #ff00ff;
+      outline-offset: 2px;
+    }
+
+    /* ========================================================================
+       LANDMARK REGION STYLES (VISUAL INDICATORS)
+       ======================================================================== */
+
+    /*
+     * These styles are for demonstration purposes.
+     * In production, landmarks don't need visual styling,
+     * but clear visual structure helps all users.
+     */
+    header[role="banner"] {
+      background: #f0f0f0;
+      padding: 1rem;
+      border-bottom: 3px solid #333;
+    }
+
+    nav[role="navigation"] {
+      background: #e0e0e0;
+      padding: 1rem;
+      border: 2px solid #666;
+      margin: 1rem 0;
+    }
+
+    main[role="main"] {
+      padding: 2rem 1rem;
+      min-height: 400px;
+    }
+
+    aside[role="complementary"] {
+      background: #f9f9f9;
+      padding: 1rem;
+      border: 2px solid #999;
+      margin: 1rem 0;
+    }
+
+    footer[role="contentinfo"] {
+      background: #e0e0e0;
+      padding: 1rem;
+      border-top: 3px solid #333;
+      margin-top: 2rem;
+    }
+
+    /* ========================================================================
+       FOCUS INDICATORS
+       ======================================================================== */
+
+    /*
+     * All interactive elements must have visible focus indicators.
+     * This is WCAG 2.4.7 Focus Visible (Level AA)
+     */
+    a:focus,
+    button:focus,
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 3px solid #0066cc;
+      outline-offset: 2px;
+    }
+
+    /* ========================================================================
+       SCREEN READER ONLY CONTENT
+       ======================================================================== */
+
+    /*
+     * Content visible only to screen readers.
+     * Never use display:none or visibility:hidden for accessible content.
+     */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /*
+     * Make sr-only content visible on focus
+     * Useful for skip links and keyboard shortcuts
+     */
+    .sr-only-focusable:focus {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: inherit;
+      margin: inherit;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================================
+       SKIP LINKS - MUST BE FIRST FOCUSABLE ELEMENTS
+       ======================================================================== -->
+
+  <!--
+    Skip links allow keyboard users to bypass repeated content.
+    Best practices:
+    - Place immediately after <body> opening tag
+    - Link to main content area
+    - Include links to major sections if page is complex
+    - Use descriptive text ("Skip to main content", not just "Skip")
+  -->
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <a href="#primary-navigation" class="skip-link">Skip to navigation</a>
+  <a href="#footer-content" class="skip-link">Skip to footer</a>
+
+
+  <!-- ========================================================================
+       HEADER LANDMARK
+       ======================================================================== -->
+
+  <!--
+    Header element automatically creates a "banner" landmark.
+    Only one banner per page (unless using <article>).
+    Contains site-level navigation and branding.
+  -->
+  <header role="banner">
+    <h1>Accessible Website Example</h1>
+
+    <!--
+      aria-label differentiates this nav from others on page.
+      Without it, screen readers would just say "navigation region".
+    -->
+    <nav id="primary-navigation" role="navigation" aria-label="Primary navigation">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- ========================================================================
+       MAIN LANDMARK
+       ======================================================================== -->
+
+  <!--
+    Main element creates a "main" landmark.
+    Only one main per page.
+    Contains the primary content of the page.
+    tabindex="-1" ensures it can receive focus from skip link in all browsers.
+  -->
+  <main id="main-content" role="main" tabindex="-1">
+    <!--
+      Heading structure provides document outline.
+      Never skip heading levels (h1 -> h3 is bad).
+      Each section should have a heading.
+    -->
+    <h1>Main Page Heading</h1>
+
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>This section demonstrates proper landmark structure and skip links.</p>
+    </section>
+
+    <section id="features">
+      <h2>Accessibility Features</h2>
+
+      <article>
+        <h3>Skip Links</h3>
+        <p>Allow keyboard users to bypass repeated content blocks.</p>
+      </article>
+
+      <article>
+        <h3>Landmarks</h3>
+        <p>Provide structure for screen reader navigation.</p>
+      </article>
+
+      <article>
+        <h3>Focus Management</h3>
+        <p>Ensure logical focus order and visible focus indicators.</p>
+      </article>
+    </section>
+
+    <!--
+      Secondary navigation within main content.
+      Use aria-label to differentiate from primary nav.
+    -->
+    <nav aria-label="Section navigation">
+      <h2>Related Pages</h2>
+      <ul>
+        <li><a href="#page1">Related Page 1</a></li>
+        <li><a href="#page2">Related Page 2</a></li>
+        <li><a href="#page3">Related Page 3</a></li>
+      </ul>
+    </nav>
+  </main>
+
+
+  <!-- ========================================================================
+       ASIDE LANDMARK (COMPLEMENTARY)
+       ======================================================================== -->
+
+  <!--
+    Aside creates a "complementary" landmark.
+    Contains content related to main content but can stand alone.
+    Examples: sidebar, related links, callout boxes.
+  -->
+  <aside role="complementary" aria-label="Related resources">
+    <h2>Related Resources</h2>
+    <ul>
+      <li><a href="https://www.w3.org/WAI/WCAG21/quickref/">WCAG Quick Reference</a></li>
+      <li><a href="https://webaim.org/">WebAIM</a></li>
+    </ul>
+  </aside>
+
+
+  <!-- ========================================================================
+       FOOTER LANDMARK (CONTENTINFO)
+       ======================================================================== -->
+
+  <!--
+    Footer creates a "contentinfo" landmark.
+    Only one per page (unless using <article>).
+    Contains site-level footer information.
+  -->
+  <footer id="footer-content" role="contentinfo" tabindex="-1">
+    <p>&copy; 2025 Accessible Website Example</p>
+
+    <!--
+      Footer navigation - use aria-label to differentiate
+    -->
+    <nav aria-label="Footer navigation">
+      <ul>
+        <li><a href="#privacy">Privacy Policy</a></li>
+        <li><a href="#terms">Terms of Service</a></li>
+        <li><a href="#accessibility">Accessibility Statement</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+
+  <!-- ========================================================================
+       JAVASCRIPT FOR ENHANCED SKIP LINK BEHAVIOR
+       ======================================================================== -->
+
+  <script>
+    /**
+     * Enhanced skip link behavior
+     * Ensures focus actually moves to target in all browsers
+     */
+    document.querySelectorAll('a[href^="#"]').forEach(skipLink => {
+      skipLink.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId);
+
+        if (target) {
+          e.preventDefault();
+
+          // Ensure target can receive focus
+          if (!target.hasAttribute('tabindex')) {
+            target.setAttribute('tabindex', '-1');
+          }
+
+          // Move focus to target
+          target.focus();
+
+          // Scroll to target (smooth scroll)
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+
+          // Update URL without jumping
+          history.pushState(null, '', `#${targetId}`);
+        }
+      });
+    });
+
+    /**
+     * Announce skip link activation to screen readers
+     */
+    document.querySelectorAll('.skip-link').forEach(link => {
+      link.addEventListener('click', function() {
+        const targetId = this.getAttribute('href').substring(1);
+        const target = document.getElementById(targetId);
+
+        if (target) {
+          // Create temporary announcement
+          const announcement = document.createElement('div');
+          announcement.setAttribute('role', 'status');
+          announcement.setAttribute('aria-live', 'polite');
+          announcement.className = 'sr-only';
+          announcement.textContent = `Skipped to ${this.textContent.toLowerCase()}`;
+
+          document.body.appendChild(announcement);
+
+          setTimeout(() => announcement.remove(), 1000);
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
+
+<!--
+  ============================================================================
+  USAGE GUIDE
+  ============================================================================
+
+  1. SKIP LINKS
+     - Place immediately after <body> tag
+     - Link to id of main content area
+     - Use descriptive text
+     - Style to be visible on focus
+     - Test with keyboard (Tab key)
+
+  2. LANDMARKS
+     - Use semantic HTML5 elements (header, nav, main, aside, footer)
+     - Include role attribute for better browser support
+     - Use aria-label for multiple instances of same landmark type
+     - Only one banner and contentinfo per page
+     - Only one main per page (except in iframes)
+
+  3. HEADINGS
+     - Use logical heading structure (h1 -> h2 -> h3)
+     - Don't skip levels
+     - Use only one h1 per page
+     - Every section should have a heading
+
+  4. FOCUS MANAGEMENT
+     - Skip link targets need tabindex="-1"
+     - All interactive elements must be keyboard accessible
+     - Focus indicators must be visible
+     - Maintain logical tab order
+
+  5. TESTING
+     - Tab through page with keyboard only
+     - Use screen reader (NVDA, JAWS, VoiceOver)
+     - Check heading structure with headings list
+     - Verify landmarks with landmarks list
+     - Test skip links actually move focus
+
+  ============================================================================
+  COMMON MISTAKES TO AVOID
+  ============================================================================
+
+  ❌ Skip link target without tabindex="-1"
+  ❌ Multiple <main> elements on same page
+  ❌ Navigation without aria-label when multiple nav elements exist
+  ❌ Using <div> instead of semantic landmarks
+  ❌ Hiding skip links completely (use off-screen positioning instead)
+  ❌ Poor focus indicator contrast
+  ❌ Skipping heading levels
+
+  ============================================================================
+-->
