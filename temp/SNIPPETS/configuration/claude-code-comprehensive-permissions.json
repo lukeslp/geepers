@@ -1,0 +1,100 @@
+// ================================================
+// Claude Code Comprehensive Tool Permissions
+// ================================================
+// Language: JSON
+// Tags: claude-code, settings, permissions, configuration
+// Source: ~/.claude/settings.json
+// Last Updated: 2025-12-15
+// Author: Luke Steuber
+// ================================================
+// Description:
+// Comprehensive Claude Code settings.json configuration that
+// enables all major tools and bash commands for development
+// workflows. Use this as a template for enabling broad tool
+// access in Claude Code projects.
+//
+// This configuration enables:
+// - All file operation tools (Task, Read, Edit, Write, Glob, Grep)
+// - Web tools (WebFetch, WebSearch)
+// - Git operations (git, gh)
+// - Package managers (npm, pnpm, pip)
+// - Python tools (python, pytest, ruff, black)
+// - System tools (mkdir, find, ls, cat, head, tail, curl)
+// - Service management (sm, systemctl, caddy, dpkg)
+// - All Agent tools
+//
+// WARNING: This grants broad permissions. Only use in trusted
+// development environments where you understand the implications.
+// ================================================
+
+{
+  "permissions": {
+    "allow": [
+      "Task(*)",
+      "Read(*)",
+      "Edit(*)",
+      "Write(*)",
+      "Glob(*)",
+      "Grep(*)",
+      "WebFetch(*)",
+      "WebSearch(*)",
+      "Bash(git:*)",
+      "Bash(gh:*)",
+      "Bash(npm:*)",
+      "Bash(pnpm:*)",
+      "Bash(pip:*)",
+      "Bash(pip3:*)",
+      "Bash(python:*)",
+      "Bash(python3:*)",
+      "Bash(pytest:*)",
+      "Bash(ruff:*)",
+      "Bash(black:*)",
+      "Bash(mkdir:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(curl:*)",
+      "Bash(sm:*)",
+      "Bash(systemctl:*)",
+      "Bash(caddy:*)",
+      "Bash(dpkg:*)",
+      "Agent(*)"
+    ],
+    "deny": [],
+    "ask": [],
+    "defaultMode": "default"
+  },
+  "enabledPlugins": {
+    "commit-commands@claude-code-plugins": true,
+    "agent-sdk-dev@claude-code-plugins": true,
+    "feature-dev@claude-code-plugins": true,
+    "explanatory-output-style@claude-code-plugins": true,
+    "security-guidance@claude-code-plugins": true,
+    "frontend-design@claude-code-plugins": true
+  },
+  "alwaysThinkingEnabled": true
+}
+
+// ================================================
+// Usage Example:
+// ================================================
+// 1. Copy this file to ~/.claude/settings.json
+// 2. Restart Claude Code or reload the workspace
+// 3. All enabled tools will be available without prompts
+//
+// Customization:
+// - Add more Bash commands as needed: "Bash(command:*)"
+// - Enable specific plugins from marketplace
+// - Use "ask" array for commands requiring confirmation
+// - Use "deny" array to block specific operations
+//
+// Common additional Bash commands to consider:
+// - "Bash(docker:*)" - Docker operations
+// - "Bash(kubectl:*)" - Kubernetes
+// - "Bash(terraform:*)" - Infrastructure as code
+// - "Bash(make:*)" - Makefiles
+// - "Bash(cargo:*)" - Rust package manager
+// - "Bash(go:*)" - Go commands
+// ================================================

@@ -1,0 +1,337 @@
+<!--
+Accessible Form Pattern with Validation
+WCAG 2.1 AA compliant form with real-time validation and screen reader support
+
+Author: Luke Steuber
+Date: 2025-12-17
+Source: Etymology Visualizer frontend patterns
+
+WCAG Criteria Met:
+- 1.3.1 Info and Relationships (A)
+- 2.1.1 Keyboard (A)
+- 3.3.1 Error Identification (A)
+- 3.3.2 Labels or Instructions (A)
+- 3.3.3 Error Suggestion (AA)
+- 4.1.3 Status Messages (AA)
+
+Features:
+- ARIA labels and descriptions
+- Live validation feedback
+- Keyboard navigation support
+- Screen reader announcements
+- Loading state indicators
+- Error handling with user-friendly messages
+
+Usage:
+    1. Copy HTML structure to your form
+    2. Customize validation rules in JavaScript
+    3. Update aria-label and id attributes for your use case
+    4. Test with screen reader (NVDA, JAWS, VoiceOver)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Form Pattern</title>
+
+    <style>
+        /* Basic accessible styling */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-control:focus {
+            outline: 3px solid #0066cc;
+            outline-offset: 2px;
+            border-color: #0066cc;
+        }
+
+        .form-control[aria-invalid="true"] {
+            border-color: #d32f2f;
+        }
+
+        .form-text {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            color: #666;
+        }
+
+        .invalid-feedback {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            color: #d32f2f;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: #0066cc;
+            color: white;
+        }
+
+        .btn:hover {
+            background-color: #0052a3;
+        }
+
+        .btn:focus {
+            outline: 3px solid #0066cc;
+            outline-offset: 2px;
+        }
+
+        .btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .spinner-border {
+            display: inline-block;
+            width: 2rem;
+            height: 2rem;
+            border: 0.25rem solid currentColor;
+            border-right-color: transparent;
+            border-radius: 50%;
+            animation: spinner-border 0.75s linear infinite;
+        }
+
+        @keyframes spinner-border {
+            to { transform: rotate(360deg); }
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        .alert {
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 4px;
+        }
+
+        .alert-success {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+
+        .alert-danger {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+
+<main role="main" class="container">
+    <h1>Accessible Form Pattern Example</h1>
+
+    <form id="exampleForm" novalidate>
+        <!-- Text input with validation -->
+        <div class="form-group" role="group" aria-labelledby="input-label">
+            <label for="userInput" id="input-label" class="form-label">
+                Enter text to process:
+                <span aria-label="required field">*</span>
+            </label>
+            <input
+                type="text"
+                id="userInput"
+                class="form-control"
+                aria-describedby="input-help input-error"
+                aria-invalid="false"
+                aria-required="true"
+                placeholder="e.g., example"
+                maxlength="50"
+                pattern="[a-zA-Z\-\s]+"
+                required
+                autofocus
+            >
+            <small id="input-help" class="form-text">
+                Letters, hyphens, and spaces only (max 50 characters)
+            </small>
+            <div id="input-error" class="invalid-feedback" role="alert" aria-live="polite" aria-atomic="true">
+                <!-- Error messages appear here -->
+            </div>
+        </div>
+
+        <!-- Submit button with loading state -->
+        <button
+            type="submit"
+            id="submitBtn"
+            class="btn btn-primary"
+            aria-label="Submit form"
+        >
+            Submit
+        </button>
+
+        <!-- Loading indicator with screen reader announcement -->
+        <div id="loading"
+             class="spinner-border"
+             role="status"
+             aria-live="polite"
+             aria-busy="true"
+             style="display: none;">
+            <span class="sr-only">Processing request, please wait...</span>
+        </div>
+    </form>
+
+    <!-- Results container with live region -->
+    <div id="results"
+         role="region"
+         aria-live="polite"
+         aria-label="Form results"
+         aria-atomic="true">
+        <!-- Results appear here -->
+    </div>
+</main>
+
+<script>
+// Client-side validation with accessibility
+function validateInput(value) {
+    const input = document.getElementById('userInput');
+    const errorDiv = document.getElementById('input-error');
+
+    // Clear previous error
+    errorDiv.textContent = '';
+
+    if (!value || value.length === 0) {
+        input.setAttribute('aria-invalid', 'true');
+        errorDiv.textContent = 'This field is required';
+        return false;
+    }
+
+    if (value.length > 50) {
+        input.setAttribute('aria-invalid', 'true');
+        errorDiv.textContent = 'Input too long (maximum 50 characters)';
+        return false;
+    }
+
+    if (!/^[a-zA-Z\-\s]+$/.test(value)) {
+        input.setAttribute('aria-invalid', 'true');
+        errorDiv.textContent = 'Input can only contain letters, hyphens, and spaces';
+        return false;
+    }
+
+    // Valid input
+    input.setAttribute('aria-invalid', 'false');
+    return true;
+}
+
+// Real-time validation on input
+document.getElementById('userInput').addEventListener('input', function(e) {
+    validateInput(e.target.value);
+});
+
+// Form submission with accessibility
+document.getElementById('exampleForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const input = document.getElementById('userInput');
+    const submitBtn = document.getElementById('submitBtn');
+    const loading = document.getElementById('loading');
+    const resultsDiv = document.getElementById('results');
+
+    const value = input.value.trim();
+
+    // Validate before submission
+    if (!validateInput(value)) {
+        input.focus();
+        return;
+    }
+
+    // Show loading state
+    submitBtn.disabled = true;
+    loading.style.display = 'inline-block';
+    loading.setAttribute('aria-busy', 'true');
+    resultsDiv.innerHTML = '';
+
+    try {
+        // Make API request
+        const response = await fetch('/api/example', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ input: value })
+        });
+
+        const data = await response.json();
+
+        // Hide loading state
+        loading.style.display = 'none';
+        loading.setAttribute('aria-busy', 'false');
+        submitBtn.disabled = false;
+
+        if (data.success) {
+            // Show success message
+            resultsDiv.innerHTML = `
+                <div class="alert alert-success" role="alert">
+                    <strong>Success!</strong> Your request was processed.
+                    <pre>${JSON.stringify(data.result, null, 2)}</pre>
+                </div>
+            `;
+            // Screen reader will announce due to aria-live="polite"
+        } else {
+            // Show error message
+            resultsDiv.innerHTML = `
+                <div class="alert alert-danger" role="alert">
+                    <strong>Error:</strong> ${data.error || 'An error occurred'}
+                </div>
+            `;
+        }
+
+    } catch (error) {
+        // Hide loading state
+        loading.style.display = 'none';
+        loading.setAttribute('aria-busy', 'false');
+        submitBtn.disabled = false;
+
+        // Show error message
+        resultsDiv.innerHTML = `
+            <div class="alert alert-danger" role="alert">
+                <strong>Error:</strong> Unable to connect to server. Please try again.
+            </div>
+        `;
+    }
+});
+
+// Keyboard navigation enhancement
+document.getElementById('submitBtn').addEventListener('keydown', function(e) {
+    // Allow Enter and Space to trigger button
+    if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+    }
+});
+</script>
+
+</body>
+</html>

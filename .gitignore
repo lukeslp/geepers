@@ -53,3 +53,9 @@ Thumbs.db
 *.pem
 *.key
 .env.local
+
+# Ignore venvs and tokens
+.upload-venv/
+.mcpregistry*
+skills/source/*/
+skills/temp_registry/

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="" content="Nofoobar">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
+  <title>NCRI</title>
+
+</head>
+
+<body>
+    
+  <div class="container">
+    <div class="row">
+      <h5 class="display-5">NCRI Reddit Access</h5>
+      <div class="text-danger font-weight-bold">
+          
+      </div>
+    </div>
+
+    <div class="row my-5">
+        <div class="mb-3">
+          <h6 class="display-6"><label>TERMS OF USE</label></h6>
+          <p>By utilizing Pushshift to access any Reddit, Inc. (“Reddit”) data or data API (the “Reddit Data API”), user certifies that they are a registered user of Reddit and a Reddit moderator (a “Mod") and may only access Reddit Services and Data through Pushshift Services for the express limited purposes of community moderation, enforcing Reddit community guidelines, and ensuring community member safety. The Mod further certifies that its access to and use of Reddit Data API through Pushshift Services will at all times strictly comply with (i) Reddit's Developer Terms (available at <a href="https://www.redditinc.com/policies/developer-terms" target="_blank">https://www.redditinc.com/policies/developer-terms</a>) and Data API Terms (available at <a href="https://www.redditinc.com/policies/data-api-terms" target="_blank">https://www.redditinc.com/policies/data-api-terms</a>), in each case, including the privacy and security provisions therein  (collectively, the “Reddit API Terms”) as in effect from time to time and (ii) all relevant laws and regulations.</p>
+          <p>For clarity, all of the commercial use and other restrictions set forth in the Reddit API Terms still apply to the Mod’s access to and use of Reddit’s Data API and other Developer Services. Accordingly, Mod agrees to abide by those restrictions and will not, and will not attempt to, or enable others to (including through Pushshift Services) commercialize the distribution of Reddit Services and Data in any manner. This includes, for example, selling, leasing, sub-licensing, monetizing, or otherwise profiting from Reddit Services and Data directly or indirectly, as well as re-distributing Reddit Services and Data or any derivative products based on it.</p>
+        </div>
+        <a href='https://auth.pushshift.io/authorize?redirect=https://search-tool.pushshift.io' class="btn btn-primary">BY CONTINUING TO USE THIS SERVICE YOU AGREE TO THESE TERMS</a>
+    </div>
+    <div class="row my-5">
+      <div class="mv-3">
+        <h6 class="display-6"><label>Usage</label></h6>
+        <p>By agreeing to the terms and clicking the link above you will be taken through an OAuth authorization flow, which upon successful completion for Reddit moderatos will arrive on a page with a bearer token. This token can then be used in the Authorization header of all API calls. For an example of this flow, copy the bearer token, go to <a href="https://api.pushshift.io/docs#/">https://api.pushshift.io/docs#/</a>, click the Authorize button on the top right, paste the bearer token in window and click authorize. The token has an expiration of 24hrs and a new token can be generated at any time if it is lost.</p>
+        <p>
+          <pre style="display: block; overflow-x: auto; padding: 0.5em; background: rgb(51, 51, 51); color: white;">
+            <code class="language-bash" style="white-space: pre;"><span>curl -X </span><span style="color: rgb(162, 252, 162);">'GET'</span><span> \
+</span><span>  </span><span style="color: rgb(162, 252, 162);">'https://api.pushshift.io/reddit/comment/search?sort=created_utc&amp;order=desc&amp;agg_size=25&amp;shard_size=1.5&amp;limit=10&amp;track_total_hits=false'</span><span> \
+</span><span>  -H </span><span style="color: rgb(162, 252, 162);">'accept: application/json'</span><span> \
+</span><span>  -H </span><span style="color: rgb(162, 252, 162);">'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiUHVzaHNoaWZ0LVN1cHBvcnQiLCJleHBpcmVzIjoxNjg1MTA4Nzg4LjE5NzY3OTh9.hATtBHzQh5hiFBSFg3gQsFK2xrwIlPynYrL7l6pPCMw'</span></code>
+            </code>
+          </pre>
+        </p>
+      </div>
+    </div>
+  </div>
+  
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"7c0f5075bccb48318b5a2fb6be07caa0","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

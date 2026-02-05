@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<link rel="shortcut icon" href="/repository/xmlui/themes/OTA/images/favicon.ico" />
+<meta name="Generator" content="DSpace 5.11-SNAPSHOT" />
+<link media="screen" href="/repository/xmlui/themes/OTA/lib/css/lindat.css" rel="stylesheet" />
+<link media="screen" href="/repository/xmlui/themes/OTA/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link media="screen" href="/repository/xmlui/themes/OTA/lib/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+<link media="screen" href="/repository/xmlui/themes/OTA/lib/bootstrap/css/ufal-theme.css" rel="stylesheet" />
+<link media="screen" href="/repository/xmlui/themes/OTA/lib/bootstrap/css/repository.css" rel="stylesheet" />
+<link media="print" href="/repository/xmlui/themes/OTA/lib/css/print.css" rel="stylesheet" />
+<link type="application/rss+xml" rel="alternate" href="/repository/xmlui/feed/rss_1.0/20.500.12024/5" />
+<link type="application/rss+xml" rel="alternate" href="/repository/xmlui/feed/rss_2.0/20.500.12024/5" />
+<link type="application/atom+xml" rel="alternate" href="/repository/xmlui/feed/atom_1.0/20.500.12024/5" />
+<link type="application/opensearchdescription+xml" rel="search" href="https://ota.bodleian.ox.ac.uk:443/repository/xmlui/open-search/description.xml" title="OTA" />
+<script type="text/javascript">
+                
+                // Clear default text of emty text areas on focus
+                function tFocus(element) {
+                    if (element.value == ' '){
+                        element.value='';
+                    }
+                }
+                
+                // Clear default text of emty text areas on submit
+                function tSubmit(form) {
+                    var defaultedElements = document.getElementsByTagName("textarea");
+                    for (var i=0; i != defaultedElements.length; i++){
+                        if (defaultedElements[i].value == ' '){
+                            defaultedElements[i].value='';
+                        }
+                    }
+                }
+                
+                // Disable pressing 'enter' key to submit a form (otherwise pressing 'enter' causes a submission to start over)
+                function disableEnterKey(e) {
+                    var key;
+                    if(window.event)
+                        key = window.event.keyCode; //Internet Explorer
+                    else
+                        key = e.which; //Firefox and Netscape
+        
+                    if(key == 13) //if "Enter" pressed, then disable!
+                        return false;
+                    else
+                        return true;
+                }
+        
+                function FnArray() {
+                    this.funcs = new Array;
+                }
+        
+                FnArray.prototype.add = function(f) {
+                    if( typeof f!= "function" ) {
+                        f = new Function(f);
+                    }
+                    this.funcs[this.funcs.length] = f;
+                };
+        
+                FnArray.prototype.execute = function() {
+                    for( var i=0; i<this.funcs.length; i++ ){
+                        this.funcs[i]();
+                    }
+                };
+        
+                var runAfterJSImports = new FnArray();
+            </script>
+<title>Early English Books Online (Phase 1)</title>
+<link rel="stylesheet" type="text/css" href="https://ota.bodleian.ox.ac.uk/aai/discojuice/discojuice.css" />
+</head><!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
+                <!--[if IE 7 ]>    <body id="lindat-repository" class="ie7"> <![endif]-->
+                <!--[if IE 8 ]>    <body id="lindat-repository" class="ie8"> <![endif]-->
+                <!--[if IE 9 ]>    <body id="lindat-repository" class="ie9"> <![endif]-->
+                <!--[if (gt IE 9)|!(IE)]><!--><body id="lindat-repository"><!--<![endif]-->
+<nav class="lindat-header lindat-common" role="navigation" data-version="1.4.2" data-build="20beb3e08729775193fd98f1e7e758639b92d830">
+  <button type="button" class="lindat-menu-btn" onclick="document.querySelector('.lindat-menu').classList.toggle('lindat-open')">
+    <span class="lindat-menu-icon">
+      <span class="lindat-icon-bar"> </span>
+      <span class="lindat-icon-bar"> </span>
+      <span class="lindat-icon-bar"> </span>
+    </span>
+  </button>
+  <ul class="lindat-menu">
+    <li class="lindat-repository-item">
+      <a href="/repository/xmlui/">
+<span>Oxford Text Archive</span>
+</a>
+    </li>
+    <li class="lindat-about-item">
+      <a href="/repository/xmlui/page/about">
+<span>About OTA</span>
+</a>
+    </li>
+    <li class="lindat-pmltq-item">
+      <a href="https://www.e-enlightenment.com/">
+<span>Electronic Enlightenment</span>
+</a>
+    </li>
+    <li class="lindat-clarin-menu">
+      <a href="http://www.clarin.eu/">
+<span>CLARIN</span>
+</a>
+    </li>
+  </ul>
+</nav>
+<nav class="navbar-fixed-top">
+<div class="container-fluid">
+<ul class="nav navbar-nav navbar-right">
+<li />
+</ul>
+<ul class="nav navbar-nav navbar-left">
+<li />
+</ul>
+</div>
+</nav>
+<div class="container-fluid">
+<div class="container">
+<div class="row">
+<ul style="padding: 10px;" class="breadcrumb no-radius no-margin">
+<li class="active">
+<a href="/repository/xmlui/">OTA Home</a>
+</li>
+<div class="col-xs-12 visible-xs"> </div>
+<form method="post" style="top: -6px;" class="pull-right col-sm-3" action="/repository/xmlui/discover">
+<div class="input-group input-group-sm">
+<input placeholder="Search" class="form-control small-search-input" type="text" name="query" />
+<span class="input-group-btn">
+<button type="submit" name="submit" class="btn small-search-btn btn-default">
+<i style="color: #7479B8;" class="fa fa-search"> </i>
+</button>
+</span>
+</div>
+</form>
+</ul>
+</div>
+<div style="margin-top: 5px;" class="visible-xs text-center">
+<button style="border-radius: 30px; width: 100%;" class="btn btn-default btn-sm" type="button" id="showhidemenu">
+<i class="fa fa-align-justify"> </i> Show/Hide Menu
+			</button>
+</div>
+<div class="row contents">
+<div class="sidebar col-sm-3 col-xs-12 hidden-xs" id="options-menu">
+<ul class="nav nav-list">
+<li class="always-open hidden-xs">
+<div class="clearfix" style="background-color: #FFFFFF;">
+<div style="height: 130px; position: relative;" class="col-sm-5">
+<a href="/">
+<img src="/images/OTA-logo_112.png" style="position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; padding: 0;" class="img-responsive" alt="Oxford Text Archive" />
+</a>
+</div>
+<div style="height: 130px; position: relative;" class="col-sm-5">
+<a href="https://www.bodleian.ox.ac.uk/">
+<img src="/images/bodleian-logo.jpg" style="position: absolute; top: 15px; bottom: 0px; left: 0px; right: 0px; padding: 0;" class="img-responsive" alt="Bodleian Libraries" />
+</a>
+</div>
+</div>
+</li>
+<li class="always-open">
+<a onclick="return false;" style="cursor: default;" href="#">
+<i class="fa fa-bullseye  fa-lg"> </i>
+<span class="menu-text">Browse</span>
+<b xmlns:confman="org.dspace.core.ConfigurationManager" class="arrow fa fa-caret-down"> </b>
+</a>
+<ul class="submenu">
+<li class="">
+<a class="dropdown-toggle" href="#">
+<i class="fa fa-caret-right"> </i>
+<span class="menu-text">
+<i class="fa fa-angle-right"> </i>All of the Repository</span>
+<b xmlns:confman="org.dspace.core.ConfigurationManager" class="arrow fa fa-caret-down"> </b>
+</a>
+<ul class="submenu">
+<li>
+<a href="/repository/xmlui/browse?type=title" class="">
+<i class="fa fa-angle-right"> </i>
+<span class="menu-text">Titles</span>
+</a>
+</li>
+<li>
+<a href="/repository/xmlui/browse?type=author" class="">
+<i class="fa fa-angle-right"> </i>
+<span class="menu-text">Authors</span>
+</a>
+</li>
+<li>
+<a href="/repository/xmlui/browse?type=subject" class="">
+<i class="fa fa-angle-right"> </i>
+<span class="menu-text">Subjects</span>
+</a>
+</li>
+<li>
+<a href="/repository/xmlui/browse?type=created" class="">
+<i class="fa fa-angle-right"> </i>
+<span class="menu-text">Dates of publication</span>
+</a>
+</li>
+<li>
+<a href="/repository/xmlui/browse?type=date_range" class="">
+<i class="fa fa-angle-right"> </i>
+<span class="menu-text">Date ranges</span>
+</a>
+</li>
+<li>
+<a href="/repository/xmlui/browse?type=language" class="">
+<i class="fa fa-angle-right"> </i>
+<span class="menu-text">Languages</span>
+</a>
+</li>
+<li>
+<a href="/repository/xmlui/browse?type=type" class="">
+<i class="fa fa-angle-right"> </i>
+<span class="menu-text">Resource Types</span>
+</a>
+</li>
+<li>
+<a href="/repository/xmlui/browse?type=ota_collection" class="">
+<i class="fa fa-angle-right"> </i>
+<span class="menu-text">Collections</span>
+</a>
+</li>
+<li>
+<a href="/repository/xmlui/browse?type=rights" class="">
+<i class="fa fa-angle-right"> </i>
+<span class="menu-text">Rights Labels</span>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="always-open">
+<a onclick="return false;" style="cursor: default;" href="#">
+<i class="fa fa-user fa-lg"> </i>
+<span class="menu-text">My Account</span>
+<b xmlns:confman="org.dspace.core.ConfigurationManager" class="arrow fa fa-caret-down"> </b>
+</a>
+<ul class="submenu">
+<li>
+<a href="/repository/xmlui/login" class="signon">
+<i class="fa fa-caret-right"> </i>
+<span class="menu-text">
+<i class="fa fa-sign-in fa-lg"> </i>Login</span>
+</a>
+</li>
+</ul>
+</li>
+<li class="always-open">
+<a onclick="return false;" style="cursor: default;" href="#">
+<i class="fa fa-info-circle fa-lg"> </i>
+<span class="menu-text">General Information</span>
+<b xmlns:confman="org.dspace.core.ConfigurationManager" class="arrow fa fa-caret-down"> </b>
+</a>
+<ul class="submenu">
+<li>
+<a href="/repository/xmlui/page/cite" class="">
+<i class="fa fa-caret-right"> </i>
+<span class="menu-text">
+<i class="fa fa-quote-right fa-lg"> </i>Cite</span>
+</a>
+</li>
+<li>
+<a href="/repository/xmlui/page/oxford" class="">
+<i class="fa fa-caret-right"> </i>
+<span class="menu-text">
+<i class="fa fa-mortar-board fa-lg"> </i>Oxford University users</span>
+</a>
+</li>
+<li>
+<a href="/repository/xmlui/page/faq" class="">
+<i class="fa fa-caret-right"> </i>
+<span class="menu-text">
+<i class="fa fa-question fa-lg"> </i>FAQ</span>
+</a>
+</li>
+<li>
+<a href="/repository/xmlui/page/about" class="">
+<i class="fa fa-caret-right"> </i>
+<span class="menu-text">
+<i class="fa fa-exclamation-circle fa-lg"> </i>About</span>
+</a>
+</li>
+<li>
+<a href="mailto:ota@bodleian.ox.ac.uk" class="helpdesk">
+<i class="fa fa-caret-right"> </i>
+<span class="menu-text">
+<i class="fa fa-envelope fa-lg"> </i>Help Desk</span>
+</a>
+</li>
+<li>
+<a href="/repository/xmlui/page/privacy" class="">
+<i class="fa fa-caret-right"> </i>
+<span class="menu-text">
+<i class="fa fa-file-text fa-lg"> </i>Privacy policy</span>
+</a>
+</li>
+</ul>
+</li>
+<li class="always-open">
+<a>
+<i class="fa fa-rss-square "> </i>
+<span class="menu-text">
+                        RSS Feed
+                </span>
+</a>
+<ul style="padding-bottom: 8px;" class="submenu">
+<li>
+<a href="/repository/xmlui/feed/rss_1.0/20.500.12024/5">
+<i class="fa fa-caret-right"> </i>
+<span class="menu-text">
+<i class="fa fa-rss"> </i>RSS 1.0</span>
+</a>
+</li>
+<li>
+<a href="/repository/xmlui/feed/rss_2.0/20.500.12024/5">
+<i class="fa fa-caret-right"> </i>
+<span class="menu-text">
+<i class="fa fa-rss"> </i>RSS 2.0</span>
+</a>
+</li>
+<li>
+<a href="/repository/xmlui/feed/atom_1.0/20.500.12024/5">
+<i class="fa fa-caret-right"> </i>
+<span class="menu-text">
+<i class="fa fa-rss"> </i>Atom</span>
+</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sidebar col-sm-3 placeholder col-xs-12 hidden-xs"> </div>
+<div class="col-sm-9" id="main-contents">
+<div id="aspect_artifactbrowser_CollectionViewer_div_collection-home" class=" primary repository collection">
+<h3 class="">Early English Books Online (Phase 1)</h3>
+<div id="aspect_artifactbrowser_CollectionViewer_div_collection-search-browse" class="well well-light secondary search-browse">
+<form id="aspect_discovery_CollectionSearch_div_collection-search" class=" secondary search" action="/repository/xmlui/handle/20.500.12024/5/discover" method="post" onsubmit="javascript:tSubmit(this);">
+<p id="aspect_discovery_CollectionSearch_p_search-query" class="">Search within this collection: <input id="aspect_discovery_CollectionSearch_field_query" class="form-control " name="query" type="text" value="" /> <input id="aspect_discovery_CollectionSearch_field_submit" class="btn btn-repository" name="submit" type="submit" value="Go" />
+</p>
+</form>
+</div>
+<div id="aspect_artifactbrowser_CollectionViewer_div_collection-view" class="well well-light secondary">
+<!-- External Metadata URL: cocoon://metadata/handle/20.500.12024/5/mets.xml-->
+<div xmlns:oreatom="http://www.openarchives.org/ore/atom/" xmlns:ore="http://www.openarchives.org/ore/terms/" xmlns:atom="http://www.w3.org/2005/Atom" class="detail-view"> 
+            
+            <p class="intro-text">
+<p xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/TR/xlink/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dim="http://www.dspace.org/xmlns/dspace/dim">EEBO-TCP is a partnership between the Universities of Michigan and Oxford and the publisher ProQuest to create accurately transcribed and encoded texts based on the image sets published by ProQuest via their Early English Books Online (EEBO) database (http://eebo.chadwyck.com). The general aim of EEBO-TCP is to encode one copy (usually the first edition) of every monographic English-language title published between 1473 and 1700 available in EEBO.</p>
+            <p xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/TR/xlink/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dim="http://www.dspace.org/xmlns/dspace/dim">EEBO-TCP aimed to produce large quantities of textual data within the usual project restraints of time and funding, and therefore chose to create diplomatic transcriptions (as opposed to critical editions) with light-touch, mainly structural encoding based on the Text Encoding Initiative (http://www.tei-c.org).</p>
+            <p xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/TR/xlink/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dim="http://www.dspace.org/xmlns/dspace/dim">The EEBO-TCP project was divided into two phases. The 25,363 texts created during Phase 1 of the project have been released into the public domain as of 1 January 2015. Anyone can now take and use these texts for their own purposes, but we respectfully request that due credit and attribution is given to their original source.</p>
+            <p xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/TR/xlink/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dim="http://www.dspace.org/xmlns/dspace/dim">Users should be aware of the process of creating the TCP texts, and therefore of any assumptions that can be made about the data.</p>
+            <p xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/TR/xlink/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dim="http://www.dspace.org/xmlns/dspace/dim">Text selection was based on the New Cambridge Bibliography of English Literature (NCBEL). If an author (or for an anonymous work, the title) appears in NCBEL, then their works are eligible for inclusion. Selection was intended to range over a wide variety of subject areas, to reflect the true nature of the print record of the period. In general, first editions of a works in English were prioritized, although there are a number of works in other languages, notably Latin and Welsh, included and sometimes a second or later edition of a work was chosen if there was a compelling reason to do so.</p>
+            <p xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/TR/xlink/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dim="http://www.dspace.org/xmlns/dspace/dim">Image sets were sent to external keying companies for transcription and basic encoding. Quality assurance was then carried out by editorial teams in Oxford and Michigan. 5% (or 5 pages, whichever is the greater) of each text was proofread for accuracy and those which did not meet QA standards were returned to the keyers to be redone. After proofreading, the encoding was enhanced and/or corrected and characters marked as illegible were corrected where possible up to a limit of 100 instances per text. Any remaining illegibles were encoded as &amp;lt;gap&amp;gt;s. Understanding these processes should make clear that, while the overall quality of TCP data is very good, some errors will remain and some readable characters will be marked as illegible. Users should bear in mind that in all likelihood such instances will never have been looked at by a TCP editor.</p>
+            <p xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/TR/xlink/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dim="http://www.dspace.org/xmlns/dspace/dim">The texts were encoded and linked to page images in accordance with level 4 of the TEI in Libraries guidelines.</p>
+            <p xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/TR/xlink/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dim="http://www.dspace.org/xmlns/dspace/dim">Copies of the texts have been issued variously as SGML (TCP schema; ASCII text with mnemonic sdata character entities); displayable XML (TCP schema; characters represented either as UTF-8 Unicode or text strings within braces); or lossless XML (TEI P5, characters represented either as UTF-8 Unicode or TEI g elements).</p>
+            <p xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/TR/xlink/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dim="http://www.dspace.org/xmlns/dspace/dim">Keying and markup guidelines are available at the <ref target="http://www.textcreationpartnership.org/docs/.">Text Creation Partnership web site</ref>.</p>
+</p>
+<div class="detail-view-rights-and-license">
+<p class="copyright-text">
+<p xmlns:mets="http://www.loc.gov/METS/" xmlns:xlink="http://www.w3.org/TR/xlink/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dim="http://www.dspace.org/xmlns/dspace/dim">This keyboarded and encoded edition of the
+	       work described above is co-owned by the institutions
+	       providing financial support to the Early English Books
+	       Online Text Creation Partnership. This Phase I text is
+	       available for reuse, according to the terms of <a href="http://creativecommons.org/publicdomain/zero/1.0/">Creative
+	       Commons 0 1.0 Universal</a>. The text can be copied,
+	       modified, distributed and performed, even for
+	       commercial purposes, all without asking permission.</p>
+</p>
+</div>
+</div>
+</div>
+<div id="aspect_discovery_CollectionRecentSubmissions_div_collection-recent-submission" class="well well-light secondary recent-submission">
+<h3 class="">Recent Submissions</h3>
+<ul xmlns:oreatom="http://www.openarchives.org/ore/atom/" xmlns:ore="http://www.openarchives.org/ore/terms/" xmlns:atom="http://www.w3.org/2005/Atom" class="no-margin no-padding">
+<!-- External Metadata URL: cocoon://metadata/handle/20.500.12024/A20060/mets.xml?sections=dmdSec,amdSec&fileGrpTypes=THUMBNAIL-->
+<li xmlns="" class="item-box">
+<div class="item-type">Text</div>
+<div class="item-branding label">EEBO-TCP (Phase 1)</div>
+<img onerror="this.src='/repository/xmlui/themes/OTA/images/mime/application-x-zerosize.png'" alt="Text" class="artifact-icon pull-right" src="/repository/xmlui/themes/OTAHome/lib/images/Text.png" />
+<div class="artifact-title">
+<a href="/repository/xmlui/handle/20.500.12024/A20060">The guls horne-booke: By T. Deckar</a>
+</div>
+<div class="publisher-date">
+<strong>Date of publication:</strong>
+<br />
+<span class="date">1609</span>
+</div>
+<div class="artifact-info">
+<span class="Z3988 hidden" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft_id=ota%3AA20060&amp;rft_id=http%3A%2F%2Fpurl.ox.ac.uk%2Fota%2FA20060&amp;rft_id=http%3A%2F%2Fhdl.handle.net%2F20.500.12024%2FA20060&amp;rft_id=STC+6500&amp;rft_id=ESTC+S105251&amp;rfr_id=info%3Asid%2Fdspace.org%3Arepository&amp;rft.has=yes&amp;rft.files=1510153&amp;rft.files=4&amp;rft.identifier=STC+6500&amp;rft.identifier=ESTC+S105251&amp;rft.date=1600-1699">
+                ﻿ 
+            </span>
+<div class="author-head">Author(s):</div>
+<div class="author">
+<span>
+<a href="/repository/xmlui/browse?value=Dekker, Thomas, ca. 1572-1632.&amp;type=author">Dekker, Thomas, ca. 1572-1632.</a>
+</span>; <span>
+<a href="/repository/xmlui/browse?value=Dedekind, Friedrich, d. 1598. Grobianus.&amp;type=author">Dedekind, Friedrich, d. 1598. Grobianus.</a>
+</span>
+</div>
+</div>
+<div class="artifact-abstract-head">
+                    Description:
+                </div>
+<div class="artifact-abstract">Based on: Dedekind, Friedrich.  Grobianus. Printer's name supplied and publisher's name conjectured by STC. The first leaf is blank. Reproduction of the original in the British Library.</div>
+<div style="margin-bottom: 20px;" class="label label-info">
+<i class="fa fa-paperclip"> </i>This item contains 4 files (1.44
+MB).</div>
+<div style="height: 20px;" class="visible-xs"> </div>
+<div class="item-label PUB">
+<span title="Publicly Available">Publicly Available</span>
+</div>
+</li>
+<li xmlns="" style="list-style: none;">
+<hr />
+</li>
+<!-- External Metadata URL: cocoon://metadata/handle/20.500.12024/A15807/mets.xml?sections=dmdSec,amdSec&fileGrpTypes=THUMBNAIL-->
+<li xmlns="" class="item-box">
+<div class="item-type">Text</div>
+<div class="item-branding label">EEBO-TCP (Phase 1)</div>
+<img onerror="this.src='/repository/xmlui/themes/OTA/images/mime/application-x-zerosize.png'" alt="Text" class="artifact-icon pull-right" src="/repository/xmlui/themes/OTAHome/lib/images/Text.png" />
+<div class="artifact-title">
+<a href="/repository/xmlui/handle/20.500.12024/A15807">Cyrupædia The institution and life of Cyrus, the first of that name, King of Persians. Eight bookes. Treating of noble education, of princely exercises, military discipline, vvarlike stratagems, preparations and expeditions: as appeareth by the contents before the beginning of the first booke. Written in Greeke by the sage Xenophon. Translated out of Greeke into English, and conferred with the Latine and French translations, by Philemon Holland of the city of Coventry Doctor in Physick. Dedicated to his most excellent Maiesty.</a>
+</div>
+<div class="publisher-date">
+<strong>Date of publication:</strong>
+<br />
+<span class="date">1632</span>
+</div>
+<div class="artifact-info">
+<span class="Z3988 hidden" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft_id=ota%3AA15807&amp;rft_id=http%3A%2F%2Fpurl.ox.ac.uk%2Fota%2FA15807&amp;rft_id=http%3A%2F%2Fhdl.handle.net%2F20.500.12024%2FA15807&amp;rft_id=STC+26068&amp;rft_id=ESTC+S118709&amp;rfr_id=info%3Asid%2Fdspace.org%3Arepository&amp;rft.has=yes&amp;rft.files=12575121&amp;rft.files=4&amp;rft.identifier=STC+26068&amp;rft.identifier=ESTC+S118709&amp;rft.date=1600-1699">
+                ﻿ 
+            </span>
+<div class="author-head">Author(s):</div>
+<div class="author">
+<span>
+<a href="/repository/xmlui/browse?value=Xenophon.&amp;type=author">Xenophon.</a>
+</span>; <span>
+<a href="/repository/xmlui/browse?value=Holland, Abraham, d. 1626. Naumachia. aut&amp;type=author">Holland, Abraham, d. 1626. Naumachia. aut</a>
+</span>; <span>
+<a href="/repository/xmlui/browse?value=Holland, Philemon, 1552-1637.&amp;type=author">Holland, Philemon, 1552-1637.</a>
+</span>; <span>
+<a href="/repository/xmlui/browse?value=Marshall, William, fl. 1617-1650, engraver.&amp;type=author">Marshall, William, fl. 1617-1650, engraver.</a>
+</span>
+</div>
+</div>
+<div class="artifact-abstract-head">
+                    Description:
+                </div>
+<div class="artifact-abstract">With an additional engraved title page signed: Hh invent Will: Marshall sculpsit. Printer's name from STC. "Naumachia .. by Abraham Holland ..", a reprint of STC 13580 with different preliminaries, has separate dated title ...</div>
+<div style="margin-bottom: 20px;" class="label label-info">
+<i class="fa fa-paperclip"> </i>This item contains 4 files (11.99
+MB).</div>
+<div style="height: 20px;" class="visible-xs"> </div>
+<div class="item-label PUB">
+<span title="Publicly Available">Publicly Available</span>
+</div>
+</li>
+<li xmlns="" style="list-style: none;">
+<hr />
+</li>
+<!-- External Metadata URL: cocoon://metadata/handle/20.500.12024/A09596/mets.xml?sections=dmdSec,amdSec&fileGrpTypes=THUMBNAIL-->
+<li xmlns="" class="item-box">
+<div class="item-type">Text</div>
+<div class="item-branding label">EEBO-TCP (Phase 1)</div>
+<img onerror="this.src='/repository/xmlui/themes/OTA/images/mime/application-x-zerosize.png'" alt="Text" class="artifact-icon pull-right" src="/repository/xmlui/themes/OTAHome/lib/images/Text.png" />
+<div class="artifact-title">
+<a href="/repository/xmlui/handle/20.500.12024/A09596">Vt hora, sic fugit vita. A commemoration on the life and death of the right Honourable, Sir Christopher Hatton, Knight, late Lord Chauncellor of England Wherin triumphant trueth reuiueth his memorie from the graue: exhorting nobilitie, gentrie, and duetifull subiects, to continue their obedience to God and her Maiestie, and to preuent by pollicie the perilous practises of euery ciuil and forrain enemy. Published by Iohn Phillips.</a>
+</div>
+<div class="publisher-date">
+<strong>Date of publication:</strong>
+<br />
+<span class="date">1591</span>
+</div>
+<div class="artifact-info">
+<span class="Z3988 hidden" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft_id=ota%3AA09596&amp;rft_id=http%3A%2F%2Fpurl.ox.ac.uk%2Fota%2FA09596&amp;rft_id=http%3A%2F%2Fhdl.handle.net%2F20.500.12024%2FA09596&amp;rft_id=STC+19876&amp;rft_id=ESTC+S110452&amp;rfr_id=info%3Asid%2Fdspace.org%3Arepository&amp;rft.has=yes&amp;rft.files=414935&amp;rft.files=4&amp;rft.identifier=STC+19876&amp;rft.identifier=ESTC+S110452&amp;rft.date=1500-1599">
+                ﻿ 
+            </span>
+<div class="author-head">Author(s):</div>
+<div class="author">
+<span>
+<a href="/repository/xmlui/browse?value=Phillips, John, fl. 1570-1591.&amp;type=author">Phillips, John, fl. 1570-1591.</a>
+</span>
+</div>
+</div>
+<div class="artifact-abstract-head">
+                    Description:
+                </div>
+<div class="artifact-abstract">In verse. Printer's name from STC. Reproduction of a photostat of the original in the Henry E. Huntington Library and Art Gallery.</div>
+<div style="margin-bottom: 20px;" class="label label-info">
+<i class="fa fa-paperclip"> </i>This item contains 4 files (405.21
+KB).</div>
+<div style="height: 20px;" class="visible-xs"> </div>
+<div class="item-label PUB">
+<span title="Publicly Available">Publicly Available</span>
+</div>
+</li>
+<li xmlns="" style="list-style: none;">
+<hr />
+</li>
+<!-- External Metadata URL: cocoon://metadata/handle/20.500.12024/A34379/mets.xml?sections=dmdSec,amdSec&fileGrpTypes=THUMBNAIL-->
+<li xmlns="" class="item-box">
+<div class="item-type">Text</div>
+<div class="item-branding label">EEBO-TCP (Phase 1)</div>
+<img onerror="this.src='/repository/xmlui/themes/OTA/images/mime/application-x-zerosize.png'" alt="Text" class="artifact-icon pull-right" src="/repository/xmlui/themes/OTAHome/lib/images/Text.png" />
+<div class="artifact-title">
+<a href="/repository/xmlui/handle/20.500.12024/A34379">A continvation of the divrnal occvrrences and proceedings of the English army against the rebels in Ireland from the first of Aprill to this present, 1642 certified by severall letters from Dublin, Duncannon Fort, and Carickfargus Aprill the 15 / and attested by Lieutenant Haward, a commander there, and sent unto a worthy gentleman in Westminster ; with some ioyfull newes from Ireland.</a>
+</div>
+<div class="publisher-date">
+<strong>Date of publication:</strong>
+<br />
+<span class="date">1642</span>
+</div>
+<div class="artifact-info">
+<span class="Z3988 hidden" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft_id=ota%3AA34379&amp;rft_id=http%3A%2F%2Fpurl.ox.ac.uk%2Fota%2FA34379&amp;rft_id=http%3A%2F%2Fhdl.handle.net%2F20.500.12024%2FA34379&amp;rft_id=Wing+C5964&amp;rft_id=ESTC+R2754&amp;rfr_id=info%3Asid%2Fdspace.org%3Arepository&amp;rft.has=yes&amp;rft.files=183464&amp;rft.files=4&amp;rft.identifier=Wing+C5964&amp;rft.identifier=ESTC+R2754&amp;rft.date=1600-1699">
+                ﻿ 
+            </span>
+<div class="author-head">Author(s):</div>
+<div class="author">
+<span>
+<a href="/repository/xmlui/browse?value=Haward, Lazarus.&amp;type=author">Haward, Lazarus.</a>
+</span>; <span>
+<a href="/repository/xmlui/browse?value=R. H. Very joyfull news from Ireland.&amp;type=author">R. H. Very joyfull news from Ireland.</a>
+</span>
+</div>
+</div>
+<div class="artifact-abstract-head">
+                    Description:
+                </div>
+<div class="artifact-abstract">Letter signed: Lazarus Haward. "Very joyfull newes from Ireland ..." is signed: R. H. Conclusion dated April 9, 1642. Reproduction of original in Thomason Collection, British Library.</div>
+<div style="margin-bottom: 20px;" class="label label-info">
+<i class="fa fa-paperclip"> </i>This item contains 4 files (179.16
+KB).</div>
+<div style="height: 20px;" class="visible-xs"> </div>
+<div class="item-label PUB">
+<span title="Publicly Available">Publicly Available</span>
+</div>
+</li>
+<li xmlns="" style="list-style: none;">
+<hr />
+</li>
+<!-- External Metadata URL: cocoon://metadata/handle/20.500.12024/A15814/mets.xml?sections=dmdSec,amdSec&fileGrpTypes=THUMBNAIL-->
+<li xmlns="" class="item-box">
+<div class="item-type">Text</div>
+<div class="item-branding label">EEBO-TCP (Phase 1)</div>
+<img onerror="this.src='/repository/xmlui/themes/OTA/images/mime/application-x-zerosize.png'" alt="Text" class="artifact-icon pull-right" src="/repository/xmlui/themes/OTAHome/lib/images/Text.png" />
+<div class="artifact-title">
+<a href="/repository/xmlui/handle/20.500.12024/A15814">Tvvo lamentable tragedies The one, of the murther of Maister Beech a chaundler in Thames-streete, and his boye, done by Thomas Merry. The other of a young childe murthered in a wood by two ruffins, with the consent of his vnckle. By Rob. Yarington.</a>
+</div>
+<div class="publisher-date">
+<strong>Date of publication:</strong>
+<br />
+<span class="date">1601</span>
+</div>
+<div class="artifact-info">
+<span class="Z3988 hidden" title="ctx_ver=Z39.88-2004&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Adc&amp;rft_id=ota%3AA15814&amp;rft_id=http%3A%2F%2Fpurl.ox.ac.uk%2Fota%2FA15814&amp;rft_id=http%3A%2F%2Fhdl.handle.net%2F20.500.12024%2FA15814&amp;rft_id=STC+26076&amp;rft_id=ESTC+S103830&amp;rfr_id=info%3Asid%2Fdspace.org%3Arepository&amp;rft.has=yes&amp;rft.files=2113110&amp;rft.files=4&amp;rft.identifier=STC+26076&amp;rft.identifier=ESTC+S103830&amp;rft.date=1600-1699">
+                ﻿ 
+            </span>
+<div class="author-head">Author(s):</div>
+<div class="author">
+<span>
+<a href="/repository/xmlui/browse?value=Yarington, Robert, fl. 1601.&amp;type=author">Yarington, Robert, fl. 1601.</a>
+</span>
+</div>
+</div>
+<div class="artifact-abstract-head">
+                    Description:
+                </div>
+<div class="artifact-abstract">In verse. Printer's name from STC. Signatures: A-K⁴ (-K4). Running title reads: Two tragedies in one. Reproduction of the original in the Henry E. Huntington Library and Art Gallery.</div>
+<div style="margin-bottom: 20px;" class="label label-info">
+<i class="fa fa-paperclip"> </i>This item contains 4 files (2.02
+MB).</div>
+<div style="height: 20px;" class="visible-xs"> </div>
+<div class="item-label PUB">
+<span title="Publicly Available">Publicly Available</span>
+</div>
+</li>
+<li xmlns="" style="list-style: none;">
+<hr />
+</li>
+</ul>
+<p id="aspect_discovery_CollectionRecentSubmissions_p_recent-submission-view-more" class=" recentSubmissionViewMore">
+<a href="/repository/xmlui/handle/20.500.12024/5/recent-submissions">View more</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a id="repository_path" class="hidden" href="/repository/xmlui"> </a>
+<!-- FOOTER -->
+<div class="lindat-common lindat-footer">
+  <div class="lindat-footer-main">
+    <div class="lindat-footer-content lindat-container">
+      <div class="lindat-footer-text">
+        <div class="lindat-footer-text1">
+           <h1>Local Connections</h1>
+  <ul>
+<li>
+<a href="http://www.e-enlightenment.com/">Electronic Enlightenment</a>
+</li>
+    <li>
+<a href="https://www.bodleian.ox.ac.uk/">Bodleian Libraries</a>
+</li>
+    <li>
+<a href="http://www.ox.ac.uk/">University of Oxford</a>
+</li>
+    </ul>
+    <p>The Oxford Text Archive is part of the Bodleian Libraries</p>
+    <p>
+<a href="/repository/xmlui/htmlmap">Sitemap</a>
+</p>
+        </div>
+        <div class="lindat-footer-text2">
+          <h1>Repository</h1>
+  <ul>
+<li>
+<a href="/repository/xmlui">Home page</a>
+</li>
+    <li>
+<a href="/repository/xmlui/page/about">About OTA</a>
+</li>
+    <li>
+<a href="/repository/xmlui/page/faq">FAQ</a>
+</li>
+    <li>
+<a href="mailto:ota@bodleian.ox.ac.uk">Contact (email)</a>
+</li>
+    <li>
+<a href="/repository/xmlui/page/privacy">Privacy policy</a>
+</li>
+    </ul>
+        </div>
+
+
+        <div class="lindat-footer-text3">
+          <h1>CLARIN Community Connections</h1>
+  <ul>
+    <li>
+<a href="https://www.clarin.ac.uk/">CLARIN-UK</a>
+</li>
+    <li>
+<a href="https://www.clarin.eu/">CLARIN</a>
+</li>
+    <li>
+<a href="https://lindat.mff.cuni.cz/en">LINDAT/CLARIN</a>
+</li>
+  </ul>
+    <p>Powered by CLARIN DSpace</p>
+        </div>
+      </div>
+</div>
+<div class="lindat-footer-content lindat-container" style="background:white">
+<img src="/images/OTA-logo_230.png" alt="University of Oxford" width="230" />
+<img src="/images/bodleian-logo_230.jpg" alt="University of Oxford" width="230" />
+<img src="/images/oxford-logo.png" alt="University of Oxford" width="230" />
+<img src="/images/clarin-logo.png" alt="Clarin" width="230" />
+</div>
+ </div>
+  <div class="lindat-copyright">
+    <p>
+      <strong>Oxford Text Archive</strong>
+    </p>
+    <p>Copyright (c) 2019 University of Oxford. All rights reserved.</p>
+  </div>
+
+<!-- Matomo -->
+<script type="text/javascript">
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//ota.bodleian.ox.ac.uk/matomo/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+
+</div>
+<!-- FOOTER END -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js" type="text/javascript"> </script>
+<script src="/repository/xmlui/themes/OTA/lib/js/jquery-ui.js" type="text/javascript"> </script>
+<script src="/repository/xmlui/themes/OTA/lib/js/jquery.i18n.js" type="text/javascript"> </script>
+<script src="https://ota.bodleian.ox.ac.uk/aai/discojuice/discojuice-2.1.en.min.js" type="text/javascript"> </script>
+<script src="https://ota.bodleian.ox.ac.uk/aai/aai.js" type="text/javascript"> </script>
+<script type="text/javascript">!window.jQuery && document.write('<script type="text/javascript" src="/repository/xmlui/static/js/jquery-1.7.min.js"> <\/script>')</script>
+<script type="text/javascript" src="/repository/xmlui/themes/OTA/lib/js/aai_config.js"> </script><!--[if lt IE 7 ]>
+<script type="text/javascript" src="/repository/xmlui/themes/OTA/lib/js/DD_belatedPNG_0.0.8a.js?v=1"> </script>
+<script type="text/javascript">DD_belatedPNG.fix('#ds-header-logo');DD_belatedPNG.fix('#ds-footer-logo');$.each($('img[src$=png]'), function() {DD_belatedPNG.fixPng(this);});</script><![endif]-->
+<script type="text/javascript" src="/repository/xmlui/themes/OTA/lib/bootstrap/js/bootstrap.min.js"> </script>
+<script type="text/javascript" src="/repository/xmlui/themes/OTA/lib/bootstrap/js/bootstrap3-typeahead.js"> </script>
+<script type="text/javascript" src="/repository/xmlui/themes/OTA/lib/bootstrap/js/ufal.min.js"> </script>
+<script type="text/javascript" src="/repository/xmlui/themes/OTA/lib/js/lindat-refbox.js"> </script>
+<script type="text/javascript">
+            runAfterJSImports.execute();
+        </script>
+<script type="text/javascript">
+                   var _gaq = _gaq || [];
+                   _gaq.push(['_setAccount', 'UA-97901701-2']);
+                   _gaq.push(['_trackPageview']);
+
+                   (function() {
+                       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                   })();
+           </script></body></html>

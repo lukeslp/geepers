@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#">
+<head>
+  <!-- force compatibility mode (quirks mode) off in IE  to avoid IE8/9/10 rendering as IE7 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta charset="utf-8"><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]},feature_flags:["soft_nav"]};(window.NREUM||(NREUM={})).loader_config={xpid:"VQABUFZaCxAFVVZbAwIFXg==",licenseKey:"74a7a5817d",applicationID:"51794328",browserID:"51795500"};;/*! For license information please see nr-loader-full-1.306.0.min.js.LICENSE.txt */
+(()=>{var e,t,r={384:(e,t,r)=>{"use strict";r.d(t,{NT:()=>a,US:()=>u,Zm:()=>o,bQ:()=>d,dV:()=>c,pV:()=>l});var n=r(6154),i=r(1863),s=r(1910);const a={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function o(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function c(){let e=o();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate||n.gm.setInterval,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket},(0,s.i)(...Object.values(e.o))),e}function d(e,t){let r=o();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t}function u(e,t){o()[e]=t}function l(){return function(){let e=o();const t=e.info||{};e.info={beacon:a.beacon,errorBeacon:a.errorBeacon,...t}}(),function(){let e=o();const t=e.init||{};e.init={...t}}(),c(),function(){let e=o();const t=e.loader_config||{};e.loader_config={...t}}(),o()}},782:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewTiming},860:(e,t,r)=>{"use strict";r.d(t,{$J:()=>u,K7:()=>c,P3:()=>d,XX:()=>i,Yy:()=>o,df:()=>s,qY:()=>n,v4:()=>a});const n="events",i="jserrors",s="browser/blobs",a="rum",o="browser/logs",c={ajax:"ajax",genericEvents:"generic_events",jserrors:i,logging:"logging",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",softNav:"soft_navigations",spa:"spa"},d={[c.pageViewEvent]:1,[c.pageViewTiming]:2,[c.metrics]:3,[c.jserrors]:4,[c.spa]:5,[c.ajax]:6,[c.sessionTrace]:7,[c.softNav]:8,[c.sessionReplay]:9,[c.logging]:10,[c.genericEvents]:11},u={[c.pageViewEvent]:a,[c.pageViewTiming]:n,[c.ajax]:n,[c.spa]:n,[c.softNav]:n,[c.metrics]:i,[c.jserrors]:i,[c.sessionTrace]:s,[c.sessionReplay]:s,[c.logging]:o,[c.genericEvents]:"ins"}},944:(e,t,r)=>{"use strict";r.d(t,{R:()=>i});var n=r(3241);function i(e,t){"function"==typeof console.debug&&(console.debug("New Relic Warning: https://github.com/newrelic/newrelic-browser-agent/blob/main/docs/warning-codes.md#".concat(e),t),(0,n.W)({agentIdentifier:null,drained:null,type:"data",name:"warn",feature:"warn",data:{code:e,secondary:t}}))}},993:(e,t,r)=>{"use strict";r.d(t,{A$:()=>s,ET:()=>a,TZ:()=>o,p_:()=>i});var n=r(860);const i={ERROR:"ERROR",WARN:"WARN",INFO:"INFO",DEBUG:"DEBUG",TRACE:"TRACE"},s={OFF:0,ERROR:1,WARN:2,INFO:3,DEBUG:4,TRACE:5},a="log",o=n.K7.logging},1687:(e,t,r)=>{"use strict";r.d(t,{Ak:()=>d,Ze:()=>h,x3:()=>u});var n=r(3241),i=r(7836),s=r(3606),a=r(860),o=r(2646);const c={};function d(e,t){const r={staged:!1,priority:a.P3[t]||0};l(e),c[e].get(t)||c[e].set(t,r)}function u(e,t){e&&c[e]&&(c[e].get(t)&&c[e].delete(t),p(e,t,!1),c[e].size&&f(e))}function l(e){if(!e)throw new Error("agentIdentifier required");c[e]||(c[e]=new Map)}function h(e="",t="feature",r=!1){if(l(e),!e||!c[e].get(t)||r)return p(e,t);c[e].get(t).staged=!0,f(e)}function f(e){const t=Array.from(c[e]);t.every(([e,t])=>t.staged)&&(t.sort((e,t)=>e[1].priority-t[1].priority),t.forEach(([t])=>{c[e].delete(t),p(e,t)}))}function p(e,t,r=!0){const a=e?i.ee.get(e):i.ee,c=s.i.handlers;if(!a.aborted&&a.backlog&&c){if((0,n.W)({agentIdentifier:e,type:"lifecycle",name:"drain",feature:t}),r){const e=a.backlog[t],r=c[t];if(r){for(let t=0;e&&t<e.length;++t)g(e[t],r);Object.entries(r).forEach(([e,t])=>{Object.values(t||{}).forEach(t=>{t[0]?.on&&t[0]?.context()instanceof o.y&&t[0].on(e,t[1])})})}}a.isolatedBacklog||delete c[t],a.backlog[t]=null,a.emit("drain-"+t,[])}}function g(e,t){var r=e[1];Object.values(t[r]||{}).forEach(t=>{var r=e[0];if(t[0]===r){var n=t[1],i=e[3],s=e[2];n.apply(i,s)}})}},1741:(e,t,r)=>{"use strict";r.d(t,{W:()=>s});var n=r(944),i=r(4261);class s{#e(e,...t){if(this[e]!==s.prototype[e])return this[e](...t);(0,n.R)(35,e)}addPageAction(e,t){return this.#e(i.hG,e,t)}register(e){return this.#e(i.eY,e)}recordCustomEvent(e,t){return this.#e(i.fF,e,t)}setPageViewName(e,t){return this.#e(i.Fw,e,t)}setCustomAttribute(e,t,r){return this.#e(i.cD,e,t,r)}noticeError(e,t){return this.#e(i.o5,e,t)}setUserId(e){return this.#e(i.Dl,e)}setApplicationVersion(e){return this.#e(i.nb,e)}setErrorHandler(e){return this.#e(i.bt,e)}addRelease(e,t){return this.#e(i.k6,e,t)}log(e,t){return this.#e(i.$9,e,t)}start(){return this.#e(i.d3)}finished(e){return this.#e(i.BL,e)}recordReplay(){return this.#e(i.CH)}pauseReplay(){return this.#e(i.Tb)}addToTrace(e){return this.#e(i.U2,e)}setCurrentRouteName(e){return this.#e(i.PA,e)}interaction(e){return this.#e(i.dT,e)}wrapLogger(e,t,r){return this.#e(i.Wb,e,t,r)}measure(e,t){return this.#e(i.V1,e,t)}consent(e){return this.#e(i.Pv,e)}}},1863:(e,t,r)=>{"use strict";function n(){return Math.floor(performance.now())}r.d(t,{t:()=>n})},1910:(e,t,r)=>{"use strict";r.d(t,{i:()=>s});var n=r(944);const i=new Map;function s(...e){return e.every(e=>{if(i.has(e))return i.get(e);const t="function"==typeof e?e.toString():"",r=t.includes("[native code]"),s=t.includes("nrWrapper");return r||s||(0,n.R)(64,e?.name||t),i.set(e,r),r})}},2555:(e,t,r)=>{"use strict";r.d(t,{D:()=>o,f:()=>a});var n=r(384),i=r(8122);const s={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0};function a(e){try{return!!e.licenseKey&&!!e.errorBeacon&&!!e.applicationID}catch(e){return!1}}const o=e=>(0,i.a)(e,s)},2614:(e,t,r)=>{"use strict";r.d(t,{BB:()=>a,H3:()=>n,g:()=>d,iL:()=>c,tS:()=>o,uh:()=>i,wk:()=>s});const n="NRBA",i="SESSION",s=144e5,a=18e5,o={STARTED:"session-started",PAUSE:"session-pause",RESET:"session-reset",RESUME:"session-resume",UPDATE:"session-update"},c={SAME_TAB:"same-tab",CROSS_TAB:"cross-tab"},d={OFF:0,FULL:1,ERROR:2}},2646:(e,t,r)=>{"use strict";r.d(t,{y:()=>n});class n{constructor(e){this.contextId=e}}},2843:(e,t,r)=>{"use strict";r.d(t,{G:()=>s,u:()=>i});var n=r(3878);function i(e,t=!1,r,i){(0,n.DD)("visibilitychange",function(){if(t)return void("hidden"===document.visibilityState&&e());e(document.visibilityState)},r,i)}function s(e,t,r){(0,n.sp)("pagehide",e,t,r)}},3241:(e,t,r)=>{"use strict";r.d(t,{W:()=>s});var n=r(6154);const i="newrelic";function s(e={}){try{n.gm.dispatchEvent(new CustomEvent(i,{detail:e}))}catch(e){}}},3304:(e,t,r)=>{"use strict";r.d(t,{A:()=>s});var n=r(7836);const i=()=>{const e=new WeakSet;return(t,r)=>{if("object"==typeof r&&null!==r){if(e.has(r))return;e.add(r)}return r}};function s(e){try{return JSON.stringify(e,i())??""}catch(e){try{n.ee.emit("internal-error",[e])}catch(e){}return""}}},3333:(e,t,r)=>{"use strict";r.d(t,{$v:()=>u,TZ:()=>n,Xh:()=>c,Zp:()=>i,kd:()=>d,mq:()=>o,nf:()=>a,qN:()=>s});const n=r(860).K7.genericEvents,i=["auxclick","click","copy","keydown","paste","scrollend"],s=["focus","blur"],a=4,o=1e3,c=2e3,d=["PageAction","UserAction","BrowserPerformance"],u={RESOURCES:"experimental.resources",REGISTER:"register"}},3434:(e,t,r)=>{"use strict";r.d(t,{Jt:()=>s,YM:()=>d});var n=r(7836),i=r(5607);const s="nr@original:".concat(i.W),a=50;var o=Object.prototype.hasOwnProperty,c=!1;function d(e,t){return e||(e=n.ee),r.inPlace=function(e,t,n,i,s){n||(n="");const a="-"===n.charAt(0);for(let o=0;o<t.length;o++){const c=t[o],d=e[c];l(d)||(e[c]=r(d,a?c+n:n,i,c,s))}},r.flag=s,r;function r(t,r,n,c,d){return l(t)?t:(r||(r=""),nrWrapper[s]=t,function(e,t,r){if(Object.defineProperty&&Object.keys)try{return Object.keys(e).forEach(function(r){Object.defineProperty(t,r,{get:function(){return e[r]},set:function(t){return e[r]=t,t}})}),t}catch(e){u([e],r)}for(var n in e)o.call(e,n)&&(t[n]=e[n])}(t,nrWrapper,e),nrWrapper);function nrWrapper(){var s,o,l,h;let f;try{o=this,s=[...arguments],l="function"==typeof n?n(s,o):n||{}}catch(t){u([t,"",[s,o,c],l],e)}i(r+"start",[s,o,c],l,d);const p=performance.now();let g;try{return h=t.apply(o,s),g=performance.now(),h}catch(e){throw g=performance.now(),i(r+"err",[s,o,e],l,d),f=e,f}finally{const e=g-p,t={start:p,end:g,duration:e,isLongTask:e>=a,methodName:c,thrownError:f};t.isLongTask&&i("long-task",[t,o],l,d),i(r+"end",[s,o,h],l,d)}}}function i(r,n,i,s){if(!c||t){var a=c;c=!0;try{e.emit(r,n,i,t,s)}catch(t){u([t,r,n,i],e)}c=a}}}function u(e,t){t||(t=n.ee);try{t.emit("internal-error",e)}catch(e){}}function l(e){return!(e&&"function"==typeof e&&e.apply&&!e[s])}},3606:(e,t,r)=>{"use strict";r.d(t,{i:()=>s});var n=r(9908);s.on=a;var i=s.handlers={};function s(e,t,r,s){a(s||n.d,i,e,t,r)}function a(e,t,r,i,s){s||(s="feature"),e||(e=n.d);var a=t[s]=t[s]||{};(a[r]=a[r]||[]).push([e,i])}},3738:(e,t,r)=>{"use strict";r.d(t,{He:()=>i,Kp:()=>o,Lc:()=>d,Rz:()=>u,TZ:()=>n,bD:()=>s,d3:()=>a,jx:()=>l,sl:()=>h,uP:()=>c});const n=r(860).K7.sessionTrace,i="bstResource",s="resource",a="-start",o="-end",c="fn"+a,d="fn"+o,u="pushState",l=1e3,h=3e4},3785:(e,t,r)=>{"use strict";r.d(t,{R:()=>c,b:()=>d});var n=r(9908),i=r(1863),s=r(860),a=r(3969),o=r(993);function c(e,t,r={},c=o.p_.INFO,d=!0,u,l=(0,i.t)()){(0,n.p)(a.xV,["API/logging/".concat(c.toLowerCase(),"/called")],void 0,s.K7.metrics,e),(0,n.p)(o.ET,[l,t,r,c,d,u],void 0,s.K7.logging,e)}function d(e){return"string"==typeof e&&Object.values(o.p_).some(t=>t===e.toUpperCase().trim())}},3878:(e,t,r)=>{"use strict";function n(e,t){return{capture:e,passive:!1,signal:t}}function i(e,t,r=!1,i){window.addEventListener(e,t,n(r,i))}function s(e,t,r=!1,i){document.addEventListener(e,t,n(r,i))}r.d(t,{DD:()=>s,jT:()=>n,sp:()=>i})},3969:(e,t,r)=>{"use strict";r.d(t,{TZ:()=>n,XG:()=>o,rs:()=>i,xV:()=>a,z_:()=>s});const n=r(860).K7.metrics,i="sm",s="cm",a="storeSupportabilityMetrics",o="storeEventMetrics"},4234:(e,t,r)=>{"use strict";r.d(t,{W:()=>s});var n=r(7836),i=r(1687);class s{constructor(e,t){this.agentIdentifier=e,this.ee=n.ee.get(e),this.featureName=t,this.blocked=!1}deregisterDrain(){(0,i.x3)(this.agentIdentifier,this.featureName)}}},4261:(e,t,r)=>{"use strict";r.d(t,{$9:()=>d,BL:()=>o,CH:()=>f,Dl:()=>w,Fw:()=>y,PA:()=>m,Pl:()=>n,Pv:()=>E,Tb:()=>l,U2:()=>s,V1:()=>T,Wb:()=>x,bt:()=>b,cD:()=>v,d3:()=>R,dT:()=>c,eY:()=>p,fF:()=>h,hG:()=>i,k6:()=>a,nb:()=>g,o5:()=>u});const n="api-",i="addPageAction",s="addToTrace",a="addRelease",o="finished",c="interaction",d="log",u="noticeError",l="pauseReplay",h="recordCustomEvent",f="recordReplay",p="register",g="setApplicationVersion",m="setCurrentRouteName",v="setCustomAttribute",b="setErrorHandler",y="setPageViewName",w="setUserId",R="start",x="wrapLogger",T="measure",E="consent"},4387:(e,t,r)=>{"use strict";function n(e={}){return!(!e.id||!e.name)}function i(e){return"string"==typeof e&&e.trim().length<501||"number"==typeof e}function s(e,t){if(2!==t?.harvestEndpointVersion)return{};const r=t.agentRef.runtime.appMetadata.agents[0].entityGuid;return n(e)?{"source.id":e.id,"source.name":e.name,"source.type":e.type,"parent.id":e.parent?.id||r}:{"entity.guid":r,appId:t.agentRef.info.applicationID}}r.d(t,{Ux:()=>s,c7:()=>n,yo:()=>i})},5205:(e,t,r)=>{"use strict";r.d(t,{j:()=>A});var n=r(384),i=r(1741);var s=r(2555),a=r(3333);const o=e=>{if(!e||"string"!=typeof e)return!1;try{document.createDocumentFragment().querySelector(e)}catch{return!1}return!0};var c=r(2614),d=r(944),u=r(8122);const l="[data-nr-mask]",h=e=>(0,u.a)(e,(()=>{const e={feature_flags:[],experimental:{allow_registered_children:!1,resources:!1},mask_selector:"*",block_selector:"[data-nr-block]",mask_input_options:{color:!1,date:!1,"datetime-local":!1,email:!1,month:!1,number:!1,range:!1,search:!1,tel:!1,text:!1,time:!1,url:!1,week:!1,textarea:!1,select:!1,password:!0}};return{ajax:{deny_list:void 0,block_internal:!0,enabled:!0,autoStart:!0},api:{get allow_registered_children(){return e.feature_flags.includes(a.$v.REGISTER)||e.experimental.allow_registered_children},set allow_registered_children(t){e.experimental.allow_registered_children=t},duplicate_registered_data:!1},browser_consent_mode:{enabled:!1},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},get feature_flags(){return e.feature_flags},set feature_flags(t){e.feature_flags=t},generic_events:{enabled:!0,autoStart:!0},harvest:{interval:30},jserrors:{enabled:!0,autoStart:!0},logging:{enabled:!0,autoStart:!0},metrics:{enabled:!0,autoStart:!0},obfuscate:void 0,page_action:{enabled:!0},page_view_event:{enabled:!0,autoStart:!0},page_view_timing:{enabled:!0,autoStart:!0},performance:{capture_marks:!1,capture_measures:!1,capture_detail:!0,resources:{get enabled(){return e.feature_flags.includes(a.$v.RESOURCES)||e.experimental.resources},set enabled(t){e.experimental.resources=t},asset_types:[],first_party_domains:[],ignore_newrelic:!0}},privacy:{cookies_enabled:!0},proxy:{assets:void 0,beacon:void 0},session:{expiresMs:c.wk,inactiveMs:c.BB},session_replay:{autoStart:!0,enabled:!1,preload:!1,sampling_rate:10,error_sampling_rate:100,collect_fonts:!1,inline_images:!1,fix_stylesheets:!0,mask_all_inputs:!0,get mask_text_selector(){return e.mask_selector},set mask_text_selector(t){o(t)?e.mask_selector="".concat(t,",").concat(l):""===t||null===t?e.mask_selector=l:(0,d.R)(5,t)},get block_class(){return"nr-block"},get ignore_class(){return"nr-ignore"},get mask_text_class(){return"nr-mask"},get block_selector(){return e.block_selector},set block_selector(t){o(t)?e.block_selector+=",".concat(t):""!==t&&(0,d.R)(6,t)},get mask_input_options(){return e.mask_input_options},set mask_input_options(t){t&&"object"==typeof t?e.mask_input_options={...t,password:!0}:(0,d.R)(7,t)}},session_trace:{enabled:!0,autoStart:!0},soft_navigations:{enabled:!0,autoStart:!0},spa:{enabled:!0,autoStart:!0},ssl:void 0,user_actions:{enabled:!0,elementAttributes:["id","className","tagName","type"]}}})());var f=r(6154),p=r(9324);let g=0;const m={buildEnv:p.F3,distMethod:p.Xs,version:p.xv,originTime:f.WN},v={consented:!1},b={appMetadata:{},get consented(){return this.session?.state?.consent||v.consented},set consented(e){v.consented=e},customTransaction:void 0,denyList:void 0,disabled:!1,harvester:void 0,isolatedBacklog:!1,isRecording:!1,loaderType:void 0,maxBytes:3e4,obfuscator:void 0,onerror:void 0,ptid:void 0,releaseIds:{},session:void 0,timeKeeper:void 0,registeredEntities:[],jsAttributesMetadata:{bytes:0},get harvestCount(){return++g}},y=e=>{const t=(0,u.a)(e,b),r=Object.keys(m).reduce((e,t)=>(e[t]={value:m[t],writable:!1,configurable:!0,enumerable:!0},e),{});return Object.defineProperties(t,r)};var w=r(5701);const R=e=>{const t=e.startsWith("http");e+="/",r.p=t?e:"https://"+e};var x=r(7836),T=r(3241);const E={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},S=e=>(0,u.a)(e,E),_=new Set;function A(e,t={},r,a){let{init:o,info:c,loader_config:d,runtime:u={},exposed:l=!0}=t;if(!c){const e=(0,n.pV)();o=e.init,c=e.info,d=e.loader_config}e.init=h(o||{}),e.loader_config=S(d||{}),c.jsAttributes??={},f.bv&&(c.jsAttributes.isWorker=!0),e.info=(0,s.D)(c);const p=e.init,g=[c.beacon,c.errorBeacon];_.has(e.agentIdentifier)||(p.proxy.assets&&(R(p.proxy.assets),g.push(p.proxy.assets)),p.proxy.beacon&&g.push(p.proxy.beacon),e.beacons=[...g],function(e){const t=(0,n.pV)();Object.getOwnPropertyNames(i.W.prototype).forEach(r=>{const n=i.W.prototype[r];if("function"!=typeof n||"constructor"===n)return;let s=t[r];e[r]&&!1!==e.exposed&&"micro-agent"!==e.runtime?.loaderType&&(t[r]=(...t)=>{const n=e[r](...t);return s?s(...t):n})})}(e),(0,n.US)("activatedFeatures",w.B),e.runSoftNavOverSpa&&=!0===p.soft_navigations.enabled&&p.feature_flags.includes("soft_nav")),u.denyList=[...p.ajax.deny_list||[],...p.ajax.block_internal?g:[]],u.ptid=e.agentIdentifier,u.loaderType=r,e.runtime=y(u),_.has(e.agentIdentifier)||(e.ee=x.ee.get(e.agentIdentifier),e.exposed=l,(0,T.W)({agentIdentifier:e.agentIdentifier,drained:!!w.B?.[e.agentIdentifier],type:"lifecycle",name:"initialize",feature:void 0,data:e.config})),_.add(e.agentIdentifier)}},5270:(e,t,r)=>{"use strict";r.d(t,{Aw:()=>a,SR:()=>s,rF:()=>o});var n=r(384),i=r(7767);function s(e){return!!(0,n.dV)().o.MO&&(0,i.V)(e)&&!0===e?.session_trace.enabled}function a(e){return!0===e?.session_replay.preload&&s(e)}function o(e,t){try{if("string"==typeof t?.type){if("password"===t.type.toLowerCase())return"*".repeat(e?.length||0);if(void 0!==t?.dataset?.nrUnmask||t?.classList?.contains("nr-unmask"))return e}}catch(e){}return"string"==typeof e?e.replace(/[\S]/g,"*"):"*".repeat(e?.length||0)}},5289:(e,t,r)=>{"use strict";r.d(t,{GG:()=>a,Qr:()=>c,sB:()=>o});var n=r(3878),i=r(6389);function s(){return"undefined"==typeof document||"complete"===document.readyState}function a(e,t){if(s())return e();const r=(0,i.J)(e),a=setInterval(()=>{s()&&(clearInterval(a),r())},500);(0,n.sp)("load",r,t)}function o(e){if(s())return e();(0,n.DD)("DOMContentLoaded",e)}function c(e){if(s())return e();(0,n.sp)("popstate",e)}},5607:(e,t,r)=>{"use strict";r.d(t,{W:()=>n});const n=(0,r(9566).bz)()},5701:(e,t,r)=>{"use strict";r.d(t,{B:()=>s,t:()=>a});var n=r(3241);const i=new Set,s={};function a(e,t){const r=t.agentIdentifier;s[r]??={},e&&"object"==typeof e&&(i.has(r)||(t.ee.emit("rumresp",[e]),s[r]=e,i.add(r),(0,n.W)({agentIdentifier:r,loaded:!0,drained:!0,type:"lifecycle",name:"load",feature:void 0,data:e})))}},6154:(e,t,r)=>{"use strict";r.d(t,{OF:()=>d,RI:()=>i,WN:()=>h,bv:()=>s,eN:()=>f,gm:()=>a,lR:()=>l,m:()=>c,mw:()=>o,sb:()=>u});var n=r(1863);const i="undefined"!=typeof window&&!!window.document,s="undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),a=i?window:"undefined"!=typeof WorkerGlobalScope&&("undefined"!=typeof self&&self instanceof WorkerGlobalScope&&self||"undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),o=Boolean("hidden"===a?.document?.visibilityState),c=""+a?.location,d=/iPad|iPhone|iPod/.test(a.navigator?.userAgent),u=d&&"undefined"==typeof SharedWorker,l=(()=>{const e=a.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/);return Array.isArray(e)&&e.length>=2?+e[1]:0})(),h=Date.now()-(0,n.t)(),f=()=>"undefined"!=typeof PerformanceNavigationTiming&&a?.performance?.getEntriesByType("navigation")?.[0]?.responseStart},6344:(e,t,r)=>{"use strict";r.d(t,{BB:()=>u,Qb:()=>l,TZ:()=>i,Ug:()=>a,Vh:()=>s,_s:()=>o,bc:()=>d,yP:()=>c});var n=r(2614);const i=r(860).K7.sessionReplay,s="errorDuringReplay",a=.12,o={DomContentLoaded:0,Load:1,FullSnapshot:2,IncrementalSnapshot:3,Meta:4,Custom:5},c={[n.g.ERROR]:15e3,[n.g.FULL]:3e5,[n.g.OFF]:0},d={RESET:{message:"Session was reset",sm:"Reset"},IMPORT:{message:"Recorder failed to import",sm:"Import"},TOO_MANY:{message:"429: Too Many Requests",sm:"Too-Many"},TOO_BIG:{message:"Payload was too large",sm:"Too-Big"},CROSS_TAB:{message:"Session Entity was set to OFF on another tab",sm:"Cross-Tab"},ENTITLEMENTS:{message:"Session Replay is not allowed and will not be started",sm:"Entitlement"}},u=5e3,l={API:"api",RESUME:"resume",SWITCH_TO_FULL:"switchToFull",INITIALIZE:"initialize",PRELOAD:"preload"}},6389:(e,t,r)=>{"use strict";function n(e,t=500,r={}){const n=r?.leading||!1;let i;return(...r)=>{n&&void 0===i&&(e.apply(this,r),i=setTimeout(()=>{i=clearTimeout(i)},t)),n||(clearTimeout(i),i=setTimeout(()=>{e.apply(this,r)},t))}}function i(e){let t=!1;return(...r)=>{t||(t=!0,e.apply(this,r))}}r.d(t,{J:()=>i,s:()=>n})},6630:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.pageViewEvent},6774:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.jserrors},7295:(e,t,r)=>{"use strict";r.d(t,{Xv:()=>a,gX:()=>i,iW:()=>s});var n=[];function i(e){if(!e||s(e))return!1;if(0===n.length)return!0;for(var t=0;t<n.length;t++){var r=n[t];if("*"===r.hostname)return!1;if(o(r.hostname,e.hostname)&&c(r.pathname,e.pathname))return!1}return!0}function s(e){return void 0===e.hostname}function a(e){if(n=[],e&&e.length)for(var t=0;t<e.length;t++){let r=e[t];if(!r)continue;0===r.indexOf("http://")?r=r.substring(7):0===r.indexOf("https://")&&(r=r.substring(8));const i=r.indexOf("/");let s,a;i>0?(s=r.substring(0,i),a=r.substring(i)):(s=r,a="");let[o]=s.split(":");n.push({hostname:o,pathname:a})}}function o(e,t){return!(e.length>t.length)&&t.indexOf(e)===t.length-e.length}function c(e,t){return 0===e.indexOf("/")&&(e=e.substring(1)),0===t.indexOf("/")&&(t=t.substring(1)),""===e||e===t}},7485:(e,t,r)=>{"use strict";r.d(t,{D:()=>i});var n=r(6154);function i(e){if(0===(e||"").indexOf("data:"))return{protocol:"data"};try{const t=new URL(e,location.href),r={port:t.port,hostname:t.hostname,pathname:t.pathname,search:t.search,protocol:t.protocol.slice(0,t.protocol.indexOf(":")),sameOrigin:t.protocol===n.gm?.location?.protocol&&t.host===n.gm?.location?.host};return r.port&&""!==r.port||("http:"===t.protocol&&(r.port="80"),"https:"===t.protocol&&(r.port="443")),r.pathname&&""!==r.pathname?r.pathname.startsWith("/")||(r.pathname="/".concat(r.pathname)):r.pathname="/",r}catch(e){return{}}}},7699:(e,t,r)=>{"use strict";r.d(t,{It:()=>s,KC:()=>o,No:()=>i,qh:()=>a});var n=r(860);const i=16e3,s=1e6,a="SESSION_ERROR",o={[n.K7.logging]:!0,[n.K7.genericEvents]:!1,[n.K7.jserrors]:!1,[n.K7.ajax]:!1}},7767:(e,t,r)=>{"use strict";r.d(t,{V:()=>i});var n=r(6154);const i=e=>n.RI&&!0===e?.privacy.cookies_enabled},7836:(e,t,r)=>{"use strict";r.d(t,{P:()=>o,ee:()=>c});var n=r(384),i=r(8990),s=r(2646),a=r(5607);const o="nr@context:".concat(a.W),c=function e(t,r){var n={},a={},u={},l=!1;try{l=16===r.length&&d.initializedAgents?.[r]?.runtime.isolatedBacklog}catch(e){}var h={on:p,addEventListener:p,removeEventListener:function(e,t){var r=n[e];if(!r)return;for(var i=0;i<r.length;i++)r[i]===t&&r.splice(i,1)},emit:function(e,r,n,i,s){!1!==s&&(s=!0);if(c.aborted&&!i)return;t&&s&&t.emit(e,r,n);var o=f(n);g(e).forEach(e=>{e.apply(o,r)});var d=v()[a[e]];d&&d.push([h,e,r,o]);return o},get:m,listeners:g,context:f,buffer:function(e,t){const r=v();if(t=t||"feature",h.aborted)return;Object.entries(e||{}).forEach(([e,n])=>{a[n]=t,t in r||(r[t]=[])})},abort:function(){h._aborted=!0,Object.keys(h.backlog).forEach(e=>{delete h.backlog[e]})},isBuffering:function(e){return!!v()[a[e]]},debugId:r,backlog:l?{}:t&&"object"==typeof t.backlog?t.backlog:{},isolatedBacklog:l};return Object.defineProperty(h,"aborted",{get:()=>{let e=h._aborted||!1;return e||(t&&(e=t.aborted),e)}}),h;function f(e){return e&&e instanceof s.y?e:e?(0,i.I)(e,o,()=>new s.y(o)):new s.y(o)}function p(e,t){n[e]=g(e).concat(t)}function g(e){return n[e]||[]}function m(t){return u[t]=u[t]||e(h,t)}function v(){return h.backlog}}(void 0,"globalEE"),d=(0,n.Zm)();d.ee||(d.ee=c)},8122:(e,t,r)=>{"use strict";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||"object"!=typeof e)return(0,n.R)(3);if(!t||"object"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),s=0===Object.keys(r).length?e:r;for(let a in s)if(void 0!==e[a])try{if(null===e[a]){r[a]=null;continue}Array.isArray(e[a])&&Array.isArray(t[a])?r[a]=Array.from(new Set([...e[a],...t[a]])):"object"==typeof e[a]&&"object"==typeof t[a]?r[a]=i(e[a],t[a]):r[a]=e[a]}catch(e){r[a]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},8139:(e,t,r)=>{"use strict";r.d(t,{u:()=>h});var n=r(7836),i=r(3434),s=r(8990),a=r(6154);const o={},c=a.gm.XMLHttpRequest,d="addEventListener",u="removeEventListener",l="nr@wrapped:".concat(n.P);function h(e){var t=function(e){return(e||n.ee).get("events")}(e);if(o[t.debugId]++)return t;o[t.debugId]=1;var r=(0,i.YM)(t,!0);function h(e){r.inPlace(e,[d,u],"-",p)}function p(e,t){return e[1]}return"getPrototypeOf"in Object&&(a.RI&&f(document,h),c&&f(c.prototype,h),f(a.gm,h)),t.on(d+"-start",function(e,t){var n=e[1];if(null!==n&&("function"==typeof n||"object"==typeof n)&&"newrelic"!==e[0]){var i=(0,s.I)(n,l,function(){var e={object:function(){if("function"!=typeof n.handleEvent)return;return n.handleEvent.apply(n,arguments)},function:n}[typeof n];return e?r(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=e[1]=i}}),t.on(u+"-start",function(e){e[1]=this.wrapped||e[1]}),t}function f(e,t,...r){let n=e;for(;"object"==typeof n&&!Object.prototype.hasOwnProperty.call(n,d);)n=Object.getPrototypeOf(n);n&&t(n,...r)}},8374:(e,t,r)=>{r.nc=(()=>{try{return document?.currentScript?.nonce}catch(e){}return""})()},8990:(e,t,r)=>{"use strict";r.d(t,{I:()=>i});var n=Object.prototype.hasOwnProperty;function i(e,t,r){if(n.call(e,t))return e[t];var i=r();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},9300:(e,t,r)=>{"use strict";r.d(t,{T:()=>n});const n=r(860).K7.ajax},9324:(e,t,r)=>{"use strict";r.d(t,{AJ:()=>a,F3:()=>i,Xs:()=>s,Yq:()=>o,xv:()=>n});const n="1.306.0",i="PROD",s="CDN",a="@newrelic/rrweb",o="1.0.1"},9566:(e,t,r)=>{"use strict";r.d(t,{LA:()=>o,ZF:()=>c,bz:()=>a,el:()=>d});var n=r(6154);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function s(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=n.gm?.crypto||n.gm?.msCrypto;let t,r=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(30))),i.split("").map(e=>"x"===e?s(t,r++).toString(16):"y"===e?(3&s()|8).toString(16):e).join("")}function o(e){const t=n.gm?.crypto||n.gm?.msCrypto;let r,i=0;t&&t.getRandomValues&&(r=t.getRandomValues(new Uint8Array(e)));const a=[];for(var o=0;o<e;o++)a.push(s(r,i++).toString(16));return a.join("")}function c(){return o(16)}function d(){return o(32)}},9908:(e,t,r)=>{"use strict";r.d(t,{d:()=>n,p:()=>i});var n=r(7836).ee.get("handle");function i(e,t,r,i,s){s?(s.buffer([e],i),s.emit(e,t,r)):(n.buffer([e],i),n.emit(e,t,r))}}},n={};function i(e){var t=n[e];if(void 0!==t)return t.exports;var s=n[e]={exports:{}};return r[e](s,s.exports,i),s.exports}i.m=r,i.d=(e,t)=>{for(var r in t)i.o(t,r)&&!i.o(e,r)&&Object.defineProperty(e,r,{enumerable:!0,get:t[r]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce((t,r)=>(i.f[r](e,t),t),[])),i.u=e=>({95:"nr-full-compressor",222:"nr-full-recorder",891:"nr-full"}[e]+"-1.306.0.min.js"),i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA-1.306.0.PROD:",i.l=(r,n,s,a)=>{if(e[r])e[r].push(n);else{var o,c;if(void 0!==s)for(var d=document.getElementsByTagName("script"),u=0;u<d.length;u++){var l=d[u];if(l.getAttribute("src")==r||l.getAttribute("data-webpack")==t+s){o=l;break}}if(!o){c=!0;var h={891:"sha512-/qWwMy3p/JNeZV9rxHDveO1SVRPsZc7FtEp+2Lwg2eXDKVTRsSkepoVKGoM6a2PaBKhi7tgk9Syz3GHhV/yEBw==",222:"sha512-TKprBSnI/se97DcqYC50sbV35OK4fdHFoUVFjQ3MxPzZoM9kVYF05SBRTnmHgdFeKzeyKrmNtyMZ/laMgnVIYw==",95:"sha512-Biiz6/+C2nyMTq0pqutBfzkUzT6wYxHWDsq0djpz1lZPBXEE/rPEha8AflYkYG65zieTtpxqEWp7DB+N32u4RA=="};(o=document.createElement("script")).charset="utf-8",i.nc&&o.setAttribute("nonce",i.nc),o.setAttribute("data-webpack",t+s),o.src=r,0!==o.src.indexOf(window.location.origin+"/")&&(o.crossOrigin="anonymous"),h[a]&&(o.integrity=h[a])}e[r]=[n];var f=(t,n)=>{o.onerror=o.onload=null,clearTimeout(p);var i=e[r];if(delete e[r],o.parentNode&&o.parentNode.removeChild(o),i&&i.forEach(e=>e(n)),t)return t(n)},p=setTimeout(f.bind(null,void 0,{type:"timeout",target:o}),12e4);o.onerror=f.bind(null,o.onerror),o.onload=f.bind(null,o.onload),c&&document.head.appendChild(o)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.p="https://js-agent.newrelic.com/",(()=>{var e={85:0,959:0};i.f.j=(t,r)=>{var n=i.o(e,t)?e[t]:void 0;if(0!==n)if(n)r.push(n[2]);else{var s=new Promise((r,i)=>n=e[t]=[r,i]);r.push(n[2]=s);var a=i.p+i.u(t),o=new Error;i.l(a,r=>{if(i.o(e,t)&&(0!==(n=e[t])&&(e[t]=void 0),n)){var s=r&&("load"===r.type?"missing":r.type),a=r&&r.target&&r.target.src;o.message="Loading chunk "+t+" failed: ("+s+": "+a+")",o.name="ChunkLoadError",o.type=s,o.request=a,n[1](o)}},"chunk-"+t,t)}};var t=(t,r)=>{var n,s,[a,o,c]=r,d=0;if(a.some(t=>0!==e[t])){for(n in o)i.o(o,n)&&(i.m[n]=o[n]);if(c)c(i)}for(t&&t(r);d<a.length;d++)s=a[d],i.o(e,s)&&e[s]&&e[s][0](),e[s]=0},r=self["webpackChunk:NRBA-1.306.0.PROD"]=self["webpackChunk:NRBA-1.306.0.PROD"]||[];r.forEach(t.bind(null,0)),r.push=t.bind(null,r.push.bind(r))})(),(()=>{"use strict";i(8374);var e=i(9566),t=i(1741);class r extends t.W{agentIdentifier=(0,e.LA)(16)}var n=i(860);const s=Object.values(n.K7);var a=i(5205);var o=i(9908),c=i(1863),d=i(4261),u=i(3241),l=i(944),h=i(5701),f=i(3969);function p(e,t,i,s){const a=s||i;!a||a[e]&&a[e]!==r.prototype[e]||(a[e]=function(){(0,o.p)(f.xV,["API/"+e+"/called"],void 0,n.K7.metrics,i.ee),(0,u.W)({agentIdentifier:i.agentIdentifier,drained:!!h.B?.[i.agentIdentifier],type:"data",name:"api",feature:d.Pl+e,data:{}});try{return t.apply(this,arguments)}catch(e){(0,l.R)(23,e)}})}function g(e,t,r,n,i){const s=e.info;null===r?delete s.jsAttributes[t]:s.jsAttributes[t]=r,(i||null===r)&&(0,o.p)(d.Pl+n,[(0,c.t)(),t,r],void 0,"session",e.ee)}var m=i(1687),v=i(4234),b=i(5289),y=i(6154),w=i(5270),R=i(7767),x=i(6389),T=i(7699);class E extends v.W{constructor(e,t){super(e.agentIdentifier,t),this.agentRef=e,this.abortHandler=void 0,this.featAggregate=void 0,this.loadedSuccessfully=void 0,this.onAggregateImported=new Promise(e=>{this.loadedSuccessfully=e}),this.deferred=Promise.resolve(),!1===e.init[this.featureName].autoStart?this.deferred=new Promise((t,r)=>{this.ee.on("manual-start-all",(0,x.J)(()=>{(0,m.Ak)(e.agentIdentifier,this.featureName),t()}))}):(0,m.Ak)(e.agentIdentifier,t)}importAggregator(e,t,r={}){if(this.featAggregate)return;const n=async()=>{let n;await this.deferred;try{if((0,R.V)(e.init)){const{setupAgentSession:t}=await i.e(891).then(i.bind(i,8766));n=t(e)}}catch(e){(0,l.R)(20,e),this.ee.emit("internal-error",[e]),(0,o.p)(T.qh,[e],void 0,this.featureName,this.ee)}try{if(!this.#t(this.featureName,n,e.init))return(0,m.Ze)(this.agentIdentifier,this.featureName),void this.loadedSuccessfully(!1);const{Aggregate:i}=await t();this.featAggregate=new i(e,r),e.runtime.harvester.initializedAggregates.push(this.featAggregate),this.loadedSuccessfully(!0)}catch(e){(0,l.R)(34,e),this.abortHandler?.(),(0,m.Ze)(this.agentIdentifier,this.featureName,!0),this.loadedSuccessfully(!1),this.ee&&this.ee.abort()}};y.RI?(0,b.GG)(()=>n(),!0):n()}#t(e,t,r){if(this.blocked)return!1;switch(e){case n.K7.sessionReplay:return(0,w.SR)(r)&&!!t;case n.K7.sessionTrace:return!!t;default:return!0}}}var S=i(6630),_=i(2614);class A extends E{static featureName=S.T;constructor(e){var t;super(e,S.T),this.setupInspectionEvents(e.agentIdentifier),t=e,p(d.Fw,function(e,r){"string"==typeof e&&("/"!==e.charAt(0)&&(e="/"+e),t.runtime.customTransaction=(r||"http://custom.transaction")+e,(0,o.p)(d.Pl+d.Fw,[(0,c.t)()],void 0,void 0,t.ee))},t),this.importAggregator(e,()=>i.e(891).then(i.bind(i,3718)))}setupInspectionEvents(e){const t=(t,r)=>{t&&(0,u.W)({agentIdentifier:e,timeStamp:t.timeStamp,loaded:"complete"===t.target.readyState,type:"window",name:r,data:t.target.location+""})};(0,b.sB)(e=>{t(e,"DOMContentLoaded")}),(0,b.GG)(e=>{t(e,"load")}),(0,b.Qr)(e=>{t(e,"navigate")}),this.ee.on(_.tS.UPDATE,(t,r)=>{(0,u.W)({agentIdentifier:e,type:"lifecycle",name:"session",data:r})})}}var O=i(384);var I=i(2843),N=i(782);class P extends E{static featureName=N.T;constructor(e){super(e,N.T),y.RI&&((0,I.u)(()=>(0,o.p)("docHidden",[(0,c.t)()],void 0,N.T,this.ee),!0),(0,I.G)(()=>(0,o.p)("winPagehide",[(0,c.t)()],void 0,N.T,this.ee)),this.importAggregator(e,()=>i.e(891).then(i.bind(i,9018))))}}class k extends E{static featureName=f.TZ;constructor(e){super(e,f.TZ),y.RI&&document.addEventListener("securitypolicyviolation",e=>{(0,o.p)(f.xV,["Generic/CSPViolation/Detected"],void 0,this.featureName,this.ee)}),this.importAggregator(e,()=>i.e(891).then(i.bind(i,6555)))}}var D=i(6774),C=i(3878),j=i(3304);class L{constructor(e,t,r,n,i){this.name="UncaughtError",this.message="string"==typeof e?e:(0,j.A)(e),this.sourceURL=t,this.line=r,this.column=n,this.__newrelic=i}}function M(e){return K(e)?e:new L(void 0!==e?.message?e.message:e,e?.filename||e?.sourceURL,e?.lineno||e?.line,e?.colno||e?.col,e?.__newrelic,e?.cause)}function H(e){const t="Unhandled Promise Rejection: ";if(!e?.reason)return;if(K(e.reason)){try{e.reason.message.startsWith(t)||(e.reason.message=t+e.reason.message)}catch(e){}return M(e.reason)}const r=M(e.reason);return(r.message||"").startsWith(t)||(r.message=t+r.message),r}function B(e){if(e.error instanceof SyntaxError&&!/:\d+$/.test(e.error.stack?.trim())){const t=new L(e.message,e.filename,e.lineno,e.colno,e.error.__newrelic,e.cause);return t.name=SyntaxError.name,t}return K(e.error)?e.error:M(e)}function K(e){return e instanceof Error&&!!e.stack}function W(e,t,r,i,s=(0,c.t)()){"string"==typeof e&&(e=new Error(e)),(0,o.p)("err",[e,s,!1,t,r.runtime.isRecording,void 0,i],void 0,n.K7.jserrors,r.ee),(0,o.p)("uaErr",[],void 0,n.K7.genericEvents,r.ee)}var F=i(4387),U=i(993),V=i(3785);function z(e,{customAttributes:t={},level:r=U.p_.INFO}={},n,i,s=(0,c.t)()){(0,V.R)(n.ee,e,t,r,!1,i,s)}function G(e,t,r,i,s=(0,c.t)()){(0,o.p)(d.Pl+d.hG,[s,e,t,i],void 0,n.K7.genericEvents,r.ee)}function q(e,t,r,i,s=(0,c.t)()){const{start:a,end:u,customAttributes:h}=t||{},f={customAttributes:h||{}};if("object"!=typeof f.customAttributes||"string"!=typeof e||0===e.length)return void(0,l.R)(57);const p=(e,t)=>null==e?t:"number"==typeof e?e:e instanceof PerformanceMark?e.startTime:Number.NaN;if(f.start=p(a,0),f.end=p(u,s),Number.isNaN(f.start)||Number.isNaN(f.end))(0,l.R)(57);else{if(f.duration=f.end-f.start,!(f.duration<0))return(0,o.p)(d.Pl+d.V1,[f,e,i],void 0,n.K7.genericEvents,r.ee),f;(0,l.R)(58)}}function Z(e,t={},r,i,s=(0,c.t)()){(0,o.p)(d.Pl+d.fF,[s,e,t,i],void 0,n.K7.genericEvents,r.ee)}function X(e){p(d.eY,function(t){return J(e,t)},e)}function J(e,t,r){const i={};(0,l.R)(54,"newrelic.register"),t||={},t.type="MFE",t.licenseKey||=e.info.licenseKey,t.blocked=!1,t.parent=r||{};let s=()=>{};const a=e.runtime.registeredEntities,d=a.find(({metadata:{target:{id:e,name:r}}})=>e===t.id);if(d)return d.metadata.target.name!==t.name&&(d.metadata.target.name=t.name),d;const u=e=>{t.blocked=!0,s=e};e.init.api.allow_registered_children||u((0,x.J)(()=>(0,l.R)(55))),(0,F.c7)(t)||u((0,x.J)(()=>(0,l.R)(48,t))),(0,F.yo)(t.id)&&(0,F.yo)(t.name)||u((0,x.J)(()=>(0,l.R)(48,t)));const h={addPageAction:(r,n={})=>m(G,[r,{...i,...n},e],t),log:(r,n={})=>m(z,[r,{...n,customAttributes:{...i,...n.customAttributes||{}}},e],t),measure:(r,n={})=>m(q,[r,{...n,customAttributes:{...i,...n.customAttributes||{}}},e],t),noticeError:(r,n={})=>m(W,[r,{...i,...n},e],t),register:(t={})=>m(J,[e,t],h.metadata.target),recordCustomEvent:(r,n={})=>m(Z,[r,{...i,...n},e],t),setApplicationVersion:e=>g("application.version",e),setCustomAttribute:(e,t)=>g(e,t),setUserId:e=>g("enduser.id",e),metadata:{customAttributes:i,target:t}},p=()=>(t.blocked&&s(),t.blocked);p()||a.push(h);const g=(e,t)=>{p()||(i[e]=t)},m=(t,r,i)=>{if(p())return;const s=(0,c.t)();(0,o.p)(f.xV,["API/register/".concat(t.name,"/called")],void 0,n.K7.metrics,e.ee);try{return e.init.api.duplicate_registered_data&&"register"!==t.name&&t(...r,void 0,s),t(...r,i,s)}catch(e){(0,l.R)(50,e)}};return h}class Y extends E{static featureName=D.T;constructor(e){var t;super(e,D.T),t=e,p(d.o5,(e,r)=>W(e,r,t),t),function(e){p(d.bt,function(t){e.runtime.onerror=t},e)}(e),function(e){let t=0;p(d.k6,function(e,r){++t>10||(this.runtime.releaseIds[e.slice(-200)]=(""+r).slice(-200))},e)}(e),X(e);try{this.removeOnAbort=new AbortController}catch(e){}this.ee.on("internal-error",(t,r)=>{this.abortHandler&&(0,o.p)("ierr",[M(t),(0,c.t)(),!0,{},e.runtime.isRecording,r],void 0,this.featureName,this.ee)}),y.gm.addEventListener("unhandledrejection",t=>{this.abortHandler&&(0,o.p)("err",[H(t),(0,c.t)(),!1,{unhandledPromiseRejection:1},e.runtime.isRecording],void 0,this.featureName,this.ee)},(0,C.jT)(!1,this.removeOnAbort?.signal)),y.gm.addEventListener("error",t=>{this.abortHandler&&(0,o.p)("err",[B(t),(0,c.t)(),!1,{},e.runtime.isRecording],void 0,this.featureName,this.ee)},(0,C.jT)(!1,this.removeOnAbort?.signal)),this.abortHandler=this.#r,this.importAggregator(e,()=>i.e(891).then(i.bind(i,2176)))}#r(){this.removeOnAbort?.abort(),this.abortHandler=void 0}}var Q=i(8990);let ee=1;function te(e){const t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===y.gm?0:(0,Q.I)(e,"nr@id",function(){return ee++})}function re(e){if("string"==typeof e&&e.length)return e.length;if("object"==typeof e){if("undefined"!=typeof ArrayBuffer&&e instanceof ArrayBuffer&&e.byteLength)return e.byteLength;if("undefined"!=typeof Blob&&e instanceof Blob&&e.size)return e.size;if(!("undefined"!=typeof FormData&&e instanceof FormData))try{return(0,j.A)(e).length}catch(e){return}}}var ne=i(8139),ie=i(7836),se=i(3434);const ae={},oe=["open","send"];function ce(e){var t=e||ie.ee;const r=function(e){return(e||ie.ee).get("xhr")}(t);if(void 0===y.gm.XMLHttpRequest)return r;if(ae[r.debugId]++)return r;ae[r.debugId]=1,(0,ne.u)(t);var n=(0,se.YM)(r),i=y.gm.XMLHttpRequest,s=y.gm.MutationObserver,a=y.gm.Promise,o=y.gm.setInterval,c="readystatechange",d=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],u=[],h=y.gm.XMLHttpRequest=function(e){const t=new i(e),s=r.context(t);try{r.emit("new-xhr",[t],s),t.addEventListener(c,(a=s,function(){var e=this;e.readyState>3&&!a.resolved&&(a.resolved=!0,r.emit("xhr-resolved",[],e)),n.inPlace(e,d,"fn-",b)}),(0,C.jT)(!1))}catch(e){(0,l.R)(15,e);try{r.emit("internal-error",[e])}catch(e){}}var a;return t};function f(e,t){n.inPlace(t,["onreadystatechange"],"fn-",b)}if(function(e,t){for(var r in e)t[r]=e[r]}(i,h),h.prototype=i.prototype,n.inPlace(h.prototype,oe,"-xhr-",b),r.on("send-xhr-start",function(e,t){f(e,t),function(e){u.push(e),s&&(p?p.then(v):o?o(v):(g=-g,m.data=g))}(t)}),r.on("open-xhr-start",f),s){var p=a&&a.resolve();if(!o&&!a){var g=1,m=document.createTextNode(g);new s(v).observe(m,{characterData:!0})}}else t.on("fn-end",function(e){e[0]&&e[0].type===c||v()});function v(){for(var e=0;e<u.length;e++)f(0,u[e]);u.length&&(u=[])}function b(e,t){return t}return r}var de="fetch-",ue=de+"body-",le=["arrayBuffer","blob","json","text","formData"],he=y.gm.Request,fe=y.gm.Response,pe="prototype";const ge={};function me(e){const t=function(e){return(e||ie.ee).get("fetch")}(e);if(!(he&&fe&&y.gm.fetch))return t;if(ge[t.debugId]++)return t;function r(e,r,n){var i=e[r];"function"==typeof i&&(e[r]=function(){var e,r=[...arguments],s={};t.emit(n+"before-start",[r],s),s[ie.P]&&s[ie.P].dt&&(e=s[ie.P].dt);var a=i.apply(this,r);return t.emit(n+"start",[r,e],a),a.then(function(e){return t.emit(n+"end",[null,e],a),e},function(e){throw t.emit(n+"end",[e],a),e})})}return ge[t.debugId]=1,le.forEach(e=>{r(he[pe],e,ue),r(fe[pe],e,ue)}),r(y.gm,"fetch",de),t.on(de+"end",function(e,r){var n=this;if(r){var i=r.headers.get("content-length");null!==i&&(n.rxSize=i),t.emit(de+"done",[null,r],n)}else t.emit(de+"done",[e],n)}),t}var ve=i(7485);class be{constructor(e){this.agentRef=e}generateTracePayload(t){const r=this.agentRef.loader_config;if(!this.shouldGenerateTrace(t)||!r)return null;var n=(r.accountID||"").toString()||null,i=(r.agentID||"").toString()||null,s=(r.trustKey||"").toString()||null;if(!n||!i)return null;var a=(0,e.ZF)(),o=(0,e.el)(),c=Date.now(),d={spanId:a,traceId:o,timestamp:c};return(t.sameOrigin||this.isAllowedOrigin(t)&&this.useTraceContextHeadersForCors())&&(d.traceContextParentHeader=this.generateTraceContextParentHeader(a,o),d.traceContextStateHeader=this.generateTraceContextStateHeader(a,c,n,i,s)),(t.sameOrigin&&!this.excludeNewrelicHeader()||!t.sameOrigin&&this.isAllowedOrigin(t)&&this.useNewrelicHeaderForCors())&&(d.newrelicHeader=this.generateTraceHeader(a,o,c,n,i,s)),d}generateTraceContextParentHeader(e,t){return"00-"+t+"-"+e+"-01"}generateTraceContextStateHeader(e,t,r,n,i){return i+"@nr=0-1-"+r+"-"+n+"-"+e+"----"+t}generateTraceHeader(e,t,r,n,i,s){if(!("function"==typeof y.gm?.btoa))return null;var a={v:[0,1],d:{ty:"Browser",ac:n,ap:i,id:e,tr:t,ti:r}};return s&&n!==s&&(a.d.tk=s),btoa((0,j.A)(a))}shouldGenerateTrace(e){return this.agentRef.init?.distributed_tracing?.enabled&&this.isAllowedOrigin(e)}isAllowedOrigin(e){var t=!1;const r=this.agentRef.init?.distributed_tracing;if(e.sameOrigin)t=!0;else if(r?.allowed_origins instanceof Array)for(var n=0;n<r.allowed_origins.length;n++){var i=(0,ve.D)(r.allowed_origins[n]);if(e.hostname===i.hostname&&e.protocol===i.protocol&&e.port===i.port){t=!0;break}}return t}excludeNewrelicHeader(){var e=this.agentRef.init?.distributed_tracing;return!!e&&!!e.exclude_newrelic_header}useNewrelicHeaderForCors(){var e=this.agentRef.init?.distributed_tracing;return!!e&&!1!==e.cors_use_newrelic_header}useTraceContextHeadersForCors(){var e=this.agentRef.init?.distributed_tracing;return!!e&&!!e.cors_use_tracecontext_headers}}var ye=i(9300),we=i(7295);function Re(e){return"string"==typeof e?e:e instanceof(0,O.dV)().o.REQ?e.url:y.gm?.URL&&e instanceof URL?e.href:void 0}var xe=["load","error","abort","timeout"],Te=xe.length,Ee=(0,O.dV)().o.REQ,Se=(0,O.dV)().o.XHR;const _e="X-NewRelic-App-Data";class Ae extends E{static featureName=ye.T;constructor(e){super(e,ye.T),this.dt=new be(e),this.handler=(e,t,r,n)=>(0,o.p)(e,t,r,n,this.ee);try{const e={xmlhttprequest:"xhr",fetch:"fetch",beacon:"beacon"};y.gm?.performance?.getEntriesByType("resource").forEach(t=>{if(t.initiatorType in e&&0!==t.responseStatus){const r={status:t.responseStatus},i={rxSize:t.transferSize,duration:Math.floor(t.duration),cbTime:0};Oe(r,t.name),this.handler("xhr",[r,i,t.startTime,t.responseEnd,e[t.initiatorType]],void 0,n.K7.ajax)}})}catch(e){}me(this.ee),ce(this.ee),function(e,t,r,i){function s(e){var t=this;t.totalCbs=0,t.called=0,t.cbTime=0,t.end=E,t.ended=!1,t.xhrGuids={},t.lastSize=null,t.loadCaptureCalled=!1,t.params=this.params||{},t.metrics=this.metrics||{},t.latestLongtaskEnd=0,e.addEventListener("load",function(r){S(t,e)},(0,C.jT)(!1)),y.lR||e.addEventListener("progress",function(e){t.lastSize=e.loaded},(0,C.jT)(!1))}function a(e){this.params={method:e[0]},Oe(this,e[1]),this.metrics={}}function d(t,r){e.loader_config.xpid&&this.sameOrigin&&r.setRequestHeader("X-NewRelic-ID",e.loader_config.xpid);var n=i.generateTracePayload(this.parsedOrigin);if(n){var s=!1;n.newrelicHeader&&(r.setRequestHeader("newrelic",n.newrelicHeader),s=!0),n.traceContextParentHeader&&(r.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&r.setRequestHeader("tracestate",n.traceContextStateHeader),s=!0),s&&(this.dt=n)}}function u(e,r){var n=this.metrics,i=e[0],s=this;if(n&&i){var a=re(i);a&&(n.txSize=a)}this.startTime=(0,c.t)(),this.body=i,this.listener=function(e){try{"abort"!==e.type||s.loadCaptureCalled||(s.params.aborted=!0),("load"!==e.type||s.called===s.totalCbs&&(s.onloadCalled||"function"!=typeof r.onload)&&"function"==typeof s.end)&&s.end(r)}catch(e){try{t.emit("internal-error",[e])}catch(e){}}};for(var o=0;o<Te;o++)r.addEventListener(xe[o],this.listener,(0,C.jT)(!1))}function l(e,t,r){this.cbTime+=e,t?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof r.onload||"function"!=typeof this.end||this.end(r)}function h(e,t){var r=""+te(e)+!!t;this.xhrGuids&&!this.xhrGuids[r]&&(this.xhrGuids[r]=!0,this.totalCbs+=1)}function p(e,t){var r=""+te(e)+!!t;this.xhrGuids&&this.xhrGuids[r]&&(delete this.xhrGuids[r],this.totalCbs-=1)}function g(){this.endTime=(0,c.t)()}function m(e,r){r instanceof Se&&"load"===e[0]&&t.emit("xhr-load-added",[e[1],e[2]],r)}function v(e,r){r instanceof Se&&"load"===e[0]&&t.emit("xhr-load-removed",[e[1],e[2]],r)}function b(e,t,r){t instanceof Se&&("onload"===r&&(this.onload=!0),("load"===(e[0]&&e[0].type)||this.onload)&&(this.xhrCbStart=(0,c.t)()))}function w(e,r){this.xhrCbStart&&t.emit("xhr-cb-time",[(0,c.t)()-this.xhrCbStart,this.onload,r],r)}function R(e){var t,r=e[1]||{};if("string"==typeof e[0]?0===(t=e[0]).length&&y.RI&&(t=""+y.gm.location.href):e[0]&&e[0].url?t=e[0].url:y.gm?.URL&&e[0]&&e[0]instanceof URL?t=e[0].href:"function"==typeof e[0].toString&&(t=e[0].toString()),"string"==typeof t&&0!==t.length){t&&(this.parsedOrigin=(0,ve.D)(t),this.sameOrigin=this.parsedOrigin.sameOrigin);var n=i.generateTracePayload(this.parsedOrigin);if(n&&(n.newrelicHeader||n.traceContextParentHeader))if(e[0]&&e[0].headers)o(e[0].headers,n)&&(this.dt=n);else{var s={};for(var a in r)s[a]=r[a];s.headers=new Headers(r.headers||{}),o(s.headers,n)&&(this.dt=n),e.length>1?e[1]=s:e.push(s)}}function o(e,t){var r=!1;return t.newrelicHeader&&(e.set("newrelic",t.newrelicHeader),r=!0),t.traceContextParentHeader&&(e.set("traceparent",t.traceContextParentHeader),t.traceContextStateHeader&&e.set("tracestate",t.traceContextStateHeader),r=!0),r}}function x(e,t){this.params={},this.metrics={},this.startTime=(0,c.t)(),this.dt=t,e.length>=1&&(this.target=e[0]),e.length>=2&&(this.opts=e[1]);var r=this.opts||{},n=this.target;Oe(this,Re(n));var i=(""+(n&&n instanceof Ee&&n.method||r.method||"GET")).toUpperCase();this.params.method=i,this.body=r.body,this.txSize=re(r.body)||0}function T(e,t){if(this.endTime=(0,c.t)(),this.params||(this.params={}),(0,we.iW)(this.params))return;let i;this.params.status=t?t.status:0,"string"==typeof this.rxSize&&this.rxSize.length>0&&(i=+this.rxSize);const s={txSize:this.txSize,rxSize:i,duration:(0,c.t)()-this.startTime};r("xhr",[this.params,s,this.startTime,this.endTime,"fetch"],this,n.K7.ajax)}function E(e){const t=this.params,i=this.metrics;if(!this.ended){this.ended=!0;for(let t=0;t<Te;t++)e.removeEventListener(xe[t],this.listener,!1);t.aborted||(0,we.iW)(t)||(i.duration=(0,c.t)()-this.startTime,this.loadCaptureCalled||4!==e.readyState?null==t.status&&(t.status=0):S(this,e),i.cbTime=this.cbTime,r("xhr",[t,i,this.startTime,this.endTime,"xhr"],this,n.K7.ajax))}}function S(e,r){e.params.status=r.status;var i=function(e,t){var r=e.responseType;return"json"===r&&null!==t?t:"arraybuffer"===r||"blob"===r||"json"===r?re(e.response):"text"===r||""===r||void 0===r?re(e.responseText):void 0}(r,e.lastSize);if(i&&(e.metrics.rxSize=i),e.sameOrigin&&r.getAllResponseHeaders().indexOf(_e)>=0){var s=r.getResponseHeader(_e);s&&((0,o.p)(f.rs,["Ajax/CrossApplicationTracing/Header/Seen"],void 0,n.K7.metrics,t),e.params.cat=s.split(", ").pop())}e.loadCaptureCalled=!0}t.on("new-xhr",s),t.on("open-xhr-start",a),t.on("open-xhr-end",d),t.on("send-xhr-start",u),t.on("xhr-cb-time",l),t.on("xhr-load-added",h),t.on("xhr-load-removed",p),t.on("xhr-resolved",g),t.on("addEventListener-end",m),t.on("removeEventListener-end",v),t.on("fn-end",w),t.on("fetch-before-start",R),t.on("fetch-start",x),t.on("fn-start",b),t.on("fetch-done",T)}(e,this.ee,this.handler,this.dt),this.importAggregator(e,()=>i.e(891).then(i.bind(i,3845)))}}function Oe(e,t){var r=(0,ve.D)(t),n=e.params||e;n.hostname=r.hostname,n.port=r.port,n.protocol=r.protocol,n.host=r.hostname+":"+r.port,n.pathname=r.pathname,e.parsedOrigin=r,e.sameOrigin=r.sameOrigin}const Ie={},Ne=["pushState","replaceState"];function Pe(e){const t=function(e){return(e||ie.ee).get("history")}(e);return!y.RI||Ie[t.debugId]++||(Ie[t.debugId]=1,(0,se.YM)(t).inPlace(window.history,Ne,"-")),t}var ke=i(3738);function De(e){p(d.BL,function(t=Date.now()){const r=t-y.WN;r<0&&(0,l.R)(62,t),(0,o.p)(f.XG,[d.BL,{time:r}],void 0,n.K7.metrics,e.ee),e.addToTrace({name:d.BL,start:t,origin:"nr"}),(0,o.p)(d.Pl+d.hG,[r,d.BL],void 0,n.K7.genericEvents,e.ee)},e)}const{He:Ce,bD:je,d3:Le,Kp:Me,TZ:He,Lc:Be,uP:Ke,Rz:We}=ke;class Fe extends E{static featureName=He;constructor(e){var t;super(e,He),t=e,p(d.U2,function(e){if(!(e&&"object"==typeof e&&e.name&&e.start))return;const r={n:e.name,s:e.start-y.WN,e:(e.end||e.start)-y.WN,o:e.origin||"",t:"api"};r.s<0||r.e<0||r.e<r.s?(0,l.R)(61,{start:r.s,end:r.e}):(0,o.p)("bstApi",[r],void 0,n.K7.sessionTrace,t.ee)},t),De(e);if(!(0,R.V)(e.init))return void this.deregisterDrain();const r=this.ee;let s;Pe(r),this.eventsEE=(0,ne.u)(r),this.eventsEE.on(Ke,function(e,t){this.bstStart=(0,c.t)()}),this.eventsEE.on(Be,function(e,t){(0,o.p)("bst",[e[0],t,this.bstStart,(0,c.t)()],void 0,n.K7.sessionTrace,r)}),r.on(We+Le,function(e){this.time=(0,c.t)(),this.startPath=location.pathname+location.hash}),r.on(We+Me,function(e){(0,o.p)("bstHist",[location.pathname+location.hash,this.startPath,this.time],void 0,n.K7.sessionTrace,r)});try{s=new PerformanceObserver(e=>{const t=e.getEntries();(0,o.p)(Ce,[t],void 0,n.K7.sessionTrace,r)}),s.observe({type:je,buffered:!0})}catch(e){}this.importAggregator(e,()=>i.e(891).then(i.bind(i,6974)),{resourceObserver:s})}}var Ue=i(6344);class Ve extends E{static featureName=Ue.TZ;#n;recorder;constructor(e){var t;let r;super(e,Ue.TZ),t=e,p(d.CH,function(){(0,o.p)(d.CH,[],void 0,n.K7.sessionReplay,t.ee)},t),function(e){p(d.Tb,function(){(0,o.p)(d.Tb,[],void 0,n.K7.sessionReplay,e.ee)},e)}(e);try{r=JSON.parse(localStorage.getItem("".concat(_.H3,"_").concat(_.uh)))}catch(e){}(0,w.SR)(e.init)&&this.ee.on(d.CH,()=>this.#i()),this.#s(r)&&this.importRecorder().then(e=>{e.startRecording(Ue.Qb.PRELOAD,r?.sessionReplayMode)}),this.importAggregator(this.agentRef,()=>i.e(891).then(i.bind(i,6167)),this),this.ee.on("err",e=>{this.blocked||this.agentRef.runtime.isRecording&&(this.errorNoticed=!0,(0,o.p)(Ue.Vh,[e],void 0,this.featureName,this.ee))})}#s(e){return e&&(e.sessionReplayMode===_.g.FULL||e.sessionReplayMode===_.g.ERROR)||(0,w.Aw)(this.agentRef.init)}importRecorder(){return this.recorder?Promise.resolve(this.recorder):(this.#n??=Promise.all([i.e(891),i.e(222)]).then(i.bind(i,4866)).then(({Recorder:e})=>(this.recorder=new e(this),this.recorder)).catch(e=>{throw this.ee.emit("internal-error",[e]),this.blocked=!0,e}),this.#n)}#i(){this.blocked||(this.featAggregate?this.featAggregate.mode!==_.g.FULL&&this.featAggregate.initializeRecording(_.g.FULL,!0,Ue.Qb.API):this.importRecorder().then(()=>{this.recorder.startRecording(Ue.Qb.API,_.g.FULL)}))}}var ze=i(3333);const Ge={},qe=new Set;function Ze(e){return"string"==typeof e?{type:"string",size:(new TextEncoder).encode(e).length}:e instanceof ArrayBuffer?{type:"ArrayBuffer",size:e.byteLength}:e instanceof Blob?{type:"Blob",size:e.size}:e instanceof DataView?{type:"DataView",size:e.byteLength}:ArrayBuffer.isView(e)?{type:"TypedArray",size:e.byteLength}:{type:"unknown",size:0}}class Xe{constructor(t,r){this.timestamp=(0,c.t)(),this.currentUrl=window.location.href,this.socketId=(0,e.LA)(8),this.requestedUrl=t,this.requestedProtocols=Array.isArray(r)?r.join(","):r||"",this.openedAt=void 0,this.protocol=void 0,this.extensions=void 0,this.binaryType=void 0,this.messageOrigin=void 0,this.messageCount=void 0,this.messageBytes=void 0,this.messageBytesMin=void 0,this.messageBytesMax=void 0,this.messageTypes=void 0,this.sendCount=void 0,this.sendBytes=void 0,this.sendBytesMin=void 0,this.sendBytesMax=void 0,this.sendTypes=void 0,this.closedAt=void 0,this.closeCode=void 0,this.closeReason=void 0,this.closeWasClean=void 0,this.connectedDuration=void 0,this.hasErrors=void 0}}class Je extends E{static featureName=ze.TZ;constructor(e){super(e,ze.TZ);const t=e.init.feature_flags.includes("websockets"),r=[e.init.page_action.enabled,e.init.performance.capture_marks,e.init.performance.capture_measures,e.init.performance.resources.enabled,e.init.user_actions.enabled,t];var s;let a,u;if(s=e,p(d.hG,(e,t)=>G(e,t,s),s),function(e){p(d.fF,(t,r)=>Z(t,r,e),e)}(e),De(e),X(e),function(e){p(d.V1,(t,r)=>q(t,r,e),e)}(e),t&&(u=function(e){if(!(0,O.dV)().o.WS)return e;const t=e.get("websockets");if(Ge[t.debugId]++)return t;Ge[t.debugId]=1,(0,I.G)(()=>{const e=(0,c.t)();qe.forEach(r=>{r.nrData.closedAt=e,r.nrData.closeCode=1001,r.nrData.closeReason="Page navigating away",r.nrData.closeWasClean=!1,r.nrData.openedAt&&(r.nrData.connectedDuration=e-r.nrData.openedAt),t.emit("ws",[r.nrData],r)})});class r extends WebSocket{static name="WebSocket";static toString(){return"function WebSocket() { [native code] }"}toString(){return"[object WebSocket]"}get[Symbol.toStringTag](){return r.name}#a(e){(e.__newrelic??={}).socketId=this.nrData.socketId,this.nrData.hasErrors??=!0}constructor(...e){super(...e),this.nrData=new Xe(e[0],e[1]),this.addEventListener("open",()=>{this.nrData.openedAt=(0,c.t)(),["protocol","extensions","binaryType"].forEach(e=>{this.nrData[e]=this[e]}),qe.add(this)}),this.addEventListener("message",e=>{const{type:t,size:r}=Ze(e.data);this.nrData.messageOrigin??=e.origin,this.nrData.messageCount=(this.nrData.messageCount??0)+1,this.nrData.messageBytes=(this.nrData.messageBytes??0)+r,this.nrData.messageBytesMin=Math.min(this.nrData.messageBytesMin??1/0,r),this.nrData.messageBytesMax=Math.max(this.nrData.messageBytesMax??0,r),(this.nrData.messageTypes??"").includes(t)||(this.nrData.messageTypes=this.nrData.messageTypes?"".concat(this.nrData.messageTypes,",").concat(t):t)}),this.addEventListener("close",e=>{this.nrData.closedAt=(0,c.t)(),this.nrData.closeCode=e.code,this.nrData.closeReason=e.reason,this.nrData.closeWasClean=e.wasClean,this.nrData.connectedDuration=this.nrData.closedAt-this.nrData.openedAt,qe.delete(this),t.emit("ws",[this.nrData],this)})}addEventListener(e,t,...r){const n=this,i="function"==typeof t?function(...e){try{return t.apply(this,e)}catch(e){throw n.#a(e),e}}:t?.handleEvent?{handleEvent:function(...e){try{return t.handleEvent.apply(t,e)}catch(e){throw n.#a(e),e}}}:t;return super.addEventListener(e,i,...r)}send(e){if(this.readyState===WebSocket.OPEN){const{type:t,size:r}=Ze(e);this.nrData.sendCount=(this.nrData.sendCount??0)+1,this.nrData.sendBytes=(this.nrData.sendBytes??0)+r,this.nrData.sendBytesMin=Math.min(this.nrData.sendBytesMin??1/0,r),this.nrData.sendBytesMax=Math.max(this.nrData.sendBytesMax??0,r),(this.nrData.sendTypes??"").includes(t)||(this.nrData.sendTypes=this.nrData.sendTypes?"".concat(this.nrData.sendTypes,",").concat(t):t)}try{return super.send(e)}catch(e){throw this.#a(e),e}}close(...e){try{super.close(...e)}catch(e){throw this.#a(e),e}}}return y.gm.WebSocket=r,t}(this.ee)),y.RI){if(me(this.ee),ce(this.ee),a=Pe(this.ee),e.init.user_actions.enabled){function l(t){const r=(0,ve.D)(t);return e.beacons.includes(r.hostname+":"+r.port)}function h(){a.emit("navChange")}ze.Zp.forEach(e=>(0,C.sp)(e,e=>(0,o.p)("ua",[e],void 0,this.featureName,this.ee),!0)),ze.qN.forEach(e=>{const t=(0,x.s)(e=>{(0,o.p)("ua",[e],void 0,this.featureName,this.ee)},500,{leading:!0});(0,C.sp)(e,t)}),y.gm.addEventListener("error",()=>{(0,o.p)("uaErr",[],void 0,n.K7.genericEvents,this.ee)},(0,C.jT)(!1,this.removeOnAbort?.signal)),this.ee.on("open-xhr-start",(e,t)=>{l(e[1])||t.addEventListener("readystatechange",()=>{2===t.readyState&&(0,o.p)("uaXhr",[],void 0,n.K7.genericEvents,this.ee)})}),this.ee.on("fetch-start",e=>{e.length>=1&&!l(Re(e[0]))&&(0,o.p)("uaXhr",[],void 0,n.K7.genericEvents,this.ee)}),a.on("pushState-end",h),a.on("replaceState-end",h),window.addEventListener("hashchange",h,(0,C.jT)(!0,this.removeOnAbort?.signal)),window.addEventListener("popstate",h,(0,C.jT)(!0,this.removeOnAbort?.signal))}if(e.init.performance.resources.enabled&&y.gm.PerformanceObserver?.supportedEntryTypes.includes("resource")){new PerformanceObserver(e=>{e.getEntries().forEach(e=>{(0,o.p)("browserPerformance.resource",[e],void 0,this.featureName,this.ee)})}).observe({type:"resource",buffered:!0})}}t&&u.on("ws",e=>{(0,o.p)("ws-complete",[e],void 0,this.featureName,this.ee)});try{this.removeOnAbort=new AbortController}catch(f){}this.abortHandler=()=>{this.removeOnAbort?.abort(),this.abortHandler=void 0},r.some(e=>e)?this.importAggregator(e,()=>i.e(891).then(i.bind(i,8019))):this.deregisterDrain()}}var Ye=i(2646);const Qe=new Map;function $e(e,t,r,n,i=!0){if("object"!=typeof t||!t||"string"!=typeof r||!r||"function"!=typeof t[r])return(0,l.R)(29);const s=function(e){return(e||ie.ee).get("logger")}(e),a=(0,se.YM)(s),o=new Ye.y(ie.P);o.level=n.level,o.customAttributes=n.customAttributes,o.autoCaptured=i;const c=t[r]?.[se.Jt]||t[r];return Qe.set(c,o),a.inPlace(t,[r],"wrap-logger-",()=>Qe.get(c)),s}var et=i(1910);class tt extends E{static featureName=U.TZ;constructor(e){var t;super(e,U.TZ),t=e,p(d.$9,(e,r)=>z(e,r,t),t),function(e){p(d.Wb,(t,r,{customAttributes:n={},level:i=U.p_.INFO}={})=>{$e(e.ee,t,r,{customAttributes:n,level:i},!1)},e)}(e),X(e);const r=this.ee;["log","error","warn","info","debug","trace"].forEach(e=>{(0,et.i)(y.gm.console[e]),$e(r,y.gm.console,e,{level:"log"===e?"info":e})}),this.ee.on("wrap-logger-end",function([e]){const{level:t,customAttributes:n,autoCaptured:i}=this;(0,V.R)(r,e,n,t,i)}),this.importAggregator(e,()=>i.e(891).then(i.bind(i,5288)))}}new class extends r{constructor(e){var t;(super(),y.gm)?(this.features={},(0,O.bQ)(this.agentIdentifier,this),this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(A),this.runSoftNavOverSpa=[...this.desiredFeatures].some(e=>e.featureName===n.K7.softNav),(0,a.j)(this,e,e.loaderType||"agent"),t=this,p(d.cD,function(e,r,n=!1){if("string"==typeof e){if(["string","number","boolean"].includes(typeof r)||null===r)return g(t,e,r,d.cD,n);(0,l.R)(40,typeof r)}else(0,l.R)(39,typeof e)},t),function(e){p(d.Dl,function(t){if("string"==typeof t||null===t)return g(e,"enduser.id",t,d.Dl,!0);(0,l.R)(41,typeof t)},e)}(this),function(e){p(d.nb,function(t){if("string"==typeof t||null===t)return g(e,"application.version",t,d.nb,!1);(0,l.R)(42,typeof t)},e)}(this),function(e){p(d.d3,function(){e.ee.emit("manual-start-all")},e)}(this),function(e){p(d.Pv,function(t=!0){if("boolean"==typeof t){if((0,o.p)(d.Pl+d.Pv,[t],void 0,"session",e.ee),e.runtime.consented=t,t){const t=e.features.page_view_event;t.onAggregateImported.then(e=>{const r=t.featAggregate;e&&!r.sentRum&&r.sendRum()})}}else(0,l.R)(65,typeof t)},e)}(this),this.run()):(0,l.R)(21)}get config(){return{info:this.info,init:this.init,loader_config:this.loader_config,runtime:this.runtime}}get api(){return this}run(){try{const e=function(e){const t={};return s.forEach(r=>{t[r]=!!e[r]?.enabled}),t}(this.init),t=[...this.desiredFeatures];t.sort((e,t)=>n.P3[e.featureName]-n.P3[t.featureName]),t.forEach(t=>{if(!e[t.featureName]&&t.featureName!==n.K7.pageViewEvent)return;if(this.runSoftNavOverSpa&&t.featureName===n.K7.spa)return;if(!this.runSoftNavOverSpa&&t.featureName===n.K7.softNav)return;const r=function(e){switch(e){case n.K7.ajax:return[n.K7.jserrors];case n.K7.sessionTrace:return[n.K7.ajax,n.K7.pageViewEvent];case n.K7.sessionReplay:return[n.K7.sessionTrace];case n.K7.pageViewTiming:return[n.K7.pageViewEvent];default:return[]}}(t.featureName).filter(e=>!(e in this.features));r.length>0&&(0,l.R)(36,{targetFeature:t.featureName,missingDependencies:r}),this.features[t.featureName]=new t(this)})}catch(e){(0,l.R)(22,e);for(const e in this.features)this.features[e].abortHandler?.();const t=(0,O.Zm)();delete t.initializedAgents[this.agentIdentifier]?.features,delete this.sharedAggregator;return t.ee.get(this.agentIdentifier).abort(),!1}}}({features:[A,P,Fe,Ve,Ae,k,Y,Je,tt],loaderType:"pro"})})()})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<link rel="shortlink" href="/node/260151" />
+<meta property="twitter:card" content="summary" />
+<meta property="og:url" content="/bnc" />
+<meta property="og:title" content="BNC1994" />
+<meta property="og:description" content="British National Corpus" />
+<meta property="og:image" content="https://www.clarin.ac.uk/sites/default/files/clarin/images/page/bncxml.png" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i%7CLora:400,400i" />
+<link rel="canonical" href="https://www.clarin.ac.uk/bnc" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+  <title>BNC1994 | CLARIN-UK</title>
+  <style>
+@import url("https://www.clarin.ac.uk/modules/system/system.base.css?t7gi5y");
+</style>
+<style>
+@import url("https://www.clarin.ac.uk/sites/all/modules/contrib/jquery_update/replace/ui/themes/base/minified/jquery.ui.core.min.css?t7gi5y");
+@import url("https://www.clarin.ac.uk/sites/all/modules/contrib/jquery_update/replace/ui/themes/base/minified/jquery.ui.theme.min.css?t7gi5y");
+@import url("https://www.clarin.ac.uk/sites/all/modules/contrib/jquery_update/replace/ui/themes/base/minified/jquery.ui.slider.min.css?t7gi5y");
+@import url("https://www.clarin.ac.uk/sites/all/modules/contrib/chosen/css/chosen-drupal.css?t7gi5y");
+</style>
+<style>
+@import url("https://www.clarin.ac.uk/modules/field/theme/field.css?t7gi5y");
+@import url("https://www.clarin.ac.uk/sites/all/modules/contrib/media_preview_slider/css/slider-styles.css?t7gi5y");
+@import url("https://www.clarin.ac.uk/modules/node/node.css?t7gi5y");
+@import url("https://www.clarin.ac.uk/sites/all/modules/contrib/views/css/views.css?t7gi5y");
+@import url("https://www.clarin.ac.uk/sites/all/modules/custom/ckeditor/css/ckeditor.css?t7gi5y");
+@import url("https://www.clarin.ac.uk/sites/all/modules/contrib/entity_embed/css/entity_embed.css?t7gi5y");
+</style>
+<style>
+@import url("https://www.clarin.ac.uk/sites/all/modules/contrib/ctools/css/ctools.css?t7gi5y");
+@import url("https://www.clarin.ac.uk/sites/all/libraries/fancybox/source/jquery.fancybox.css?t7gi5y");
+@import url("https://www.clarin.ac.uk/sites/all/modules/contrib/panels/css/panels.css?t7gi5y");
+@import url("https://www.clarin.ac.uk/sites/all/modules/contrib/panels/plugins/layouts/onecol/onecol.css?t7gi5y");
+</style>
+<style>select.field-add-more-type option[value=custom_css]{display:none}
+select.field-add-more-type option[value=custom_javascript]{display:none}
+select.field-add-more-type option[value=web_application]{display:none}
+select.field-add-more-type option[value=form]{display:none}
+.field-name-field-advanced-section-content .field-name-field-enable-widget-bg-color,.field-name-field-advanced-section-content .field-name-field-widget-background-colour,.field-name-field-advanced-section-content .field-name-field-title-text-colour{display:none;}
+.field-name-field-advanced-tab-content .field-name-field-enable-widget-bg-color,.field-name-field-advanced-tab-content .field-name-field-widget-background-colour,.field-name-field-advanced-tab-content .field-name-field-title-text-colour{display:none;}
+select.field-add-more-type option[value=custom_css]{display:none}
+select.field-add-more-type option[value=custom_javascript]{display:none}
+select.field-add-more-type option[value=web_application]{display:none}
+select.field-add-more-type option[value=form]{display:none}
+.field-name-field-advanced-section-content .field-name-field-enable-widget-bg-color,.field-name-field-advanced-section-content .field-name-field-widget-background-colour,.field-name-field-advanced-section-content .field-name-field-title-text-colour{display:none;}
+.field-name-field-advanced-tab-content .field-name-field-enable-widget-bg-color,.field-name-field-advanced-tab-content .field-name-field-widget-background-colour,.field-name-field-advanced-tab-content .field-name-field-title-text-colour{display:none;}
+</style>
+<style>
+@import url("https://www.clarin.ac.uk/sites/all/libraries/swiper/css/swiper.min.css?t7gi5y");
+@import url("https://www.clarin.ac.uk/sites/all/modules/features/oxdrupal_core_paragraph_bundles/css/oxdrupal_core_paragraph.css?t7gi5y");
+</style>
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.css" media="all" crossorigin="anonymous" integrity="sha256-0XAFLBbK7DgQ8t7mRWU5BF2OMm9tjtfH945Z7TTeNIo=" />
+<link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@unicorn-fail/drupal-bootstrap-styles@0.0.2/dist/3.3.1/7.x-3.x/drupal-bootstrap.css" media="all" crossorigin="anonymous" integrity="sha256-9zGXDrcvPKxQmSI/s9Rm9jypcvR2INe5SG/jot1Dqg0=" />
+<style>
+@import url("https://www.clarin.ac.uk/sites/all/themes/custom/oxtheme/../../../libraries/fontawesome/css/all.css?t7gi5y");
+@import url("https://www.clarin.ac.uk/sites/all/themes/custom/oxtheme/../../../libraries/fontawesome/css/v4-shims.min.css?t7gi5y");
+@import url("https://www.clarin.ac.uk/sites/all/themes/custom/oxtheme/../../../libraries/dataTables/css/jquery.dataTables.css?t7gi5y");
+@import url("https://www.clarin.ac.uk/sites/default/files/themes/oxtheme_style.css?t7gi5y");
+</style>
+<style>
+@import url("https://www.clarin.ac.uk/sites/default/files/themes/custom/css/default.css?t7gi5y");
+@import url("https://www.clarin.ac.uk/sites/default/files/themes/custom/css/clarin.web.ox.ac.uk/oxdrupal_custom_fonts.css?t7gi5y");
+@import url("https://www.clarin.ac.uk/sites/default/files/themes/custom/css/clarin.web.ox.ac.uk/custom_settings.css?t7gi5y");
+</style>
+  <!-- HTML5 element support for IE6-8 -->
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script src="https://www.clarin.ac.uk/sites/all/modules/contrib/jquery_update/replace/jquery/3.6/jquery.min.js?v=3.6.0"></script>
+<script>jQuery.migrateMute=true;jQuery.migrateTrace=false;</script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/contrib/jquery_update/replace/jquery-migrate/3/jquery-migrate.min.js?v=3"></script>
+<script src="https://www.clarin.ac.uk/misc/jquery-extend-3.4.0.js?v=3.6.0"></script>
+<script src="https://www.clarin.ac.uk/misc/jquery-html-prefilter-3.5.0-backport.js?v=3.6.0"></script>
+<script src="https://www.clarin.ac.uk/misc/jquery.once.js?v=1.2"></script>
+<script src="https://www.clarin.ac.uk/misc/drupal.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/contrib/jquery_update/replace/ui/ui/minified/jquery.ui.core.min.js?v=1.10.2"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/contrib/jquery_update/replace/ui/ui/minified/jquery.ui.widget.min.js?v=1.10.2"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/contrib/jquery_update/replace/ui/ui/minified/jquery.ui.mouse.min.js?v=1.10.2"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/contrib/jquery_update/replace/ui/ui/minified/jquery.ui.slider.min.js?v=1.10.2"></script>
+<script src="https://www.clarin.ac.uk/sites/all/libraries/chosen/chosen.jquery.min.js?v=1.1.0"></script>
+<script src="https://www.clarin.ac.uk/misc/form-single-submit.js?v=7.103.13+7.103.1:drupal"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.js"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/custom/entityreference/js/entityreference.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/contrib/media_preview_slider/js/slider.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/contrib/fancybox/fancybox.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/libraries/fancybox/source/jquery.fancybox.pack.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/libraries/fancybox/lib/jquery.mousewheel.pack.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/features/oxdrupal_responsive_header/oxdrupal_responsive_header.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/features/oxdrupal_listings/js/youtube_videos_global_variables.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/features/oxdrupal_listings/js/youtube_videos.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/features/oxdrupal_listings/js/call_to_actions.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/features/oxdrupal_listings/js/tile_rollover_height.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/features/oxdrupal_listings/js/scrolltowidget.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/libraries/oxdrupal-react-renderer/build/listGrid.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/custom/oxdrupal_feedback/js/oxdrupal_feedback.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/custom/google_analytics/googleanalytics.js?t7gi5y"></script>
+<script src="https://www.googletagmanager.com/gtag/js?id=UA-59014396-1"></script>
+<script>if (window.navigator.useragent != 'Mosaic Wraith') {window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "UA-59014396-1", {"groups":"default","cookie_domain":".www.clarin.ac.uk","anonymize_ip":true});}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.5.0/core.js" crossorigin="anonymous" integrity="sha512-Zb/49B03Pvr5qzNelm8HxpBm5QYIpsEErXq7E6hdNfEGE2rP0Ex7Beu9Ts6Rwcok3LABILg3Bv0YOldPvyknRg=="></script>
+<script src="https://www.clarin.ac.uk/sites/all/libraries/sweetalert/sweetalert2.all.min.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/features/oxdrupal_listings/js/javascript_pagination.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/features/oxdrupal_feeds/js/oxdrupal_feeds.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/libraries/twig/js/js/twig.min.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/libraries/jquery.truncate/jquery.truncate.js?t7gi5y"></script>
+<script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js" crossorigin="anonymous" integrity="sha256-l+byNOqXRevb5OdQHM4K9/hN2QoYx+lfZ5ZDeG88yWQ="></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/features/oxdrupal_site_settings/js/oxdrupal_site_settings_cookies.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/libraries/swiper/js/swiper.min.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/custom/oxdrupal_widgets/oxdrupal_slideshow/js/slideshow_height.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/custom/oxdrupal_widgets/oxdrupal_vacancies/js/oxdrupal_vacancies.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/features/oxdrupal_wysiwyg/oxdrupal_wysiwyg_circled_list.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/libraries/moment/moment.min.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/features/oxdrupal_core_paragraph_bundles/js/taxonomy_filter_selects.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/features/oxdrupal_theme_top_nav/js/standard_drop_menu.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/themes/custom/oxtheme/js/header.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/themes/custom/oxtheme/js/accessibility.js?t7gi5y"></script>
+<script>var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);</script>
+<script src="https://www.clarin.ac.uk/sites/all/modules/contrib/chosen/chosen.js?v=1.1.0"></script>
+<script src="https://www.clarin.ac.uk/sites/all/themes/custom/oxtheme/../../../libraries/dataTables/js/jquery.dataTables.min.js?t7gi5y"></script>
+<script src="https://www.clarin.ac.uk/sites/all/themes/custom/oxtheme/js/dataTables.js?t7gi5y"></script>
+<script>
+        if (window.navigator.userAgent != 'Mosaic Wraith') {
+
+          if(typeof ga==='function') {
+             var ga_mosaic = ga;
+          } else {
+             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+             })(window,document,'script','https://www.google-analytics.com/analytics.js','ga_mosaic');
+          }
+
+          ga_mosaic('create',{
+              trackingId: 'UA-72187643-2',
+              cookieDomain: 'unknown',
+              name: 'mosaicTracker',
+              storage: 'none',
+              storeGac: false,
+            }
+          );
+
+          ga_mosaic('mosaicTracker.set', 'anonymizeIp', true);
+          ga_mosaic('mosaicTracker.set', 'contentGroup1', 'CLARIN-UK');
+          ga_mosaic('mosaicTracker.set', 'contentGroup2', '138456');
+          ga_mosaic('mosaicTracker.set', 'contentGroup3', 'anonymous');
+          ga_mosaic('mosaicTracker.set', 'contentGroup4', 'anonymous');
+          ga_mosaic('mosaicTracker.set', 'contentGroup5', 'unknown');
+
+
+          ga_mosaic('mosaicTracker.set', 'dimension1', 'CLARIN-UK');
+          ga_mosaic('mosaicTracker.set', 'dimension2', 'unknown');
+          ga_mosaic('mosaicTracker.set', 'dimension3', '138456');
+          ga_mosaic('mosaicTracker.set', 'dimension4', 'anonymous');
+          ga_mosaic('mosaicTracker.set', 'dimension5', 'anonymous');
+
+          ga_mosaic('mosaicTracker.send', 'pageview', {'dimension1': 'CLARIN-UK', 'dimension2': 'unknown', 'dimension3': '138456', 'dimension4' : 'anonymous', 'dimension5': 'anonymous', 'contentGroup1' : 'CLARIN-UK', 'contentGroup2': '138456', 'contentGroup3' : 'anonymous', 'contentGroup4': 'anonymous', 'contentGroup5': 'unknown'});
+        }
+      </script>
+<script>jQuery.extend(Drupal.settings, {"basePath":"\/","pathPrefix":"","setHasJsCookie":0,"ajaxPageState":{"theme":"oxtheme_flex","theme_token":"sdhYvkoE_mD-jEH7iQYaJ93o9hePUbBLZWZuOd_xS8k","js":{"sites\/all\/themes\/contrib\/bootstrap\/js\/bootstrap.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery\/3.6\/jquery.min.js":1,"0":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/jquery-migrate\/3\/jquery-migrate.min.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery-html-prefilter-3.5.0-backport.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.core.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.widget.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.mouse.min.js":1,"sites\/all\/modules\/contrib\/jquery_update\/replace\/ui\/ui\/minified\/jquery.ui.slider.min.js":1,"sites\/all\/libraries\/chosen\/chosen.jquery.min.js":1,"misc\/form-single-submit.js":1,"https:\/\/cdn.jsdelivr.net\/npm\/bootstrap@3.4.1\/dist\/js\/bootstrap.js":1,"sites\/all\/modules\/custom\/entityreference\/js\/entityreference.js":1,"sites\/all\/modules\/contrib\/media_preview_slider\/js\/slider.js":1,"sites\/all\/modules\/contrib\/fancybox\/fancybox.js":1,"sites\/all\/libraries\/fancybox\/source\/jquery.fancybox.pack.js":1,"sites\/all\/libraries\/fancybox\/lib\/jquery.mousewheel.pack.js":1,"sites\/all\/modules\/features\/oxdrupal_responsive_header\/oxdrupal_responsive_header.js":1,"sites\/all\/modules\/features\/oxdrupal_listings\/js\/youtube_videos_global_variables.js":1,"sites\/all\/modules\/features\/oxdrupal_listings\/js\/youtube_videos.js":1,"sites\/all\/modules\/features\/oxdrupal_listings\/js\/call_to_actions.js":1,"sites\/all\/modules\/features\/oxdrupal_listings\/js\/tile_rollover_height.js":1,"sites\/all\/modules\/features\/oxdrupal_listings\/js\/scrolltowidget.js":1,"sites\/all\/libraries\/oxdrupal-react-renderer\/build\/listGrid.js":1,"sites\/all\/modules\/custom\/oxdrupal_feedback\/js\/oxdrupal_feedback.js":1,"sites\/all\/modules\/custom\/google_analytics\/googleanalytics.js":1,"https:\/\/www.googletagmanager.com\/gtag\/js?id=UA-59014396-1":1,"1":1,"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/core-js\/2.5.0\/core.js":1,"sites\/all\/libraries\/sweetalert\/sweetalert2.all.min.js":1,"sites\/all\/modules\/features\/oxdrupal_listings\/js\/javascript_pagination.js":1,"sites\/all\/modules\/features\/oxdrupal_feeds\/js\/oxdrupal_feeds.js":1,"sites\/all\/libraries\/twig\/js\/js\/twig.min.js":1,"sites\/all\/libraries\/jquery.truncate\/jquery.truncate.js":1,"https:\/\/cc.cdn.civiccomputing.com\/9\/cookieControl-9.x.min.js":1,"sites\/all\/modules\/features\/oxdrupal_site_settings\/js\/oxdrupal_site_settings_cookies.js":1,"sites\/all\/libraries\/swiper\/js\/swiper.min.js":1,"sites\/all\/modules\/custom\/oxdrupal_widgets\/oxdrupal_slideshow\/js\/slideshow_height.js":1,"sites\/all\/modules\/custom\/oxdrupal_widgets\/oxdrupal_vacancies\/js\/oxdrupal_vacancies.js":1,"sites\/all\/modules\/features\/oxdrupal_wysiwyg\/oxdrupal_wysiwyg_circled_list.js":1,"sites\/all\/libraries\/moment\/moment.min.js":1,"sites\/all\/modules\/features\/oxdrupal_core_paragraph_bundles\/js\/taxonomy_filter_selects.js":1,"sites\/all\/modules\/features\/oxdrupal_theme_top_nav\/js\/standard_drop_menu.js":1,"sites\/all\/themes\/custom\/oxtheme\/js\/header.js":1,"sites\/all\/themes\/custom\/oxtheme\/js\/accessibility.js":1,"2":1,"sites\/all\/modules\/contrib\/chosen\/chosen.js":1,"sites\/all\/themes\/custom\/oxtheme\/..\/..\/..\/libraries\/dataTables\/js\/jquery.dataTables.min.js":1,"sites\/all\/themes\/custom\/oxtheme\/js\/dataTables.js":1,"3":1},"css":{"modules\/system\/system.base.css":1,"misc\/ui\/jquery.ui.core.css":1,"misc\/ui\/jquery.ui.theme.css":1,"misc\/ui\/jquery.ui.slider.css":1,"sites\/all\/modules\/contrib\/chosen\/css\/chosen-drupal.css":1,"modules\/field\/theme\/field.css":1,"sites\/all\/modules\/contrib\/media_preview_slider\/css\/slider-styles.css":1,"modules\/node\/node.css":1,"sites\/all\/modules\/contrib\/views\/css\/views.css":1,"sites\/all\/modules\/custom\/ckeditor\/css\/ckeditor.css":1,"sites\/all\/modules\/contrib\/entity_embed\/css\/entity_embed.css":1,"sites\/all\/modules\/contrib\/ctools\/css\/ctools.css":1,"sites\/all\/libraries\/fancybox\/source\/jquery.fancybox.css":1,"sites\/all\/modules\/contrib\/panels\/css\/panels.css":1,"sites\/all\/modules\/contrib\/panels\/plugins\/layouts\/onecol\/onecol.css":1,"0":1,"1":1,"2":1,"3":1,"4":1,"5":1,"6":1,"7":1,"8":1,"9":1,"10":1,"11":1,"sites\/all\/libraries\/swiper\/css\/swiper.min.css":1,"sites\/all\/modules\/features\/oxdrupal_core_paragraph_bundles\/css\/oxdrupal_core_paragraph.css":1,"https:\/\/cdn.jsdelivr.net\/npm\/bootstrap@3.4.1\/dist\/css\/bootstrap.css":1,"https:\/\/cdn.jsdelivr.net\/npm\/@unicorn-fail\/drupal-bootstrap-styles@0.0.2\/dist\/3.3.1\/7.x-3.x\/drupal-bootstrap.css":1,"sites\/all\/themes\/custom\/oxtheme\/..\/..\/..\/libraries\/fontawesome\/css\/all.css":1,"sites\/all\/themes\/custom\/oxtheme\/..\/..\/..\/libraries\/fontawesome\/css\/v4-shims.min.css":1,"sites\/all\/themes\/custom\/oxtheme\/..\/..\/..\/libraries\/dataTables\/css\/jquery.dataTables.css":1,"sites\/default\/files\/themes\/oxtheme_style.css":1,"sites\/default\/files\/themes\/custom\/css\/default.css":1,"sites\/default\/files\/themes\/custom\/css\/clarin.web.ox.ac.uk\/oxdrupal_custom_fonts.css":1,"sites\/default\/files\/themes\/custom\/css\/clarin.web.ox.ac.uk\/custom_settings.css":1,"sites\/default\/files\/themes\/custom\/css\/clarin.web.ox.ac.uk\/custom.css":1}},"fancybox":{"selectors":[".fancybox"]},"chosen":{"selector":"#edit-og-vocabulary select[multiple]","minimum_single":10,"minimum_multiple":0,"minimum_width":650,"options":{"allow_single_deselect":false,"disable_search":false,"disable_search_threshold":0,"search_contains":false,"placeholder_text_multiple":"Choose term(s)","placeholder_text_single":"Choose term","no_results_text":"No results match","inherit_select_classes":true}},"googleanalytics":{"account":["UA-59014396-1"],"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"currentPath":"node\/260151","currentPathIsAdmin":false,"oxdrupal_site_settings_cookies":{"analyticsCookies":"\u0027_ga\u0027, \u0027_gid\u0027, \u0027_gat*\u0027, \u0027_gat_gtag_*\u0027,","functionalCookies":"","essentialCookies":"\u0027quickedit\u0027, \u0027ajs_anonymous_id\u0027, \u0027ajs_group_id\u0027, \u0027ajs_user_id\u0027, \u0027TSNGUID\u0027, \u0027login_idle_session_timeout\u0027, \u0027staging-login_idle_session_timeout\u0027, \u0027SimpleSAMLAuthToken\u0027, \u0027SimpleSAMLSessionID\u0027, \u0027SSESS*\u0027, \u0027CookieControl\u0027, \u0027has_js\u0027, \u0027Drupal.toolbar.collapsed\u0027, \u0027Drupal.tableDrag.showWeight\u0027, \u0027NO_CACHE\u0027","apiKey":"33682ad9b7be72b5c2a4af66e77916ccbecad0ed","product":"CUSTOM","position":"left","analyticsCookieOnAccept":"","analyticsCookieOnDecline":"","functionalCookieOnAccept":"","functionalCookieOnDecline":"","branding":{"fontColor":"#ffffff","notifyFontColor":"#ffffff","backgroundColor":"#002147"}},"oxdrupal_vacancies":{"vacanciesAPIBaseURL":"https:\/\/wnrkuv8ox6.execute-api.eu-west-2.amazonaws.com\/production","vacanciesAPIKey":"64QfQNjElP1jVVmS1ZeIW2By9Uq0dIyC6Pvsww17"},"urlIsAjaxTrusted":{"\/bnc":true},"ogContext":{"groupType":"node","gid":"138456"},"bootstrap":{"anchorsFix":"0","anchorsSmoothScrolling":"0","formHasError":1,"popoverEnabled":1,"popoverOptions":{"animation":1,"html":0,"placement":"right","selector":"","trigger":"click","triggerAutoclose":1,"title":"","content":"","delay":0,"container":"body"},"tooltipEnabled":1,"tooltipOptions":{"animation":1,"html":0,"placement":"auto left","selector":"","trigger":"hover focus","delay":0,"container":"body"}}});</script>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.clarin.ac.uk/sites/default/files/styles/apple-touch-icon-180x180/public/clarin/site-favicon/clarin-uk-logo03.png?itok=mqBo_l9P"><link rel="icon" type="image/png" href="https://www.clarin.ac.uk/sites/default/files/styles/favicon-32x32/public/clarin/site-favicon/clarin-uk-logo03.png?itok=TS8GqJbu" sizes="32x32"><link rel="icon" type="image/png" href="https://www.clarin.ac.uk/sites/default/files/styles/favicon-16x16/public/clarin/site-favicon/clarin-uk-logo03.png?itok=Y5_PRByB" sizes="16x16"><meta name="msapplication-TileColor" content="#002147"><meta name="msapplication-TileImage" content="https://www.clarin.ac.uk/sites/default/files/styles/mstile-144x144/public/clarin/site-favicon/clarin-uk-logo03.png?itok=UFaTwx-5"><meta name="theme-color" content="#002147" /></head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-node page-node- page-node-260151 node-type-oxdrupal-basic-page og-context og-context-node og-context-node-138456 no-background-image content-position-top header_header_links search_slimline header crest_none page-title-align-left page-title-margin-top-none page-title-margin-bottom-single page-subtitle-margin-top-double page-subtitle-margin-bottom-single chevron-right precanned" >
+  <div class="skip-link">
+    <a href="#" tabindex="0" class="element-invisible element-focusable pause-animated-content">Pause animated content</a>
+  </div>
+  <div id="skip-link">
+    <a href="#main-content" tabindex="0" aria-flowto="main-content" aria-label="Skip to main content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    
+<header id="header" class="region-indented mobile_style_two_level_crest standard-content-width header">
+    <div id="topbar" class="sub-container sub-container" >
+    <div class="container">
+            
+    <div class='oxlogo-container '>
+      <a href='http://www.ox.ac.uk'>
+        <img
+          src='/sites/all/themes/custom/oxtheme/images/brandmark/svg/oxlogo-rect-border.svg'
+          alt='Oxford University'
+        />
+      </a>
+    </div>
+        
+    <div class='oxlogo-container mobile-oxlogo-container'>
+      <a href='http://www.ox.ac.uk'>
+        <img
+          src='/sites/all/themes/custom/oxtheme/images/brandmark/svg/oxlogo-rect-border.svg'
+          alt='Oxford University'
+        />
+      </a>
+    </div>
+              <div id="topbar-links" class="primary_link_position_right">
+        <a class='fas fa-ellipsis-h topbar-links-trigger' role='button' aria-label='Secondary menu' tabindex='0'></a>        <div class="links-container">
+                    <div class="primary-links primary_link_icons_">
+              <div class="region region-header-links">
+    <div class="block-views-header-links-blk block block-views clearfix">
+      
+  <div class="view view-header-links view-id-header_links view-display-id-blk block-header-links view-dom-id-0bdfe32202bada0b9fe6804410c36eb5">
+        
+  
+  
+      <div 
+   >
+        <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field views-field-field-link">        <div class="field-content"><div class=""><a href="https://www.clarin.eu" title="CLARIN" target="_blank"><div class="fa-2x fas fa-arrow-right" ></div><span>CLARIN.EU</span></a></div>
+</div>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div></div>
+  </div>
+          </div>
+                    <div class="secondary-links secondary_link_icons_">
+                      </div>
+        </div>
+                      </div>
+    </div>
+  </div>
+    <div id="header-main" class="sub-container desktop-header-padding">
+    <div class="container">
+      <div id="header-wrapper">
+                                
+      <div id='logo-container'>
+        <a href='/'>
+          <img src='https://www.clarin.ac.uk/sites/default/files/styles/site_logo/public/styles/site_logo/public/clarin/site-logo/clarin-uk-logo02.png?itok=exxvuZxY' alt='Logo'/>
+        </a>
+      </div>
+                    
+      <div id='site-titles'>
+        <div id='site-title'>
+    
+        <a href='/'>
+          CLARIN-UK
+        </a>
+      
+      </div>
+      <div id='site-subtitle'>
+    Infrastructure for Digital Language Resources and Tools
+        </div>
+      </div>
+            
+    <div id='mobile-branding-container'>
+      <a href='/'>
+        
+          <img src='https://www.clarin.ac.uk/sites/default/files/styles/site_logo/public/styles/site_logo/public/clarin/site-logo/clarin-uk-logo02.png?itok=exxvuZxY' alt='Logo'/>
+        
+      </a>
+    </div>
+          <div id="mobile-icon-container">
+                                        <div class="search-container search_style_standard search_collapse_inactive">
+            <a id="search-mobile-trigger" role="button" class="fas fa-search" aria-label="Activate search" tabindex="0"></a>
+              <div class="region region-search">
+    <div id='block-search-form' class="block block-search clearfix">
+      
+  <form role="search" class="form-search content-search" action="/bnc" method="post" id="search-block-form--2" accept-charset="UTF-8"><div><div>
+      <div class="element-invisible">Search form</div>
+    <div style="display:flex;">
+    <input title="Enter the terms you wish to search for" aria-label="Enter the terms you wish to search for" class="form-control form-text" type="text" id="edit-search-block-form--4" name="search_block_form" value="" size="15" maxlength="128" /><div class="form-actions input-group-btn form-wrapper form-group" id="edit-actions--2"><button class="btn btn-primary form-submit" aria-label="Search" type="submit" id="edit-submit--2" name="op" value="&lt;span class=&quot;icon fas fa-search&quot;&gt;&lt;span class=&quot;hide&quot;&gt;Search&lt;/span&gt;&lt;/span&gt;"><span class="icon fas fa-search"><span class="hide">Search</span></span></button>
+</div><input type="hidden" name="form_build_id" value="form-yZgyCq9q0l_O1yISNUjnwfQc6fnBiELLtUc5TfMpcbQ" />
+<input type="hidden" name="form_id" value="search_block_form" />
+  </div>
+</div>
+</div></form>
+</div>
+  </div>
+          </div>
+                    <div id="main-links" class="">
+            <a id="main-links-trigger" role="button" class="fas fa-bars" aria-label="Main menu" tabindex="0"></a>
+            <div class="links-container">
+              <nav id="main-menu" name="Main navigation">
+                  <div class="region region-navigation">
+    <div id='block-menu-block-top-nav' class="block block-menu-block clearfix">
+      
+  <div class="menu-block-wrapper menu-block-top_nav menu-name-menu-og-138456 parent-mlid-0 menu-level-1">
+  <ul class="menu nav navbar-nav fa-caret" aria-expanded="false"><li class="first leaf menu-mlid-37026">
+      <div class='item-container '>
+        <a href="/home"><span>Home</span><span class="icon" aria-hidden="true"></span></a> 
+      </div>
+    </li>
+<li class="expanded active-trail menu-mlid-38051">
+      <div class='item-container has-sub-items'>
+        <a href="/about" class="active-trail" aria-expanded="false" aria-haspopup="true" id="submenu-button-38051" aria-controls="submenu-container-38051"><span>About</span><span class="icon" aria-hidden="true"></span></a> <a class="mobile-expand fas fa-plus" tabindex="0" role="button" aria-haspopup= "true" aria-controls="submenu-container-38051" aria-label="Expand: About"></a>
+      </div>
+    <ul id="submenu-container-38051" aria-labelledby="submenu-38051" class="menu nav navbar-nav fa-caret" aria-expanded="false"><li class="first leaf has-children menu-mlid-58161">
+      <div class='item-container '>
+        <a href="/centres"><span>Centres</span><span class="icon" aria-hidden="true"></span></a> 
+      </div>
+    </li>
+<li class="leaf has-children active-trail menu-mlid-58271">
+      <div class='item-container '>
+        <a href="/resources" class="active-trail"><span>Resources</span><span class="icon" aria-hidden="true"></span></a> 
+      </div>
+    </li>
+<li class="last leaf menu-mlid-38881">
+      <div class='item-container '>
+        <a href="/people"><span>People</span><span class="icon" aria-hidden="true"></span></a> 
+      </div>
+    </li>
+</ul></li>
+<li class="leaf menu-mlid-38876">
+      <div class='item-container '>
+        <a href="/news"><span>News</span><span class="icon" aria-hidden="true"></span></a> 
+      </div>
+    </li>
+<li class="leaf menu-mlid-38151">
+      <div class='item-container '>
+        <a href="/events"><span>Events</span><span class="icon" aria-hidden="true"></span></a> 
+      </div>
+    </li>
+<li class="leaf menu-mlid-38146">
+      <div class='item-container '>
+        <a href="/blog"><span>Blog</span><span class="icon" aria-hidden="true"></span></a> 
+      </div>
+    </li>
+<li class="leaf menu-mlid-353771">
+      <div class='item-container '>
+        <a href="/dr-lib"><span>Knowledge Centre</span><span class="icon" aria-hidden="true"></span></a> 
+      </div>
+    </li>
+<li class="leaf menu-mlid-397546">
+      <div class='item-container '>
+        <a href="/oxford-text-archive"><span>Deposit</span><span class="icon" aria-hidden="true"></span></a> 
+      </div>
+    </li>
+<li class="leaf menu-mlid-490361">
+      <div class='item-container '>
+        <a href="/courses"><span>Training</span><span class="icon" aria-hidden="true"></span></a> 
+      </div>
+    </li>
+<li class="last leaf menu-mlid-362466">
+      <div class='item-container '>
+        <a href="/clarin-other-countries"><span>CLARIN in other countries</span><span class="icon" aria-hidden="true"></span></a> 
+      </div>
+    </li>
+</ul></div>
+
+</div>
+  </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div id="wrapper-main" class="wrapper wrapper-main region-indented standard-content-width">
+
+    <!-- REGION PREFACE -->
+    <div id="preface">
+                            </div>
+    <!-- END REGION PREFACE -->
+
+    <!-- main container -->
+    <div id="main-container" class="container">
+
+        <!-- REGION CONTENT -->
+        <div id="maincontent" class="row">
+          
+                        <aside class="col-sm-3 sidebar-first">
+                  <div class="region region-sidebar-first well">
+    <div id='block-menu-block-sidebar-nav' class="block block-menu-block clearfix">
+      
+  <div class="menu-block-wrapper menu-block-sidebar_nav menu-name-menu-og-138456 parent-mlid-58271 menu-level-1">
+  <ul class="menu nav navbar-nav"><li class="menu-parent-item"><a href="/resources"><span>Resources</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="first leaf menu-mlid-58351"><a href="/lancsbox"><span>#LancsBox</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf active-trail menu-mlid-58501 menu-item-current active"><a href="/bnc" class="active-trail active"><span>BNC1994</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf menu-mlid-424491"><a href="/bnclab"><span>BNCLab</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf menu-mlid-58356"><a href="/claws"><span>CLAWS</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf menu-mlid-58361"><a href="/clic"><span>CLiC</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf menu-mlid-181326"><a href="/corcencc"><span>CorCenCC</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf menu-mlid-58366"><a href="/cqpweb-lancaster-university"><span>CQPweb</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf menu-mlid-465206"><a href="/dr-lib-0"><span>DR-LIB</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf menu-mlid-58376"><a href="/gate"><span>GATE</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf menu-mlid-62171"><a href="/gate-cloud"><span>GATE Cloud</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf menu-mlid-58411"><a href="/hansard-corpus"><span>The Hansard Corpus</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf menu-mlid-387546"><a href="/historical-thesaurus-of-english"><span>Historical Thesaurus of English</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf menu-mlid-463071"><a href="/ivo-corpus"><span>IVO Corpus</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf menu-mlid-196201"><a href="/language-technology-software"><span>Language Technology Software (Edinburgh)</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf menu-mlid-489186"><a href="/latinise-corpus"><span>LatinISE Corpus</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf menu-mlid-58386"><a href="/mapping-metaphor"><span>Mapping Metaphor</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf menu-mlid-58391"><a href="/oxford-text-archive"><span>Oxford Text Archive Collections</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf menu-mlid-58406"><a href="/scottish-corpus-texts-and-speech"><span>Scottish Corpus of Texts and Speech</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf menu-mlid-58396"><a href="/spoken-bnc2014"><span>Spoken BNC2014</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf menu-mlid-58416"><a href="/vard"><span>VARD</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="leaf menu-mlid-58421"><a href="/wmatrix"><span>Wmatrix</span><span class="icon" aria-hidden="true"></span></a></li>
+<li class="last leaf menu-mlid-58401"><a href="/wordtree"><span>Wordtree</span><span class="icon" aria-hidden="true"></span></a></li>
+</ul></div>
+
+</div>
+  </div>
+              </aside>  <!-- /#sidebar-first-1 -->
+                    
+            <div  class="col-sm-9">
+              
+                <div id="main-content" role="main">
+
+                                                                            <div class="row">
+                          <div class="h1_row col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                              <div class="header-title">
+                                  <h1 class="page-header row ">BNC1994</h1>
+
+                                                                                            </div>
+                          </div>
+                      </div>
+                                    
+                                                        <div class="region region-content">
+    <div id='block-system-main' class="block block-system clearfix">
+      
+  <div class="panelizer-view-mode node node-full node-oxdrupal-basic-page node-260151"  >
+          <div class="bootstrap-twocol-stacked" >
+      <div class="row">
+      <div class="panel-panel top col-xs-12 col-sm-12 col-md-12 col-lg-12"><div class="panel-pane pane-entity-field pane-node-field-region-1"  >
+  
+      
+  
+  <div class="pane-content">
+    
+<div class="paragraphs-items paragraphs-items-field-region-1 paragraphs-items-field-region-1-full paragraphs-items-full">
+  
+<div class="field field-name-field-region-1 field-type-paragraphs field-label-hidden">
+    <div class="field-items">
+                  <div class="field-item private-show even">
+
+                <div class="entity entity-paragraphs-item paragraphs-item-wysiwyg-content-area margin-bottom widget-width-12-columns widget-style-main paragraphs-item-340081">
+      <div id="widget-id-340081"></div>
+    <div class="content">
+        
+<div class="field field-name-field-content field-type-text-with-summary field-label-hidden">
+    <div class="field-items">
+                  <div class="field-item private-show even">
+
+                <p>The British National Corpus 1994 (BNC1994) is a 100 million word collection of samples of written and spoken language from a wide range of sources, designed to represent a wide cross-section of British English, both spoken and written, from the late twentieth century.</p>
+<ul>
+<li><a href="http://hdl.handle.net/20.500.14106/2554">Download the whole BNC1994 corpus</a> from the Oxford Text Archive</li>
+<li><a href="https://cqpweb.lancs.ac.uk/bncxmlweb/">Explore BNC1994 online with CQPWeb</a> at Lancaster University </li>
+</ul>
+<p>More information can be found on the <a href="http://www.natcorp.ox.ac.uk/" target="_blank">BNC website</a>.</p>
+<p>This original version of the BNC was released in 1994, and is an important historical snapshot of the language at that time. A comparative corpus from a more recent period is also available in the form of the <a href="http://corpora.lancs.ac.uk/bnc2014/" target="_blank">British National Corpus 2014</a>.</p>
+      </div>
+            </div>
+</div>
+  </div>
+</div>
+      </div>
+                        <div class="field-item private-show odd">
+
+                <div class="panelizer-view-mode paragraphs-item paragraphs-item-full paragraphs-item-grid-listing paragraphs-item-3430751 margin-bottom widget-width-12-columns" id="panelizer-item-3430751" >
+      <div id="widget-id-3430751"></div>
+          <div class="panel-display panel-1col clearfix" >
+  <div class="panel-panel panel-col">
+    <div><div class="panel-pane pane-grid-listing-widget"  >
+  
+      
+  
+  <div class="pane-content">
+    <div id="listing-wrapper-3430751" class="listing-wrapper grid-listing-wrapper with-title no-link no-controls" style="">
+            <div class="widget-header ">
+            <h2 class="widget-title">Related content</h2>                         <div class="clearfix"></div>
+        </div>
+              <div id="react-listing-grid_listing-3430751-89605621" class="react-listing items-per-row-6" 
+        aria-live="off"
+        data-widget-id="3430751"
+        data-revision-id="89605621"
+        data-item-style="tile_text_displayed"
+        data-items-per-page="24"
+        data-items-per-row="6"
+        data-display-pager="true"
+        data-widget-background-colour=""
+        data-widget-title-colour=""
+        data-link-url=""
+        data-link-title=""
+        data-margin-top=""
+        data-margin-bottom="1"
+        data-display-width="1"
+        data-display-content-subtype="false"
+        data-display-date-infobox="true"
+        data-display-listing-text='1'
+        data-display-tertiary-text='1'
+        data-taxonomy-prefilters=''
+        data-taxonomy-filters='[]'
+        data-sort-order="asc"
+        data-display-sort-order="false"
+        data-show-event-date-filter="false"
+        data-empty-listing-message=''
+      data-container-classes="item-listing grid-listing view-content row items-per-row-6 item-style-tile_text_displayed items-per-row-6"></div>
+    </div>
+  </div>
+
+  
+  </div>
+</div>
+  </div>
+</div>
+</div>
+      </div>
+            </div>
+</div>
+</div>
+  </div>
+
+  
+  </div>
+</div>
+    </div>
+  
+  
+  </div>
+</div>
+
+</div>
+  </div>
+                </div>
+            </div>
+
+                                <!-- Optional feedback form -->
+                            <div id="oxdrupal_feedback_form_wrapper" role="form">
+                                      </div>
+                            <!-- End Optional feedback form -->
+        </div>
+
+        <!-- REGION POSTSCRIPT -->
+        <div id="postscript">
+                                                </div><!-- END REGION POSTSCRIPT -->
+
+    </div><!-- end content container -->
+</div>
+<footer class="region-indented standard-content-width footer-no-img">
+    <!-- REGION PREFOOTER LOGOS -->
+    <div id="wrapper-prefooter-logos" class="wrapper">
+        <div class="container">
+            <div id="prefooter-logos" class="row">
+                                                        </div>
+        </div><!-- end prefooter-logos container -->
+    </div><!-- end prefooter-logos wrapper -->
+    <!-- END REGION PREFOOTER LOGOS -->
+
+    <!-- REGION FOOTER TOP -->
+    <div id="wrapper-footer" class="wrapper">
+              <div id="footer" class="container">
+            <div class="row">
+              <div class="panelizer-view-mode node node-full node-oxdrupal-site-footer node-138486"  >
+          <div class="bootstrap-twocol-stacked" >
+  
+      <div class="row">
+      <div class="panel-panel left col-xs-12 col-sm-9 col-md-9 col-lg-9"><div class="panel-pane pane-entity-field pane-node-field-region-1"  >
+  
+      
+  
+  <div class="pane-content">
+    
+<div class="paragraphs-items paragraphs-items-field-region-1 paragraphs-items-field-region-1-full paragraphs-items-full">
+  
+<div class="field field-name-field-region-1 field-type-paragraphs field-label-hidden">
+    <div class="field-items">
+                  <div class="field-item private-show even">
+
+                <div class="entity entity-paragraphs-item paragraphs-item-wysiwyg-content-area margin-bottom widget-width-12-columns widget-style-main paragraphs-item-341881">
+      <div id="widget-id-341881"></div>
+    <div class="content">
+        
+<div class="field field-name-field-content field-type-text-with-summary field-label-hidden">
+    <div class="field-items">
+                  <div class="field-item private-show even">
+
+                <p>Faculty of Linguistics, Philology &amp; Phonetics<br />
+Clarendon Institute<br />
+Walton Street<br />
+Oxford<br />
+OX1 2HG</p>
+      </div>
+            </div>
+</div>
+  </div>
+</div>
+      </div>
+            </div>
+</div>
+</div>
+  </div>
+
+  
+  </div>
+</div>
+      <div class="panel-panel right col-xs-12 col-sm-3 col-md-3 col-lg-3"><div class="panel-pane pane-entity-field pane-node-field-mandatory-content"  >
+  
+      
+  
+  <div class="pane-content">
+    
+<div class="paragraphs-items paragraphs-items-field-mandatory-content paragraphs-items-field-mandatory-content-full paragraphs-items-full">
+  
+<div class="field field-name-field-mandatory-content field-type-paragraphs field-label-hidden">
+    <div class="field-items">
+                  <div class="field-item private-show even">
+
+                <div class="entity entity-paragraphs-item paragraphs-item-wysiwyg-content-area margin-bottom widget-width-12-columns widget-style-main paragraphs-item-125581">
+      <div id="widget-id-125581"></div>
+    <div class="content">
+        
+<div class="field field-name-field-content field-type-text-with-summary field-label-hidden">
+    <div class="field-items">
+                  <div class="field-item private-show even">
+
+                <ul>
+<li><a href="https://www.clarin.ac.uk/copyright">Copyright</a></li>
+<li><a href="https://www.clarin.ac.uk/picture_credits">Picture credits</a></li>
+<li><a href="https://www.clarin.ac.uk/accessibility">Accessibility statement</a></li>
+<li><a href="https://www.clarin.ac.uk/privacy">Privacy statement</a></li>
+</ul>
+      </div>
+            </div>
+</div>
+  </div>
+</div>
+      </div>
+            </div>
+</div>
+</div>
+  </div>
+
+  
+  </div>
+</div>
+    </div>
+  
+  </div>
+</div>
+            </div>
+        </div>
+      <!-- end container -->
+    </div> <!-- end wrapper -->
+    <div id="wrapper-footer-bottom" class="wrapper">
+        <div id="footer-bottom" class="container">
+            <div class="row">
+                          </div>
+        </div> <!-- end container -->
+    </div> <!-- end wrapper -->
+
+    <!-- REGION POSTFOOTER LOGOS -->
+    <div id="wrapper-postfooter-logos" class="wrapper">
+        <div class="container">
+            <div id="postfooter-logos" class="row">
+                                <div class="region region-postfooter-logos">
+    <div id='block-views-affiliate-logos-blk-postfooter' class="block block-views clearfix">
+      
+  <div class="view view-affiliate-logos view-id-affiliate_logos view-display-id-blk_postfooter block-affiliate-logos view-dom-id-6a35a945fff738a80c2c10b7d4cc09b0">
+        
+  
+  
+      <div 
+   class="view-content row">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+    <div class="views-field views-field-wrapper">
+  <span class="field-content">
+    <span class="alignment-helper"></span>
+          <a 
+        href="https://www.ukri.org/councils/ahrc/"
+        title="AHRC"
+              >
+        <img typeof="foaf:Image" class="img-responsive" src="https://www.clarin.ac.uk/sites/default/files/styles/affiliate_logo/public/clarin/images/media/ukri-ahrc-square-logo.png?itok=X80SkRoK" width="144" height="120" alt="Logo for the Arts and Humanities Research Council, incorporating UKRI logo" />          </a>
+      </span>  
+</div>
+  </div>
+  <div class="views-row views-row-2 views-row-even">
+    <div class="views-field views-field-wrapper">
+  <span class="field-content">
+    <span class="alignment-helper"></span>
+          <a 
+        href="https://www.clarin.eu"
+        title="CLARIN ERIC"
+              >
+        <img typeof="foaf:Image" class="img-responsive" src="https://www.clarin.ac.uk/sites/default/files/styles/affiliate_logo/public/clarin/images/media/clarin-logo.png?itok=-3-tCOpg" width="106" height="120" alt="CLARIN" />          </a>
+      </span>  
+</div>
+  </div>
+  <div class="views-row views-row-3 views-row-odd views-row-last">
+    <div class="views-field views-field-wrapper">
+  <span class="field-content">
+    <span class="alignment-helper"></span>
+          <a 
+        href="https://www.ling-phil.ox.ac.uk/"
+        title="https://www.ling-phil.ox.ac.uk/"
+                target="_blank"
+              >
+        <img typeof="foaf:Image" class="img-responsive" src="https://www.clarin.ac.uk/sites/default/files/styles/affiliate_logo/public/clarin/images/page/flpp_logo.png?itok=lo3lvAp7" width="100" height="100" alt="Logo of the Faculty of Linguistics, Philology and Phonetics, University of Oxford" />          </a>
+      </span>  
+</div>
+  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>
+</div>
+  </div>
+                          </div>
+        </div><!-- end postfooter-logos container -->
+    </div><!-- end postfooter-logos wrapper -->
+    <!-- END REGION POSTFOOTER LOGOS -->
+
+</footer>
+<div role="complementary" aria-label="Powered by Oxford Mosaic banner">
+  <div class="powered-by-wrapper wrapper region-indented">
+    <div class="container">
+      <div class="powered-by">
+        <a href="http://oxfordmosaic.web.ox.ac.uk/" target="_blank">
+          <img class="om-logo" src ="/sites/all/themes/custom/oxtheme/images/logo/mosaic-logo.png" alt="Oxford Mosaic logo" />
+          <div class="pb-text">
+            <span class="pb">powered by</span>
+            <span class="om">oxford mosaic</span>
+          </div>
+          <img class="it-logo" src ="/sites/all/themes/custom/oxtheme/images/logo/it-services-logo.png" alt="IT Services logo" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+  <script src="https://www.clarin.ac.uk/sites/all/themes/contrib/bootstrap/js/bootstrap.js?t7gi5y"></script>
+
+  <a class="hide" href="/sitelist.html">List of site pages</a>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"74a7a5817d","applicationID":"51794328","transactionName":"MlUHbBNWCkJZW0JfDgsfJFsVXgtfF1dOUhMQQARUPlQLX0xdWEI+El8XUwdbC0ZnX1NCPgtfAV0=","queueTime":16,"applicationTime":1053,"atts":"HhIEGltMGUw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

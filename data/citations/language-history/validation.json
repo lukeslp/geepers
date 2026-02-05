@@ -1,0 +1,14 @@
+{
+  "project": "language-history",
+  "generated_at": "2025-12-21T18:05:00Z",
+  "sources": [
+    "Ethnologue 26th edition (2023)",
+    "Glottolog 4.8",
+    "Academic linguistic literature (see DATA_SOURCES.md)",
+    "National census data",
+    "ISO 639-3 reference tables",
+    "Wikidata P220/P218/P219/P282"
+  ],
+  "url_checks": "not_run",
+  "notes": "ISO 639-3 and Wikidata fetched via HTTP; academic citations not URL-validated."
+}

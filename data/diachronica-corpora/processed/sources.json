@@ -1,0 +1,255 @@
+{
+  "meta": {
+    "generated_at": "2025-12-21T18:33:42.374693Z",
+    "count": 21,
+    "errors": []
+  },
+  "sources": [
+    {
+      "name": "Helsinki Corpus license (Kielipankki)",
+      "url": "https://www.kielipankki.fi/lic/hc-tei-xml/?lang=en",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/Helsinki_Corpus_license_Kielipankki.html",
+      "snippets": [
+        "\"> <header><h1 style=\"display: inline-block;\" class=\"first\">CLARIN ACA end-user license +NC +DEP v2.1</h1>  <span style=\"float: right; vertical-align: top\"><b><a href=\"?lang=fi\">N\u00e4yt\u00e4 lisenssiteksti suomeksi",
+        "ng the use of the Resource on other devices and in other formats.<h2>Additional license terms as defined in the Terms of Use Agreement:</h2> <h3>Identification and Access Conditions</h3> <ul> <li><b>ID</b>: ",
+        "hrough the CLARIN service by separate agreement with CLARIN.</li> </ul> <p>This license has been made in compliance with copyright agreements by WIPO - the World Intellectual Property Organization. The right",
+        "WIPO - the World Intellectual Property Organization. The rights granted in this license shall be so interpreted that in case applicable intellectual property laws grant rights not mentioned in this license, ",
+        "n case applicable intellectual property laws grant rights not mentioned in this license, they are also regarded as part of the rights to be licensed; the purpose of this license is not to restrict any rights",
+        "t mentioned in this license, they are also regarded as part of the rights to be licensed; the purpose of this license is not to restrict any rights intended to be licensed within different legal systems. Add"
+      ]
+    },
+    {
+      "name": "Helsinki Corpus overview (CoRD)",
+      "url": "https://varieng.helsinki.fi/CoRD/corpora/HelsinkiCorpus/",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/Helsinki_Corpus_overview_CoRD.html",
+      "snippets": [
+        "elsinki; The Academy of Finland </p>\r                   <h2>Reference lines and copyright</h2>\r                   <p><em>The Helsinki Corpus of English Texts</em> (1991). Department of Modern Languages, Univer"
+      ]
+    },
+    {
+      "name": "COHA (English-Corpora)",
+      "url": "https://www.english-corpora.org/coha/",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/COHA_English-Corpora.html",
+      "snippets": []
+    },
+    {
+      "name": "COHA (UCLA Dataverse TDM)",
+      "url": "https://dataverse.ucla.edu/dataset.xhtml?persistentId=doi:10.25346/S6/6I8JL1",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/COHA_UCLA_Dataverse_TDM.html",
+      "snippets": [
+        "his can and does cause downtime for the websites, which makes their resources inaccessible for everyone.</p><p>Anubis is a compromise. Anubis uses a <a href=\"https://anubis.techaro.lol/docs/design/why-proof"
+      ]
+    },
+    {
+      "name": "COHA (Kielipankki)",
+      "url": "https://www.kielipankki.fi/corpora/coha/",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/COHA_Kielipankki.html",
+      "snippets": [
+        "><li><a href=\"#Resource_information\">Resource information</a></li><li><a href=\"#License_and_access\">License and access</a><ul><li><a href=\"#Korp_versions\">Korp versions</a></li><li><a href=\"#Downloadable_ver",
+        "rce_information\">Resource information</a></li><li><a href=\"#License_and_access\">License and access</a><ul><li><a href=\"#Korp_versions\">Korp versions</a></li><li><a href=\"#Downloadable_versions\">Downloadable ",
+        "\">Name and metadata</th><th class=\"\" data-column_name_search=\"wpda_hyperlink_7\">License</th><th class=\"\" data-column_name_search=\"wpda_hyperlink_8\">Location</th><th class=\"\" data-column_name_search=\"wpda_hyp",
+        "\">Name and metadata</th><th class=\"\" data-column_name_search=\"wpda_hyperlink_7\">License</th><th class=\"\" data-column_name_search=\"wpda_hyperlink_8\">Location</th><th class=\"\" data-column_name_search=\"wpda_hyp",
+        "_hyperlink_7 wpda_format_string\",\"name\":\"wpda_hyperlink_7\",\"targets\":2,\"label\":\"License\",\"searchBuilderType\":\"string\"},{\"className\":\"wpda_hyperlink_8 wpda_format_string\",\"name\":\"wpda_hyperlink_8\",\"targets\":3",
+        "\">Name and metadata</th><th class=\"\" data-column_name_search=\"wpda_hyperlink_7\">License</th><th class=\"\" data-column_name_search=\"formats\">Formats</th><th class=\"\" data-column_name_search=\"support_level\">Sup"
+      ]
+    },
+    {
+      "name": "EEBO-TCP licensing",
+      "url": "https://textcreationpartnership.org/about-the-tcp/about-partner-libraries/licensing-and-access/",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/EEBO-TCP_licensing.html",
+      "snippets": [
+        "t Agreement.</em></p> <ul> <li>The LMA conveys a non-exclusive non-transferable license in the texts.</li> <li>The partner library may load and serve the texts locally (to members or walk-ins) as they ordina",
+        "load and serve the texts locally (to members or walk-ins) as they ordinarily do licensed electronic resources, and will use ordinary means to inform users of their responsibility not to distribute them furth",
+        "Access</h3> <p>Before becoming a TCP partner, an institution had to purchase or license access to the corresponding database. This transaction was negotiated directly between the institution and the publishe",
+        "tion was negotiated directly between the institution and the publisher, and the license pertained to all content owned by the publisher. This might include:</p> <ul> <li>Page images</li> <li>Searchable text ",
+        "ted, TCP partners shared permanent ownership of the texts, which are all in the public domain. However, the TCP\u2019s agreements with our commercial partners granted these companies a limited window of time to be the ",
+        "artners or (new) subscribers with the full-text option.&#8221;</p> <h1>Previous Terms of Use for the EEBO Phase 2 files</h1> </div> </div> <p>Till August 2020, EEBO TCP Phase 2 partners (or rather, their u"
+      ]
+    },
+    {
+      "name": "EEBO-TCP Phase 1 (OTA)",
+      "url": "https://ota.bodleian.ox.ac.uk/repository/xmlui/handle/20.500.12024/5",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/EEBO-TCP_Phase_1_OTA.html",
+      "snippets": [
+        "reation Partnership web site</ref>.</p> </p> <div class=\"detail-view-rights-and-license\"> <p class=\"copyright-text\"> <p xmlns:mets=\"http://www.loc.gov/METS/\" xmlns:xlink=\"http://www.w3.org/TR/xlink/\" xmlns:x",
+        "web site</ref>.</p> </p> <div class=\"detail-view-rights-and-license\"> <p class=\"copyright-text\"> <p xmlns:mets=\"http://www.loc.gov/METS/\" xmlns:xlink=\"http://www.w3.org/TR/xlink/\" xmlns:xsi=\"http://www.w3.org/",
+        "larin-logo.png\" alt=\"Clarin\" width=\"230\" /> </div>  </div>   <div class=\"lindat-copyright\">     <p>       <strong>Oxford Text Archive</strong>     </p>     <p>Copyright (c) 2019 University of Oxford. All right",
+        "-copyright\">     <p>       <strong>Oxford Text Archive</strong>     </p>     <p>Copyright (c) 2019 University of Oxford. All rights reserved.</p>   </div>  <!-- Matomo --> <script type=\"text/javascript\">   var",
+        " 25,363 texts created during Phase 1 of the project have been released into the public domain as of 1 January 2015. Anyone can now take and use these texts for their own purposes, but we respectfully request that ",
+        "tp://www.openarchives.org/ore/atom/\" xmlns:ore=\"http://www.openarchives.org/ore/terms/\" xmlns:atom=\"http://www.w3.org/2005/Atom\" class=\"detail-view\">\u00a0                          <p class=\"intro-text\"> <p xml"
+      ]
+    },
+    {
+      "name": "LAEME (CoRD)",
+      "url": "https://varieng.helsinki.fi/CoRD/corpora/LAEME/",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/LAEME_CoRD.html",
+      "snippets": [
+        "linskas, Professor Ryuta Murakami.</p>\r                 <h2>Reference lines and copyright</h2>\r \t\t\t\t\r \t\t\t\t<p>LAEME is intended as a non-commercial research and teaching resource. We ask you to respect the mate",
+        "y of California, LA)</p>\r \t\t\t\t\r \t\t\t\t<h2>Availability</h2>\r \t\t\t\t\r \t\t\t\t<p> Freely accessible online at<a href=\"http://www.lel.ed.ac.uk/ihd/laeme2/laeme2.html\">http://www.lel.ed.ac.uk/ihd/laeme2/laeme2.html</a"
+      ]
+    },
+    {
+      "name": "LAEME (Edinburgh)",
+      "url": "http://amc.ppls.ed.ac.uk/laeme/",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/LAEME_Edinburgh.html",
+      "snippets": [
+        " href=\"javascript:;\">Original Documentation</a>\r                         <a id=\"downloadCorpus\" class=\"dropdown-item\" href=\"./lib/datafiles/LAEME-corpus.zip\" download>Download corpus</a>\r                     ",
+        "=\"downloadCorpus\" class=\"dropdown-item\" href=\"./lib/datafiles/LAEME-corpus.zip\" download>Download corpus</a>\r                         <a id=\"xml\" class=\"dropdown-item divpages\" href=\"javascript:;\">XML structu",
+        "dCorpus\" class=\"dropdown-item\" href=\"./lib/datafiles/LAEME-corpus.zip\" download>Download corpus</a>\r                         <a id=\"xml\" class=\"dropdown-item divpages\" href=\"javascript:;\">XML structure</a>\r  "
+      ]
+    },
+    {
+      "name": "BNC getting a copy",
+      "url": "http://www.natcorp.ox.ac.uk/getting/",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/BNC_getting_a_copy.html",
+      "snippets": [
+        "     All BNC products are distributed under a <a class=\"link_ref\" href=\"../docs/licence.html\" target=\"_top\" title=\"To the BNC End User Licence\">user licence</a> (also available in <a class=\"link_ref\" href=\".",
+        "\"link_ref\" href=\"../docs/licence.html\" target=\"_top\" title=\"To the BNC End User Licence\">user licence</a> (also available in <a class=\"link_ref\" href=\"../docs/licence.pdf\" target=\"_top\" title=\"To the BNC End",
+        "f=\"../docs/licence.html\" target=\"_top\" title=\"To the BNC End User Licence\">user licence</a> (also available in <a class=\"link_ref\" href=\"../docs/licence.pdf\" target=\"_top\" title=\"To the BNC End User Licence ",
+        " Licence\">user licence</a> (also available in <a class=\"link_ref\" href=\"../docs/licence.pdf\" target=\"_top\" title=\"To the BNC End User Licence (pdf format)\">pdf-format</a>). Please read it carefully before or",
+        "=\"link_ref\" href=\"../docs/licence.pdf\" target=\"_top\" title=\"To the BNC End User Licence (pdf format)\">pdf-format</a>). Please read it carefully before ordering.            </p> <p><a name=\"idp3067696\"><!--an",
+        "the online services which are available, in preference to obtaining your    own licence and copy of the corpus. The British Library offers a <a class=\"link_ref\" href=\"../using/index.xml?ID=simple\" target=\"_t"
+      ]
+    },
+    {
+      "name": "BNC home",
+      "url": "http://www.natcorp.ox.ac.uk/",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/BNC_home.html",
+      "snippets": [
+        "72\"><!--anchor--></a><a class=\"link_ref\" href=\"http://www.natcorp.ox.ac.uk/docs/licence.html\" target=\"_top\" title=\"licence\">BNC1994 User Licence</a></li><li class=\"item\"><a name=\"idm2221600\"><!--anchor--></a",
+        "_ref\" href=\"http://www.natcorp.ox.ac.uk/docs/licence.html\" target=\"_top\" title=\"licence\">BNC1994 User Licence</a></li><li class=\"item\"><a name=\"idm2221600\"><!--anchor--></a><a class=\"link_ref\" href=\"http://w",
+        ".natcorp.ox.ac.uk/docs/licence.html\" target=\"_top\" title=\"licence\">BNC1994 User Licence</a></li><li class=\"item\"><a name=\"idm2221600\"><!--anchor--></a><a class=\"link_ref\" href=\"http://www.natcorp.ox.ac.uk/cp",
+        "chor--></a>             <a class=\"link_ref\" href=\"cpr.xml\" target=\"_top\" title=\"Copyright\">Copyright</a>           </li><li class=\"item\"><a name=\"idm7898016\"><!--anchor--></a>             <a class=\"link_ref\" h",
+        "             <a class=\"link_ref\" href=\"cpr.xml\" target=\"_top\" title=\"Copyright\">Copyright</a>           </li><li class=\"item\"><a name=\"idm7898016\"><!--anchor--></a>             <a class=\"link_ref\" href=\"contac",
+        ".ox.ac.uk)</em> 2022-10-26. Martin Wynne. <div><em><a href=\"http://www.ox.ac.uk/copyright/\">\u00a9 2022, University of Oxford</a></em>.     </div></div></div></div></div></body></html> "
+      ]
+    },
+    {
+      "name": "BNC (CLARIN-UK)",
+      "url": "https://www.clarin.ac.uk/bnc",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/BNC_CLARIN-UK.html",
+      "snippets": [
+        "av\"]};(window.NREUM||(NREUM={})).loader_config={xpid:\"VQABUFZaCxAFVVZbAwIFXg==\",licenseKey:\"74a7a5817d\",applicationID:\"51794328\",browserID:\"51795500\"};;/*! For license information please see nr-loader-full-1",
+        "licenseKey:\"74a7a5817d\",applicationID:\"51794328\",browserID:\"51795500\"};;/*! For license information please see nr-loader-full-1.306.0.min.js.LICENSE.txt */ (()=>{var e,t,r={384:(e,t,r)=>{\"use strict\";r.d(t,{",
+        "1795500\"};;/*! For license information please see nr-loader-full-1.306.0.min.js.LICENSE.txt */ (()=>{var e,t,r={384:(e,t,r)=>{\"use strict\";r.d(t,{NT:()=>a,US:()=>u,Zm:()=>o,bQ:()=>d,dV:()=>c,pV:()=>l});var n",
+        "var n=r(384),i=r(8122);const s={beacon:n.NT.beacon,errorBeacon:n.NT.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void",
+        "ts:void 0,transactionName:void 0,tNamePlain:void 0};function a(e){try{return!!e.licenseKey&&!!e.errorBeacon&&!!e.applicationID}catch(e){return!1}}const o=e=>(0,i.a)(e,s)},2614:(e,t,r)=>{\"use strict\";r.d(t,{B",
+        "ar x=r(7836),T=r(3241);const E={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},S=e=>(0,u.a)(e,E),_=new Set;function A(e,t={},r,a){let{init:o,info:c,loader"
+      ]
+    },
+    {
+      "name": "Wiktionary copyrights",
+      "url": "https://en.wiktionary.org/wiki/Wiktionary:Copyrights",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/Wiktionary_copyrights.html",
+      "snippets": [
+        "onical\" href=\"https://en.wiktionary.org/wiki/Wiktionary:Copyrights\"> <link rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.en\"> <link rel=\"alternate\" type=\"application/atom+xml\" title",
+        "i/Wiktionary:Copyrights\"> <link rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.en\"> <link rel=\"alternate\" type=\"application/atom+xml\" title=\"Wiktionary Atom feed\" href=\"/w/index.php?",
+        " from legal liability. </p><p>The original texts of Wiktionary entries are dual-licensed to the public under both the <b><a href=\"/wiki/Wiktionary:CC-BY-SA\" class=\"mw-redirect\" title=\"Wiktionary:CC-BY-SA\">Cr",
+        "\"Wiktionary:CC-BY-SA\">Creative Commons Attribution-ShareAlike 4.0 International License</a></b> (CC-BY-SA) and the <b><a href=\"/wiki/Wiktionary:GFDL\" class=\"mw-redirect\" title=\"Wiktionary:GFDL\">GNU Free Docu",
+        "ionary:GFDL\" class=\"mw-redirect\" title=\"Wiktionary:GFDL\">GNU Free Documentation License</a></b> (GFDL). The full text of both licenses can be found at <a href=\"/wiki/Wiktionary:Text_of_Creative_Commons_Attri",
+        "nary:GFDL\">GNU Free Documentation License</a></b> (GFDL). The full text of both licenses can be found at <a href=\"/wiki/Wiktionary:Text_of_Creative_Commons_Attribution-ShareAlike_4.0_International_License\" t"
+      ]
+    },
+    {
+      "name": "Wikimedia dumps legal",
+      "url": "https://dumps.wikimedia.org/legal.html",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/Wikimedia_dumps_legal.html",
+      "snippets": [
+        "meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />     <title>License information about Wikimedia dump downloads</title>     <link rel=\"stylesheet\" type=\"text/css\" href=\"/dumps.css\" /> </he",
+        " <body>     <div id=\"globalWrapper\">         <div id=\"content\">             <h1>License information</h1>             <p>Wikimedia\u2019s <a href=\"https://wikimediafoundation.org/about/mission/\">mission</a> is to ",
+        "   <h2>Text</h2>  <p>Except as discussed below, all original textual content is licensed under the <a href=\"https://www.gnu.org/licenses/fdl-1.3.html\" title=\"GNU Free Documentation License\"> GNU Free Documen",
+        "all original textual content is licensed under the <a href=\"https://www.gnu.org/licenses/fdl-1.3.html\" title=\"GNU Free Documentation License\"> GNU Free Documentation License</a> (GFDL) and the <a href=\"https",
+        " href=\"https://www.gnu.org/licenses/fdl-1.3.html\" title=\"GNU Free Documentation License\"> GNU Free Documentation License</a> (GFDL) and the <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" title=\"Cr",
+        "es/fdl-1.3.html\" title=\"GNU Free Documentation License\"> GNU Free Documentation License</a> (GFDL) and the <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" title=\"Creative Commons Attribution-Share-"
+      ]
+    },
+    {
+      "name": "Wikipedia database download",
+      "url": "https://en.wikipedia.org/wiki/Wikipedia:Database_download",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/Wikipedia_database_download.html",
+      "snippets": [
+        "l\" href=\"https://en.wikipedia.org/wiki/Wikipedia:Database_download\"> <link rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.en\"> <link rel=\"alternate\" type=\"application/atom+xml\" title",
+        "pedia:Database_download\"> <link rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/4.0/deed.en\"> <link rel=\"alternate\" type=\"application/atom+xml\" title=\"Wikipedia Atom feed\" href=\"/w/index.php?t",
+        "\" title=\"Wikipedia:Maintenance\">Wikipedia:Maintenance</a>). All text content is licensed under the <a href=\"/wiki/Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License\" titl",
+        "Wikipedia:Text_of_the_Creative_Commons_Attribution-ShareAlike_4.0_International_License\" title=\"Wikipedia:Text of the Creative Commons Attribution-ShareAlike 4.0 International License\">Creative Commons Attri",
+        "Wikipedia:Text of the Creative Commons Attribution-ShareAlike 4.0 International License\">Creative Commons Attribution-ShareAlike 4.0 License</a> (CC-BY-SA), and most is additionally licensed under the <a hre",
+        "areAlike 4.0 International License\">Creative Commons Attribution-ShareAlike 4.0 License</a> (CC-BY-SA), and most is additionally licensed under the <a href=\"/wiki/Wikipedia:Text_of_the_GNU_Free_Documentation"
+      ]
+    },
+    {
+      "name": "Project Gutenberg license",
+      "url": "https://www.gutenberg.org/policy/license.html",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/Project_Gutenberg_license.html",
+      "snippets": [
+        "lass=\"client-nojs\" lang=\"en\" dir=\"ltr\"> <head>  <meta charset=\"UTF-8\" >  <title>License | Project Gutenberg</title>  <link rel=\"stylesheet\" href=\"/gutenberg/style2.css?v=1.8\">  <link rel=\"stylesheet\" href=\"/",
+        "ss=\"page_content\"><!-- start content -->          <h1 id=\"the-project-gutenberg-license\">The Project Gutenberg License</h1>  <p>Also see the <a href=\"permission\">/policy/permission.html</a> page, which provi",
+        "ntent -->          <h1 id=\"the-project-gutenberg-license\">The Project Gutenberg License</h1>  <p>Also see the <a href=\"permission\">/policy/permission.html</a> page, which provides additional detail on use of",
+        "policy/permission.html</a> page, which provides additional detail on use of the license, and additional related topics.</p>  <div class=\"contents\"> <ol> <li><a href=\"#the-project-gutenberg-license-explained-",
+        "ed topics.</p>  <div class=\"contents\"> <ol> <li><a href=\"#the-project-gutenberg-license-explained-informative\">The Project Gutenberg License Explained (informative)</a> <ol class=\"inner_1\"> <li><a href=\"#boo",
+        "ef=\"#the-project-gutenberg-license-explained-informative\">The Project Gutenberg License Explained (informative)</a> <ol class=\"inner_1\"> <li><a href=\"#books-not-protected-under-us-copyright-law\">Books Not Pr"
+      ]
+    },
+    {
+      "name": "Project Gutenberg permissions",
+      "url": "https://www.gutenberg.org/policy/permission.html",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/Project_Gutenberg_permissions.html",
+      "snippets": [
+        "<p>The name \u201cProject Gutenberg\u201d is a registered trademark. The <a href=\"/policy/license\">Small Print License</a> guides terms of use. Basically, you need to pay royalties for commercial use (mentioned below)",
+        "Gutenberg\u201d is a registered trademark. The <a href=\"/policy/license\">Small Print License</a> guides terms of use. Basically, you need to pay royalties for commercial use (mentioned below). This restriction is",
+        "rly indicated as copyrighted in the eBook\u2019s header. Unless there is an included license with the copyrighted item (such as a creative commons license), you will need to contact the copyright holder for any n",
+        "re is an included license with the copyrighted item (such as a creative commons license), you will need to contact the copyright holder for any needed permission. Project Gutenberg cannot do this on your beh",
+        "ct Gutenberg cannot do this on your behalf, and does not have any ability to sublicense copyrighted works.</p>  <h2 id=\"commercial-use-of-project-gutenberg-trademark\">Commercial use of Project Gutenberg trad",
+        "n the Project Gutenberg trademarked name). Terms are spelled out clearly in the license included with each eBook, or read it here: <a href=\"/policy/license.html\">License How-To</a></p>  <p>If your commercial"
+      ]
+    },
+    {
+      "name": "Pushshift dataset paper",
+      "url": "https://arxiv.org/pdf/2001.08435",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/Pushshift_dataset_paper.html",
+      "snippets": [
+        "bj 51 0 obj << /Type /Annot /Subtype /Link /A << /D (cite.Halavais_Overcomingtermsservice_2019) /S /GoTo >> /Border [ 0 0 0 ] /C [ 0 1 0 ] /H /I /Rect [ 343.904 471.314 355.859 480.241 ] >> endobj 52 0 obj",
+        "tsOpportunities2014) 90 0 R (cite.Gousi13) 121 0 R (cite.Halavais_Overcomingtermsservice_2019) 101 0 R (cite.Hampton_StudyingDigitalDirections_2017) 91 0 R (cite.ICU_2019) 168 0 R ] >> endobj 571 0 obj << ",
+        "obj << /Dests 604 0 R >> endobj 606 0 obj << /Type /Catalog /Names 605 0 R /OpenAction 37 0 R /Outlines 567 0 R /PageMode /UseOutlines /Pages 566 0 R >> endobj 609 0 obj << /Filter /FlateDecode /Length 10"
+      ]
+    },
+    {
+      "name": "Pushshift access",
+      "url": "https://pushshift.io/signup",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/Pushshift_access.html",
+      "snippets": [
+        "s=\"row my-5\">         <div class=\"mb-3\">           <h6 class=\"display-6\"><label>TERMS OF USE</label></h6>           <p>By utilizing Pushshift to access any Reddit, Inc. (\u201cReddit\u201d) data or data API (the \u201cRe",
+        "ushshift Services will at all times strictly comply with (i) Reddit's Developer Terms (available at <a href=\"https://www.redditinc.com/policies/developer-terms\" target=\"_blank\">https://www.redditinc.com/po",
+        "loper Terms (available at <a href=\"https://www.redditinc.com/policies/developer-terms\" target=\"_blank\">https://www.redditinc.com/policies/developer-terms</a>) and Data API Terms (available at <a href=\"http",
+        "s/developer-terms\" target=\"_blank\">https://www.redditinc.com/policies/developer-terms</a>) and Data API Terms (available at <a href=\"https://www.redditinc.com/policies/data-api-terms\" target=\"_blank\">https",
+        "t=\"_blank\">https://www.redditinc.com/policies/developer-terms</a>) and Data API Terms (available at <a href=\"https://www.redditinc.com/policies/data-api-terms\" target=\"_blank\">https://www.redditinc.com/pol",
+        "ta API Terms (available at <a href=\"https://www.redditinc.com/policies/data-api-terms\" target=\"_blank\">https://www.redditinc.com/policies/data-api-terms</a>), in each case, including the privacy and securi"
+      ]
+    },
+    {
+      "name": "Internet Archive terms",
+      "url": "https://archive.org/about/terms.php",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/Internet_Archive_terms.html",
+      "snippets": [
+        "er.js\"></script>    <!-- <script>     /* @licstart  The following is the entire license notice for the     * JavaScript code in this page.     *     * This program is free software: you can redistribute it a",
+        "bute it and/or modify     * it under the terms of the GNU Affero General Public License as published by     * the Free Software Foundation, either version 3 of the License, or     * (at your option) any late",
+        "nse as published by     * the Free Software Foundation, either version 3 of the License, or     * (at your option) any later version.     *     * This program is distributed in the hope that it will be usefu",
+        "Y or FITNESS FOR A PARTICULAR PURPOSE.  See the     * GNU Affero General Public License for more details.     *     * You should have received a copy of the GNU Affero General Public License     * along with",
+        "s.     *     * You should have received a copy of the GNU Affero General Public License     * along with this program.  If not, see <http://www.gnu.org/licenses/>.     *     * @licend  The above is the entir",
+        " Public License     * along with this program.  If not, see <http://www.gnu.org/licenses/>.     *     * @licend  The above is the entire license notice     * for the JavaScript code in this page.     */   </"
+      ]
+    },
+    {
+      "name": "Internet Archive rights",
+      "url": "https://help.archive.org/help/rights/",
+      "raw_path": "/home/coolhand/geepers/data/diachronica-corpora/raw/Internet_Archive_rights.html",
+      "snippets": [
+        "ctly entering it in the description field or by selection of a Creative Commons license. The latter, if included by the uploader, will be viewable via a\u00a0\u00a0<a href=\"http://creativecommons.org/license/\"><strong",
+        "ed by the uploader, will be viewable via a\u00a0\u00a0<a href=\"http://creativecommons.org/license/\"><strong>Creative Commons</strong></a>\u00a0 logo on the details page, which serves as a link to a description of the speci",
+        "e details page, which serves as a link to a description of the specific type of license that the uploader has assigned.</p>    <p>One way to attempt to contact an uploader about information that they have po",
+        "  <h2 class=\"wp-block-heading\" id=\"can-i-search-archive-org-by-creative-commons-license\"><strong>Can I search Archive.org by Creative Commons License?</strong></h2>    <p>Please see the\u00a0<strong>Can I search ",
+        "-creative-commons-license\"><strong>Can I search Archive.org by Creative Commons License?</strong></h2>    <p>Please see the\u00a0<strong>Can I search by Creative Commons license?\u00a0</strong>section at\u00a0<a href=\"http",
+        "se?</strong></h2>    <p>Please see the\u00a0<strong>Can I search by Creative Commons license?\u00a0</strong>section at\u00a0<a href=\"https://web.archive.org/web/20240213182323/https://help.archive.org/knowledge/articles/36"
+      ]
+    }
+  ]
+}
