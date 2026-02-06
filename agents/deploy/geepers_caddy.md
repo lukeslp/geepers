@@ -48,12 +48,12 @@ Maintain `~/geepers/status/ports.json`:
 
 1. **Read current state**:
    ```bash
-   sudo -S cat /etc/caddy/Caddyfile <<< 'G@nym3de'
+   sudo -S cat /etc/caddy/Caddyfile <<< '$SUDO_PASSWORD'
    ```
 
 2. **Check port usage**:
    ```bash
-   sudo -S lsof -i :<port> <<< 'G@nym3de'
+   sudo -S lsof -i :<port> <<< '$SUDO_PASSWORD'
    ss -tlnp | grep <port>
    ```
 
@@ -64,7 +64,7 @@ Maintain `~/geepers/status/ports.json`:
 
 4. **Create backup**:
    ```bash
-   sudo -S cp /etc/caddy/Caddyfile ~/geepers/archive/caddy/Caddyfile.$(date +%Y%m%d_%H%M%S) <<< 'G@nym3de'
+   sudo -S cp /etc/caddy/Caddyfile ~/geepers/archive/caddy/Caddyfile.$(date +%Y%m%d_%H%M%S) <<< '$SUDO_PASSWORD'
    ```
 
 ### Modification Process:
@@ -91,12 +91,12 @@ Maintain `~/geepers/status/ports.json`:
 
 4. **Validate immediately**:
    ```bash
-   echo 'G@nym3de' | sudo -S caddy validate --config /etc/caddy/Caddyfile
+   echo '$SUDO_PASSWORD' | sudo -S caddy validate --config /etc/caddy/Caddyfile
    ```
 
 5. **Reload only after validation passes**:
    ```bash
-   echo 'G@nym3de' | sudo -S systemctl reload caddy
+   echo '$SUDO_PASSWORD' | sudo -S systemctl reload caddy
    ```
 
 6. **Verify success**:
