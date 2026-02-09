@@ -3,10 +3,10 @@ requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "geepers"
-version = "1.0.0"
-description = "Multi-agent orchestration system with MCP tools and Claude Code plugin agents"
-authors = [{name = "Luke Steuber", email = "luke@lukesteuber.com"}]
+name = "conductor-geepers"
+version = "1.0.1"
+description = "Multi-agent orchestration system with 70 specialized Claude Code agents for development workflows"
+authors = [{name = "Luke Steuber", email = "luke@dr.eamer.dev"}]
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.8"
@@ -91,24 +91,14 @@ Repository = "https://github.com/lukeslp/geepers"
 Issues = "https://github.com/lukeslp/geepers/issues"
 Documentation = "https://dr.eamer.dev/geepers/"
 
-[project.scripts]
-geepers-unified = "geepers.mcp.stdio_servers.unified_stdio:main"
-geepers-providers = "geepers.mcp.stdio_servers.providers_stdio:main"
-geepers-data = "geepers.mcp.stdio_servers.data_stdio:main"
-geepers-cache = "geepers.mcp.stdio_servers.cache_stdio:main"
-geepers-utility = "geepers.mcp.stdio_servers.utility_stdio:main"
-geepers-websearch = "geepers.mcp.stdio_servers.web_search_stdio:main"
-
 [tool.setuptools]
 packages = [
     "geepers",
-    "geepers.mcp",
-    "geepers.mcp.stdio_servers",
-    "geepers.mcp.tools",
     "geepers.orchestrators",
     "geepers.orchestrators.enterprise",
     "geepers.parser",
     "geepers.naming",
+    "geepers.utils",
 ]
 
 [tool.setuptools.package-data]
