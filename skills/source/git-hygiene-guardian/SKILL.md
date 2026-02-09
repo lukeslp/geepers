@@ -253,7 +253,7 @@ fi
 ### CI/CD Integration
 ```yaml
 # .github/workflows/hygiene-check.yml
-name: Git Hygiene Check
+name: geepers-git-hygiene
 on: [pull_request]
 jobs:
   hygiene:

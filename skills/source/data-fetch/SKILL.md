@@ -1,5 +1,5 @@
 ---
-name: data-fetch
+name: geepers-fetch
 description: Universal data fetching MCP server providing access to arXiv, Census, Weather, News, and GitHub.
 ---
 

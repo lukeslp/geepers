@@ -1,5 +1,5 @@
 ---
-name: server-deploy
+name: geepers-server-deploy
 description: Deploy and manage services on dr.eamer.dev server. Use when (1) starting, stopping, or restarting services, (2) checking service status and health, (3) managing Caddy reverse proxy routes, (4) deploying new services, (5) viewing service logs.
 ---
 

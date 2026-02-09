@@ -1,5 +1,5 @@
 ---
-name: geepers_product
+name: geepers-product
 description: "Product management orchestrator. Conducts market research, generates PRDs, and defines product roadmaps. Use for 'Plan X', 'Research Y', or 'Create PRD for Z'."
 ---
 

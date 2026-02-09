@@ -1,5 +1,5 @@
 ---
-name: geepers_finance
+name: geepers-finance
 description: "Finance and Marketing orchestrator. Analyzes monetization strategies, creates financial plans, and evaluates market opportunities. Use for 'How to monetize X' or 'Marketing plan for Y'."
 ---
 

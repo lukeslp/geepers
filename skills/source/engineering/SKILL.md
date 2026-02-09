@@ -1,5 +1,5 @@
 ---
-name: geepers_engineering
+name: geepers-engineering
 description: "Engineering orchestrator. Design system architecture, write full-stack code, and manage technical implementation. Use for 'Build X', 'Architect Y', or 'Refactor Z'."
 ---
 
