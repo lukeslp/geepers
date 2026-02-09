@@ -1,230 +1,98 @@
 {
   "name": "geepers",
   "version": "1.0.1",
-  "displayName": "Geepers",
-  "description": "Multi-agent orchestration system with Claude Code plugin agents. 70 specialized agents for development workflows, code quality, deployment, research, data visualization, and more.",
-  "author": "Luke Steuber",
+  "description": "Multi-agent orchestration system with 70 specialized Claude Code agents for development workflows, code quality, deployment, research, data visualization, and more.",
+  "author": {
+    "name": "Luke Steuber",
+    "email": "luke@dr.eamer.dev"
+  },
   "license": "MIT",
   "homepage": "https://dr.eamer.dev/geepers/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lukeslp/geepers"
-  },
-  "keywords": [
-    "mcp",
-    "orchestration",
-    "multi-agent",
-    "development-workflow",
-    "code-quality",
-    "deployment",
-    "geepers",
-    "claude-code"
-  ],
-  "categories": [
-    "ai-tools",
-    "orchestration",
-    "development"
-  ],
-  "icon": "robot",
-  "mcpServers": [
-    {
-      "id": "checkpoint",
-      "name": "Checkpoint Orchestrator",
-      "description": "Session maintenance: scout, repo, status, snippets coordination"
-    },
-    {
-      "id": "deploy",
-      "name": "Deploy Orchestrator",
-      "description": "Infrastructure deployment: validator, caddy, services coordination"
-    },
-    {
-      "id": "quality",
-      "name": "Quality Orchestrator",
-      "description": "Code quality audits: a11y, perf, api, deps coordination"
-    },
-    {
-      "id": "fullstack",
-      "name": "Fullstack Orchestrator",
-      "description": "End-to-end features: backend/frontend team coordination"
-    },
-    {
-      "id": "research",
-      "name": "Research Orchestrator",
-      "description": "Data gathering: swarm-style parallel information retrieval"
-    },
-    {
-      "id": "games",
-      "name": "Games Orchestrator",
-      "description": "Game development: gamedev, game, react, godot coordination"
-    },
-    {
-      "id": "corpus",
-      "name": "Corpus Orchestrator",
-      "description": "Linguistics: corpus, corpus_ux, db coordination"
-    },
-    {
-      "id": "web",
-      "name": "Web Orchestrator",
-      "description": "Web apps: flask, react, design, a11y coordination"
-    },
-    {
-      "id": "python",
-      "name": "Python Orchestrator",
-      "description": "Python projects: flask, pycli, api, deps coordination"
-    },
-    {
-      "id": "unified",
-      "name": "Unified Orchestrator",
-      "description": "All orchestrators in a single server with intelligent routing"
-    },
-    {
-      "id": "hive",
-      "name": "Hive Orchestrator",
-      "description": "Task execution: planner, builder, quickwin, integrator, refactor coordination"
-    },
-    {
-      "id": "frontend",
-      "name": "Frontend Orchestrator",
-      "description": "UI/UX development: CSS, TypeScript, motion, design, accessibility coordination"
-    },
-    {
-      "id": "datavis",
-      "name": "Data Visualization Orchestrator",
-      "description": "Data visualization: D3.js, color theory, mathematical elegance, narrative design"
-    }
-  ],
+  "repository": "https://github.com/lukeslp/geepers",
   "agents": [
-    {"id": "geepers_conductor", "source": "./agents/master/geepers_conductor.md"},
+    "./agents/master/geepers_conductor.md",
 
-    {"id": "geepers_orchestrator_checkpoint", "source": "./agents/checkpoint/geepers_orchestrator_checkpoint.md"},
-    {"id": "geepers_scout", "source": "./agents/checkpoint/geepers_scout.md"},
-    {"id": "geepers_repo", "source": "./agents/checkpoint/geepers_repo.md"},
-    {"id": "geepers_status", "source": "./agents/checkpoint/geepers_status.md"},
-    {"id": "geepers_snippets", "source": "./agents/checkpoint/geepers_snippets.md"},
+    "./agents/checkpoint/geepers_orchestrator_checkpoint.md",
+    "./agents/checkpoint/geepers_scout.md",
+    "./agents/checkpoint/geepers_repo.md",
+    "./agents/checkpoint/geepers_status.md",
+    "./agents/checkpoint/geepers_snippets.md",
 
-    {"id": "geepers_orchestrator_corpus", "source": "./agents/corpus/geepers_orchestrator_corpus.md"},
-    {"id": "geepers_corpus", "source": "./agents/corpus/geepers_corpus.md"},
-    {"id": "geepers_corpus_ux", "source": "./agents/corpus/geepers_corpus_ux.md"},
+    "./agents/corpus/geepers_orchestrator_corpus.md",
+    "./agents/corpus/geepers_corpus.md",
+    "./agents/corpus/geepers_corpus_ux.md",
 
-    {"id": "geepers_orchestrator_datavis", "source": "./agents/datavis/geepers_orchestrator_datavis.md"},
-    {"id": "geepers_datavis_viz", "source": "./agents/datavis/geepers_datavis_viz.md"},
-    {"id": "geepers_datavis_color", "source": "./agents/datavis/geepers_datavis_color.md"},
-    {"id": "geepers_datavis_story", "source": "./agents/datavis/geepers_datavis_story.md"},
-    {"id": "geepers_datavis_math", "source": "./agents/datavis/geepers_datavis_math.md"},
-    {"id": "geepers_datavis_data", "source": "./agents/datavis/geepers_datavis_data.md"},
+    "./agents/datavis/geepers_orchestrator_datavis.md",
+    "./agents/datavis/geepers_datavis_viz.md",
+    "./agents/datavis/geepers_datavis_color.md",
+    "./agents/datavis/geepers_datavis_story.md",
+    "./agents/datavis/geepers_datavis_math.md",
+    "./agents/datavis/geepers_datavis_data.md",
 
-    {"id": "geepers_orchestrator_deploy", "source": "./agents/deploy/geepers_orchestrator_deploy.md"},
-    {"id": "geepers_validator", "source": "./agents/deploy/geepers_validator.md"},
-    {"id": "geepers_caddy", "source": "./agents/deploy/geepers_caddy.md"},
-    {"id": "geepers_services", "source": "./agents/deploy/geepers_services.md"},
+    "./agents/deploy/geepers_orchestrator_deploy.md",
+    "./agents/deploy/geepers_validator.md",
+    "./agents/deploy/geepers_caddy.md",
+    "./agents/deploy/geepers_services.md",
 
-    {"id": "geepers_orchestrator_frontend", "source": "./agents/frontend/geepers_orchestrator_frontend.md"},
-    {"id": "geepers_css", "source": "./agents/frontend/geepers_css.md"},
-    {"id": "geepers_design", "source": "./agents/frontend/geepers_design.md"},
-    {"id": "geepers_motion", "source": "./agents/frontend/geepers_motion.md"},
-    {"id": "geepers_typescript", "source": "./agents/frontend/geepers_typescript.md"},
-    {"id": "geepers_uxpert", "source": "./agents/frontend/geepers_uxpert.md"},
-    {"id": "geepers_webperf", "source": "./agents/frontend/geepers_webperf.md"},
+    "./agents/frontend/geepers_orchestrator_frontend.md",
+    "./agents/frontend/geepers_css.md",
+    "./agents/frontend/geepers_design.md",
+    "./agents/frontend/geepers_motion.md",
+    "./agents/frontend/geepers_typescript.md",
+    "./agents/frontend/geepers_uxpert.md",
+    "./agents/frontend/geepers_webperf.md",
 
-    {"id": "geepers_orchestrator_fullstack", "source": "./agents/fullstack/geepers_orchestrator_fullstack.md"},
-    {"id": "geepers_db", "source": "./agents/fullstack/geepers_db.md"},
-    {"id": "geepers_react", "source": "./agents/fullstack/geepers_react.md"},
+    "./agents/fullstack/geepers_orchestrator_fullstack.md",
+    "./agents/fullstack/geepers_db.md",
+    "./agents/fullstack/geepers_react.md",
 
-    {"id": "geepers_orchestrator_games", "source": "./agents/games/geepers_orchestrator_games.md"},
-    {"id": "geepers_gamedev", "source": "./agents/games/geepers_gamedev.md"},
-    {"id": "geepers_game", "source": "./agents/games/geepers_game.md"},
-    {"id": "geepers_godot", "source": "./agents/games/geepers_godot.md"},
+    "./agents/games/geepers_orchestrator_games.md",
+    "./agents/games/geepers_gamedev.md",
+    "./agents/games/geepers_game.md",
+    "./agents/games/geepers_godot.md",
 
-    {"id": "geepers_orchestrator_hive", "source": "./agents/hive/geepers_orchestrator_hive.md"},
-    {"id": "geepers_builder", "source": "./agents/hive/geepers_builder.md"},
-    {"id": "geepers_planner", "source": "./agents/hive/geepers_planner.md"},
-    {"id": "geepers_quickwin", "source": "./agents/hive/geepers_quickwin.md"},
-    {"id": "geepers_integrator", "source": "./agents/hive/geepers_integrator.md"},
-    {"id": "geepers_refactor", "source": "./agents/hive/geepers_refactor.md"},
+    "./agents/hive/geepers_orchestrator_hive.md",
+    "./agents/hive/geepers_builder.md",
+    "./agents/hive/geepers_planner.md",
+    "./agents/hive/geepers_quickwin.md",
+    "./agents/hive/geepers_integrator.md",
+    "./agents/hive/geepers_refactor.md",
 
-    {"id": "geepers_orchestrator_python", "source": "./agents/python/geepers_orchestrator_python.md"},
-    {"id": "geepers_pycli", "source": "./agents/python/geepers_pycli.md"},
+    "./agents/python/geepers_orchestrator_python.md",
+    "./agents/python/geepers_pycli.md",
 
-    {"id": "geepers_orchestrator_quality", "source": "./agents/quality/geepers_orchestrator_quality.md"},
-    {"id": "geepers_a11y", "source": "./agents/quality/geepers_a11y.md"},
-    {"id": "geepers_perf", "source": "./agents/quality/geepers_perf.md"},
-    {"id": "geepers_deps", "source": "./agents/quality/geepers_deps.md"},
-    {"id": "geepers_critic", "source": "./agents/quality/geepers_critic.md"},
-    {"id": "geepers_testing", "source": "./agents/quality/geepers_testing.md"},
-    {"id": "geepers_security", "source": "./agents/quality/geepers_security.md"},
+    "./agents/quality/geepers_orchestrator_quality.md",
+    "./agents/quality/geepers_a11y.md",
+    "./agents/quality/geepers_perf.md",
+    "./agents/quality/geepers_deps.md",
+    "./agents/quality/geepers_critic.md",
+    "./agents/quality/geepers_testing.md",
+    "./agents/quality/geepers_security.md",
 
-    {"id": "geepers_orchestrator_research", "source": "./agents/research/geepers_orchestrator_research.md"},
-    {"id": "geepers_fetcher", "source": "./agents/research/geepers_fetcher.md"},
-    {"id": "geepers_searcher", "source": "./agents/research/geepers_searcher.md"},
-    {"id": "geepers_data", "source": "./agents/research/geepers_data.md"},
-    {"id": "geepers_links", "source": "./agents/research/geepers_links.md"},
-    {"id": "geepers_diag", "source": "./agents/research/geepers_diag.md"},
-    {"id": "geepers_citations", "source": "./agents/research/geepers_citations.md"},
+    "./agents/research/geepers_orchestrator_research.md",
+    "./agents/research/geepers_fetcher.md",
+    "./agents/research/geepers_searcher.md",
+    "./agents/research/geepers_data.md",
+    "./agents/research/geepers_links.md",
+    "./agents/research/geepers_diag.md",
+    "./agents/research/geepers_citations.md",
 
-    {"id": "geepers_orchestrator_web", "source": "./agents/web/geepers_orchestrator_web.md"},
-    {"id": "geepers_flask", "source": "./agents/web/geepers_flask.md"},
-    {"id": "geepers_express", "source": "./agents/web/geepers_express.md"},
+    "./agents/web/geepers_orchestrator_web.md",
+    "./agents/web/geepers_flask.md",
+    "./agents/web/geepers_express.md",
 
-    {"id": "geepers_api", "source": "./agents/standalone/geepers_api.md"},
-    {"id": "geepers_scalpel", "source": "./agents/standalone/geepers_scalpel.md"},
-    {"id": "geepers_janitor", "source": "./agents/standalone/geepers_janitor.md"},
-    {"id": "geepers_canary", "source": "./agents/standalone/geepers_canary.md"},
-    {"id": "geepers_dashboard", "source": "./agents/standalone/geepers_dashboard.md"},
-    {"id": "geepers_git", "source": "./agents/standalone/geepers_git.md"},
-    {"id": "geepers_todoist", "source": "./agents/standalone/geepers_todoist.md"},
-    {"id": "geepers_docs", "source": "./agents/standalone/geepers_docs.md"},
-    {"id": "geepers_humanizer", "source": "./agents/standalone/geepers_humanizer.md"},
+    "./agents/standalone/geepers_api.md",
+    "./agents/standalone/geepers_scalpel.md",
+    "./agents/standalone/geepers_janitor.md",
+    "./agents/standalone/geepers_canary.md",
+    "./agents/standalone/geepers_dashboard.md",
+    "./agents/standalone/geepers_git.md",
+    "./agents/standalone/geepers_todoist.md",
+    "./agents/standalone/geepers_docs.md",
+    "./agents/standalone/geepers_humanizer.md",
 
-    {"id": "geepers_system_help", "source": "./agents/system/geepers_system_help.md"},
-    {"id": "geepers_system_onboard", "source": "./agents/system/geepers_system_onboard.md"},
-    {"id": "geepers_system_diag", "source": "./agents/system/geepers_system_diag.md"}
-  ],
-  "requirements": {
-    "python": ">=3.8",
-    "packages": [
-      "python-dotenv>=1.0.0",
-      "pyyaml>=6.0.0",
-      "aiohttp>=3.9.0"
-    ]
-  },
-  "optionalDependencies": {
-    "anthropic": "anthropic>=0.18.0"
-  },
-  "configurationSchema": {
-    "type": "object",
-    "properties": {
-      "output_dir": {
-        "type": "string",
-        "description": "Base directory for geepers output",
-        "default": "~/geepers"
-      },
-      "anthropic_api_key": {
-        "type": "string",
-        "description": "Anthropic API key for model calls",
-        "secret": true
-      },
-      "default_model": {
-        "type": "string",
-        "description": "Default model tier",
-        "default": "sonnet",
-        "enum": ["haiku", "sonnet", "opus"]
-      },
-      "hub_enabled": {
-        "type": "boolean",
-        "description": "Connect to shared/mcp hub for extended capabilities",
-        "default": false
-      },
-      "hub_url": {
-        "type": "string",
-        "description": "Hub URL when enabled",
-        "default": "http://localhost:5060"
-      },
-      "log_level": {
-        "type": "string",
-        "description": "Logging level",
-        "default": "INFO",
-        "enum": ["DEBUG", "INFO", "WARNING", "ERROR"]
-      }
-    }
-  }
+    "./agents/system/geepers_system_help.md",
+    "./agents/system/geepers_system_onboard.md",
+    "./agents/system/geepers_system_diag.md"
+  ]
 }
