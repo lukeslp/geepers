@@ -16,7 +16,10 @@
         "name": "Luke Steuber",
         "email": "luke@dr.eamer.dev"
       },
-      "source": ".",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/lukeslp/geepers.git"
+      },
       "category": "development",
       "homepage": "https://github.com/lukeslp/geepers"
     }
