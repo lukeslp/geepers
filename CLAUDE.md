@@ -4,10 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-Geepers is a Claude Code plugin providing 70+ specialized markdown-defined agents, packaged skills, and a Python orchestration library. Two surface areas:
+Geepers is a Claude Code plugin providing 70 specialized markdown-defined agents, packaged skills, and a Python orchestration library. Three surface areas:
 
 1. **Claude Code Plugin** (`agents/` + `.claude-plugin/`) — Markdown agent definitions loaded via `subagent_type="geepers_*"` in Claude Code's Task tool
-2. **Packaged Skills** (`skills/`) — 37+ skills built from agent definitions, installable as Claude Code skills
+2. **Packaged Skills** (`skills/`) — 39 skills built from agent definitions, installable as Claude Code skills
 3. **Python Package** (`geepers/`) — Async orchestration framework for multi-agent workflows with LLM providers
 
 ## Commands
@@ -22,8 +22,9 @@ pip install -e ".[all]"
 # Verify installation
 python -c "from geepers import ConfigManager; print('OK')"
 
-# Install as Claude Code plugin
-# (from Claude Code CLI): /plugin add lukeslp/geepers
+# Install as Claude Code plugin (from Claude Code CLI):
+# /plugin marketplace add lukeslp/geepers
+# /plugin install geepers@geepers-marketplace
 
 # Regenerate skills from agent definitions
 python3 skills/package_all_skills.py
@@ -65,8 +66,8 @@ Source in `skills/source/`, built zips in `skills/zips/`. Run `python3 skills/pa
 
 ### Plugin Manifests (`.claude-plugin/`)
 
-- `plugin.json` — Claude Code plugin manifest. Lists all agents with source paths, MCP server definitions, and configuration schema.
-- `marketplace.json` — Marketplace metadata with full agent catalog.
+- `plugin.json` — Claude Code plugin manifest. Lists all 70 agents by path string. Fields: name, version, description, author, license, homepage, repository, agents.
+- `marketplace.json` — Marketplace listing for `claude plugin marketplace add`. Single plugin entry pointing to the GitHub repo.
 
 ## Key Conventions
 
@@ -83,6 +84,9 @@ Source in `skills/source/`, built zips in `skills/zips/`. Run `python3 skills/pa
 # PyPI
 python -m build && twine upload dist/*
 
-# Claude Marketplace
-# Push to GitHub — plugins auto-discovered from .claude-plugin/plugin.json
+# Claude Code Plugin
+# Push to GitHub — marketplace users run:
+#   /plugin marketplace add lukeslp/geepers
+#   /plugin install geepers@geepers-marketplace
+# Marketplace cache updates: /plugin marketplace update geepers-marketplace
 ```

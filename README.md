@@ -4,9 +4,15 @@ Multi-agent orchestration system with specialized Claude Code plugin agents and 
 
 ## Installation
 
-### As Claude Code Plugin (agents + skills)
+### As Claude Code Plugin (recommended)
+
+In Claude Code CLI:
 ```bash
-/plugin add lukeslp/geepers
+# 1. Add the marketplace (one-time)
+/plugin marketplace add lukeslp/geepers
+
+# 2. Install the plugin
+/plugin install geepers@geepers-marketplace
 ```
 
 ### Manual Installation (skills only)
@@ -44,9 +50,9 @@ Markdown-defined agents for Claude Code that provide specialized workflows:
 | **Standalone** | api, scalpel, dashboard, canary, janitor, docs, git, todoist, humanizer | Specialized tasks |
 | **System** | help, onboard, diag | System utilities |
 
-### 39 Packaged Skills
+### Packaged Skills
 
-All agents are packaged as Claude Code skills in `skills/zips/`:
+All agents are packaged as Claude Code skills in `skills/zips/` (39 zips):
 
 | Skill | Type | Description |
 |-------|------|-------------|
@@ -82,8 +88,10 @@ All agents are packaged as Claude Code skills in `skills/zips/`:
 | **system-diag** | Standalone | Full system diagnostics |
 | **system-help** | Standalone | Agent discovery and help |
 | **system-onboard** | Standalone | Project onboarding |
-| **dream-swarm** | Research | Parallel multi-domain search |
-| **dream-cascade** | Research | Hierarchical deep research |
+| **swarm** | Research | Parallel multi-domain search |
+| **geepers-cascade** | Research | Hierarchical deep research |
+| **geepers-publish** | Workflow | Publishing and release workflow |
+| **geepers-team** | Workflow | Team coordination workflow |
 | **data-fetch** | MCP | Universal data fetching server |
 | **mcp-orchestration** | MCP | Multi-agent orchestration server |
 | **vision** | MCP | Alt text and image analysis |
@@ -92,7 +100,7 @@ All agents are packaged as Claude Code skills in `skills/zips/`:
 
 ```
 skills/
-├── source/           # Skill source directories (39)
+├── source/           # Skill source directories
 │   ├── conductor/
 │   │   └── SKILL.md
 │   ├── quality/
@@ -102,7 +110,7 @@ skills/
 │   │       ├── geepers_critic.md
 │   │       └── ...
 │   └── ...
-├── zips/             # Packaged skill zips (37)
+├── zips/             # Packaged skill zips
 ├── rebuild-zips.sh   # Rebuild all zips from source
 └── package_all_skills.py  # Generate skills from agents
 ```
