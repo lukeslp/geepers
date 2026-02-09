@@ -10,7 +10,7 @@ These requirements apply to ALL geepers agents and orchestrators. Every agent MU
 
 ## 2. ALWAYS Call Agents
 - EVERY response should consider which geepers agent applies
-- Complex questions → `@conductor_geepers` (master router)
+- Complex questions → `@geepers_conductor` (master router)
 - Medium tasks → appropriate orchestrator
 - Specific tasks → individual specialist agent
 - Never work alone on infrastructure, deployment, or code changes
@@ -83,4 +83,4 @@ After making changes:
 
 ---
 
-*These rules are also in `~/.claude/CLAUDE.md` and are enforced by conductor_geepers.*
+*These rules are also in `~/.claude/CLAUDE.md` and are enforced by geepers_conductor.*

@@ -12,7 +12,7 @@ GEEPERS AGENTS HIERARCHY                    SKILL EQUIVALENTS
 ═════════════════════════════════════════════════════════════
 
 Master/Routing
-  conductor_geepers                    →    mcp-orchestration
+  geepers_conductor                    →    mcp-orchestration
   ├─ router logic
   ├─ orchestrator launcher
   └─ task dispatcher
@@ -481,7 +481,7 @@ Agent processes result and responds to user.
 User Request
     │
     ▼
-conductor_geepers Agent
+geepers_conductor Agent
     │
     ├─ Recognizes need for multi-agent research
     │
@@ -707,7 +707,7 @@ Result: Fully deployed app on port 5015 at /api/*
 User → "Research the impact of generative AI on employment"
          │
          ▼
-conductor_geepers Agent
+geepers_conductor Agent
          │
          └─→ mcp-orchestration Skill
              │

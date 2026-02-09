@@ -6,7 +6,7 @@ Quick reference for all 51 agents organized by category.
 
 | Agent | Purpose |
 |-------|---------|
-| `conductor_geepers` | Master orchestrator - routes to all other agents |
+| `geepers_conductor` | Master orchestrator - routes to all other agents |
 
 ## Product Development (7) ⭐ NEW
 

@@ -31,7 +31,7 @@ The skill system elevates agents from advisors to automation orchestrators.
 
 ```
 Master
-├── conductor_geepers (router)
+├── geepers_conductor (router)
 ├── Checkpoint agents (repo, status, scout, snippets)
 ├── Corpus agents (lingustic analysis)
 ├── Datavis agents (visualization experts)

@@ -17,7 +17,7 @@ Markdown-defined agents for Claude Code that provide specialized workflows:
 
 | Category | Agents | Purpose |
 |----------|--------|---------|
-| **Master** | conductor_geepers | Intelligent routing to specialists |
+| **Master** | geepers_conductor | Intelligent routing to specialists |
 | **Checkpoint** | scout, repo, status, snippets, orchestrator | Session maintenance |
 | **Deploy** | caddy, services, validator, orchestrator | Infrastructure |
 | **Quality** | a11y, perf, api, deps, critic, security, testing, orchestrator | Code audits |
@@ -67,7 +67,7 @@ Task with subagent_type="geepers_orchestrator_frontend"
 See [AGENT_DOMAINS.md](agents/AGENT_DOMAINS.md) for the full routing guide.
 
 **Orchestrators** coordinate multiple specialists:
-- `conductor_geepers` - Master router
+- `geepers_conductor` - Master router
 - `geepers_orchestrator_frontend` - CSS, React, design, motion
 - `geepers_orchestrator_fullstack` - Backend + frontend
 - `geepers_orchestrator_hive` - Build from plans and TODOs

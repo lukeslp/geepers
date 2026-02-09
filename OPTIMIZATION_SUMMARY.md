@@ -149,7 +149,7 @@ Add sections:
 - "Parallel Workflow Combinations" (link to PARALLEL_WORKFLOWS.md)
 - "Quick Reference" (link to QUICK_REFERENCE.md)
 
-### Update: `/home/coolhand/geepers/agents/master/conductor_geepers.md`
+### Update: `/home/coolhand/geepers/agents/master/geepers_conductor.md`
 Add:
 - "Check quick-reference first" workflow
 - Link to QUICK_REFERENCE.md at top

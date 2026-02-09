@@ -54,7 +54,7 @@ Puerto Local Clone
   ],
   "agents": {
     "master": {
-      "conductor_geepers": "agents/master/conductor_geepers.md"
+      "geepers_conductor": "agents/master/geepers_conductor.md"
     },
     "checkpoint": {
       "scout": "agents/checkpoint/geepers_scout.md",
@@ -167,7 +167,7 @@ Puerto Local Clone
 Table with all 63 agents:
 | Agent ID | Category | Description | Use Case |
 |----------|----------|-------------|----------|
-| conductor_geepers | Master | Intelligent routing | Route to specialists |
+| geepers_conductor | Master | Intelligent routing | Route to specialists |
 | geepers_scout | Checkpoint | Quick reconnaissance | Project analysis |
 | ... | ... | ... | ... |
 
@@ -223,7 +223,7 @@ git commit -m "feat: add geepers multi-agent orchestration plugin
 
 - 63 specialized agents across 13 categories
 - Infrastructure, quality, frontend, fullstack, and more
-- Intelligent routing via conductor_geepers
+- Intelligent routing via geepers_conductor
 - Complete MCP server integration"
 
 git push origin feature/add-geepers-plugin

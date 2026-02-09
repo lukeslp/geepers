@@ -24,7 +24,7 @@ Agent        +  Skill         =  Automation
 | **server-deploy** | `geepers_caddy`, `geepers_services` | `deploy_service()` | Need to deploy app or configure Caddy routing |
 | **code-quality** | `geepers_testing`, `geepers_perf` | `run_full_scan()` | Need to test, lint, or audit code |
 | **data-fetch** | `geepers_data`, `geepers_fetcher` | `get_client('arxiv')` | Need to fetch data from external APIs |
-| **mcp-orchestration** | `conductor_geepers` | `launch_cascade()` | Need multi-agent research or complex orchestration |
+| **mcp-orchestration** | `geepers_conductor` | `launch_cascade()` | Need multi-agent research or complex orchestration |
 
 ### Priority 2: Secondary Skills (Implement Week 4)
 
@@ -295,7 +295,7 @@ papers = client.search('machine learning', max_results=100)
 
 ### 5. mcp-orchestration
 
-**Maps to**: conductor_geepers
+**Maps to**: geepers_conductor
 **Key Scripts**:
 - `cascade.py` - Dream Cascade (hierarchical)
 - `swarm.py` - Dream Swarm (parallel)

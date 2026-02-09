@@ -176,7 +176,7 @@ for infrastructure, quality, frontend, fullstack development, and more.
 
 Features:
 - 63 specialized agents across 13 categories
-- Master orchestrator (conductor_geepers) for intelligent routing
+- Master orchestrator (geepers_conductor) for intelligent routing
 - Infrastructure agents (Caddy, services, validators)
 - Quality agents (accessibility, performance, security, testing)
 - Frontend agents (CSS, design, motion, UX)
@@ -240,8 +240,8 @@ puerto/plugins/geepers/
   "tags": ["orchestration", "agents", "infrastructure", "quality", "frontend"],
   "agents": [
     {
-      "id": "conductor_geepers",
-      "path": "agents/master/conductor_geepers.md"
+      "id": "geepers_conductor",
+      "path": "agents/master/geepers_conductor.md"
     },
     // ... more agents
   ],

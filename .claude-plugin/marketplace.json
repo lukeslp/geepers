@@ -16,8 +16,8 @@
   },
   "plugins": [
     {
-      "name": "conductor_geepers",
-      "source": "./agents/master/conductor_geepers.md",
+      "name": "geepers_conductor",
+      "source": "./agents/master/geepers_conductor.md",
       "description": "Master orchestrator for coordinating all geepers agents. Intelligent routing to specialists.",
       "version": "1.0.0",
       "category": "orchestration",

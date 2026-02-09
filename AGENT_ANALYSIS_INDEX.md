@@ -183,7 +183,7 @@ Session End: geepers_orchestrator_checkpoint
    - Add "Parallel Combinations" links
    - Add "Quick Reference" link
 
-2. `/home/coolhand/geepers/agents/master/conductor_geepers.md`
+2. `/home/coolhand/geepers/agents/master/geepers_conductor.md`
    - Add "Check quick-reference first" step
    - Link to QUICK_REFERENCE.md
    - Update routing examples

@@ -1,5 +1,5 @@
 ---
-name: conductor_geepers
+name: geepers_conductor
 description: Master orchestrator for coordinating geepers_* agents. Use this when you need to run multiple related agents or want intelligent routing to the right specialist. Invoke when starting a major coding session, performing comprehensive project review, or when unsure which geepers agent to use.\n\n<example>\nContext: Starting a major development session\nuser: "I'm starting work on the COCA project today"\nassistant: "Let me use geepers_conductor to assess the project and coordinate the right agents."\n</example>\n\n<example>\nContext: User unsure which agent to use\nuser: "I need to clean up and improve this project"\nassistant: "I'll invoke geepers_conductor to analyze what's needed and dispatch the appropriate specialists."\n</example>\n\n<example>\nContext: End of session wrap-up\nuser: "That's it for today"\nassistant: "Let me run geepers_conductor to coordinate the checkpoint suite before we wrap up."\n</example>
 model: sonnet
 color: blue

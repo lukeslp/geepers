@@ -121,7 +121,7 @@ Each geepers agent category maps to one or more skills:
 | `geepers_caddy`, `geepers_services`, etc. (4 agents) | **server-deploy** | Centralized deployment, no duplication |
 | `geepers_testing`, `geepers_perf`, etc. (6 agents) | **code-quality** | Unified quality scanning |
 | `geepers_data`, `geepers_fetcher` (4 agents) | **data-fetch** | Centralized API clients |
-| `conductor_geepers` | **mcp-orchestration** | Advanced orchestration capability |
+| `geepers_conductor` | **mcp-orchestration** | Advanced orchestration capability |
 | `geepers_react`, `geepers_db` (3 agents) | **fullstack-dev** | Full-stack scaffolding |
 | `geepers_design`, `geepers_css`, etc. (7 agents) | **frontend-design** (Anthropic) | Use existing skill |
 | [8 more agent categories] | [8 more skills] | Consistent pattern throughout |

@@ -1,88 +1,78 @@
-# Geepers Package
+# CLAUDE.md
 
-Multi-agent orchestration system combining MCP tools and Claude Code plugin agents.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Consolidated Structure
+## What This Is
 
-```
-~/geepers/                     # THE canonical geepers location
-├── agents/                    # 50+ markdown agent definitions
-│   ├── master/                # conductor_geepers (top-level orchestrator)
-│   ├── product/               # business_plan, prd, fullstack_dev, intern_pool, code_checker, docs
-│   ├── checkpoint/            # scout, repo, status, snippets, janitor
-│   ├── deploy/                # caddy, services, validator, canary
-│   ├── quality/               # a11y, perf, api, deps, critic
-│   ├── research/              # data, links, diag, citations, swarm_research
-│   ├── fullstack/             # db, design, react
-│   ├── games/                 # game, gamedev, godot
-│   ├── corpus/                # corpus, corpus_ux
-│   ├── web/                   # flask
-│   ├── python/                # pycli
-│   ├── standalone/            # scalpel, dashboard, canary, janitor
-│   └── system/                # help, onboard, diag
-├── geepers/                   # Python package
-│   ├── mcp/ → ~/shared/mcp/   # Symlink to shared MCP server
-│   ├── orchestrators/         # Workflow orchestration
-│   └── parser/                # Agent markdown parser
-├── .claude-plugin/            # Claude marketplace manifest
-├── pyproject.toml             # PyPI package config
-└── README.md
+Geepers is a Claude Code plugin providing 63+ specialized markdown-defined agents and a Python orchestration library. It has two surface areas:
 
-~/geepers_agents → ~/geepers/agents/   # Symlink for compatibility
-~/.mcp.json                            # Points to ~/start-mcp-server
-~/start-mcp-server                     # STDIO bridge → ~/shared/mcp/UnifiedMCPServer
-~/shared/mcp/                          # Actual MCP server code
-```
+1. **Claude Code Plugin** (`agents/` + `.claude-plugin/`) — Markdown agent definitions loaded via `subagent_type="geepers_*"` in Claude Code's Task tool
+2. **Python Package** (`geepers/`) — Async orchestration framework for multi-agent workflows with LLM providers
 
-## Key Symlinks
-
-| Symlink | Target | Purpose |
-|---------|--------|---------|
-| `~/geepers_agents` | `~/geepers/agents/` | Backward compatibility |
-| `~/geepers/geepers/mcp/` | `~/shared/mcp/` | Avoid MCP code duplication |
-
-## Archived (in ~/archive/)
-
-- `dreamwalker-mcp/` - Original MCP project (superseded)
-- `geepers-orchestrators/` - Old agent repo (merged into geepers)
-- `orchestrator_snippets/` - Old orchestrator code
-
-## Key Commands
+## Commands
 
 ```bash
-# Install in dev mode
+# Install Python package in dev mode
 pip install -e .
 
-# Test imports
-python -c "from geepers import ConfigManager"
+# Install with all optional LLM/data providers
+pip install -e ".[all]"
 
-# Run MCP server (what Claude Code uses)
-~/start-mcp-server
+# Verify installation
+python -c "from geepers import ConfigManager; print('OK')"
+
+# Install as Claude Code plugin
+# (from Claude Code CLI): /plugin add lukeslp/geepers
+
+# Rebuild skill zips after editing source
+cd skills/source && for s in */; do cd "$s" && zip -r ../../zips/${s%/}.zip . && cd ..; done
 ```
 
-## Agent Categories (50+ agents)
+## Architecture
 
-| Category | Orchestrator | Agents |
-|----------|--------------|--------|
-| **master/** | conductor_geepers | Routes to all other agents |
-| **product/** | orchestrator_product | business_plan, prd, fullstack_dev, intern_pool, code_checker, docs |
-| **checkpoint/** | orchestrator_checkpoint | scout, repo, status, snippets, janitor |
-| **deploy/** | orchestrator_deploy | caddy, services, validator, canary |
-| **quality/** | orchestrator_quality | a11y, perf, api, deps, critic |
-| **research/** | orchestrator_research | data, links, diag, citations, swarm_research |
-| **fullstack/** | orchestrator_fullstack | db, design, react |
-| **games/** | orchestrator_games | game, gamedev, godot |
-| **corpus/** | orchestrator_corpus | corpus, corpus_ux |
-| **web/** | orchestrator_web | flask |
-| **python/** | orchestrator_python | pycli |
+### Agent System (the main product)
+
+Agents are markdown files in `agents/` with YAML frontmatter (`name`, `description`, `model`, `color`). They're registered in `.claude-plugin/plugin.json` and invoked via Claude Code's Task tool:
+
+```
+Task with subagent_type="geepers_scout"
+```
+
+**Hierarchy**: `geepers_conductor` (master router) → domain orchestrators (`geepers_orchestrator_*`) → specialist agents (`geepers_*`).
+
+Key domains: checkpoint, deploy, quality, frontend, fullstack, hive, research, games, corpus, web, python, datavis, standalone, system. See `agents/AGENT_DOMAINS.md` for the full routing guide.
+
+### Python Package (`geepers/`)
+
+- `config.py` — `ConfigManager` with multi-source config loading (defaults → config file → .env → env vars → CLI args). Handles API key management for 15+ providers.
+- `orchestrators/` — Async orchestration framework. `BaseOrchestrator` (ABC) defines: `decompose_task()` → `execute_subtask()` → `synthesize_results()`. Supports parallel/sequential execution, streaming events, retries, and document generation. Notable implementations: `dream_cascade_orchestrator`, `dream_swarm_orchestrator`, `dreamer_beltalowda_orchestrator`.
+- `naming/` — Canonical naming registry mapping roles (conductor/orchestrator/agent/utility) to identifiers across scopes (internal/package/cli/mcp). `LEGACY_MAP` handles old class names.
+- `utils/` — Async helpers: rate limiter, cache manager, retry decorator, parallel task execution, graceful import fallbacks.
+- `parser/` — Agent markdown file parser.
+
+### Skills (`skills/`)
+
+Claude Desktop skills (zip-packaged). Source in `skills/source/`, built zips in `skills/zips/`. Each skill has `SKILL.md` + optional `scripts/`, `reference/`, `src/` directories.
+
+### Plugin Manifests (`.claude-plugin/`)
+
+- `plugin.json` — Claude Code plugin manifest. Lists all agents with source paths, MCP server definitions, and configuration schema.
+- `marketplace.json` — Marketplace metadata with full agent catalog.
+
+## Key Conventions
+
+- All agent IDs are prefixed `geepers_` (e.g., `geepers_scout`, `geepers_orchestrator_deploy`)
+- Orchestrators coordinate specialists; standalone agents work independently
+- The `shared/` directory under agents contains workflow docs referenced by all agents (`WORKFLOW_REQUIREMENTS.md`, `PARALLEL_WORKFLOWS.md`, `SESSION_WORKFLOWS.md`)
+- Python package depends on `dr-eamer-ai-shared` (shared library published to PyPI)
+- The `geepers/mcp/` directory is expected to be symlinked to `~/shared/mcp/` in development; it's not committed to this repo
 
 ## Publishing
 
-### To PyPI
 ```bash
-python -m build
-twine upload dist/*
-```
+# PyPI
+python -m build && twine upload dist/*
 
-### To Claude Marketplace
-Push to GitHub - plugins are auto-discovered from `.claude-plugin/plugin.json`.
+# Claude Marketplace
+# Push to GitHub — plugins auto-discovered from .claude-plugin/plugin.json
+```

@@ -6,7 +6,7 @@ Quick reference for all agents organized by domain.
 
 | Domain | Directory | Purpose | Key Agents |
 |--------|-----------|---------|------------|
-| **Master** | `master/` | Top-level routing | conductor_geepers |
+| **Master** | `master/` | Top-level routing | geepers_conductor |
 | **Checkpoint** | `checkpoint/` | Session maintenance | scout, repo, status, snippets |
 | **Deploy** | `deploy/` | Infrastructure | caddy, services, validator, canary |
 | **Quality** | `quality/` | Code quality | a11y, perf, api, deps, critic, testing, security |
