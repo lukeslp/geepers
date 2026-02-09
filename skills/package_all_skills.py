@@ -10,8 +10,10 @@ import re
 import shutil
 from pathlib import Path
 
-AGENTS_DIR = Path(os.path.expanduser("~/geepers/agents"))
-SOURCE_DIR = Path(os.path.expanduser("~/geepers/skills/source"))
+SCRIPT_DIR = Path(__file__).resolve().parent
+REPO_ROOT = SCRIPT_DIR.parent
+AGENTS_DIR = REPO_ROOT / "agents"
+SOURCE_DIR = SCRIPT_DIR / "source"
 
 # Mapping: skill-name -> { type, files, description_override }
 # type: "orchestrator" (category with orchestrator + sub-agents)
@@ -22,7 +24,7 @@ SKILL_MAP = {
     # === ORCHESTRATOR CATEGORIES (new) ===
     "conductor": {
         "type": "standalone",
-        "files": ["master/conductor_geepers.md"],
+        "files": ["master/geepers_conductor.md"],
     },
     "checkpoint": {
         "type": "orchestrator",
@@ -162,6 +164,10 @@ SKILL_MAP = {
     "todoist": {
         "type": "standalone",
         "files": ["standalone/geepers_todoist.md"],
+    },
+    "humanize": {
+        "type": "standalone",
+        "files": ["standalone/geepers_humanizer.md"],
     },
     # === SYSTEM AGENTS (new) ===
     "system-diag": {

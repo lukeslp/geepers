@@ -22,7 +22,7 @@ done
 
 ## What's Included
 
-### 73 Specialized Agents
+### 70 Specialized Agents
 
 Markdown-defined agents for Claude Code that provide specialized workflows:
 
@@ -41,10 +41,10 @@ Markdown-defined agents for Claude Code that provide specialized workflows:
 | **Corpus** | corpus, corpus_ux, orchestrator | Linguistics/NLP |
 | **Web** | flask, express, orchestrator | Web applications |
 | **Python** | pycli, orchestrator | Python projects |
-| **Standalone** | api, scalpel, dashboard, canary, janitor, docs, git, todoist | Specialized tasks |
+| **Standalone** | api, scalpel, dashboard, canary, janitor, docs, git, todoist, humanizer | Specialized tasks |
 | **System** | help, onboard, diag | System utilities |
 
-### 37 Packaged Skills
+### 39 Packaged Skills
 
 All agents are packaged as Claude Code skills in `skills/zips/`:
 
@@ -78,6 +78,7 @@ All agents are packaged as Claude Code skills in `skills/zips/`:
 | **janitor** | Standalone | Project cleanup |
 | **scalpel** | Standalone | Surgical code edits |
 | **todoist** | Standalone | Todoist task management |
+| **humanize** | Standalone | Remove AI writing indicators from documentation |
 | **system-diag** | Standalone | Full system diagnostics |
 | **system-help** | Standalone | Agent discovery and help |
 | **system-onboard** | Standalone | Project onboarding |
@@ -86,14 +87,12 @@ All agents are packaged as Claude Code skills in `skills/zips/`:
 | **data-fetch** | MCP | Universal data fetching server |
 | **mcp-orchestration** | MCP | Multi-agent orchestration server |
 | **vision** | MCP | Alt text and image analysis |
-| **bluesky-cli** | Tool | Bluesky social management |
-| **porkbun-cli** | Tool | Porkbun domain management |
 
 ## Skill Structure
 
 ```
 skills/
-├── source/           # Skill source directories (37)
+├── source/           # Skill source directories (39)
 │   ├── conductor/
 │   │   └── SKILL.md
 │   ├── quality/

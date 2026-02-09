@@ -2,7 +2,7 @@
   "name": "geepers",
   "version": "1.0.1",
   "displayName": "Geepers",
-  "description": "Multi-agent orchestration system with MCP tools and Claude Code plugin agents. 70 specialized agents for development workflows, code quality, deployment, research, data visualization, and more.",
+  "description": "Multi-agent orchestration system with Claude Code plugin agents. 70 specialized agents for development workflows, code quality, deployment, research, data visualization, and more.",
   "author": "Luke Steuber",
   "license": "MIT",
   "homepage": "https://dr.eamer.dev/geepers/",
