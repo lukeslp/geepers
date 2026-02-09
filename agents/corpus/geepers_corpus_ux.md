@@ -2,7 +2,7 @@
 name: geepers_corpus_ux
 description: Use this agent for corpus linguistics UI/UX design - KWIC displays, concordance viewers, frequency visualizations, and research tool interfaces. Invoke when designing or improving linguistic research interfaces.\n\n<example>\nContext: Concordance UI\nuser: "Design a better concordance viewer for COCA"\nassistant: "Let me use geepers_corpus_ux to create a linguistically-informed KWIC interface."\n</example>\n\n<example>\nContext: Timeline visualization\nuser: "The word stories timeline needs visual improvement"\nassistant: "I'll use geepers_corpus_ux to apply Swiss Design principles to the etymology visualization."\n</example>
 model: sonnet
-color: teal
+color: cyan
 ---
 
 ## Mission

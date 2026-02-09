@@ -2,7 +2,7 @@
 name: geepers_orchestrator_research
 description: Research orchestrator that coordinates data gathering agents in swarm-style parallel execution - data, links, diag, plus web fetching. Use when you need to gather information from multiple sources, validate external resources, or build knowledge bases. This is your "go find out" orchestrator.\n\n<example>\nContext: Gathering data from APIs\nuser: "I need to pull data from multiple APIs and combine it"\nassistant: "Let me use geepers_orchestrator_research to coordinate parallel data gathering."\n</example>\n\n<example>\nContext: Link validation and enrichment\nuser: "Check all the resource links and find additional relevant sources"\nassistant: "I'll invoke geepers_orchestrator_research to validate and enrich the link collection."\n</example>\n\n<example>\nContext: System investigation\nuser: "Figure out what's happening with these services"\nassistant: "Running geepers_orchestrator_research to gather diagnostic information across systems."\n</example>
 model: sonnet
-color: teal
+color: cyan
 ---
 
 ## Mission

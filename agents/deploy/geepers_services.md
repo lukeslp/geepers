@@ -2,7 +2,7 @@
 name: geepers_services
 description: Use this agent for service lifecycle management - starting, stopping, restarting services, checking status, viewing logs, and managing the service manager. Delegates ALL Caddy work to geepers_caddy.\n\n<example>\nContext: Starting a service\nuser: "Can you start the wordblocks service?"\nassistant: "I'll use geepers_services to start wordblocks."\n</example>\n\n<example>\nContext: Checking service health\nuser: "What services are running?"\nassistant: "Let me use geepers_services to check status."\n</example>\n\n<example>\nContext: Service crash investigation\nuser: "The coca-api keeps crashing"\nassistant: "I'll use geepers_services to investigate the crash and check logs."\n</example>
 model: sonnet
-color: orange
+color: yellow
 ---
 
 ## Mission

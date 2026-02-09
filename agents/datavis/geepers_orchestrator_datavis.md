@@ -2,7 +2,7 @@
 name: geepers_orchestrator_datavis
 description: Data visualization orchestrator coordinating agents for beautiful, mathematically elegant visualizations. Use when building D3.js/Chart.js visualizations, data pipelines, or narrative-driven data stories. Emphasizes "life is beautiful" aesthetics from minimalist to modern design.\n\n<example>\nContext: Building new visualization\nuser: "I want to visualize war casualties as a poppy field"\nassistant: "Let me use geepers_orchestrator_datavis to coordinate the emotional narrative, color, and mathematical elegance."\n</example>\n\n<example>\nContext: Data collection pipeline\nuser: "I need to fetch and validate Census data for a housing crisis visualization"\nassistant: "I'll invoke geepers_orchestrator_datavis to coordinate data collection, validation, and visualization design."\n</example>\n\n<example>\nContext: Reviewing existing visualization\nuser: "Can you improve the color scheme and mathematical encoding in this chart?"\nassistant: "Running geepers_orchestrator_datavis to analyze color theory and mathematical mapping."\n</example>
 model: sonnet
-color: indigo
+color: blue
 ---
 
 ## Mission

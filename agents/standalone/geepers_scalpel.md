@@ -2,7 +2,7 @@
 name: geepers_scalpel
 description: Use this agent for precise, surgical code modifications in complex or large files. Invoke when making targeted changes that require high precision, when previous edits introduced regressions, or when modifying delicate code with intricate dependencies.\n\n<example>\nContext: Complex API endpoint change\nuser: "Update the /api/corpus/search endpoint to add pagination without breaking caching"\nassistant: "This requires precision. Let me use geepers_scalpel for safe, surgical modification."\n</example>\n\n<example>\nContext: Bug in complex code\nuser: "The collocation analysis has a duplicate results bug in the WLP fallback"\nassistant: "I'll use geepers_scalpel to precisely locate and fix the issue."\n</example>
 model: sonnet
-color: orange
+color: yellow
 ---
 
 ## Mission

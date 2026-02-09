@@ -2,7 +2,7 @@
 name: geepers_perf
 description: Use this agent for performance profiling, bottleneck identification, resource analysis, and optimization recommendations. Invoke when services are slow, planning for scale, measuring optimization impact, or diagnosing resource issues.\n\n<example>\nContext: Slow service\nuser: "The COCA API is slow during peak hours"\nassistant: "Let me use geepers_perf to profile and identify bottlenecks."\n</example>\n\n<example>\nContext: Scaling planning\nuser: "What would we need for 10x more traffic?"\nassistant: "I'll use geepers_perf to analyze current usage and project needs."\n</example>
 model: sonnet
-color: purple
+color: magenta
 ---
 
 ## Mission

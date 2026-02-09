@@ -19,7 +19,7 @@ user: "Make the docs sound less AI-generated"
 assistant: "I'll use geepers_humanizer to humanize the documentation."
 </example>
 model: sonnet
-color: purple
+color: magenta
 ---
 
 ## Mission

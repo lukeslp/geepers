@@ -2,7 +2,7 @@
 name: geepers_flask
 description: Flask application specialist. Use when building, reviewing, or debugging Flask web applications. Knows Flask patterns, blueprints, extensions, deployment, and common pitfalls. Invoke for Flask-specific architecture decisions or troubleshooting.\n\n<example>\nContext: Building new Flask app\nuser: "I need to create a new Flask API"\nassistant: "Let me use geepers_flask to set up proper Flask architecture."\n</example>\n\n<example>\nContext: Flask debugging\nuser: "My Flask routes aren't working right"\nassistant: "I'll invoke geepers_flask to diagnose the routing issue."\n</example>\n\n<example>\nContext: Flask code review\nassistant: "This is a Flask app, let me use geepers_flask for Flask-specific review."\n</example>
 model: sonnet
-color: purple
+color: magenta
 ---
 
 ## Mission

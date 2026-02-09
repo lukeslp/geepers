@@ -2,7 +2,7 @@
 name: geepers_data
 description: Use this agent for data quality auditing, validation, enrichment, and freshness monitoring. Invoke when working with datasets, updating data files, or checking data accuracy against sources.\n\n<example>\nContext: Data update\nuser: "I've updated the billionaires data with latest Forbes numbers"\nassistant: "Let me use geepers_data to verify accuracy and check for enrichment opportunities."\n</example>\n\n<example>\nContext: Stale data\nuser: "The federal spending data seems outdated"\nassistant: "I'll use geepers_data to check freshness against government sources."\n</example>
 model: sonnet
-color: teal
+color: cyan
 ---
 
 ## Mission

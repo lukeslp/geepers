@@ -2,7 +2,7 @@
 name: geepers_refactor
 description: Use this agent for code refactoring, restructuring, and modernization. Invoke when code needs cleanup, patterns need updating, or architecture needs improvement without changing functionality.\n\n<example>\nContext: Messy code\nuser: "This code is a mess, clean it up"\nassistant: "Let me use geepers_refactor to restructure the code."\n</example>\n\n<example>\nContext: Pattern update\nuser: "Convert these callbacks to async/await"\nassistant: "I'll use geepers_refactor for the async conversion."\n</example>
 model: sonnet
-color: orange
+color: yellow
 ---
 
 ## Mission

@@ -2,7 +2,7 @@
 name: geepers_datavis_math
 description: Mathematical elegance in data visualization - scales, transforms, encodings, and algorithms. Use when designing perceptually accurate mappings, choosing between linear/log/sqrt scales, or implementing clever mathematical metaphors.\n\n<example>\nContext: Scale selection\nuser: "War deaths range from 3,000 to 75,000,000 - what scale should I use?"\nassistant: "Let me use geepers_datavis_math to analyze the distribution and recommend log vs sqrt scales."\n</example>\n\n<example>\nContext: Visual encoding\nuser: "How do I map casualties to flower size so it feels accurate?"\nassistant: "I'll use geepers_datavis_math to ensure perceptually linear area encoding with sqrt scale."\n</example>\n\n<example>\nContext: Force simulation tuning\nuser: "The network graph is too clustered in the center"\nassistant: "Let me use geepers_datavis_math to balance force parameters mathematically."\n</example>
 model: sonnet
-color: orange
+color: yellow
 ---
 
 ## Mission

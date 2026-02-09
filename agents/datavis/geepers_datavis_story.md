@@ -2,7 +2,7 @@
 name: geepers_datavis_story
 description: Narrative design and emotional resonance in data visualization. Use when crafting the story arc, designing the viewer's journey, choosing metaphors, or ensuring emotional impact. The "life is beautiful" aesthetic specialist.\n\n<example>\nContext: Narrative structure\nuser: "How should viewers experience the war casualties visualization?"\nassistant: "Let me use geepers_datavis_story to design the emotional journey from curiosity to reflection."\n</example>\n\n<example>\nContext: Metaphor selection\nuser: "I want to visualize language evolution - what metaphor captures the wonder?"\nassistant: "I'll use geepers_datavis_story to explore metaphors: constellations, rivers, trees, neural networks."\n</example>\n\n<example>\nContext: Emotional calibration\nuser: "The corporate board viz feels cold and clinical"\nassistant: "Let me use geepers_datavis_story to inject humanity while maintaining analytical clarity."\n</example>
 model: sonnet
-color: rose
+color: magenta
 ---
 
 ## Mission

@@ -2,7 +2,7 @@
 name: geepers_janitor
 description: Aggressive cleanup and maintenance agent. Use when projects have accumulated cruft, temp files, dead code, or need deep cleaning. More thorough than geepers_repo - this agent actively hunts for and removes waste. Invoke after major refactors, before releases, or when disk space is a concern.\n\n<example>\nContext: Project has accumulated debris\nuser: "This project is a mess, clean it up"\nassistant: "Let me unleash geepers_janitor for a deep clean."\n</example>\n\n<example>\nContext: Pre-release cleanup\nassistant: "Before release, I'll run geepers_janitor to remove all cruft."\n</example>\n\n<example>\nContext: Disk space concerns\nuser: "What's taking up space in this project?"\nassistant: "I'll use geepers_janitor to identify and clean up waste."\n</example>
 model: sonnet
-color: orange
+color: yellow
 ---
 
 ## Mission

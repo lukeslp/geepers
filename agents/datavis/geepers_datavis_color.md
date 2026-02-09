@@ -2,7 +2,7 @@
 name: geepers_datavis_color
 description: Color theory, palette design, and perceptual uniformity for visualizations. Use when designing color schemes, ensuring colorblind accessibility, creating emotional palettes, or mapping data to color.\n\n<example>\nContext: Categorical palette\nuser: "I need colors for 5 geographic regions that are distinguishable and meaningful"\nassistant: "Let me use geepers_datavis_color to design a perceptually uniform categorical palette."\n</example>\n\n<example>\nContext: Emotional color design\nuser: "The war visualization should feel solemn but not depressing"\nassistant: "I'll use geepers_datavis_color to craft a muted palette with subtle warmth."\n</example>\n\n<example>\nContext: Sequential data\nuser: "Map population density from rural to urban with color intensity"\nassistant: "Let me use geepers_datavis_color to select a perceptually uniform sequential scale."\n</example>
 model: sonnet
-color: pink
+color: magenta
 ---
 
 ## Mission

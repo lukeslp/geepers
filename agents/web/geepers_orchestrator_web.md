@@ -2,7 +2,7 @@
 name: geepers_orchestrator_web
 description: Flask-specific web application orchestrator. Coordinates Flask backend + templates/React frontend + design + accessibility. Use for Flask apps (Jinja templates or Flask+React). For Node.js backends, use geepers_orchestrator_fullstack. For pure frontend, use geepers_orchestrator_frontend.\n\n<example>\nContext: Building new web app\nuser: "I want to build a web dashboard for monitoring"\nassistant: "Let me use geepers_orchestrator_web to coordinate the full web app development."\n</example>\n\n<example>\nContext: Web app review\nuser: "Review this web application"\nassistant: "I'll invoke geepers_orchestrator_web for a comprehensive web app audit."\n</example>\n\n<example>\nContext: Improving existing web app\nuser: "This web app needs work"\nassistant: "Running geepers_orchestrator_web to coordinate improvements across all layers."\n</example>
 model: sonnet
-color: purple
+color: magenta
 ---
 
 ## Mission

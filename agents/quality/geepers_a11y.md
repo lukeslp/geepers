@@ -2,7 +2,7 @@
 name: geepers_a11y
 description: Use this agent for accessibility audits, WCAG compliance review, assistive technology testing, and inclusive design guidance. Invoke when creating UI components, reviewing web pages, or ensuring content is accessible to all users.\n\n<example>\nContext: New UI component\nuser: "I've added a new button component for the radial menu"\nassistant: "Let me use geepers_a11y to ensure it follows accessibility best practices."\n</example>\n\n<example>\nContext: Accessibility review\nuser: "Can you check if my navigation menu is accessible?"\nassistant: "I'll use geepers_a11y for a thorough accessibility audit."\n</example>
 model: sonnet
-color: purple
+color: magenta
 ---
 
 ## Mission

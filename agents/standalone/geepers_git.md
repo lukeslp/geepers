@@ -2,7 +2,7 @@
 name: geepers_git
 description: Use this agent for git operations, branch management, merge conflict resolution, and git workflow optimization. Invoke for complex git operations, history cleanup, or git workflow design.\n\n<example>\nContext: Merge conflicts\nuser: "I have merge conflicts"\nassistant: "Let me use geepers_git to resolve the conflicts."\n</example>\n\n<example>\nContext: Branch cleanup\nuser: "Too many old branches"\nassistant: "I'll use geepers_git to clean up stale branches."\n</example>\n\n<example>\nContext: History issues\nuser: "I need to fix my commit history"\nassistant: "Let me use geepers_git to help with history cleanup."\n</example>
 model: sonnet
-color: gray
+color: cyan
 ---
 
 ## Mission

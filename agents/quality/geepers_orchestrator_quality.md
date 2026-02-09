@@ -2,7 +2,7 @@
 name: geepers_orchestrator_quality
 description: Quality orchestrator that coordinates audit agents - a11y, perf, api, and deps. Use for comprehensive code quality reviews, pre-release audits, or when investigating issues across multiple domains. This is your "is it good enough?" orchestrator.\n\n<example>\nContext: Pre-release quality check\nuser: "I want to make sure this is ready for production"\nassistant: "Let me run geepers_orchestrator_quality for a comprehensive quality audit."\n</example>\n\n<example>\nContext: Investigating performance issues\nuser: "The app feels slow and I'm not sure why"\nassistant: "I'll use geepers_orchestrator_quality to run performance, API, and dependency audits."\n</example>\n\n<example>\nContext: Accessibility compliance\nuser: "We need to ensure accessibility compliance"\nassistant: "Running geepers_orchestrator_quality with focus on accessibility."\n</example>
 model: sonnet
-color: purple
+color: magenta
 ---
 
 ## Mission
