@@ -60,3 +60,4 @@ Thumbs.db
 skills/source/*/
 skills/temp_registry/
 geepers/mcp
+.build-venv/
