@@ -3,9 +3,9 @@ requires = ["setuptools>=64", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "conductor-geepers"
-version = "1.0.1"
-description = "Multi-agent orchestration system with 70 specialized Claude Code agents for development workflows"
+name = "geepers-agents"
+version = "1.0.2"
+description = "Agent system for geepers multi-agent orchestration with 70 specialized Claude Code agents"
 authors = [{name = "Luke Steuber", email = "luke@dr.eamer.dev"}]
 readme = "README.md"
 license = {text = "MIT"}
