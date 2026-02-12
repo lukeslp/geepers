@@ -1,8 +1,18 @@
-# Language & Linguistic UIs - Discovery Report
+# Dataset Consolidation Inventory - Complete Symlink & Data Survey
+**Generated**: 2026-02-10
+**Location**: `/home/coolhand/html/datavis/data_trove/`
+**Total Size**: 4.5G
+
+---
 
 ## Executive Summary
 
-Found **3 major language/linguistic visualization projects** with existing web UIs and APIs:
+The data_trove project is a centralized repository for data visualization datasets with:
+- **53 symlinks** pointing from data_trove to dev projects
+- **210 regular files** in quirky/ (85 total datasets)
+- **40 _real.json datasets** (20 _real.json + 20 _real_metadata.json pairs)
+- **Git LFS enabled** for large file storage
+- **GitHub remote**: https://github.com/lukeslp/data_trove.git
 
 1. **Language History Explorer** - D3.js phylogenetic tree, map, and timeline visualizations
 2. **Diachronica Etymology Visualizer** - Flask-based etymology network and heatmap generator
