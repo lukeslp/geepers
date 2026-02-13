@@ -4,10 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-Geepers is a multi-agent orchestration system that ships as a **Claude Code plugin** (`/plugin add lukeslp/geepers`). It has two distinct layers:
+Geepers is a multi-agent orchestration system that ships as a **Claude Code plugin** (`/plugin add lukeslp/geepers`). It has three distinct layers:
 
-1. **Agent definitions** (`agents/`) - Markdown-defined specialists organized into 15 domains, invoked via Claude Code's `Task` tool with `subagent_type`
-2. **Python package** (`geepers/`) - Orchestration framework, config management, naming registry, and utilities. Published to PyPI as `geepers`. The `geepers/mcp/` directory is a symlink to `~/shared/mcp/` (the actual MCP server code).
+1. **Agent definitions** (`agents/`) - 72 markdown-defined specialists organized into 15 domains (60 registered in plugin.json), invoked via Claude Code's `Task` tool with `subagent_type`
+2. **Python package** (`geepers/`) - Orchestration framework, config management, naming registry, and utilities. Published to PyPI as `geepers` v1.0.0. The `geepers/mcp/` directory is a symlink to `~/shared/mcp/` (the actual MCP server code).
+3. **Skills** (`skills/source/`) - 13 Claude Desktop skill packs (datavis, engineering, finance, vision, etc.) zipped for upload
 
 ## Commands
 
@@ -43,7 +44,9 @@ Agents follow a strict routing hierarchy: **Conductor -> Orchestrators -> Specia
 
 - `conductor_geepers` (`agents/master/`) - Top-level router, dispatches to orchestrators
 - 13 orchestrators (one per domain) - Coordinate groups of specialists
-- ~50 specialists - Do the actual work
+- ~57 specialists - Do the actual work (72 total agent .md files on disk)
+
+60 agents are registered in `.claude-plugin/plugin.json`. The remaining 12 are on disk but not yet registered (mostly newer additions like `geepers_poet`, `geepers_humanizer`, `geepers_readme`, `geepers_doublecheck`, `geepers_flask`, `geepers_express`, `geepers_testing`, `geepers_security`).
 
 Each agent is a markdown file with YAML frontmatter (`name`, `description`, `model`, `color`) and structured sections (Mission, Workflow, Coordination Protocol). The plugin manifest at `.claude-plugin/plugin.json` maps agent IDs to their markdown source paths.
 
@@ -53,7 +56,7 @@ Shared workflow requirements that all agents must follow live in `agents/shared/
 
 | Module | Purpose |
 |--------|---------|
-| `geepers/orchestrators/` | Abstract `BaseOrchestrator` + 5 concrete implementations + enterprise subpackage |
+| `geepers/orchestrators/` | Abstract `BaseOrchestrator` + 5 concrete + 7 pattern/lifecycle modules + enterprise subpackage (22 files total) |
 | `geepers/config.py` | `ConfigManager` - multi-source config loading with precedence: defaults < config file < .env < env vars < CLI args |
 | `geepers/naming/` | Naming registry mapping roles (conductor/orchestrator/agent/utility) to identifiers across scopes (internal/package/cli/mcp) |
 | `geepers/utils/` | Async patterns, rate limiting, retry decorators, caching, parallel task execution |
@@ -71,7 +74,9 @@ async def synthesize_results(self, agent_results, context=None) -> str
 
 The base class handles the workflow lifecycle: decompose -> parallel/sequential execution (with semaphore, timeout, retry) -> synthesis -> optional document generation. Streaming events are emitted via callbacks throughout.
 
-**Concrete orchestrators**: `DreamCascadeOrchestrator` (hierarchical 3-tier), `DreamSwarmOrchestrator` (parallel multi-domain search), `SequentialOrchestrator`, `ConditionalOrchestrator`, `IterativeOrchestrator`.
+**Concrete orchestrators**: `DreamCascadeOrchestrator` (hierarchical 3-tier), `DreamSwarmOrchestrator` (parallel multi-domain search), `SequentialOrchestrator`, `ConditionalOrchestrator`, `IterativeOrchestrator`, `AccessibilityOrchestrator`, `PhasedWorkflowOrchestrator`.
+
+**Pattern modules** (reusable orchestration building blocks): `agent_lifecycle_management`, `hierarchical_agent_coordination`, `multi_agent_data_models`, `parallel_agent_execution`, `provider_abstraction_pattern`, `task_decomposition_pattern`, `task_tool_dispatch_pattern`.
 
 **Config hierarchy**: `OrchestratorConfig` (base) -> `DreamCascadeConfig`, `DreamSwarmConfig`, `LessonPlanConfig`. Each adds domain-specific fields.
 
@@ -104,7 +109,25 @@ Claude Code connects via `~/.mcp.json` -> `~/start-mcp-server` -> `~/shared/mcp/
 
 ### Skills
 
-`skills/source/` contains Claude Desktop skills (SKILL.md + scripts). Each skill is zipped into `skills/zips/` for upload. Skills are separate from agents - skills run in Claude Desktop, agents run in Claude Code.
+`skills/source/` contains 13 Claude Desktop skill packs, each with SKILL.md + scripts. Zipped into `skills/zips/` for upload.
+
+| Skill Pack | Purpose |
+|-----------|---------|
+| `bluesky-cli` | Bluesky AT Protocol operations |
+| `data-fetch` | Structured API data collection |
+| `datavis` | D3.js visualization creation |
+| `dream-swarm` | Multi-agent parallel search |
+| `engineering` | Code generation and review |
+| `executive` | Executive analysis and reporting |
+| `finance` | Financial analysis tools |
+| `git-hygiene-guardian` | Git workflow and cleanup |
+| `mcp-orchestration` | MCP server management |
+| `porkbun-cli` | Domain management (local only) |
+| `product` | Product management workflows |
+| `server-deploy` | Service deployment |
+| `vision` | Image analysis and description |
+
+Skills are separate from agents - skills run in Claude Desktop, agents run in Claude Code.
 
 ### Output Directories
 
@@ -123,18 +146,18 @@ These directories are excluded from the PyPI package via `pyproject.toml`.
 | Master | `agents/master/` | `conductor_geepers` | (routes to all) |
 | Checkpoint | `agents/checkpoint/` | `geepers_orchestrator_checkpoint` | scout, repo, status, snippets |
 | Deploy | `agents/deploy/` | `geepers_orchestrator_deploy` | caddy, services, validator |
-| Quality | `agents/quality/` | `geepers_orchestrator_quality` | a11y, perf, deps, critic |
-| Frontend | `agents/frontend/` | `geepers_orchestrator_frontend` | css, typescript, motion, webperf, design, uxpert, react |
-| Fullstack | `agents/fullstack/` | `geepers_orchestrator_fullstack` | db, design, react |
+| Quality | `agents/quality/` | `geepers_orchestrator_quality` | a11y, perf, deps, critic, testing, security |
+| Frontend | `agents/frontend/` | `geepers_orchestrator_frontend` | css, typescript, motion, webperf, design, uxpert |
+| Fullstack | `agents/fullstack/` | `geepers_orchestrator_fullstack` | db, react |
 | Web | `agents/web/` | `geepers_orchestrator_web` | flask, express |
 | Hive | `agents/hive/` | `geepers_orchestrator_hive` | planner, builder, quickwin, integrator, refactor |
-| Research | `agents/research/` | `geepers_orchestrator_research` | data, links, diag, citations, fetcher, searcher |
+| Research | `agents/research/` | `geepers_orchestrator_research` | data, links, diag, citations, fetcher, searcher, doublecheck |
 | Python | `agents/python/` | `geepers_orchestrator_python` | pycli |
 | Games | `agents/games/` | `geepers_orchestrator_games` | gamedev, game, godot |
 | Corpus | `agents/corpus/` | `geepers_orchestrator_corpus` | corpus, corpus_ux |
-| Datavis | `agents/datavis/` | `geepers_orchestrator_datavis` | viz, color, story, math, data |
+| Datavis | `agents/datavis/` | `geepers_orchestrator_datavis` | viz, color, story, math, data, poet |
 | System | `agents/system/` | (none) | help, onboard, diag |
-| Standalone | `agents/standalone/` | (none) | api, scalpel, janitor, canary, dashboard, git, todoist, docs |
+| Standalone | `agents/standalone/` | (none) | api, scalpel, janitor, canary, dashboard, git, todoist, docs, humanizer, readme |
 
 **Product domain** agents are registered in `plugin.json` but the `agents/product/` directory does not yet exist on disk (orchestrator_product, business_plan, prd, fullstack_dev, intern_pool, code_checker, docs).
 

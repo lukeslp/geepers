@@ -1,80 +1,122 @@
 # Geepers
 
-Multi-agent orchestration system with specialized Claude Code plugin agents.
+Multi-agent orchestration framework and Claude Code plugin. Ships 60+ specialized agents as markdown definitions and a Python package with orchestrator patterns, config management, and MCP server bridges.
 
-## Installation
+## Install
 
-### As Claude Code Plugin (agents)
 ```bash
+# Python package
+pip install geepers
+
+# With specific LLM providers
+pip install "geepers[anthropic]"
+pip install "geepers[openai]"
+pip install "geepers[all]"      # everything
+
+# As Claude Code plugin (agents only)
 /plugin add lukeslp/geepers
 ```
 
-## What's Included
+## Python Package
 
-### 63 Specialized Agents
+The `geepers` package provides orchestration infrastructure:
 
-Markdown-defined agents for Claude Code that provide specialized workflows:
+```python
+from geepers import ConfigManager
+from geepers.orchestrators import (
+    DreamCascadeOrchestrator,   # Hierarchical 3-tier research
+    DreamSwarmOrchestrator,     # Parallel multi-domain search
+    SequentialOrchestrator,
+    ConditionalOrchestrator,
+    IterativeOrchestrator,
+)
+```
 
-| Category | Agents | Purpose |
-|----------|--------|---------|
-| **Master** | conductor_geepers | Intelligent routing to specialists |
-| **Checkpoint** | scout, repo, status, snippets, orchestrator | Session maintenance |
-| **Deploy** | caddy, services, validator, orchestrator | Infrastructure |
-| **Quality** | a11y, perf, api, deps, critic, security, testing, orchestrator | Code audits |
-| **Frontend** | css, design, motion, typescript, uxpert, webperf, orchestrator | UI/UX development |
-| **Fullstack** | db, react, orchestrator | End-to-end features |
-| **Hive** | builder, planner, integrator, quickwin, refactor, orchestrator | Task execution |
-| **Research** | data, links, diag, citations, fetcher, searcher, orchestrator | Data gathering |
-| **Games** | game, gamedev, godot, orchestrator | Game development |
-| **Corpus** | corpus, corpus_ux, orchestrator | Linguistics/NLP |
-| **Web** | flask, express, orchestrator | Web applications |
-| **Python** | pycli, orchestrator | Python projects |
-| **Standalone** | api, scalpel, dashboard, canary, janitor, docs, git | Specialized tasks |
-| **System** | help, onboard, diag | System utilities |
+### Orchestrators
 
-## Related: MCP-Dreamwalker
+All orchestrators share the same interface:
 
-For programmatic orchestration with LLM providers and data clients, see [MCP-Dreamwalker](https://github.com/lukeslp/mcp-dreamwalker):
+```python
+async def decompose_task(task, context=None) -> List[SubTask]
+async def execute_subtask(subtask, context=None) -> AgentResult
+async def synthesize_results(results, context=None) -> str
+```
 
-- **Dream Cascade** - Hierarchical 3-tier research orchestration
-- **Dream Swarm** - Multi-domain parallel search
-- **12 LLM Providers** - Anthropic, OpenAI, xAI, Gemini, Mistral, Cohere, etc.
-- **17 Data Clients** - Census, arXiv, GitHub, NASA, Wikipedia, etc.
+The base class handles parallel execution with semaphores, timeouts, retries, and streaming progress events.
 
-## Usage
+**Dream Cascade** - Three-tier hierarchical research. Decomposes tasks into subtasks, fans out to worker agents, synthesizes through a mid-level coordinator, then produces a final executive summary.
 
-Agents are available via Claude Code's Task tool with `subagent_type`:
+**Dream Swarm** - Parallel multi-domain search. Dispatches specialized agents (web search, academic, data analysis) simultaneously and merges results.
+
+### Config Management
+
+```python
+from geepers import ConfigManager
+
+config = ConfigManager(app_name="myapp")
+# Loads: defaults < config file < .env < env vars < CLI args
+api_key = config.get_api_key("anthropic")
+```
+
+Auto-discovers keys for 16 LLM providers from environment variables.
+
+### MCP Server Bridges
+
+Entry points for STDIO-based MCP servers:
+
+- `geepers-unified` - All tools in one server
+- `geepers-providers` - LLM provider access
+- `geepers-data` - Data source clients
+- `geepers-cache` - Caching layer
+- `geepers-utility` - File and text utilities
+- `geepers-websearch` - Web search tools
+
+### Naming Registry
+
+```python
+from geepers.naming import get_identifier, resolve_legacy
+
+get_identifier("orchestrator", "cascade")  # Returns scoped identifier
+resolve_legacy("BeltalowdaOrchestrator")   # Maps to canonical name
+```
+
+## Claude Code Agents
+
+60+ markdown-defined agents organized into 15 domains:
+
+| Domain | Orchestrator | Specialists |
+|--------|-------------|-------------|
+| **Master** | conductor_geepers | Routes to all domains |
+| **Checkpoint** | orchestrator_checkpoint | scout, repo, status, snippets |
+| **Deploy** | orchestrator_deploy | caddy, services, validator |
+| **Quality** | orchestrator_quality | a11y, perf, deps, critic, security, testing |
+| **Frontend** | orchestrator_frontend | css, design, motion, typescript, uxpert, webperf |
+| **Fullstack** | orchestrator_fullstack | db, react |
+| **Hive** | orchestrator_hive | builder, planner, integrator, quickwin, refactor |
+| **Research** | orchestrator_research | data, links, diag, citations, fetcher, searcher |
+| **Web** | orchestrator_web | flask, express |
+| **Python** | orchestrator_python | pycli |
+| **Games** | orchestrator_games | game, gamedev, godot |
+| **Corpus** | orchestrator_corpus | corpus, corpus_ux |
+| **Datavis** | orchestrator_datavis | viz, color, story, math, data |
+| **System** | (standalone) | help, onboard, diag |
+| **Standalone** | (standalone) | api, scalpel, janitor, canary, dashboard, git, docs |
+
+Agents follow a strict routing hierarchy: **Conductor -> Orchestrators -> Specialists**.
 
 ```
-# Quick reconnaissance
+# Usage in Claude Code (via Task tool)
 Task with subagent_type="geepers_scout"
-
-# Infrastructure changes
-Task with subagent_type="geepers_caddy"
-
-# End-of-session cleanup
-Task with subagent_type="geepers_orchestrator_checkpoint"
-
-# Full-stack development
-Task with subagent_type="geepers_orchestrator_fullstack"
-
-# Frontend work
 Task with subagent_type="geepers_orchestrator_frontend"
+Task with subagent_type="conductor_geepers"
 ```
 
-## Agent Categories
+## Related
 
-See [AGENT_DOMAINS.md](agents/AGENT_DOMAINS.md) for the full routing guide.
-
-**Orchestrators** coordinate multiple specialists:
-- `conductor_geepers` - Master router
-- `geepers_orchestrator_frontend` - CSS, React, design, motion
-- `geepers_orchestrator_fullstack` - Backend + frontend
-- `geepers_orchestrator_hive` - Build from plans and TODOs
-- `geepers_orchestrator_quality` - Audits and reviews
-- `geepers_orchestrator_deploy` - Infrastructure changes
-- `geepers_orchestrator_checkpoint` - Session maintenance
+- [dr-eamer-ai-shared](https://pypi.org/project/dr-eamer-ai-shared/) - Core shared library (LLM providers, data clients)
+- [geepers-orchestrators](https://pypi.org/project/geepers-orchestrators/) - Standalone orchestration patterns
+- [MCP-Dreamwalker](https://github.com/lukeslp/mcp-dreamwalker) - MCP server for multi-agent workflows
 
 ## License
 
-MIT License - Luke Steuber
+MIT - Luke Steuber

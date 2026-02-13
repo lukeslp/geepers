@@ -642,7 +642,7 @@ if __name__ == "__main__":
 
         # Execute task with hierarchical coordination
         result = await orchestrator.execute_task(
-            task="Analyze the impact of artificial intelligence on healthcare",
+            task="Analyze the impact of language models on healthcare",
             stream_callback=progress_callback
         )
 

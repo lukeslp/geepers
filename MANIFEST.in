@@ -1,10 +1,15 @@
 include LICENSE
 include README.md
-include CLAUDE.md
 include pyproject.toml
 recursive-include agents *.md
 recursive-include .claude-plugin *.json
 recursive-include geepers *.py *.json *.yaml *.md
+prune geepers/mcp/venv
+prune geepers/mcp/remote-venv
+prune geepers/mcp/tests
+prune geepers/mcp/reports
+prune geepers/mcp/__pycache__
+prune geepers/mcp/.backup-20251118-001627
 global-exclude __pycache__/*
 global-exclude *.pyc
 global-exclude *.pyo
@@ -14,3 +19,6 @@ global-exclude reports/*
 global-exclude recommendations/*
 global-exclude status/*
 global-exclude archive/*
+global-exclude *.sh
+global-exclude *.backup*
+global-exclude state_backup.json
