@@ -6,12 +6,12 @@ Multi-agent orchestration framework and Claude Code plugin. Ships 60+ specialize
 
 ```bash
 # Python package
-pip install geepers-ai
+pip install geepers-llm
 
 # With specific LLM providers
-pip install "geepers-ai[anthropic]"
-pip install "geepers-ai[openai]"
-pip install "geepers-ai[all]"      # everything
+pip install "geepers-llm[anthropic]"
+pip install "geepers-llm[openai]"
+pip install "geepers-llm[all]"      # everything
 
 # As Claude Code plugin (agents only)
 /plugin add lukeslp/geepers
