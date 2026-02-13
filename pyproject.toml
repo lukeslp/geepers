@@ -8,13 +8,12 @@ version = "1.0.0"
 description = "Multi-agent orchestration system with MCP tools and Claude Code plugin agents"
 authors = [{name = "Luke Steuber", email = "luke@lukesteuber.com"}]
 readme = "README.md"
-license = {text = "MIT"}
+license = "MIT"
 requires-python = ">=3.8"
 keywords = ["mcp", "orchestration", "multi-agent", "llm", "claude-code", "geepers"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
@@ -104,15 +103,20 @@ packages = [
     "geepers",
     "geepers.mcp",
     "geepers.mcp.stdio_servers",
-    "geepers.mcp.tools",
     "geepers.orchestrators",
     "geepers.orchestrators.enterprise",
     "geepers.parser",
     "geepers.naming",
+    "geepers.utils",
 ]
 
 [tool.setuptools.package-data]
 "*" = ["*.yaml", "*.json", "*.md"]
 
 [tool.setuptools.exclude-package-data]
-"*" = ["logs/*", "reports/*", "recommendations/*", "status/*", "archive/*"]
+"*" = [
+    "logs/*", "reports/*", "recommendations/*", "status/*", "archive/*",
+    "venv/*", "remote-venv/*", "tests/*", "__pycache__/*",
+    "*.sh", "*.backup*", "state_backup.json",
+    ".backup-*/*",
+]

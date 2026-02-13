@@ -7,7 +7,7 @@ orchestrate parallel workflows with asyncio.gather, task grouping, and streaming
 updates.
 
 Use Cases:
-- Multi-agent AI workflows with parallel processing
+- Multi-agent LLM workflows with parallel processing
 - Batch processing with concurrent workers
 - Coordinating multiple API calls in parallel
 - Swarm-based task decomposition and execution

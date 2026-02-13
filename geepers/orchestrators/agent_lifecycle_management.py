@@ -256,7 +256,7 @@ class BaseAgent(ABC):
         try:
             # Create mock messages for cost estimation
             messages = [
-                {"role": "system", "content": "You are a helpful AI assistant."},
+                {"role": "system", "content": "You are a helpful assistant."},
                 {"role": "user", "content": task.prompt}
             ]
 

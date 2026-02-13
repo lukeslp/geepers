@@ -1,7 +1,7 @@
 """
 Belter Agent - File Processing Specialist
 
-Specialized AI agent for file processing, document analysis, and data extraction
+Specialized agent for file processing, document analysis, and data extraction
 using Mistral-7b. Handles various file formats including PDF, DOCX, CSV, JSON, and XML.
 
 Key Capabilities:
@@ -200,8 +200,8 @@ class BelterAgent(SwarmModuleBase):
             elif file_extension == '.xml':
                 extracted_data = await self.file_processors['xml'].extract_data(content, schema)
             else:
-                # Use AI for unstructured data extraction
-                extracted_data = await self._ai_extract_structured_data(content, schema)
+                # Use LLM for unstructured data extraction
+                extracted_data = await self._llm_extract_structured_data(content, schema)
             
             return TaskResult(
                 task_id=f"extract_{Path(file_path).stem}",
@@ -451,8 +451,8 @@ class BelterAgent(SwarmModuleBase):
         - quality: Assessment of content quality
         """
     
-    async def _ai_extract_structured_data(self, content: str, schema: Optional[Dict]) -> Dict:
-        """Use AI to extract structured data based on schema."""
+    async def _llm_extract_structured_data(self, content: str, schema: Optional[Dict]) -> Dict:
+        """Use LLM to extract structured data based on schema."""
         
         schema_prompt = ""
         if schema:

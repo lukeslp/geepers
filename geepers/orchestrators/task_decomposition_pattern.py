@@ -384,7 +384,7 @@ if __name__ == "__main__":
 
         decomposer = TaskDecomposer(config)
 
-        task = "Analyze the impact of artificial intelligence on healthcare"
+        task = "Analyze the impact of language models on healthcare"
         result = await decomposer.decompose_task(task)
 
         print(f"Original Task: {result.original_task}")
