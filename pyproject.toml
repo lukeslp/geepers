@@ -119,4 +119,6 @@ packages = [
     "venv/*", "remote-venv/*", "tests/*", "__pycache__/*",
     "*.sh", "*.backup*", "state_backup.json",
     ".backup-*/*",
+    "CLAUDE.md", "OPTIMIZATION_SUMMARY.txt",
+    "claude_code_config.json", "cursor_mcp_config.json",
 ]

@@ -2,6 +2,7 @@ include LICENSE
 include README.md
 include pyproject.toml
 recursive-include agents *.md
+prune agents/geepers_agents
 recursive-include .claude-plugin *.json
 recursive-include geepers *.py *.json *.yaml *.md
 prune geepers/mcp/venv
