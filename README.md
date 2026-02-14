@@ -36,7 +36,7 @@ from geepers.orchestrators import (
 
 ### Orchestrators
 
-All orchestrators share the same interface:
+Every orchestrator implements three methods:
 
 ```python
 async def decompose_task(task, context=None) -> List[SubTask]
@@ -44,11 +44,11 @@ async def execute_subtask(subtask, context=None) -> AgentResult
 async def synthesize_results(results, context=None) -> str
 ```
 
-The base class handles parallel execution with semaphores, timeouts, retries, and streaming progress events.
+Base class handles the grunt work: parallel execution, timeouts, retries, and streaming events.
 
-**Dream Cascade** - Three-tier hierarchical research. Decomposes tasks into subtasks, fans out to worker agents, synthesizes through a mid-level coordinator, then produces a final executive summary.
+**Dream Cascade** - Hierarchical research workflow. Breaks tasks into subtasks, farms them out to worker agents, synthesizes through a mid-level coordinator, produces executive summary.
 
-**Dream Swarm** - Parallel multi-domain search. Dispatches specialized agents (web search, academic, data analysis) simultaneously and merges results.
+**Dream Swarm** - Parallel search across domains. Dispatches specialized agents (web search, academic, data analysis) simultaneously and merges results.
 
 ### Config Management
 
@@ -104,7 +104,7 @@ resolve_legacy("BeltalowdaOrchestrator")   # Maps to canonical name
 | **System** | (standalone) | help, onboard, diag |
 | **Standalone** | (standalone) | api, scalpel, janitor, canary, dashboard, git, docs |
 
-Agents follow a strict routing hierarchy: **Conductor -> Orchestrators -> Specialists**.
+Routing hierarchy: **Conductor -> Orchestrators -> Specialists**.
 
 ```
 # Usage in Claude Code (via Task tool)
