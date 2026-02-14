@@ -4,37 +4,52 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-Geepers is a multi-agent orchestration system that ships as a **Claude Code plugin** (`/plugin add lukeslp/geepers`). It has three distinct layers:
+Geepers is a multi-agent orchestration system that ships in two ways:
+- **Claude Code plugin** (`/plugin add lukeslp/geepers`) - Installs 60 agent definitions
+- **Python package** (`pip install geepers-llm`) - Provides orchestrators, config, utilities
+
+It has three distinct layers:
 
 1. **Agent definitions** (`agents/`) - 72 markdown-defined specialists organized into 15 domains (60 registered in plugin.json), invoked via Claude Code's `Task` tool with `subagent_type`
-2. **Python package** (`geepers/`) - Orchestration framework, config management, naming registry, and utilities. Published to PyPI as `geepers` v1.0.0. The `geepers/mcp/` directory is a symlink to `~/shared/mcp/` (the actual MCP server code).
+2. **Python package** (`geepers/`) - Orchestration framework, config management, naming registry, and utilities. Published to PyPI as **`geepers-llm`** v1.0.0. The `geepers/mcp/` directory is a symlink to `~/shared/mcp/` (the actual MCP server code).
 3. **Skills** (`skills/source/`) - 13 Claude Desktop skill packs (datavis, engineering, finance, vision, etc.) zipped for upload
 
 ## Commands
 
 ```bash
-# Install package in dev mode
+# Install from PyPI (regular usage)
+pip install geepers-llm                 # Core package
+pip install "geepers-llm[anthropic]"    # With Anthropic provider
+pip install "geepers-llm[all]"          # Everything
+
+# Install in dev mode (for development)
 pip install -e .
+pip install -e ".[all]"                 # Everything
 
-# Install with optional dependencies
-pip install -e ".[all]"          # Everything
-pip install -e ".[anthropic]"    # Just Anthropic provider
-
-# Test imports
+# Verify installation
 python -c "from geepers import ConfigManager"
 python -c "from geepers.orchestrators import DreamCascadeOrchestrator"
+python -c "from geepers.naming import get_identifier"
 
 # Run MCP server (what Claude Code connects to)
 ~/start-mcp-server
 
-# Publish to PyPI
-python -m build && twine upload dist/*
+# Build and publish to PyPI
+python -m build
+twine upload dist/*
 
 # Rebuild Claude Desktop skill zips after editing source
 cd ~/geepers/skills && bash rebuild-zips.sh
+
+# System cleanup (removes logs, backups, temp files)
+bash scripts/system-cleanup.sh
 ```
 
-No test suite exists yet. Verify changes by testing imports and running the MCP server.
+**Testing**: No formal test suite exists. Verify changes by:
+1. Testing imports (see above)
+2. Running the MCP server and checking Claude Code connection
+3. Testing orchestrator execution with a simple task
+4. Checking agent invocation via Claude Code Task tool
 
 ## Architecture
 
