@@ -1,8 +1,8 @@
 # Geepers
 
-Multi-agent orchestration for LLM workfows. Two ways to use it:
-- **Claude Code plugin** - 60+ specialized agents for development tasks
-- **Python package** - Orchestrators, config management, MCP server bridges
+Multi-agent orchestration for LLM workflows. Two ways to use it:
+- Claude Code plugin - 60+ specialized agents for development tasks
+- Python package - Orchestrators, config management, MCP server bridges
 
 ## Install
 
@@ -46,9 +46,9 @@ async def synthesize_results(results, context=None) -> str
 
 Base class handles the grunt work: parallel execution, timeouts, retries, and streaming events.
 
-**Dream Cascade** - Hierarchical research workflow. Breaks tasks into subtasks, farms them out to worker agents, synthesizes through a mid-level coordinator, produces executive summary.
+Dream Cascade - Hierarchical research workflow. Breaks tasks into subtasks, farms them out to worker agents, synthesizes through a mid-level coordinator, produces executive summary.
 
-**Dream Swarm** - Parallel search across domains. Dispatches specialized agents (web search, academic, data analysis) simultaneously and merges results.
+Dream Swarm - Parallel search across domains. Dispatches specialized agents (web search, academic, data analysis) simultaneously and merges results.
 
 ### Config Management
 
@@ -88,23 +88,23 @@ resolve_legacy("BeltalowdaOrchestrator")   # Maps to canonical name
 
 | Domain | Orchestrator | Specialists |
 |--------|-------------|-------------|
-| **Master** | conductor_geepers | Routes to all domains |
-| **Checkpoint** | orchestrator_checkpoint | scout, repo, status, snippets |
-| **Deploy** | orchestrator_deploy | caddy, services, validator |
-| **Quality** | orchestrator_quality | a11y, perf, deps, critic, security, testing |
-| **Frontend** | orchestrator_frontend | css, design, motion, typescript, uxpert, webperf |
-| **Fullstack** | orchestrator_fullstack | db, react |
-| **Hive** | orchestrator_hive | builder, planner, integrator, quickwin, refactor |
-| **Research** | orchestrator_research | data, links, diag, citations, fetcher, searcher |
-| **Web** | orchestrator_web | flask, express |
-| **Python** | orchestrator_python | pycli |
-| **Games** | orchestrator_games | game, gamedev, godot |
-| **Corpus** | orchestrator_corpus | corpus, corpus_ux |
-| **Datavis** | orchestrator_datavis | viz, color, story, math, data |
-| **System** | (standalone) | help, onboard, diag |
-| **Standalone** | (standalone) | api, scalpel, janitor, canary, dashboard, git, docs |
+| Master | conductor_geepers | Routes to all domains |
+| Checkpoint | orchestrator_checkpoint | scout, repo, status, snippets |
+| Deploy | orchestrator_deploy | caddy, services, validator |
+| Quality | orchestrator_quality | a11y, perf, deps, critic, security, testing |
+| Frontend | orchestrator_frontend | css, design, motion, typescript, uxpert, webperf |
+| Fullstack | orchestrator_fullstack | db, react |
+| Hive | orchestrator_hive | builder, planner, integrator, quickwin, refactor |
+| Research | orchestrator_research | data, links, diag, citations, fetcher, searcher |
+| Web | orchestrator_web | flask, express |
+| Python | orchestrator_python | pycli |
+| Games | orchestrator_games | game, gamedev, godot |
+| Corpus | orchestrator_corpus | corpus, corpus_ux |
+| Datavis | orchestrator_datavis | viz, color, story, math, data |
+| System | (standalone) | help, onboard, diag |
+| Standalone | (standalone) | api, scalpel, janitor, canary, dashboard, git, docs |
 
-Routing hierarchy: **Conductor -> Orchestrators -> Specialists**.
+Routing hierarchy: Conductor -> Orchestrators -> Specialists.
 
 ```
 # Usage in Claude Code (via Task tool)
