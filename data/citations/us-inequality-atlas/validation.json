@@ -1,0 +1,256 @@
+{
+  "project": "us-inequality-atlas",
+  "validation_date": "2026-02-14T08:22:00Z",
+  "total_citations": 11,
+  "valid_count": 9,
+  "needs_attention_count": 1,
+  "invalid_count": 1,
+  "unverifiable_count": 0,
+  "citations": [
+    {
+      "id": 1,
+      "source": "Census ACS",
+      "url": "https://data.census.gov",
+      "status": "valid",
+      "http_status": 200,
+      "verified": true,
+      "locations": ["README.md", "DATASET_CARD.md", "multiple metadata files"]
+    },
+    {
+      "id": 2,
+      "source": "USDA Food Access Research Atlas",
+      "url": "https://www.ers.usda.gov/data-products/food-access-research-atlas/",
+      "status": "valid",
+      "http_status": 301,
+      "verified": true,
+      "notes": "Redirects but resolves to valid page",
+      "locations": ["README.md line 121", "DATASET_CARD.md line 48"]
+    },
+    {
+      "id": 3,
+      "source": "CMS Hospital Compare",
+      "url": "https://data.cms.gov/provider-data/dataset/xubh-q36u",
+      "status": "valid",
+      "http_status": 200,
+      "verified": true,
+      "locations": ["README.md line 122", "DATASET_CARD.md line 49", "cms_hospitals_metadata.json"]
+    },
+    {
+      "id": 4,
+      "source": "HRSA HPSA",
+      "url": "https://data.hrsa.gov",
+      "status": "valid",
+      "http_status": 200,
+      "verified": true,
+      "locations": ["README.md line 123", "DATASET_CARD.md line 50"]
+    },
+    {
+      "id": 5,
+      "source": "HuggingFace Dataset",
+      "url": "https://huggingface.co/datasets/lukeslp/us-inequality-atlas",
+      "status": "valid",
+      "http_status": 200,
+      "verified": true,
+      "locations": ["README.md line 5", "README.md line 132"]
+    },
+    {
+      "id": 6,
+      "source": "Data Trove catalog",
+      "url": "https://dr.eamer.dev/datavis/data_trove/",
+      "status": "valid",
+      "http_status": 200,
+      "verified": true,
+      "locations": ["README.md line 11", "README.md line 130", "DATASET_CARD.md line 28"]
+    },
+    {
+      "id": 7,
+      "source": "Data Trove main",
+      "url": "https://dr.eamer.dev/datavis/",
+      "status": "valid",
+      "http_status": 200,
+      "verified": true,
+      "locations": ["README.md line 9"]
+    },
+    {
+      "id": 8,
+      "source": "Census data table browser",
+      "url": "https://data.census.gov/table",
+      "status": "valid",
+      "http_status": 200,
+      "verified": true,
+      "notes": "Specific ACS table references in metadata"
+    },
+    {
+      "id": 9,
+      "source": "GitHub repository",
+      "url": "https://github.com/lukeslp/us-inequality-atlas",
+      "status": "valid",
+      "http_status": 200,
+      "verified": true,
+      "locations": ["DATASET_CARD.md line 27"]
+    },
+    {
+      "id": 10,
+      "source": "Portfolio site",
+      "url": "https://lukesteuber.com",
+      "status": "needs_attention",
+      "http_status": 301,
+      "verified": true,
+      "issue": "Redirects to https://dr.eamer.dev/luke/",
+      "recommendation": "Update to canonical URL",
+      "locations": ["README.md line 131", "README.md line 137", "DATASET_CARD.md line 29"]
+    },
+    {
+      "id": 11,
+      "source": "Bluesky profile",
+      "url": "https://bsky.app/profile/lukesteuber.com",
+      "status": "invalid",
+      "http_status": 404,
+      "verified": false,
+      "issue": "URL returns 404 Not Found",
+      "recommendation": "Verify and update or remove",
+      "locations": ["README.md line 138"]
+    }
+  ],
+  "data_sources": [
+    {
+      "name": "Census ACS 2021",
+      "category": "Food Deserts",
+      "agency": "US Census Bureau",
+      "public_domain": true,
+      "verified": true,
+      "usage": "Poverty, vehicle access, grocery stores"
+    },
+    {
+      "name": "Census ACS 2022",
+      "category": "Healthcare, Housing",
+      "agency": "US Census Bureau",
+      "public_domain": true,
+      "verified": true,
+      "usage": "Uninsured rate, poverty, rent burden, median income, housing units",
+      "specific_tables": ["B25070", "B25064", "B19013", "B25003"]
+    },
+    {
+      "name": "USDA Food Access Atlas 2019",
+      "category": "Food Deserts",
+      "agency": "USDA ERS",
+      "public_domain": true,
+      "verified": true,
+      "source_file": "source/food_access_atlas_2019.xlsx",
+      "file_size": "82 MB (Git LFS)"
+    },
+    {
+      "name": "CMS Hospital Compare",
+      "category": "Healthcare",
+      "agency": "Centers for Medicare & Medicaid Services",
+      "public_domain": true,
+      "verified": true,
+      "last_updated": "2026-01-17",
+      "record_count": 5421
+    },
+    {
+      "name": "HRSA HPSA",
+      "category": "Healthcare",
+      "agency": "Health Resources & Services Administration",
+      "public_domain": true,
+      "verified": true
+    },
+    {
+      "name": "VA Statistics",
+      "category": "Veterans",
+      "agency": "Department of Veterans Affairs",
+      "public_domain": true,
+      "verified": true
+    },
+    {
+      "name": "CDC Data",
+      "category": "Veterans (suicide data)",
+      "agency": "Centers for Disease Control",
+      "public_domain": true,
+      "verified": true
+    }
+  ],
+  "file_validation": {
+    "csv_files": 16,
+    "json_files": 21,
+    "xlsx_files": 1,
+    "all_claimed_files_exist": false,
+    "issues": [
+      {
+        "type": "duplicate",
+        "files": ["healthcare/cms_hospitals_2025.csv", "cms/cms_hospitals_20260121.csv"],
+        "severity": "low",
+        "recommendation": "Clarify relationship or remove duplicate"
+      },
+      {
+        "type": "undocumented",
+        "files": [
+          "food_deserts/children_worst_counties.json",
+          "food_deserts/urban_rural_comparison.json",
+          "All *_metadata.json files"
+        ],
+        "severity": "low",
+        "recommendation": "Add to README documentation"
+      }
+    ]
+  },
+  "metadata_validation": {
+    "all_json_valid": true,
+    "all_csv_have_metadata": true,
+    "metadata_includes_sources": true,
+    "metadata_includes_row_counts": true,
+    "metadata_includes_creation_dates": true
+  },
+  "license_validation": {
+    "license_file_exists": true,
+    "license_type": "MIT",
+    "copyright_holder": "Luke Steuber",
+    "copyright_year": 2025,
+    "consistency": "All license references consistent",
+    "public_domain_claim_for_sources": true,
+    "claim_accurate": true
+  },
+  "data_accuracy": {
+    "county_count_claim": "~3,200",
+    "actual_county_count": "3,222 (healthcare/housing), 3,142 (food deserts)",
+    "accuracy": "Good approximation",
+    "hospital_count_claim": 5421,
+    "hospital_count_actual": 5421,
+    "veteran_states_claim": 54,
+    "veteran_states_actual": 54,
+    "fips_code_convention_documented": true
+  },
+  "quality_issues": [
+    {
+      "severity": "high",
+      "type": "broken_link",
+      "location": "README.md line 138",
+      "issue": "Bluesky profile URL returns 404",
+      "action": "Update or remove URL"
+    },
+    {
+      "severity": "low",
+      "type": "redirect",
+      "location": "Multiple files",
+      "issue": "Portfolio URL redirects",
+      "action": "Update to canonical URL: https://dr.eamer.dev/luke/"
+    },
+    {
+      "severity": "low",
+      "type": "data_quality",
+      "location": "food_deserts/state_rankings.json line 621",
+      "issue": "Puerto Rico (state code 72) has NaN state_name",
+      "action": "Set state_name to 'Puerto Rico'"
+    }
+  ],
+  "overall_assessment": {
+    "citation_quality": "Excellent",
+    "source_quality": "Tier 1 (Government/Official)",
+    "metadata_completeness": "Excellent",
+    "documentation_quality": "Very Good",
+    "license_clarity": "Excellent",
+    "major_issues": 1,
+    "minor_issues": 2,
+    "recommendation": "High quality dataset with excellent provenance documentation. Fix broken Bluesky link and address minor quality issues."
+  }
+}

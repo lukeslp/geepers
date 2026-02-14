@@ -1,0 +1,1239 @@
+[
+  {
+    "dataset": "accessibility-atlas",
+    "status": "checked",
+    "urls_checked": 36,
+    "urls_valid": 30,
+    "urls_invalid": 6,
+    "urls": [
+      {
+        "url": "https://patentscope.wipo.int",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://webaim.org/projects/screenreadersurvey10/",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://sites.ed.gov/idea/data/",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": true
+      },
+      {
+        "url": "https://data.worldbank.org",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.hud.gov/program_offices/fair_housing_equal_opp",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://bsky.app/profile/lukesteuber.com",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://data.cms.gov",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": true
+      },
+      {
+        "url": "https://lukesteuber.com",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.ssa.gov/policy",
+        "valid": false,
+        "status_code": 403,
+        "message": "HTTP 403",
+        "is_critical": true
+      },
+      {
+        "url": "https://treaties.un.org",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://askjan.org",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.eeoc.gov/data/charge-statistics",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": true
+      },
+      {
+        "url": "https://www.who.int/data/gho",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": true
+      },
+      {
+        "url": "https://arasaac.org",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://globalsymbols.com",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://stats.oecd.org",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK (GET)",
+        "is_critical": false
+      },
+      {
+        "url": "https://img.shields.io/badge/live-dr.eamer.dev-orange",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://fred.stlouisfed.org",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://httparchive.org",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://data.census.gov",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": true
+      },
+      {
+        "url": "https://www.bls.gov/cps/cpsdisability.htm",
+        "valid": false,
+        "status_code": 403,
+        "message": "HTTP 403",
+        "is_critical": true
+      },
+      {
+        "url": "https://info.usablenet.com/ada-website-compliance-lawsuit-tracker",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://webaim.org/projects/million/",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.samhsa.gov/data",
+        "valid": false,
+        "status_code": 400,
+        "message": "HTTP 400",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.transit.dot.gov/ntd",
+        "valid": false,
+        "status_code": 403,
+        "message": "HTTP 403",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.va.gov/disability",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": true
+      },
+      {
+        "url": "https://img.shields.io/badge/notebooks-10-purple",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "LICENSE",
+        "valid": true,
+        "status_code": 0,
+        "message": "Relative path (skipped)",
+        "is_critical": false
+      },
+      {
+        "url": "https://dr.eamer.dev",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://vizwiz.org",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.section508.gov",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://dr.eamer.dev/datavis/data_trove/",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://img.shields.io/badge/datasets-42-green",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://ocrdata.ed.gov",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": true
+      },
+      {
+        "url": "https://ec.europa.eu/eurostat",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://img.shields.io/badge/license-MIT-blue.svg",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      }
+    ]
+  },
+  {
+    "dataset": "bluesky_kaggle_export",
+    "status": "no_readme",
+    "urls_checked": 0,
+    "urls_valid": 0,
+    "urls_invalid": 0
+  },
+  {
+    "dataset": "etymology_atlas",
+    "status": "checked",
+    "urls_checked": 1,
+    "urls_valid": 0,
+    "urls_invalid": 1,
+    "urls": [
+      {
+        "url": "https://huggingface.co/datasets/lukeslp/etymology-atlas}",
+        "valid": false,
+        "status_code": 401,
+        "message": "HTTP 401",
+        "is_critical": false
+      }
+    ]
+  },
+  {
+    "dataset": "language-data",
+    "status": "checked",
+    "urls_checked": 9,
+    "urls_valid": 7,
+    "urls_invalid": 2,
+    "urls": [
+      {
+        "url": "https://huggingface.co/datasets/lukeslp/world-languages",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://wals.info",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://phoible.org",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://bsky.app/profile/lukesteuber.com",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "LICENSE.md",
+        "valid": true,
+        "status_code": 0,
+        "message": "Relative path (skipped)",
+        "is_critical": false
+      },
+      {
+        "url": "https://iso639-3.sil.org/code_tables/download_tables",
+        "valid": false,
+        "status_code": 403,
+        "message": "HTTP 403",
+        "is_critical": false
+      },
+      {
+        "url": "https://joshuaproject.net",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://glottolog.org",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://lukesteuber.com",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      }
+    ]
+  },
+  {
+    "dataset": "large-meteorites",
+    "status": "checked",
+    "urls_checked": 10,
+    "urls_valid": 1,
+    "urls_invalid": 9,
+    "urls": [
+      {
+        "url": "https://www.kaggle.com/datasets/lucassteuber/large-meteorites",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.kaggle.com/datasets/lucassteuber/large-meteorites\"",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://gist.github.com/lukeslp/1e62406b77598b0fc9fefbe3c3d3badb",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.kaggle.com/datasets/lucassteuber/large-meteorites\",",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://lukesteuber.com\"",
+        "valid": false,
+        "status_code": 0,
+        "message": "Connection error",
+        "is_critical": false
+      },
+      {
+        "url": "https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": true
+      },
+      {
+        "url": "https://huggingface.co/datasets/lukeslp/large-meteorites\",",
+        "valid": false,
+        "status_code": 401,
+        "message": "HTTP 401",
+        "is_critical": false
+      },
+      {
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/\",",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://schema.org\",",
+        "valid": false,
+        "status_code": 0,
+        "message": "Connection error",
+        "is_critical": false
+      },
+      {
+        "url": "https://huggingface.co/datasets/lukeslp/large-meteorites",
+        "valid": false,
+        "status_code": 401,
+        "message": "HTTP 401",
+        "is_critical": false
+      }
+    ]
+  },
+  {
+    "dataset": "noaa-significant-storms",
+    "status": "checked",
+    "urls_checked": 9,
+    "urls_valid": 2,
+    "urls_invalid": 7,
+    "urls": [
+      {
+        "url": "https://huggingface.co/datasets/lukeslp/noaa-significant-storms",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.kaggle.com/datasets/lucassteuber/noaa-significant-storms",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://huggingface.co/datasets/lukeslp/noaa-significant-storms\",",
+        "valid": false,
+        "status_code": 401,
+        "message": "HTTP 401",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.kaggle.com/datasets/lucassteuber/noaa-significant-storms\"",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.kaggle.com/datasets/lucassteuber/noaa-significant-storms\",",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://gist.github.com/lukeslp/cf4bbf5219bb0db3c360696fbcc25c52",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://lukesteuber.com\"",
+        "valid": false,
+        "status_code": 0,
+        "message": "Connection error",
+        "is_critical": false
+      },
+      {
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/\",",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://schema.org\",",
+        "valid": false,
+        "status_code": 0,
+        "message": "Connection error",
+        "is_critical": false
+      }
+    ]
+  },
+  {
+    "dataset": "reports",
+    "status": "no_readme",
+    "urls_checked": 0,
+    "urls_valid": 0,
+    "urls_invalid": 0
+  },
+  {
+    "dataset": "strange-places-mysterious-phenomena",
+    "status": "checked",
+    "urls_checked": 21,
+    "urls_valid": 13,
+    "urls_invalid": 8,
+    "urls": [
+      {
+        "url": "https://www.kaggle.com/datasets/lucassteuber/strange-places-mysterious-phenomena\",",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://img.shields.io/badge/Records-354%2C770-brightgreen",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://dr.eamer.dev/datavis/interactive/strange-places/",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://bsky.app/profile/lukesteuber.com",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://schema.org\",",
+        "valid": false,
+        "status_code": 0,
+        "message": "Connection error",
+        "is_critical": false
+      },
+      {
+        "url": "https://img.shields.io/badge/Kaggle-Dataset-20BEFF",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://github.com/lukeslp/strange-places-dataset",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://lukesteuber.com",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.kaggle.com/datasets/lucassteuber/strange-places-mysterious-phenomena",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://creativecommons.org/licenses/by/4.0/\",",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://lukesteuber.com\"",
+        "valid": false,
+        "status_code": 0,
+        "message": "Connection error",
+        "is_critical": false
+      },
+      {
+        "url": "https://huggingface.co/datasets/lukeslp/strange-places-mysterious-phenomena\",",
+        "valid": false,
+        "status_code": 401,
+        "message": "HTTP 401",
+        "is_critical": false
+      },
+      {
+        "url": "https://huggingface.co/datasets/lukeslp/strange-places-mysterious-phenomena",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://img.shields.io/badge/Categories-14-blue",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://dr.eamer.dev/datavis/poems/keep-looking/",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://dr.eamer.dev",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://dr.eamer.dev/datavis/data_trove/",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://dr.eamer.dev/datavis/poems/bigfoot/big-foot.html",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.kaggle.com/datasets/lucassteuber/strange-places-mysterious-phenomena\"",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      }
+    ]
+  },
+  {
+    "dataset": "titanic-dataset",
+    "status": "no_readme",
+    "urls_checked": 0,
+    "urls_valid": 0,
+    "urls_invalid": 0
+  },
+  {
+    "dataset": "us-attention-data",
+    "status": "checked",
+    "urls_checked": 13,
+    "urls_valid": 10,
+    "urls_invalid": 3,
+    "urls": [
+      {
+        "url": "https://www.gdeltproject.org/",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://dr.eamer.dev/datavis/one-year/",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "LICENSE",
+        "valid": true,
+        "status_code": 0,
+        "message": "Relative path (skipped)",
+        "is_critical": false
+      },
+      {
+        "url": "https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://trends.google.com/",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://huggingface.co/datasets/lukeslp/us-attention-data",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://dr.eamer.dev/datavis/data_trove/",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://img.shields.io/badge/License-MIT-blue.svg",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://img.shields.io/badge/Sources-Wikipedia%20%7C%20GDELT%20%7C%20Google%20Trends-green",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://en.wikipedia.org/wiki/Special:Statistics",
+        "valid": false,
+        "status_code": 403,
+        "message": "HTTP 403",
+        "is_critical": false
+      },
+      {
+        "url": "https://bsky.app/profile/lukesteuber.com",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://wikimedia.org/api/rest_v1/",
+        "valid": false,
+        "status_code": 403,
+        "message": "HTTP 403",
+        "is_critical": false
+      },
+      {
+        "url": "https://lukesteuber.com",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      }
+    ]
+  },
+  {
+    "dataset": "us-disasters-mashup",
+    "status": "checked",
+    "urls_checked": 18,
+    "urls_valid": 8,
+    "urls_invalid": 10,
+    "urls": [
+      {
+        "url": "https://earthquake.usgs.gov/",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": true
+      },
+      {
+        "url": "https://github.com/lukeslp/us-disasters-mashup",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://gist.github.com/lukeslp/1bf1ce9d0e4bedce40be25d82b986a08",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://github.com/lukeslp/us-disasters-mashup\",",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/\",",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.ntsb.gov/safety/data",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.kaggle.com/datasets/lucassteuber/us-disasters-mashup",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://github.com/lukeslp/us-disasters-mashup\"",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://github.com/lukeslp/us-disasters-mashup}",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://huggingface.co/datasets/lukeslp/us-disasters-mashup\",",
+        "valid": false,
+        "status_code": 401,
+        "message": "HTTP 401",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.kaggle.com/datasets/lucassteuber/us-disasters-mashup\"",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://lukesteuber.com\"",
+        "valid": false,
+        "status_code": 0,
+        "message": "Connection error",
+        "is_critical": false
+      },
+      {
+        "url": "https://huggingface.co/datasets/lukeslp/us-disasters-mashup",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.ncdc.noaa.gov/stormevents/",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": true
+      },
+      {
+        "url": "https://bsky.app/profile/lukesteuber.com",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.nauticalcharts.noaa.gov/data/wrecks-and-obstructions.html",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": true
+      },
+      {
+        "url": "https://schema.org\",",
+        "valid": false,
+        "status_code": 0,
+        "message": "Connection error",
+        "is_critical": false
+      },
+      {
+        "url": "https://lukesteuber.com",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      }
+    ]
+  },
+  {
+    "dataset": "us-housing-affordability-crisis",
+    "status": "no_readme",
+    "urls_checked": 0,
+    "urls_valid": 0,
+    "urls_invalid": 0
+  },
+  {
+    "dataset": "us-inequality-atlas",
+    "status": "checked",
+    "urls_checked": 16,
+    "urls_valid": 14,
+    "urls_invalid": 2,
+    "urls": [
+      {
+        "url": "https://www.ers.usda.gov/data-products/food-access-research-atlas/",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://data.census.gov",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": true
+      },
+      {
+        "url": "https://data.hrsa.gov",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://huggingface.co/datasets/lukeslp/us-inequality-atlas",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "LICENSE",
+        "valid": true,
+        "status_code": 0,
+        "message": "Relative path (skipped)",
+        "is_critical": false
+      },
+      {
+        "url": "https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://data.cms.gov/provider-data/dataset/xubh-q36u",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": true
+      },
+      {
+        "url": "https://dr.eamer.dev",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://dr.eamer.dev/datavis/data_trove/",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://bsky.app/profile/lukesteuber.com",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://img.shields.io/badge/License-MIT-blue.svg",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.kaggle.com/datasets/lucassteuber/us-inequality-atlas",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://dr.eamer.dev/datavis/",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://img.shields.io/badge/Sources-Census%20ACS%20%7C%20CMS%20%7C%20USDA%20%7C%20HRSA-green",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://img.shields.io/badge/Kaggle-Dataset-20BEFF",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://lukesteuber.com",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      }
+    ]
+  },
+  {
+    "dataset": "us-military-veteran-analysis",
+    "status": "no_readme",
+    "urls_checked": 0,
+    "urls_valid": 0,
+    "urls_invalid": 0
+  },
+  {
+    "dataset": "usgs-significant-earthquakes",
+    "status": "checked",
+    "urls_checked": 10,
+    "urls_valid": 3,
+    "urls_invalid": 7,
+    "urls": [
+      {
+        "url": "https://www.kaggle.com/datasets/lucassteuber/usgs-significant-earthquakes\",",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://huggingface.co/datasets/lukeslp/usgs-significant-earthquakes",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://huggingface.co/datasets/lukeslp/usgs-significant-earthquakes\",",
+        "valid": false,
+        "status_code": 401,
+        "message": "HTTP 401",
+        "is_critical": false
+      },
+      {
+        "url": "https://earthquake.usgs.gov/earthquakes/",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": true
+      },
+      {
+        "url": "https://www.kaggle.com/datasets/lucassteuber/usgs-significant-earthquakes\"",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://gist.github.com/lukeslp/98c82e896ad688a4fc0407a3b76e59f7",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://lukesteuber.com\"",
+        "valid": false,
+        "status_code": 0,
+        "message": "Connection error",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.kaggle.com/datasets/lucassteuber/usgs-significant-earthquakes",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/\",",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://schema.org\",",
+        "valid": false,
+        "status_code": 0,
+        "message": "Connection error",
+        "is_critical": false
+      }
+    ]
+  },
+  {
+    "dataset": "waterfalls-worldwide",
+    "status": "checked",
+    "urls_checked": 1,
+    "urls_valid": 0,
+    "urls_invalid": 1,
+    "urls": [
+      {
+        "url": "https://huggingface.co/datasets/lukeslp/waterfalls-worldwide}",
+        "valid": false,
+        "status_code": 401,
+        "message": "HTTP 401",
+        "is_critical": false
+      }
+    ]
+  },
+  {
+    "dataset": "witnessed-meteorite-falls",
+    "status": "checked",
+    "urls_checked": 10,
+    "urls_valid": 1,
+    "urls_invalid": 9,
+    "urls": [
+      {
+        "url": "https://huggingface.co/datasets/lukeslp/witnessed-meteorite-falls\",",
+        "valid": false,
+        "status_code": 401,
+        "message": "HTTP 401",
+        "is_critical": false
+      },
+      {
+        "url": "https://gist.github.com/lukeslp/795a4f4b59954b3f30f3b80a7c77a481",
+        "valid": true,
+        "status_code": 200,
+        "message": "OK",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.kaggle.com/datasets/lucassteuber/witnessed-meteorite-falls\"",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.kaggle.com/datasets/lucassteuber/witnessed-meteorite-falls",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://huggingface.co/datasets/lukeslp/witnessed-meteorite-falls",
+        "valid": false,
+        "status_code": 401,
+        "message": "HTTP 401",
+        "is_critical": false
+      },
+      {
+        "url": "https://lukesteuber.com\"",
+        "valid": false,
+        "status_code": 0,
+        "message": "Connection error",
+        "is_critical": false
+      },
+      {
+        "url": "https://www.kaggle.com/datasets/lucassteuber/witnessed-meteorite-falls\",",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://data.nasa.gov/Space-Science/Meteorite-Landings/gh4g-9sfh",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": true
+      },
+      {
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/\",",
+        "valid": false,
+        "status_code": 404,
+        "message": "HTTP 404",
+        "is_critical": false
+      },
+      {
+        "url": "https://schema.org\",",
+        "valid": false,
+        "status_code": 0,
+        "message": "Connection error",
+        "is_critical": false
+      }
+    ]
+  },
+  {
+    "dataset": "world-languages",
+    "status": "checked",
+    "urls_checked": 1,
+    "urls_valid": 0,
+    "urls_invalid": 1,
+    "urls": [
+      {
+        "url": "https://huggingface.co/datasets/lukeslp/world-languages}",
+        "valid": false,
+        "status_code": 401,
+        "message": "HTTP 401",
+        "is_critical": false
+      }
+    ]
+  }
+]
