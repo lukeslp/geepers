@@ -51,6 +51,17 @@ bash scripts/system-cleanup.sh
 3. Testing orchestrator execution with a simple task
 4. Checking agent invocation via Claude Code Task tool
 
+## Dependencies
+
+**Core dependency**: `dr-eamer-ai-shared>=1.0.0` - Shared library providing LLM providers, orchestration primitives, and data fetching. Geepers builds on top of this foundation.
+
+**Optional dependencies** (16 groups in `pyproject.toml`):
+- LLM providers: `anthropic`, `openai`, `xai`, `mistral`, `cohere`, `gemini`, `perplexity`, `groq`, `huggingface`
+- Data sources: `arxiv`, `wikipedia`, `youtube`
+- Utilities: `tts`, `citations`, `redis`, `documents`, `telemetry`
+- Install specific groups: `pip install "geepers-llm[anthropic,redis]"`
+- Install everything: `pip install "geepers-llm[all]"`
+
 ## Architecture
 
 ### Agent Hierarchy
