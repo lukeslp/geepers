@@ -1,6 +1,8 @@
 # Geepers
 
-Multi-agent orchestration framework and Claude Code plugin. Ships 60+ specialized agents as markdown definitions and a Python package with orchestrator patterns, config management, and MCP server bridges.
+Multi-agent orchestration for LLM workflows. Two ways to use it:
+- **Claude Code plugin** - 60+ specialized agents for development tasks
+- **Python package** - Orchestrators, config management, MCP server bridges
 
 ## Install
 
@@ -19,7 +21,7 @@ pip install "geepers-llm[all]"      # everything
 
 ## Python Package
 
-The `geepers` package provides orchestration infrastructure:
+Orchestration infrastructure for building multi-agent LLM systems:
 
 ```python
 from geepers import ConfigManager
