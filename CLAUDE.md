@@ -178,12 +178,35 @@ These directories are excluded from the PyPI package via `pyproject.toml`.
 
 Full routing guide: `agents/AGENT_DOMAINS.md`
 
+## Directory Structure
+
+```
+~/geepers/
+├── agents/              # 72 markdown agent definitions (15 domains)
+├── geepers/             # Python package source
+│   ├── orchestrators/   # BaseOrchestrator + 7 concrete + patterns
+│   ├── mcp/            # Symlink to ~/shared/mcp/ (actual MCP server code)
+│   ├── config.py       # ConfigManager (multi-source loading)
+│   ├── naming/         # Naming registry (4 scopes)
+│   ├── parser/         # Agent markdown parser (stub)
+│   └── utils/          # Async, retry, cache, parallel execution
+├── skills/             # Claude Desktop skill packs
+│   ├── source/         # Editable SKILL.md + scripts (13 packs)
+│   └── zips/           # Built archives for upload
+├── .claude-plugin/     # Plugin manifest (plugin.json)
+├── reports/            # Agent output (excluded from package)
+├── recommendations/    # Per-project suggestions (excluded from package)
+├── status/             # Session tracking (excluded from package)
+├── temp/SNIPPETS/      # Reusable code patterns (excluded from package)
+└── scripts/            # Utility scripts (system-cleanup.sh)
+```
+
 ## Key Symlinks
 
 | Symlink | Target | Purpose |
 |---------|--------|---------|
 | `~/geepers_agents` | `~/geepers/agents/` | Backward compat for agent references |
-| `~/geepers/geepers/mcp/` | `~/shared/mcp/` | MCP server code lives in shared library |
+| `~/geepers/geepers/mcp/` | `~/shared/mcp/` | MCP server code lives in shared library (verified with `ls -la`) |
 
 ## Adding a New Agent
 
