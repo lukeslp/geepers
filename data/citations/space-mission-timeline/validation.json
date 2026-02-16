@@ -1,0 +1,164 @@
+{
+  "project": "space-mission-timeline",
+  "file": "/home/coolhand/html/datavis/gallery/vizs/demos/space-mission-timeline.html",
+  "validated_at": "2026-02-14",
+  "total_missions": 73,
+  "accuracy_score": 0.79,
+  "issues": [
+    {
+      "severity": "error",
+      "line": 212,
+      "mission": "Pioneer 10",
+      "field": "distance",
+      "current_value": 18000,
+      "correct_value": 778,
+      "explanation": "Using current spacecraft distance (18 billion km from Earth in 2026) instead of mission destination (Jupiter at 778M km)",
+      "fix": "Change distance: 18000 to distance: 778"
+    },
+    {
+      "severity": "error",
+      "line": 215,
+      "mission": "Pioneer 11",
+      "field": "distance",
+      "current_value": 12000,
+      "correct_value": 1275,
+      "explanation": "Using current spacecraft distance instead of Saturn flyby distance (1,275M km)",
+      "fix": "Change distance: 12000 to distance: 1275"
+    },
+    {
+      "severity": "error",
+      "line": 219,
+      "mission": "Voyager 1",
+      "field": "distance",
+      "current_value": 24000,
+      "correct_value": 1275,
+      "explanation": "Using current interstellar distance (24B km) instead of Saturn encounter (1,275M km). Could also use Jupiter (778M km) as primary target.",
+      "fix": "Change distance: 24000 to distance: 1275"
+    },
+    {
+      "severity": "error",
+      "line": 220,
+      "mission": "Voyager 2",
+      "field": "distance",
+      "current_value": 20000,
+      "correct_value": 4500,
+      "explanation": "Using current distance instead of Neptune flyby (4,500M km). Grand Tour visited Jupiter (778), Saturn (1,275), Uranus (2,870), Neptune (4,500).",
+      "fix": "Change distance: 20000 to distance: 4500"
+    },
+    {
+      "severity": "error",
+      "line": 272,
+      "mission": "Artemis II",
+      "field": "year",
+      "current_value": 2025,
+      "correct_value": null,
+      "explanation": "Mission has not launched as of Feb 2026. Currently scheduled for 2026 or later.",
+      "fix": "Remove this entry or mark as 'planned' with tentative year 2026+"
+    },
+    {
+      "severity": "warning",
+      "line": 244,
+      "mission": "New Horizons",
+      "field": "distance",
+      "current_value": 7500,
+      "correct_value": 5900,
+      "explanation": "Pluto's distance varies (perihelion ~4,400M km, aphelion ~7,300M km). Semi-major axis is 5,900M km (standard).",
+      "fix": "Change distance: 7500 to distance: 5900 for consistency"
+    },
+    {
+      "severity": "warning",
+      "line": 253,
+      "mission": "New Horizons Pluto",
+      "field": "distance",
+      "current_value": 7500,
+      "correct_value": 5900,
+      "explanation": "Same as line 244 - duplicate entry for same mission",
+      "fix": "Change distance: 7500 to distance: 5900"
+    },
+    {
+      "severity": "warning",
+      "line": 258,
+      "mission": "Parker Solar Probe",
+      "field": "distance",
+      "current_value": 0.05,
+      "correct_value": 6.1,
+      "explanation": "Closest approach is ~6.1M km from Sun's center (~696,000 km radius, so ~5.4M km from surface). 0.05M km = 50,000 km is inside the corona.",
+      "fix": "Change distance: 0.05 to distance: 6.1 or add note that this is from surface"
+    },
+    {
+      "severity": "warning",
+      "line": 267,
+      "mission": "Artemis I",
+      "field": "distance",
+      "current_value": 0.45,
+      "correct_value": 0.384,
+      "explanation": "Moon's average distance is 384,400 km (0.384M km). Using 0.45 creates inconsistency with Apollo/Luna missions.",
+      "fix": "Change distance: 0.45 to distance: 0.384"
+    },
+    {
+      "severity": "warning",
+      "line": 235,
+      "mission": "Cassini-Huygens",
+      "field": "agency",
+      "current_value": "NASA",
+      "correct_value": "NASA/ESA/ASI",
+      "explanation": "Joint mission with European Space Agency and Italian Space Agency. If maintaining single-color encoding, note partnership in description.",
+      "fix": "Add 'Joint NASA/ESA/ASI mission' to description"
+    },
+    {
+      "severity": "warning",
+      "line": 265,
+      "mission": "JWST",
+      "field": "agency",
+      "current_value": "NASA",
+      "correct_value": "NASA/ESA/CSA",
+      "explanation": "Joint mission with ESA and Canadian Space Agency",
+      "fix": "Add 'Joint NASA/ESA/CSA mission' to description"
+    }
+  ],
+  "verified_correct": [
+    "Moon distance: 0.384M km (Luna, Apollo, Chandrayaan)",
+    "Mars distance: 225M km average",
+    "Venus distance: 41M km average",
+    "Jupiter distance: 778M km",
+    "Saturn distance: 1,275M km",
+    "JWST L2 point: 1.5M km",
+    "DART asteroid: 11M km",
+    "All major historical dates (first satellite, human, spacewalk, Moon landing)"
+  ],
+  "sources": {
+    "claimed": "NASA / ESA Mission Archives",
+    "verified_against": [
+      "NASA JPL Mission Pages",
+      "NASA NSSDCA Master Catalog",
+      "ESA Science & Technology",
+      "IAU/JPL Horizons (astronomical distances)"
+    ]
+  },
+  "recommendations": [
+    {
+      "priority": "high",
+      "action": "Fix Pioneer/Voyager distances to use mission destinations, not current spacecraft positions"
+    },
+    {
+      "priority": "high",
+      "action": "Remove or postpone Artemis II entry (mission not yet launched)"
+    },
+    {
+      "priority": "medium",
+      "action": "Standardize Pluto distance to 5,900M km"
+    },
+    {
+      "priority": "medium",
+      "action": "Fix Parker Solar Probe distance or clarify measurement method"
+    },
+    {
+      "priority": "medium",
+      "action": "Use consistent Moon distance (0.384M km) for all lunar missions"
+    },
+    {
+      "priority": "low",
+      "action": "Acknowledge joint mission partnerships in descriptions"
+    }
+  ]
+}

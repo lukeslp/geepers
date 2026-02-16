@@ -84,8 +84,15 @@ strace -p <pid> -f 2>&1 | head -100
 - `geepers_db`: For database issues
 
 **Called by:**
+- `/geepers-health audit`, `/geepers-fix`
+- `geepers_canary`: When deeper investigation needed (escalation)
 - Manual invocation
-- Alert systems (when available)
 
 **Shares data with:**
 - `geepers_status`: Diagnostic findings
+
+**Boundary with related agents:**
+- `geepers_diag` = root cause investigation for SPECIFIC failures (service crashes, error patterns, log analysis)
+- `geepers_system_diag` = FULL infrastructure audit (ALL services, Caddy, ports, databases, resources)
+- `geepers_canary` = quick spot-checks (<60s), escalates to geepers_diag when issues found
+- `geepers_validator` = configuration/path/permission validation, not runtime diagnostics

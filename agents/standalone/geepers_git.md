@@ -115,11 +115,9 @@ hotfix   ────────────────●
 type(scope): short description
 
 Longer explanation if needed.
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
 ```
+
+**NEVER** include `Co-Authored-By` or any Claude/AI attribution in commits. Credit Luke Steuber only.
 
 ### Types
 - `feat`: New feature
@@ -156,3 +154,8 @@ Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
 **Called by:** geepers_repo (for complex git issues), geepers_orchestrator_checkpoint
 **Works with:** geepers_repo (hygiene), geepers_status (commit tracking)
 **Escalates to:** User for destructive operations
+
+**Boundary with geepers_repo:**
+- `geepers_repo` = routine hygiene (commits, .gitignore, branch cleanup, AI artifact detection, file organization)
+- `geepers_git` = complex operations (merge conflict resolution, interactive rebase, history rewriting, cherry-picks, git bisect)
+- If geepers_repo encounters merge conflicts or needs history rewriting, it delegates to geepers_git

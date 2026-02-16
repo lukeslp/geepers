@@ -84,13 +84,11 @@ git commit -m "$(cat <<'EOF'
 type: short description
 
 Longer explanation if needed.
-
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
-
-Co-Authored-By: Claude <noreply@anthropic.com>
 EOF
 )"
 ```
+
+**NEVER** include `Co-Authored-By` or any Claude/AI attribution in commits. Credit Luke Steuber only.
 
 Commit types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 
@@ -160,20 +158,55 @@ Create `~/geepers/reports/by-date/YYYY-MM-DD/repo-{project}.md`:
 {Any remaining issues or suggestions}
 ```
 
+## Git Hygiene (Absorbed from git-hygiene-guardian)
+
+### AI Tool Artifact Detection
+Scan .gitignore for coverage of AI coding tool artifacts:
+- `.claude/`, `.cursor/`, `.aider/`, `.continue/`, `.tabnine/`, `.codeium/`, `.windsurf/`, `.bolt/`, `.codex/`, `.serena/`, `.warp/`, `.cody/`, `.tabby/`
+- Generic: `*.ai-generated`, `.ai-cache/`, `.llm-cache/`, `.prompts/`, `.conversations/`
+
+```bash
+# Check for tracked AI artifacts
+git ls-files | grep -E "\.claude|\.cursor|\.aider|\.continue|\.tabnine|\.codeium"
+
+# Remove from tracking if found
+git rm --cached <file>
+```
+
+### Branch Cleanup
+```bash
+# Delete merged branches
+git branch --merged | grep -v '\*\|main\|master' | xargs -n 1 git branch -d
+
+# Prune remote-tracking branches
+git fetch --prune
+
+# Find stale branches
+git for-each-ref --sort=-committerdate --format='%(refname:short) %(committerdate:relative)' refs/heads/
+```
+
 ## Coordination Protocol
 
+**Absorbs:** git-hygiene-guardian (AI artifact detection, branch cleanup, .gitignore enforcement)
+
 **Delegates to:**
+- `geepers_git`: For complex git operations (merge conflicts, rebasing, history rewriting, cherry-picks, bisect)
 - `geepers_scout`: When code quality issues found during review
 - `geepers_deps`: When dependency issues detected
 
 **Called by:**
-- Session checkpoint automation
+- `/geepers-checkpoint`, `/geepers-end` (session workflows)
 - `geepers_scout`: When cleanup needed
+- `geepers_orchestrator_checkpoint`
 - Manual invocation
 
 **Shares data with:**
 - `geepers_status`: Sends commit summary for work log
 - `geepers_scout`: Receives cleanup recommendations
+
+**Boundary with geepers_git:**
+- `geepers_repo` = routine hygiene (commits, .gitignore, branch cleanup, AI artifact detection, file organization)
+- `geepers_git` = complex operations (merge conflict resolution, interactive rebase, history rewriting, cherry-picks, git bisect)
 
 ## Safety Rules
 
