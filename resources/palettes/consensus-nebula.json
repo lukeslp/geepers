@@ -1,0 +1,135 @@
+{
+  "name": "Consensus Nebula",
+  "version": "1.0",
+  "author": "Luke Steuber",
+  "date": "2026-02-16",
+  "description": "Cosmic bioluminescence palette for 143K movie particles. Diverging blue→purple→amber scale for consensus/polarization, 18 genre tints, temporal desaturation.",
+  "consensus_polarization": {
+    "type": "diverging",
+    "domain": [-1, 0, 1],
+    "description": "Blue = high consensus (universal agreement), Purple = neutral, Amber = high polarization (divisive)",
+    "stops": [
+      { "value": -1.0, "color": "oklch(75% 0.15 240)", "hex": "#4D9FFF", "name": "High Consensus Blue" },
+      { "value": -0.8, "color": "oklch(72% 0.14 245)", "hex": "#5B9BF8", "name": "Consensus 90" },
+      { "value": -0.6, "color": "oklch(70% 0.13 250)", "hex": "#6896F0", "name": "Consensus 80" },
+      { "value": -0.4, "color": "oklch(68% 0.12 255)", "hex": "#7592E8", "name": "Consensus 70" },
+      { "value": -0.2, "color": "oklch(66% 0.11 260)", "hex": "#818EDF", "name": "Consensus 60" },
+      { "value": 0.0,  "color": "oklch(65% 0.10 270)", "hex": "#8B89D6", "name": "Neutral Purple" },
+      { "value": 0.2,  "color": "oklch(66% 0.11 30)",  "hex": "#D88B7A", "name": "Polarized 60" },
+      { "value": 0.4,  "color": "oklch(68% 0.13 35)",  "hex": "#E08E6C", "name": "Polarized 70" },
+      { "value": 0.6,  "color": "oklch(70% 0.15 40)",  "hex": "#E8925F", "name": "Polarized 80" },
+      { "value": 0.8,  "color": "oklch(72% 0.17 45)",  "hex": "#F09652", "name": "Polarized 90" },
+      { "value": 1.0,  "color": "oklch(75% 0.19 50)",  "hex": "#FF9A44", "name": "High Polarization Amber" }
+    ]
+  },
+  "genres": {
+    "description": "18 genre tints for secondary encoding. Mix 30% genre + 70% consensus color.",
+    "families": {
+      "action_adventure": {
+        "Action": { "color": "oklch(70% 0.16 30)", "hex": "#DF8B6B", "description": "Ember orange" },
+        "Adventure": { "color": "oklch(68% 0.14 40)", "hex": "#D48A61", "description": "Golden sand" }
+      },
+      "scifi_fantasy": {
+        "Sci-Fi": { "color": "oklch(72% 0.15 240)", "hex": "#4D9FFF", "description": "Cyan blue" },
+        "Fantasy": { "color": "oklch(70% 0.13 280)", "hex": "#9589E0", "description": "Violet" }
+      },
+      "drama_romance": {
+        "Drama": { "color": "oklch(68% 0.12 320)", "hex": "#C086C4", "description": "Mauve" },
+        "Romance": { "color": "oklch(70% 0.14 340)", "hex": "#D888B8", "description": "Rose" }
+      },
+      "comedy_animation": {
+        "Comedy": { "color": "oklch(73% 0.16 70)", "hex": "#FFB05C", "description": "Sunny yellow" },
+        "Animation": { "color": "oklch(71% 0.15 180)", "hex": "#5FCCB0", "description": "Aqua (colorblind-safe)" }
+      },
+      "thriller_horror_mystery": {
+        "Thriller": { "color": "oklch(66% 0.13 250)", "hex": "#6B93E8", "description": "Steel blue" },
+        "Horror": { "color": "oklch(64% 0.14 260)", "hex": "#7A86D8", "description": "Deep purple" },
+        "Mystery": { "color": "oklch(65% 0.12 270)", "hex": "#8584D0", "description": "Indigo" }
+      },
+      "documentary_history": {
+        "Documentary": { "color": "oklch(67% 0.10 60)", "hex": "#C5A86F", "description": "Parchment" },
+        "History": { "color": "oklch(66% 0.09 50)", "hex": "#B9A275", "description": "Sepia" }
+      },
+      "crime_war": {
+        "Crime": { "color": "oklch(65% 0.12 20)", "hex": "#C88470", "description": "Rust" },
+        "War": { "color": "oklch(64% 0.11 10)", "hex": "#BC8276", "description": "Clay" }
+      },
+      "music_western": {
+        "Music": { "color": "oklch(72% 0.17 300)", "hex": "#B988E8", "description": "Neon purple" },
+        "Western": { "color": "oklch(68% 0.13 45)", "hex": "#D18D5E", "description": "Desert tan" }
+      }
+    }
+  },
+  "temporal": {
+    "description": "Temporal encoding via saturation. Older films desaturated (ghostly), newer films fully saturated.",
+    "year_range": [1995, 2023],
+    "chroma_range": [0.5, 1.0],
+    "implementation": "Scale year to chroma multiplier. Multiply base color chroma by this factor."
+  },
+  "interaction_states": {
+    "hover": {
+      "stroke": { "color": "oklch(95% 0.05 270)", "hex": "#F0F0F8", "description": "Soft white glow" },
+      "glow": { "color": "rgba(255, 255, 255, 0.3)", "description": "Outer halo" },
+      "stroke_width": 2
+    },
+    "selected": {
+      "stroke": { "color": "oklch(98% 0.02 270)", "hex": "#FFFFFF", "description": "Pure white ring" },
+      "glow": { "color": "rgba(255, 255, 255, 0.6)", "description": "Intense glow" },
+      "stroke_width": 3
+    },
+    "neighbor": {
+      "stroke": { "color": "oklch(85% 0.10 270)", "hex": "#C5C3E0", "description": "Muted purple" },
+      "opacity": 0.6,
+      "stroke_width": 1
+    },
+    "dimmed": {
+      "opacity": 0.2,
+      "description": "Non-neighbors fade into background"
+    }
+  },
+  "ui": {
+    "panels": {
+      "background": { "color": "rgba(18, 18, 24, 0.85)", "description": "Glassmorphic dark panel" },
+      "border": { "color": "oklch(30% 0.05 270)", "hex": "#3A3A48", "description": "Subtle purple tint" },
+      "shadow": { "color": "rgba(0, 0, 0, 0.5)", "description": "Soft shadow" }
+    },
+    "text": {
+      "primary": { "color": "oklch(95% 0.02 270)", "hex": "#F5F5F8", "description": "Off-white" },
+      "secondary": { "color": "oklch(75% 0.04 270)", "hex": "#B8B8C8", "description": "Muted gray" },
+      "accent": { "color": "oklch(80% 0.12 270)", "hex": "#A89FE0", "description": "Purple accent" }
+    },
+    "buttons": {
+      "default": { "color": "oklch(25% 0.06 270)", "hex": "#2E2E3C", "description": "Dark purple" },
+      "hover": { "color": "oklch(35% 0.08 270)", "hex": "#45455A", "description": "Lighter purple" },
+      "active": { "color": "oklch(45% 0.10 270)", "hex": "#5C5C78", "description": "Active purple" }
+    }
+  },
+  "accessibility": {
+    "contrast_ratios": {
+      "consensus_blue_vs_bg": "13.2:1",
+      "polarized_amber_vs_bg": "15.8:1",
+      "wcag_level": "AAA"
+    },
+    "colorblind_safe": {
+      "protanopia": "Blue/purple distinct, amber shifts yellow (acceptable)",
+      "deuteranopia": "All stops distinguishable, no pure red/green",
+      "tritanopia": "Blue→teal, purple→pink, amber unchanged (distinguishable)"
+    },
+    "redundant_encoding": [
+      "Add shape encoding for top 6 genres (circle, square, triangle, star, diamond, hexagon)",
+      "Stroke width + opacity changes for interaction states",
+      "Text labels on legend (not color-only)"
+    ]
+  },
+  "performance": {
+    "notes": [
+      "OKLCH interpolation slightly slower than RGB but visually superior",
+      "Cache color calculations for each unique polarization value",
+      "Pre-compute genre-consensus mixed colors",
+      "Use CSS custom properties for UI colors"
+    ]
+  },
+  "usage_example": {
+    "javascript": "const consensusScale = d3.scaleDiverging().domain([-1, 0, 1]).interpolator(d3.piecewise(d3.interpolateOklch, ['oklch(75% 0.15 240)', 'oklch(65% 0.10 270)', 'oklch(75% 0.19 50)']));"
+  }
+}

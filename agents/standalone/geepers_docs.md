@@ -126,7 +126,22 @@ Brief overview of structure.
 Project-specific patterns to follow.
 ```
 
+## Humanize Gate (MANDATORY)
+
+All front-facing documentation MUST be run through `/humanize` before finalizing:
+- READMEs, changelogs, API docs, user guides
+- Catches "AI" terminology, robotic phrasing, press-release tone
+- Reference: `~/.claude/skills/humanize/SKILL.md`
+
 ## Coordination Protocol
 
-**Called by:** geepers_orchestrator_checkpoint, geepers_builder
+**Absorbs:** geepers_readme (README generation is now a capability of docs, not a separate agent)
+
+**Called by:** geepers_orchestrator_checkpoint, geepers_builder, `/geepers-end`, `/geepers-context`
 **Complements:** geepers_system_onboard (ONBOARD.md explains, docs instruct)
+
+**README generation:** When creating READMEs specifically, follow the geepers_readme protocol:
+- Badges (shields.io), MIT license, Luke Steuber attribution
+- Natural voice, first person, no "AI" terminology
+- Scan project for tech stack before writing
+- See `~/geepers/agents/standalone/geepers_readme.md` for full README template
