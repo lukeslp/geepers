@@ -1,0 +1,137 @@
+version: 1
+manifest_name: geepers-skills-canonical
+canonical_repo: https://github.com/lukeslp/geepers
+canonical_root: skills/source
+defaults:
+  status: active
+  owners:
+    - geepers-core
+  platforms:
+    - claude
+    - codex
+    - gemini
+    - manus
+skills:
+  - id: builder
+    source_path: skills/source/builder
+    bundles: [core, workflow]
+    description: Implementation execution specialist.
+
+  - id: data-fetch
+    source_path: skills/source/data-fetch
+    bundles: [core, data]
+    description: Structured data retrieval from external sources.
+
+  - id: datavis
+    source_path: skills/source/datavis
+    bundles: [core, datavis]
+    description: Data visualization design and implementation.
+
+  - id: dream-swarm
+    source_path: skills/source/dream-swarm
+    bundles: [core, orchestration]
+    description: Parallel multi-agent search workflows.
+
+  - id: engineering
+    source_path: skills/source/engineering
+    bundles: [core, strategy]
+    description: Engineering orchestrator skill.
+    allow_legacy_name: true
+
+  - id: executive
+    source_path: skills/source/executive
+    bundles: [core, strategy]
+    description: Executive orchestration skill.
+    allow_legacy_name: true
+
+  - id: finance
+    source_path: skills/source/finance
+    bundles: [core, strategy]
+    description: Finance and marketing orchestration skill.
+    allow_legacy_name: true
+
+  - id: git-hygiene-guardian
+    source_path: skills/source/git-hygiene-guardian
+    bundles: [core, maintenance]
+    description: Repository hygiene and artifact concealment.
+
+  - id: mcp-orchestration
+    source_path: skills/source/mcp-orchestration
+    bundles: [core, orchestration]
+    description: Dream Cascade and Dream Swarm orchestration skill.
+
+  - id: planner
+    source_path: skills/source/planner
+    bundles: [core, workflow]
+    description: Plan and prioritize implementation tasks.
+
+  - id: product
+    source_path: skills/source/product
+    bundles: [core, strategy]
+    description: Product planning and PRD generation skill.
+    allow_legacy_name: true
+
+  - id: quality
+    source_path: skills/source/quality
+    bundles: [core, quality]
+    description: Multi-agent quality review orchestration.
+
+  - id: scout
+    source_path: skills/source/scout
+    bundles: [core, workflow]
+    description: Project reconnaissance and quick-win analysis.
+
+  - id: server-deploy
+    source_path: skills/source/server-deploy
+    bundles: [core, operations]
+    description: Service deployment and routing operations.
+
+  - id: swarm
+    source_path: skills/source/swarm
+    bundles: [core, orchestration]
+    description: Parallel research swarm orchestration.
+
+  - id: team
+    source_path: skills/source/team
+    bundles: [core, workflow]
+    description: Master routing orchestrator for geepers skills.
+
+  - id: testing
+    source_path: skills/source/testing
+    bundles: [core, quality]
+    description: Test strategy and implementation guidance.
+
+  - id: validator
+    source_path: skills/source/validator
+    bundles: [core, quality]
+    description: Configuration and integration validation.
+
+  - id: geepers-corpus
+    source_path: skills/source/geepers-corpus
+    bundles: [api]
+    platforms: [claude, codex, gemini, manus, clawhub]
+    description: COCA corpus linguistics API access.
+
+  - id: geepers-data
+    source_path: skills/source/geepers-data
+    bundles: [api]
+    platforms: [claude, codex, gemini, manus, clawhub]
+    description: Structured data API aggregation skill.
+
+  - id: geepers-etymology
+    source_path: skills/source/geepers-etymology
+    bundles: [api]
+    platforms: [claude, codex, gemini, manus, clawhub]
+    description: Etymology and historical linguistics API access.
+
+  - id: geepers-llm
+    source_path: skills/source/geepers-llm
+    bundles: [api]
+    platforms: [claude, codex, gemini, manus, clawhub]
+    description: Multi-provider LLM API access.
+
+  - id: geepers-orchestrate
+    source_path: skills/source/geepers-orchestrate
+    bundles: [api, orchestration]
+    platforms: [claude, codex, gemini, manus, clawhub]
+    description: API-backed Dream Cascade and Dream Swarm execution.
