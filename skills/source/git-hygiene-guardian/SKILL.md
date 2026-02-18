@@ -1,3 +1,8 @@
+---
+name: git-hygiene-guardian
+description: Repository hygiene agent for git cleanup, branch maintenance, and artifact concealment.
+---
+
 # Git Hygiene Guardian
 
 **Purpose**: Unified repository maintenance agent ensuring git best practices, code cleanup, and comprehensive AI tool artifact concealment.

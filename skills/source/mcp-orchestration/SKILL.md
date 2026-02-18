@@ -1,3 +1,8 @@
+---
+name: mcp-orchestration
+description: Launch MCP orchestration workflows (Dream Cascade and Dream Swarm) for multi-agent coordination and synthesis.
+---
+
 # MCP Orchestration Skill (formerly Dream Cascade)
 
 The **MCP Orchestration** skill provides advanced multi-agent coordination patterns for Claude. It allows you to launch massive, hierarchical research swarms or task-specific agent teams to solve complex problems that require multiple perspectives or large-scale data processing.
