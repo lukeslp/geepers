@@ -1,10 +1,11 @@
-# Task Queue: Dataset Publishing Workflow
+# Task Queue: Datasets Project
 
-**Generated**: 2026-02-14 08:45
-**Total Tasks**: 18
-**Quick Wins**: 6
-**Blocked**: 0
-**Estimated Total Effort**: 24-32 hours
+**Generated**: 2026-02-16
+**Total Tasks**: 28
+**Quick Wins**: 12
+**Blocked**: 1
+**High Priority**: 8
+**Estimated Total Effort**: 25-32 hours
 
 ---
 
