@@ -1,0 +1,61 @@
+Build production-ready Flask backend for Foresight stock prediction dashboard at /home/coolhand/projects/foresight.
+
+PORT: 5062
+PROJECT: Stock prediction dashboard using multi-provider LLM agents
+
+REQUIRED COMPONENTS:
+
+1. app.py (expand from stub):
+   - SSE streaming endpoints for real-time predictions
+   - CORS setup for frontend access
+   - Health endpoint (exists, keep it)
+   - Error handling with proper HTTP status codes
+   - Shared library integration (sys.path.insert for /home/coolhand/shared)
+   - Use settings.py for configuration
+
+   Endpoints:
+   - GET /health (exists)
+   - GET /api/current (current cycle with predictions from db)
+   - GET /api/stats (accuracy statistics from db)
+   - GET /api/stream/predict (SSE streaming for predictions)
+   - POST /api/manual/discover (trigger stock discovery)
+   - POST /api/manual/predict (trigger prediction for symbol)
+
+   Reference patterns:
+   - /home/coolhand/servers/lessonplanner/app.py for SSE
+   - /home/coolhand/servers/swarm/app.py for multi-provider
+
+2. db.py (create new):
+   SQLite database module with:
+
+   Schema:
+   - cycles: id, start_time, end_time, status, created_at
+   - predictions: id, cycle_id, symbol, company, prediction, confidence, reasoning, actual_price, start_price, end_price, outcome, timestamp
+   - system_stats: id, total_cycles, total_predictions, accurate_predictions, accuracy_rate, last_updated
+
+   Functions:
+   - init_db(), get_current_cycle(), create_cycle()
+   - save_prediction(), update_prediction_outcome()
+   - get_stats(), get_cycle_predictions(), close_cycle()
+
+   Use settings.DB_PATH from settings.py
+   Proper indexing, foreign keys, timestamps
+
+3. agents.py (create new):
+   Multi-provider LLM integration using shared library:
+   - ProviderFactory from /home/coolhand/shared/llm_providers
+   - Providers: xai (Grok), anthropic (Claude), gemini
+   - Functions: discover_stocks(), predict_stock(), synthesize_confidence()
+
+4. price_fetcher.py (create new):
+   Stock price fetching using yfinance:
+   - get_current_price(symbol)
+   - get_price_change(symbol, start_time, end_time)
+   - Error handling for invalid symbols
+
+EXISTING FILES:
+- settings.py: PORT, DB_PATH, CYCLE_INTERVAL, PROVIDERS config
+- start.sh: Gunicorn startup script (working)
+- requirements.txt: Flask, yfinance, requests, gunicorn
+
+Follow Flask best practices, SSE patterns from lessonplanner, and dr.eamer.dev deployment standards.
