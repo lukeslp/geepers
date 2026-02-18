@@ -162,6 +162,8 @@ Agents write reports, recommendations, and status files to:
 - `recommendations/by-project/` - Per-project improvement suggestions
 - `status/` - Session and project status tracking
 - `temp/SNIPPETS/` - Harvested reusable code patterns
+- `hive/` - Hive orchestrator workspace: queue files, quickwins lists, planner summaries, and cross-project work documents (55+ files organized by project/task). Start with `hive/INDEX.md` or `hive/SUMMARY.md` for orientation. **Do not delete these** — they represent in-progress work plans.
+- `todos/` - Per-project backend todo lists (e.g. `todos/foresight-backend.md`)
 
 These directories are excluded from the PyPI package via `pyproject.toml`.
 
@@ -205,6 +207,8 @@ Full routing guide: `agents/AGENT_DOMAINS.md`
 │   ├── source/         # Editable SKILL.md + scripts (13 packs)
 │   └── zips/           # Built archives for upload
 ├── .claude-plugin/     # Plugin manifest (plugin.json)
+├── hive/               # Hive orchestrator workspace (queue, quickwins, plans)
+├── todos/              # Per-project todo lists
 ├── reports/            # Agent output (excluded from package)
 ├── recommendations/    # Per-project suggestions (excluded from package)
 ├── status/             # Session tracking (excluded from package)
