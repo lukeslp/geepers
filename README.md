@@ -1,8 +1,23 @@
 # Geepers
 
-Multi-agent orchestration for LLM workflows. Two ways to use it:
-- Claude Code plugin - 73 specialized agents for development tasks
-- Python package - Orchestrators, config management, MCP server bridges
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/geepers-llm.svg)](https://pypi.org/project/geepers-llm/)
+
+Multi-agent orchestration for LLM workflows — 73 Claude Code agents and a Python package for building orchestrated workflows.
+
+## Ecosystem
+
+| | |
+|---|---|
+| **PyPI** | [`geepers-llm`](https://pypi.org/project/geepers-llm/) · [`geepers-kernel`](https://pypi.org/project/geepers-kernel/) |
+| **Claude Code** | [`/plugin add lukeslp/geepers`](https://github.com/lukeslp/geepers-skills) |
+| **Codex CLI** | [`geepers-gpt`](https://github.com/lukeslp/geepers-gpt) |
+| **Gemini** | [`geepers-gemini`](https://github.com/lukeslp/geepers-gemini) |
+| **Manus** | [`geepers-manus`](https://github.com/lukeslp/geepers-manus) |
+| **ClawHub** | [`geepers-api-skills`](https://github.com/lukeslp/geepers-api-skills) |
+| **MCP servers** | [`geepers-unified` · `geepers-providers` · `geepers-data` · `geepers-websearch`](https://github.com/lukeslp/geepers-kernel) |
+| **Orchestration** | [`beltalowda`](https://github.com/lukeslp/beltalowda) · [`multi-agent-orchestration`](https://github.com/lukeslp/multi-agent-orchestration) |
+| **Data clients** | [`research-data-clients`](https://github.com/lukeslp/research-data-clients) — 17+ structured APIs |
 
 ## Install
 
@@ -112,12 +127,6 @@ Task with subagent_type="geepers_scout"
 Task with subagent_type="geepers_orchestrator_frontend"
 Task with subagent_type="conductor_geepers"
 ```
-
-## Related
-
-- [dr-eamer-ai-shared](https://pypi.org/project/dr-eamer-ai-shared/) - Core shared library (LLM providers, data clients)
-- [geepers-orchestrators](https://pypi.org/project/geepers-orchestrators/) - Standalone orchestration patterns
-- [MCP-Dreamwalker](https://github.com/lukeslp/mcp-dreamwalker) - MCP server for multi-agent workflows
 
 ## License
 
