@@ -11,6 +11,7 @@ defaults:
     - codex
     - gemini
     - manus
+    - clawhub
 skills:
   - id: builder
     source_path: skills/source/builder
