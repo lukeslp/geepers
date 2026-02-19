@@ -1,10 +1,12 @@
 # geepers-skills (Manus)
 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Platform: Manus](https://img.shields.io/badge/platform-Manus-teal.svg)
 ![Skills: 23](https://img.shields.io/badge/skills-23-brightgreen.svg)
 
-Skill package for the Manus runtime. Full 23-skill set from the canonical geepers release, packaged for Manus.
+23 skills for planning, building, shipping, and researching — packaged for the Manus runtime.
+
+Part of the [geepers](https://github.com/lukeslp/geepers) skill collection.
 
 ## Install
 
@@ -43,11 +45,12 @@ Reference `manus-skills.json` from your Manus config, or copy the `skills/` dire
 **Product**
 - `product` — PRD generation and product planning
 
-## Rebuild from Canonical
+## Other Platforms
 
-```bash
-python3 scripts/build-platform-packages.py --platform manus --clean
-```
+- **Claude Code**: [geepers-skills](https://github.com/lukeslp/geepers-skills)
+- **Codex CLI**: [geepers-gpt](https://github.com/lukeslp/geepers-gpt)
+- **Gemini**: [geepers-gemini](https://github.com/lukeslp/geepers-gemini)
+- **ClawHub**: [geepers-api-skills](https://github.com/lukeslp/geepers-api-skills)
 
 ## Author
 

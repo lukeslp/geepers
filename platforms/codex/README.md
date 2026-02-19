@@ -1,10 +1,12 @@
 # geepers-skills (Codex)
 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Platform: Codex](https://img.shields.io/badge/platform-Codex%20CLI-orange.svg)
 ![Skills: 23](https://img.shields.io/badge/skills-23-brightgreen.svg)
 
-Skill package for the Codex CLI. Same 23-skill set as the canonical geepers release, synced and adapted for the Codex runtime.
+23 skills for planning, building, shipping, and researching — for the Codex CLI.
+
+Part of the [geepers](https://github.com/lukeslp/geepers) skill collection.
 
 ## Install
 
@@ -43,11 +45,12 @@ Drop the `skills/` directory from this package into your Codex skills path, or r
 **Product**
 - `product` — PRD generation and product planning
 
-## Rebuild from Canonical
+## Other Platforms
 
-```bash
-python3 scripts/build-platform-packages.py --platform codex --clean
-```
+- **Claude Code**: [geepers-skills](https://github.com/lukeslp/geepers-skills)
+- **Gemini**: [geepers-gemini](https://github.com/lukeslp/geepers-gemini)
+- **Manus**: [geepers-manus](https://github.com/lukeslp/geepers-manus)
+- **ClawHub**: [geepers-api-skills](https://github.com/lukeslp/geepers-api-skills)
 
 ## Author
 

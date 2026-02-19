@@ -1,10 +1,12 @@
 # geepers-skills (ClawHub)
 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Platform: ClawHub](https://img.shields.io/badge/platform-ClawHub-red.svg)
 ![Skills: 23](https://img.shields.io/badge/skills-23-brightgreen.svg)
 
-Skill package for ClawHub (formerly OpenClaw API). Full 23-skill set from the canonical geepers release, packaged for the ClawHub distribution format.
+23 skills for planning, building, shipping, and researching — for the ClawHub API (formerly OpenClaw).
+
+Part of the [geepers](https://github.com/lukeslp/geepers) skill collection.
 
 ## Install
 
@@ -47,11 +49,12 @@ Reference `clawhub-package.json` from your ClawHub config, or copy the `skills/`
 
 Previously distributed as `dreamer-api-skills`. The `clawhub-package.json` includes the legacy alias for backwards compatibility.
 
-## Rebuild from Canonical
+## Other Platforms
 
-```bash
-python3 scripts/build-platform-packages.py --platform clawhub --clean
-```
+- **Claude Code**: [geepers-skills](https://github.com/lukeslp/geepers-skills)
+- **Codex CLI**: [geepers-gpt](https://github.com/lukeslp/geepers-gpt)
+- **Gemini**: [geepers-gemini](https://github.com/lukeslp/geepers-gemini)
+- **Manus**: [geepers-manus](https://github.com/lukeslp/geepers-manus)
 
 ## Author
 
