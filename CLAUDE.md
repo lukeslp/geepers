@@ -72,7 +72,7 @@ Agents follow a strict routing hierarchy: **Conductor -> Orchestrators -> Specia
 - 13 orchestrators (one per domain) - Coordinate groups of specialists
 - ~57 specialists - Do the actual work (72 total agent .md files on disk)
 
-60 agents are registered in `.claude-plugin/plugin.json`. The remaining 12 are on disk but not yet registered (mostly newer additions like `geepers_poet`, `geepers_humanizer`, `geepers_readme`, `geepers_doublecheck`, `geepers_flask`, `geepers_express`, `geepers_testing`, `geepers_security`).
+52 agents are registered in `.claude-plugin/plugin.json`. The remaining 21 are on disk but not yet registered.
 
 Each agent is a markdown file with YAML frontmatter (`name`, `description`, `model`, `color`) and structured sections (Mission, Workflow, Coordination Protocol). The plugin manifest at `.claude-plugin/plugin.json` maps agent IDs to their markdown source paths.
 
@@ -137,23 +137,13 @@ Claude Code connects via `~/.mcp.json` -> `~/start-mcp-server` -> `~/shared/mcp/
 
 `skills/source/` contains 13 Claude Desktop skill packs, each with SKILL.md + scripts. Zipped into `skills/zips/` for upload.
 
-| Skill Pack | Purpose |
-|-----------|---------|
-| `bluesky-cli` | Bluesky AT Protocol operations |
-| `data-fetch` | Structured API data collection |
-| `datavis` | D3.js visualization creation |
-| `dream-swarm` | Multi-agent parallel search |
-| `engineering` | Code generation and review |
-| `executive` | Executive analysis and reporting |
-| `finance` | Financial analysis tools |
-| `git-hygiene-guardian` | Git workflow and cleanup |
-| `mcp-orchestration` | MCP server management |
-| `porkbun-cli` | Domain management (local only) |
-| `product` | Product management workflows |
-| `server-deploy` | Service deployment |
-| `vision` | Image analysis and description |
+| Category | Skill Packs |
+|----------|-------------|
+| **Claude Desktop** | `bluesky-cli`, `data-fetch`, `datavis`, `dream-swarm`, `engineering`, `executive`, `finance`, `git-hygiene-guardian`, `mcp-orchestration`, `porkbun-cli`, `product`, `server-deploy`, `vision` |
+| **Geepers workflow** | `builder`, `planner`, `quality`, `scout`, `swarm`, `team`, `testing`, `validator` |
+| **API skills** (dr.eamer.dev API) | `geepers-corpus`, `geepers-data`, `geepers-etymology`, `geepers-llm`, `geepers-orchestrate` |
 
-Skills are separate from agents - skills run in Claude Desktop, agents run in Claude Code.
+Skills run in Claude Desktop; agents run in Claude Code. API skills wrap the public dr.eamer.dev REST API (`/code/api/`). Rebuild zips after editing source: `cd ~/geepers/skills && bash rebuild-zips.sh`
 
 ### Output Directories
 

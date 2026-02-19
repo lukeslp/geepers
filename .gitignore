@@ -59,3 +59,27 @@ Thumbs.db
 .mcpregistry*
 skills/source/*/
 skills/temp_registry/
+
+# Agent cruft - auto-generated files that should never be committed
+CRITIC.md
+ONBOARD.md
+SUGGESTIONS.md
+REPO_AUDIT.md
+REPOSITORY_ANALYSIS.md
+INTEGRATION_ANALYSIS.md
+GEMINI.md
+*_STATUS.md
+*_PROGRESS.md
+SESSION_LOG.md
+WORK_LOG.md
+AGENT_REPORT.md
+EXPLORATION_SUMMARY.md
+CONSOLIDATION_HISTORY.md
+IMPLEMENTATION_STATUS.md
+QUICK_WIN_SCAN_COMPLETE.md
+PRE_COMMIT_REPORT.md
+SEARCH*SUMMARY.md
+search-log.md
+.aider.chat.history.md
+.aider.input.history
+temp_*
