@@ -3,8 +3,8 @@
 This directory is generated from canonical source in `geepers/manifests/skills-manifest.yaml`.
 
 - Platform: `clawhub`
-- Skill count: `5`
-- Generated at: `2026-02-19T00:50:59.867721+00:00`
+- Skill count: `23`
+- Generated at: `2026-02-19T04:45:32.799453+00:00`
 
 Regenerate with:
 

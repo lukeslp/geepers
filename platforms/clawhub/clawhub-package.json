@@ -5,8 +5,80 @@
   ],
   "version": "1.0.0",
   "distribution": "clawhub",
-  "generated_at": "2026-02-19T00:50:59.867627+00:00",
+  "generated_at": "2026-02-19T04:45:32.799275+00:00",
   "skills": [
+    {
+      "id": "builder",
+      "path": "skills/builder"
+    },
+    {
+      "id": "data-fetch",
+      "path": "skills/data-fetch"
+    },
+    {
+      "id": "datavis",
+      "path": "skills/datavis"
+    },
+    {
+      "id": "dream-swarm",
+      "path": "skills/dream-swarm"
+    },
+    {
+      "id": "engineering",
+      "path": "skills/engineering"
+    },
+    {
+      "id": "executive",
+      "path": "skills/executive"
+    },
+    {
+      "id": "finance",
+      "path": "skills/finance"
+    },
+    {
+      "id": "git-hygiene-guardian",
+      "path": "skills/git-hygiene-guardian"
+    },
+    {
+      "id": "mcp-orchestration",
+      "path": "skills/mcp-orchestration"
+    },
+    {
+      "id": "planner",
+      "path": "skills/planner"
+    },
+    {
+      "id": "product",
+      "path": "skills/product"
+    },
+    {
+      "id": "quality",
+      "path": "skills/quality"
+    },
+    {
+      "id": "scout",
+      "path": "skills/scout"
+    },
+    {
+      "id": "server-deploy",
+      "path": "skills/server-deploy"
+    },
+    {
+      "id": "swarm",
+      "path": "skills/swarm"
+    },
+    {
+      "id": "team",
+      "path": "skills/team"
+    },
+    {
+      "id": "testing",
+      "path": "skills/testing"
+    },
+    {
+      "id": "validator",
+      "path": "skills/validator"
+    },
     {
       "id": "geepers-corpus",
       "path": "skills/geepers-corpus"
