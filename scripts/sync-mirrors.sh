@@ -70,7 +70,7 @@ for line in "${PLATFORM_LINES[@]}"; do
   src_skills="$src_root/skills"
 
   if [[ ! -d "$src_skills" ]]; then
-    echo "Skipping $name: generated skills not found at $src_skills"
+    echo "Skipping $name: skills not found at $src_skills"
     continue
   fi
 

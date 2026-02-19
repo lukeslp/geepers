@@ -64,7 +64,7 @@ for line in "${PLATFORM_LINES[@]}"; do
   src_skills="$src_root/skills"
 
   if [[ ! -d "$src_skills" ]]; then
-    echo "[warn] $name generated skills not found: $src_skills"
+    echo "[warn] $name skills not found: $src_skills"
     ((DRIFT_COUNT++)) || true
     continue
   fi
