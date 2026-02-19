@@ -1,6 +1,6 @@
 {
   "platform": "codex",
-  "built_at": "2026-02-19T07:03:51.114875+00:00",
+  "built_at": "2026-02-19T07:24:06.745251+00:00",
   "source_manifest": "manifests/skills-manifest.yaml",
   "skills": [
     "builder",

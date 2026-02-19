@@ -2,7 +2,7 @@
 
 - Platform: `manus`
 - Skills: `23`
-- Built: `2026-02-19T07:03:51.162776+00:00`
+- Built: `2026-02-19T07:24:06.786045+00:00`
 - Source: `geepers/manifests/skills-manifest.yaml`
 
 Rebuild:
