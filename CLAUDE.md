@@ -8,11 +8,12 @@ Geepers is a multi-agent orchestration system that ships in two ways:
 - **Claude Code plugin** (`/plugin add lukeslp/geepers`) - Installs 52 agent definitions
 - **Python package** (`pip install geepers-llm`) - Provides orchestrators, config, utilities
 
-It has three distinct layers:
+It has four distinct layers:
 
 1. **Agent definitions** (`agents/`) - 73 markdown-defined specialists organized into 15 domains (52 registered in plugin.json), invoked via Claude Code's `Task` tool with `subagent_type`
 2. **Python package** (`geepers/`) - Orchestration framework, config management, naming registry, and utilities. Published to PyPI as **`geepers-llm`** v1.0.0. The `geepers/mcp/` directory is a symlink to `~/shared/mcp/` (the actual MCP server code).
 3. **Skills** (`skills/source/`) - 26 skill packs (Claude Desktop skills + geepers-* API skills) zipped for upload
+4. **Platform manifests** (`platforms/`) - Generated manifests and skill packages for 5 platforms: `claude`, `clawhub`, `codex`, `gemini`, `manus`. Each contains `manifest.generated.json`, `aliases.json`, `README.generated.md`, and a `skills/` directory with platform-specific skill exports.
 
 ## Commands
 
