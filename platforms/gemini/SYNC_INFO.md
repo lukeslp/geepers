@@ -2,7 +2,7 @@
 
 - Platform: `gemini`
 - Skills: `23`
-- Built: `2026-02-19T06:42:39.687754+00:00`
+- Built: `2026-02-19T06:56:22.286270+00:00`
 - Source: `geepers/manifests/skills-manifest.yaml`
 
 Rebuild:
