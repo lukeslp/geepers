@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "geepers-llm"
-version = "1.0.0"
+version = "1.0.1"
 description = "Multi-agent orchestration system with MCP tools and Claude Code plugin agents"
 authors = [{name = "Luke Steuber", email = "luke@lukesteuber.com"}]
 readme = "README.md"
