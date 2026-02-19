@@ -1,7 +1,7 @@
 # Geepers
 
 Multi-agent orchestration for LLM workflows. Two ways to use it:
-- Claude Code plugin - 60+ specialized agents for development tasks
+- Claude Code plugin - 73 specialized agents for development tasks
 - Python package - Orchestrators, config management, MCP server bridges
 
 ## Install
