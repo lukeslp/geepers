@@ -96,6 +96,10 @@ for line in "${PLATFORM_LINES[@]}"; do
   if [[ -f "$src_root/aliases.json" ]]; then
     run_cmd "cp '$src_root/aliases.json' '$mirror_repo/aliases.generated.json'"
   fi
+
+  if [[ -f "$src_root/README.md" ]]; then
+    run_cmd "cp '$src_root/README.md' '$mirror_repo/README.md'"
+  fi
 done
 
 echo "Sync complete."
