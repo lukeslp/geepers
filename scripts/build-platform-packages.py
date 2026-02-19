@@ -139,21 +139,21 @@ def generate_platform_metadata(platform: str, output_root: Path, skills: List[di
 
 
 def write_generated_readme(platform: str, output_root: Path, skill_count: int) -> None:
-    content = f"""# {platform.title()} Skill Package
-
-This directory is synced from canonical source in `geepers/manifests/skills-manifest.yaml`.
+    """Write build metadata to SYNC_INFO.md — leaves README.md untouched."""
+    content = f"""# Sync Info
 
 - Platform: `{platform}`
-- Skill count: `{skill_count}`
-- Built at: `{datetime.now(timezone.utc).isoformat()}`
+- Skills: `{skill_count}`
+- Built: `{datetime.now(timezone.utc).isoformat()}`
+- Source: `geepers/manifests/skills-manifest.yaml`
 
-Rebuild with:
+Rebuild:
 
 ```bash
 python3 scripts/build-platform-packages.py --platform {platform} --clean
 ```
 """
-    (output_root / "README.generated.md").write_text(content, encoding="utf-8")
+    (output_root / "SYNC_INFO.md").write_text(content, encoding="utf-8")
 
 
 def build_one(platform_name: str, manifest: dict, platforms_cfg: dict, aliases: dict, clean: bool) -> int:
