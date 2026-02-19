@@ -5,12 +5,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## What This Is
 
 Geepers is a multi-agent orchestration system that ships in two ways:
-- **Claude Code plugin** (`/plugin add lukeslp/geepers`) - Installs 52 agent definitions
+- **Claude Code plugin** (`/plugin add lukeslp/geepers`) - Installs 73 agent definitions
 - **Python package** (`pip install geepers-llm`) - Provides orchestrators, config, utilities
 
 It has four distinct layers:
 
-1. **Agent definitions** (`agents/`) - 73 markdown-defined specialists organized into 15 domains (52 registered in plugin.json), invoked via Claude Code's `Task` tool with `subagent_type`
+1. **Agent definitions** (`agents/`) - 73 markdown-defined specialists organized into 15 domains (all 73 registered in plugin.json), invoked via Claude Code's `Task` tool with `subagent_type`
 2. **Python package** (`geepers/`) - Orchestration framework, config management, naming registry, and utilities. Published to PyPI as **`geepers-llm`** v1.0.0. The `geepers/mcp/` directory is a symlink to `~/shared/mcp/` (the actual MCP server code).
 3. **Skills** (`skills/source/`) - 26 skill packs (Claude Desktop skills + geepers-* API skills) zipped for upload
 4. **Platform manifests** (`platforms/`) - Generated manifests and skill packages for 5 platforms: `claude`, `clawhub`, `codex`, `gemini`, `manus`. Each contains `manifest.generated.json`, `aliases.json`, `README.generated.md`, and a `skills/` directory with platform-specific skill exports.
@@ -71,9 +71,9 @@ Agents follow a strict routing hierarchy: **Conductor -> Orchestrators -> Specia
 
 - `conductor_geepers` (`agents/master/`) - Top-level router, dispatches to orchestrators
 - 13 orchestrators (one per domain) - Coordinate groups of specialists
-- ~57 specialists - Do the actual work (72 total agent .md files on disk)
+- ~59 specialists - Do the actual work (73 total agent .md files on disk)
 
-52 agents are registered in `.claude-plugin/plugin.json`. The remaining 21 are on disk but not yet registered.
+All 73 agents are registered in `.claude-plugin/plugin.json`.
 
 Each agent is a markdown file with YAML frontmatter (`name`, `description`, `model`, `color`) and structured sections (Mission, Workflow, Coordination Protocol). The plugin manifest at `.claude-plugin/plugin.json` maps agent IDs to their markdown source paths.
 
