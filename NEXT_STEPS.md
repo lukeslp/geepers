@@ -14,16 +14,18 @@ The build/sync pipeline is active from canonical source in `geepers`:
 - `bash scripts/sync-mirrors.sh --platform all --delete --skip-build`
 - `bash scripts/report-drift.sh --platform all --skip-missing`
 
-Language cleanup is in progress across mirrors:
-- removed "generated ..." framing in top-level docs and metadata
+Language cleanup is complete in the canonical repo:
+- removed "generated ..." framing in scripts, docs, and platform metadata
 - replaced mirror guard wording with "synced mirror"
+- `README.generated.md` replaced by `README.md` (humanized) + `SYNC_INFO.md` (build metadata)
+- build script now copies humanized README templates from `scripts/platform-readmes/` on every build
 
 ## Immediate Follow-Up
 
-1. Commit and push the current wording/metadata cleanup in all affected repos.
-2. Keep `geepers` as the only authoring source for shared skill content.
-3. Continue enforcing read-only mirror policy in every mirror repo.
-4. Confirm top-level README style remains consistent after future sync runs.
+1. Push latest canonical commits to the GitHub remote.
+2. Run `sync-mirrors.sh` to propagate updated platform packages to all mirror repos.
+3. Keep `geepers` as the only authoring source for shared skill content.
+4. Continue enforcing read-only mirror policy in every mirror repo.
 
 ## Future Tasks
 

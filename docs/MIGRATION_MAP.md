@@ -18,4 +18,4 @@
 ## Transition policy
 - New documentation and build artifacts use canonical names.
 - Legacy names remain documented as aliases for one release cycle.
-- Mirror repositories should consume generated artifacts only.
+- Mirror repositories should consume built artifacts only.
