@@ -84,7 +84,7 @@ resolve_legacy("BeltalowdaOrchestrator")   # Maps to canonical name
 
 ## Claude Code Agents
 
-60+ markdown-defined agents organized into 15 domains:
+73 markdown-defined agents organized into 15 domains:
 
 | Domain | Orchestrator | Specialists |
 |--------|-------------|-------------|
