@@ -35,9 +35,7 @@ class NamingEntry:
 LEGACY_MAP: Dict[str, NamingEntry] = {
     "DreamCascadeOrchestrator": NamingEntry(Role.CONDUCTOR, "beltalowda"),
     "BeltalowdaOrchestrator": NamingEntry(Role.CONDUCTOR, "beltalowda"),
-    "DreamerBeltalowdaOrchestrator": NamingEntry(Role.CONDUCTOR, "beltalowda"),
     "DreamSwarmOrchestrator": NamingEntry(Role.CONDUCTOR, "swarm"),
-    "DreamerSwarmOrchestrator": NamingEntry(Role.CONDUCTOR, "swarm"),
     "SequentialOrchestrator": NamingEntry(Role.ORCHESTRATOR, "sequential"),
     "ConditionalOrchestrator": NamingEntry(Role.ORCHESTRATOR, "conditional"),
     "IterativeOrchestrator": NamingEntry(Role.ORCHESTRATOR, "iterative"),
