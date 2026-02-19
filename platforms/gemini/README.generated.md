@@ -4,7 +4,7 @@ This directory is generated from canonical source in `geepers/manifests/skills-m
 
 - Platform: `gemini`
 - Skill count: `23`
-- Generated at: `2026-02-19T00:34:44.043030+00:00`
+- Generated at: `2026-02-19T00:45:00.957947+00:00`
 
 Regenerate with:
 
