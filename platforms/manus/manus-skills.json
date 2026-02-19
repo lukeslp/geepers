@@ -1,8 +1,8 @@
 {
-  "name": "geepers-manus-generated",
+  "name": "geepers-manus-package",
   "version": "1.0.0",
   "runtime": "manus",
-  "generated_at": "2026-02-19T04:45:32.673153+00:00",
+  "built_at": "2026-02-19T06:28:40.649241+00:00",
   "skills": [
     {
       "id": "builder",
