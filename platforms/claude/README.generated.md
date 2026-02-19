@@ -1,12 +1,12 @@
-# Generated Claude Skill Package
+# Claude Skill Package
 
-This directory is generated from canonical source in `geepers/manifests/skills-manifest.yaml`.
+This directory is synced from canonical source in `geepers/manifests/skills-manifest.yaml`.
 
 - Platform: `claude`
 - Skill count: `23`
-- Generated at: `2026-02-19T00:50:59.805537+00:00`
+- Built at: `2026-02-19T06:28:40.584196+00:00`
 
-Regenerate with:
+Rebuild with:
 
 ```bash
 python3 scripts/build-platform-packages.py --platform claude --clean

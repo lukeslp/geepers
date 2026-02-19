@@ -1,8 +1,8 @@
 {
-  "name": "geepers-gemini-generated",
+  "name": "geepers-gemini-package",
   "version": "1.0.0",
-  "description": "Generated Gemini extension package from canonical geepers skills.",
-  "generated_at": "2026-02-19T00:50:59.845368+00:00",
+  "description": "Gemini extension package synced from canonical geepers skills.",
+  "built_at": "2026-02-19T06:28:40.627114+00:00",
   "skills": [
     {
       "name": "builder",

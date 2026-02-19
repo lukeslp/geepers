@@ -1,18 +1,18 @@
 {
-  "name": "geepers-generated-marketplace",
+  "name": "geepers-marketplace",
   "owner": {
     "name": "Luke Steuber",
     "email": "luke@dr.eamer.dev"
   },
   "metadata": {
-    "description": "Generated geepers skills package for Claude-compatible clients.",
+    "description": "Skill package for Claude-compatible clients.",
     "version": "1.0.0",
-    "generated_at": "2026-02-19T00:50:59.805400+00:00"
+    "built_at": "2026-02-19T06:28:40.584038+00:00"
   },
   "plugins": [
     {
-      "name": "geepers-generated-skills",
-      "description": "Generated from canonical geepers manifest",
+      "name": "geepers-skills-package",
+      "description": "Synced from canonical geepers manifest",
       "source": "./",
       "strict": false,
       "skills": [
