@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate platform-specific skill packages from canonical manifest."""
+"""Build platform-specific skill packages from canonical manifest."""
 
 from __future__ import annotations
 
@@ -68,20 +68,20 @@ def generate_platform_metadata(platform: str, output_root: Path, skills: List[di
 
     if platform == "claude":
         payload = {
-            "name": "geepers-generated-marketplace",
+            "name": "geepers-marketplace",
             "owner": {
                 "name": "Luke Steuber",
                 "email": "luke@dr.eamer.dev"
             },
             "metadata": {
-                "description": "Generated geepers skills package for Claude-compatible clients.",
+                "description": "Skill package for Claude-compatible clients.",
                 "version": "1.0.0",
-                "generated_at": datetime.now(timezone.utc).isoformat()
+                "built_at": datetime.now(timezone.utc).isoformat()
             },
             "plugins": [
                 {
-                    "name": "geepers-generated-skills",
-                    "description": "Generated from canonical geepers manifest",
+                    "name": "geepers-skills-package",
+                    "description": "Synced from canonical geepers manifest",
                     "source": "./",
                     "strict": False,
                     "skills": [f"./skills/{name}" for name in skill_names]
@@ -94,10 +94,10 @@ def generate_platform_metadata(platform: str, output_root: Path, skills: List[di
 
     elif platform == "gemini":
         payload = {
-            "name": "geepers-gemini-generated",
+            "name": "geepers-gemini-package",
             "version": "1.0.0",
-            "description": "Generated Gemini extension package from canonical geepers skills.",
-            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "description": "Gemini extension package synced from canonical geepers skills.",
+            "built_at": datetime.now(timezone.utc).isoformat(),
             "skills": [{"name": name, "path": f"skills/{name}"} for name in skill_names],
             "aliases": aliases.get("skill_aliases", [])
         }
@@ -106,10 +106,10 @@ def generate_platform_metadata(platform: str, output_root: Path, skills: List[di
 
     elif platform == "manus":
         payload = {
-            "name": "geepers-manus-generated",
+            "name": "geepers-manus-package",
             "version": "1.0.0",
             "runtime": "manus",
-            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "built_at": datetime.now(timezone.utc).isoformat(),
             "skills": [{"id": name, "path": f"skills/{name}"} for name in skill_names]
         }
         target = output_root / "manus-skills.json"
@@ -121,7 +121,7 @@ def generate_platform_metadata(platform: str, output_root: Path, skills: List[di
             "legacy_aliases": ["dreamer-api-skills"],
             "version": "1.0.0",
             "distribution": "clawhub",
-            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "built_at": datetime.now(timezone.utc).isoformat(),
             "skills": [{"id": name, "path": f"skills/{name}"} for name in skill_names]
         }
         target = output_root / "clawhub-package.json"
@@ -129,9 +129,9 @@ def generate_platform_metadata(platform: str, output_root: Path, skills: List[di
 
     else:  # codex and fallback
         payload = {
-            "name": f"geepers-{platform}-generated",
+            "name": f"geepers-{platform}-package",
             "version": "1.0.0",
-            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "built_at": datetime.now(timezone.utc).isoformat(),
             "skills": [{"id": name, "path": f"skills/{name}"} for name in skill_names]
         }
         target = output_root / f"{platform}-package.json"
@@ -139,15 +139,15 @@ def generate_platform_metadata(platform: str, output_root: Path, skills: List[di
 
 
 def write_generated_readme(platform: str, output_root: Path, skill_count: int) -> None:
-    content = f"""# Generated {platform.title()} Skill Package
+    content = f"""# {platform.title()} Skill Package
 
-This directory is generated from canonical source in `geepers/manifests/skills-manifest.yaml`.
+This directory is synced from canonical source in `geepers/manifests/skills-manifest.yaml`.
 
 - Platform: `{platform}`
 - Skill count: `{skill_count}`
-- Generated at: `{datetime.now(timezone.utc).isoformat()}`
+- Built at: `{datetime.now(timezone.utc).isoformat()}`
 
-Regenerate with:
+Rebuild with:
 
 ```bash
 python3 scripts/build-platform-packages.py --platform {platform} --clean
@@ -190,7 +190,7 @@ def build_one(platform_name: str, manifest: dict, platforms_cfg: dict, aliases: 
 
     generated_manifest = {
         "platform": platform_name,
-        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "built_at": datetime.now(timezone.utc).isoformat(),
         "source_manifest": str(MANIFEST_PATH.relative_to(ROOT)),
         "skills": copied,
     }
