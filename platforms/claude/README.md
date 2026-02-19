@@ -19,25 +19,25 @@ Or drop this directory into your Claude skills path manually.
 ## What's Included
 
 **Orchestration**
-- `team` — routes any request to the right specialist
-- `executive`, `engineering`, `finance` — domain-specific orchestration
-- `dream-swarm`, `swarm`, `mcp-orchestration` — parallel multi-agent workflows
+- `geepers-team` — routes any request to the right specialist
+- `geepers-executive`, `geepers-engineering`, `geepers-finance` — domain-specific orchestration
+- `geepers-dream-swarm`, `geepers-swarm`, `geepers-mcp` — parallel multi-agent workflows
 
 **Planning & Building**
-- `planner` — breaks down tasks and sequences work
-- `builder` — executes implementation plans
-- `scout` — fast project reconnaissance and quick wins
-- `quality` — parallel a11y, perf, security, and dep checks
-- `testing` — test strategy and implementation
+- `geepers-planner` — breaks down tasks and sequences work
+- `geepers-builder` — executes implementation plans
+- `geepers-scout` — fast project reconnaissance and quick wins
+- `geepers-quality` — parallel a11y, perf, security, and dep checks
+- `geepers-testing` — test strategy and implementation
 
 **Dev Tools**
-- `git-hygiene-guardian` — repo cleanup and artifact hygiene
-- `validator` — config and integration validation
-- `server-deploy` — service deployment and Caddy routing
+- `geepers-git` — repo cleanup and artifact hygiene
+- `geepers-validate` — config and integration validation
+- `geepers-deploy` — service deployment and Caddy routing
 
 **Research & Data**
-- `data-fetch` — pulls from 17+ structured APIs (Census, arXiv, GitHub, NASA, etc.)
-- `datavis` — D3.js and Chart.js visualization workflows
+- `geepers-fetch` — pulls from 17+ structured APIs (Census, arXiv, GitHub, NASA, etc.)
+- `geepers-datavis` — D3.js and Chart.js visualization workflows
 - `geepers-data` — aggregated data API access
 - `geepers-corpus` — COCA corpus linguistics
 - `geepers-etymology` — historical linguistics and etymology
@@ -47,7 +47,7 @@ Or drop this directory into your Claude skills path manually.
 - `geepers-orchestrate` — API-backed Dream Cascade and Dream Swarm execution
 
 **Product**
-- `product` — PRD generation and product planning
+- `geepers-product` — PRD generation and product planning
 
 ## Ecosystem
 

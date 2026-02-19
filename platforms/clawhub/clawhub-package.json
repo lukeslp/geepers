@@ -5,79 +5,79 @@
   ],
   "version": "1.0.0",
   "distribution": "clawhub",
-  "built_at": "2026-02-19T08:07:12.245303+00:00",
+  "built_at": "2026-02-19T09:37:29.104235+00:00",
   "skills": [
     {
-      "id": "builder",
-      "path": "skills/builder"
+      "id": "geepers-builder",
+      "path": "skills/geepers-builder"
     },
     {
-      "id": "data-fetch",
-      "path": "skills/data-fetch"
+      "id": "geepers-fetch",
+      "path": "skills/geepers-fetch"
     },
     {
-      "id": "datavis",
-      "path": "skills/datavis"
+      "id": "geepers-datavis",
+      "path": "skills/geepers-datavis"
     },
     {
-      "id": "dream-swarm",
-      "path": "skills/dream-swarm"
+      "id": "geepers-dream-swarm",
+      "path": "skills/geepers-dream-swarm"
     },
     {
-      "id": "engineering",
-      "path": "skills/engineering"
+      "id": "geepers-engineering",
+      "path": "skills/geepers-engineering"
     },
     {
-      "id": "executive",
-      "path": "skills/executive"
+      "id": "geepers-executive",
+      "path": "skills/geepers-executive"
     },
     {
-      "id": "finance",
-      "path": "skills/finance"
+      "id": "geepers-finance",
+      "path": "skills/geepers-finance"
     },
     {
-      "id": "git-hygiene-guardian",
-      "path": "skills/git-hygiene-guardian"
+      "id": "geepers-git",
+      "path": "skills/geepers-git"
     },
     {
-      "id": "mcp-orchestration",
-      "path": "skills/mcp-orchestration"
+      "id": "geepers-mcp",
+      "path": "skills/geepers-mcp"
     },
     {
-      "id": "planner",
-      "path": "skills/planner"
+      "id": "geepers-planner",
+      "path": "skills/geepers-planner"
     },
     {
-      "id": "product",
-      "path": "skills/product"
+      "id": "geepers-product",
+      "path": "skills/geepers-product"
     },
     {
-      "id": "quality",
-      "path": "skills/quality"
+      "id": "geepers-quality",
+      "path": "skills/geepers-quality"
     },
     {
-      "id": "scout",
-      "path": "skills/scout"
+      "id": "geepers-scout",
+      "path": "skills/geepers-scout"
     },
     {
-      "id": "server-deploy",
-      "path": "skills/server-deploy"
+      "id": "geepers-deploy",
+      "path": "skills/geepers-deploy"
     },
     {
-      "id": "swarm",
-      "path": "skills/swarm"
+      "id": "geepers-swarm",
+      "path": "skills/geepers-swarm"
     },
     {
-      "id": "team",
-      "path": "skills/team"
+      "id": "geepers-team",
+      "path": "skills/geepers-team"
     },
     {
-      "id": "testing",
-      "path": "skills/testing"
+      "id": "geepers-testing",
+      "path": "skills/geepers-testing"
     },
     {
-      "id": "validator",
-      "path": "skills/validator"
+      "id": "geepers-validate",
+      "path": "skills/geepers-validate"
     },
     {
       "id": "geepers-corpus",
