@@ -154,7 +154,9 @@
     {"id": "geepers_dashboard", "source": "./agents/standalone/geepers_dashboard.md"},
     {"id": "geepers_git", "source": "./agents/standalone/geepers_git.md"},
     {"id": "geepers_todoist", "source": "./agents/standalone/geepers_todoist.md"},
-    {"id": "geepers_docs_standalone", "source": "./agents/standalone/geepers_docs.md"}
+    {"id": "geepers_humanizer", "source": "./agents/standalone/geepers_humanizer.md"},
+    {"id": "geepers_readme", "source": "./agents/standalone/geepers_readme.md"},
+    {"id": "geepers_docs", "source": "./agents/standalone/geepers_docs.md"}
   ],
   "requirements": {
     "python": ">=3.8",
