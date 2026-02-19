@@ -1,6 +1,6 @@
 {
   "platform": "gemini",
-  "built_at": "2026-02-19T07:03:51.139298+00:00",
+  "built_at": "2026-02-19T07:24:06.764768+00:00",
   "source_manifest": "manifests/skills-manifest.yaml",
   "skills": [
     "builder",
