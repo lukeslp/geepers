@@ -2,79 +2,79 @@
   "name": "geepers-gemini-package",
   "version": "1.0.0",
   "description": "23 geepers skills for planning, building, shipping, and researching \u2014 Gemini format.",
-  "built_at": "2026-02-19T08:07:12.203320+00:00",
+  "built_at": "2026-02-19T09:37:29.068335+00:00",
   "skills": [
     {
-      "name": "builder",
-      "path": "skills/builder"
+      "name": "geepers-builder",
+      "path": "skills/geepers-builder"
     },
     {
-      "name": "data-fetch",
-      "path": "skills/data-fetch"
+      "name": "geepers-fetch",
+      "path": "skills/geepers-fetch"
     },
     {
-      "name": "datavis",
-      "path": "skills/datavis"
+      "name": "geepers-datavis",
+      "path": "skills/geepers-datavis"
     },
     {
-      "name": "dream-swarm",
-      "path": "skills/dream-swarm"
+      "name": "geepers-dream-swarm",
+      "path": "skills/geepers-dream-swarm"
     },
     {
-      "name": "engineering",
-      "path": "skills/engineering"
+      "name": "geepers-engineering",
+      "path": "skills/geepers-engineering"
     },
     {
-      "name": "executive",
-      "path": "skills/executive"
+      "name": "geepers-executive",
+      "path": "skills/geepers-executive"
     },
     {
-      "name": "finance",
-      "path": "skills/finance"
+      "name": "geepers-finance",
+      "path": "skills/geepers-finance"
     },
     {
-      "name": "git-hygiene-guardian",
-      "path": "skills/git-hygiene-guardian"
+      "name": "geepers-git",
+      "path": "skills/geepers-git"
     },
     {
-      "name": "mcp-orchestration",
-      "path": "skills/mcp-orchestration"
+      "name": "geepers-mcp",
+      "path": "skills/geepers-mcp"
     },
     {
-      "name": "planner",
-      "path": "skills/planner"
+      "name": "geepers-planner",
+      "path": "skills/geepers-planner"
     },
     {
-      "name": "product",
-      "path": "skills/product"
+      "name": "geepers-product",
+      "path": "skills/geepers-product"
     },
     {
-      "name": "quality",
-      "path": "skills/quality"
+      "name": "geepers-quality",
+      "path": "skills/geepers-quality"
     },
     {
-      "name": "scout",
-      "path": "skills/scout"
+      "name": "geepers-scout",
+      "path": "skills/geepers-scout"
     },
     {
-      "name": "server-deploy",
-      "path": "skills/server-deploy"
+      "name": "geepers-deploy",
+      "path": "skills/geepers-deploy"
     },
     {
-      "name": "swarm",
-      "path": "skills/swarm"
+      "name": "geepers-swarm",
+      "path": "skills/geepers-swarm"
     },
     {
-      "name": "team",
-      "path": "skills/team"
+      "name": "geepers-team",
+      "path": "skills/geepers-team"
     },
     {
-      "name": "testing",
-      "path": "skills/testing"
+      "name": "geepers-testing",
+      "path": "skills/geepers-testing"
     },
     {
-      "name": "validator",
-      "path": "skills/validator"
+      "name": "geepers-validate",
+      "path": "skills/geepers-validate"
     },
     {
       "name": "geepers-corpus",
@@ -117,6 +117,86 @@
     {
       "from": "dreamer-orchestrate",
       "to": "geepers-orchestrate"
+    },
+    {
+      "from": "builder",
+      "to": "geepers-builder"
+    },
+    {
+      "from": "data-fetch",
+      "to": "geepers-fetch"
+    },
+    {
+      "from": "datavis",
+      "to": "geepers-datavis"
+    },
+    {
+      "from": "dream-swarm",
+      "to": "geepers-dream-swarm"
+    },
+    {
+      "from": "engineering",
+      "to": "geepers-engineering"
+    },
+    {
+      "from": "executive",
+      "to": "geepers-executive"
+    },
+    {
+      "from": "finance",
+      "to": "geepers-finance"
+    },
+    {
+      "from": "git-hygiene-guardian",
+      "to": "geepers-git"
+    },
+    {
+      "from": "mcp-orchestration",
+      "to": "geepers-mcp"
+    },
+    {
+      "from": "planner",
+      "to": "geepers-planner"
+    },
+    {
+      "from": "porkbun-cli",
+      "to": "geepers-porkbun"
+    },
+    {
+      "from": "product",
+      "to": "geepers-product"
+    },
+    {
+      "from": "quality",
+      "to": "geepers-quality"
+    },
+    {
+      "from": "scout",
+      "to": "geepers-scout"
+    },
+    {
+      "from": "server-deploy",
+      "to": "geepers-deploy"
+    },
+    {
+      "from": "swarm",
+      "to": "geepers-swarm"
+    },
+    {
+      "from": "team",
+      "to": "geepers-team"
+    },
+    {
+      "from": "testing",
+      "to": "geepers-testing"
+    },
+    {
+      "from": "validator",
+      "to": "geepers-validate"
+    },
+    {
+      "from": "vision",
+      "to": "geepers-vision"
     }
   ]
 }

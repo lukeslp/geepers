@@ -26,6 +26,86 @@
     {
       "from": "dreamer-orchestrate",
       "to": "geepers-orchestrate"
+    },
+    {
+      "from": "builder",
+      "to": "geepers-builder"
+    },
+    {
+      "from": "data-fetch",
+      "to": "geepers-fetch"
+    },
+    {
+      "from": "datavis",
+      "to": "geepers-datavis"
+    },
+    {
+      "from": "dream-swarm",
+      "to": "geepers-dream-swarm"
+    },
+    {
+      "from": "engineering",
+      "to": "geepers-engineering"
+    },
+    {
+      "from": "executive",
+      "to": "geepers-executive"
+    },
+    {
+      "from": "finance",
+      "to": "geepers-finance"
+    },
+    {
+      "from": "git-hygiene-guardian",
+      "to": "geepers-git"
+    },
+    {
+      "from": "mcp-orchestration",
+      "to": "geepers-mcp"
+    },
+    {
+      "from": "planner",
+      "to": "geepers-planner"
+    },
+    {
+      "from": "porkbun-cli",
+      "to": "geepers-porkbun"
+    },
+    {
+      "from": "product",
+      "to": "geepers-product"
+    },
+    {
+      "from": "quality",
+      "to": "geepers-quality"
+    },
+    {
+      "from": "scout",
+      "to": "geepers-scout"
+    },
+    {
+      "from": "server-deploy",
+      "to": "geepers-deploy"
+    },
+    {
+      "from": "swarm",
+      "to": "geepers-swarm"
+    },
+    {
+      "from": "team",
+      "to": "geepers-team"
+    },
+    {
+      "from": "testing",
+      "to": "geepers-testing"
+    },
+    {
+      "from": "validator",
+      "to": "geepers-validate"
+    },
+    {
+      "from": "vision",
+      "to": "geepers-vision"
     }
   ]
 }
