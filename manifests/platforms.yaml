@@ -26,11 +26,11 @@ platforms:
     include_bundles: [core, workflow, data, datavis, orchestration, strategy, quality, maintenance, operations, api]
     skills_dir: skills
     metadata_file: manus-skills.json
-    mirror_repo: /home/coolhand/servers/geepers-manus
+    mirror_repo: /home/coolhand/projects/packages/geepers-manus
 
   clawhub:
     output_root: platforms/clawhub
-    include_bundles: [api]
+    include_bundles: [core, workflow, data, datavis, orchestration, strategy, quality, maintenance, operations, api]
     skills_dir: skills
     metadata_file: clawhub-package.json
     mirror_repo: /home/coolhand/projects/dreamer-api-skills
