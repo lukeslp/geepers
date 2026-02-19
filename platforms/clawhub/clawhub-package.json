@@ -1,0 +1,31 @@
+{
+  "name": "geepers-api-skills",
+  "legacy_aliases": [
+    "dreamer-api-skills"
+  ],
+  "version": "1.0.0",
+  "distribution": "clawhub",
+  "generated_at": "2026-02-19T00:34:44.059852+00:00",
+  "skills": [
+    {
+      "id": "geepers-corpus",
+      "path": "skills/geepers-corpus"
+    },
+    {
+      "id": "geepers-data",
+      "path": "skills/geepers-data"
+    },
+    {
+      "id": "geepers-etymology",
+      "path": "skills/geepers-etymology"
+    },
+    {
+      "id": "geepers-llm",
+      "path": "skills/geepers-llm"
+    },
+    {
+      "id": "geepers-orchestrate",
+      "path": "skills/geepers-orchestrate"
+    }
+  ]
+}

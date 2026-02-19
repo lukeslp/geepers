@@ -39,7 +39,8 @@ fi
 mapfile -t PLATFORM_LINES < <(python3 - <<'PY'
 import yaml
 from pathlib import Path
-root = Path("/home/coolhand/geepers")
+import os
+root = Path(os.environ["ROOT"])
 cfg = yaml.safe_load((root / "manifests/platforms.yaml").read_text(encoding="utf-8"))
 for name, details in (cfg.get("platforms") or {}).items():
     out = details.get("output_root", "")

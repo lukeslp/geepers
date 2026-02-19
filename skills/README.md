@@ -72,3 +72,28 @@ To keep in sync, edit in `source/` and copy back to `.claude/skills/` as needed.
 - [Agent Skills Overview](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview)
 - [Using Skills in Claude](https://support.claude.com/en/articles/12512180-using-skills-in-claude)
 - [Anthropic Skills Announcement](https://www.anthropic.com/news/skills)
+
+## Canonical Source and Adapters
+
+This repository now treats `skills/source/` as canonical authoring content.
+
+Generated platform outputs are written to:
+- `platforms/claude/`
+- `platforms/codex/`
+- `platforms/gemini/`
+- `platforms/manus/`
+- `platforms/clawhub/`
+
+Build and validation commands:
+
+```bash
+python3 scripts/validate-skills.py --strict
+python3 scripts/build-platform-packages.py --platform all --clean
+bash scripts/report-drift.sh --strict --skip-missing
+```
+
+Mirror sync (optional):
+
+```bash
+bash scripts/sync-mirrors.sh --delete
+```

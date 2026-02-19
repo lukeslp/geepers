@@ -122,3 +122,28 @@ Task with subagent_type="conductor_geepers"
 ## License
 
 MIT - Luke Steuber
+
+## Cross-Platform Skill Packaging
+
+Canonical skill content lives in `skills/source/` and is distributed via platform adapters.
+
+```bash
+# 1) Validate canonical manifests + SKILL frontmatter
+python3 scripts/validate-skills.py --strict
+
+# 2) Generate packages for Claude, Codex, Gemini, Manus, and ClawHub
+python3 scripts/build-platform-packages.py --platform all --clean
+
+# 3) Compare generated outputs against mirror repos
+bash scripts/report-drift.sh --strict --skip-missing
+
+# 4) Sync generated artifacts into configured mirror repos
+bash scripts/sync-mirrors.sh --delete
+```
+
+Key files:
+- `manifests/skills-manifest.yaml`
+- `manifests/platforms.yaml`
+- `manifests/aliases.yaml`
+- `docs/UNIFICATION_ARCHITECTURE.md`
+- `docs/MIGRATION_MAP.md`
