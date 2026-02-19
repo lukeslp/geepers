@@ -1,6 +1,6 @@
 {
   "platform": "manus",
-  "generated_at": "2026-02-19T00:50:59.865012+00:00",
+  "generated_at": "2026-02-19T04:45:32.673027+00:00",
   "source_manifest": "manifests/skills-manifest.yaml",
   "skills": [
     "builder",
