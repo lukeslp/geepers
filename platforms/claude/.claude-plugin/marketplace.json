@@ -5,14 +5,14 @@
     "email": "luke@dr.eamer.dev"
   },
   "metadata": {
-    "description": "Skill package for Claude-compatible clients.",
+    "description": "23 skills for planning, building, shipping, and researching \u2014 for Claude Code.",
     "version": "1.0.0",
-    "built_at": "2026-02-19T07:24:06.725925+00:00"
+    "built_at": "2026-02-19T07:41:19.739755+00:00"
   },
   "plugins": [
     {
       "name": "geepers-skills-package",
-      "description": "Synced from canonical geepers manifest",
+      "description": "23 geepers skills \u2014 planning, building, shipping, researching.",
       "source": "./",
       "strict": false,
       "skills": [

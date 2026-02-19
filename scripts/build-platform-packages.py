@@ -75,14 +75,14 @@ def generate_platform_metadata(platform: str, output_root: Path, skills: List[di
                 "email": "luke@dr.eamer.dev"
             },
             "metadata": {
-                "description": "Skill package for Claude-compatible clients.",
+                "description": "23 skills for planning, building, shipping, and researching — for Claude Code.",
                 "version": "1.0.0",
                 "built_at": datetime.now(timezone.utc).isoformat()
             },
             "plugins": [
                 {
                     "name": "geepers-skills-package",
-                    "description": "Synced from canonical geepers manifest",
+                    "description": "23 geepers skills — planning, building, shipping, researching.",
                     "source": "./",
                     "strict": False,
                     "skills": [f"./skills/{name}" for name in skill_names]
@@ -97,7 +97,7 @@ def generate_platform_metadata(platform: str, output_root: Path, skills: List[di
         payload = {
             "name": "geepers-gemini-package",
             "version": "1.0.0",
-            "description": "Gemini extension package synced from canonical geepers skills.",
+            "description": "23 geepers skills for planning, building, shipping, and researching — Gemini format.",
             "built_at": datetime.now(timezone.utc).isoformat(),
             "skills": [{"name": name, "path": f"skills/{name}"} for name in skill_names],
             "aliases": aliases.get("skill_aliases", [])

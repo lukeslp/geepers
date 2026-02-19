@@ -1,10 +1,10 @@
 # geepers-skills
 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Platform: Claude](https://img.shields.io/badge/platform-Claude%20Code-blueviolet.svg)
 ![Skills: 23](https://img.shields.io/badge/skills-23-brightgreen.svg)
 
-Skill package for Claude Code and Claude Desktop. Covers the full development workflow — planning, building, shipping, researching, and auditing — from a single install.
+23 skills for Claude Code and Claude Desktop — planning, building, shipping, researching, and auditing from a single install.
 
 ## Install
 
@@ -46,6 +46,13 @@ Or drop this directory into your Claude skills path manually.
 
 **Product**
 - `product` — PRD generation and product planning
+
+## Other Platforms
+
+- **Codex CLI**: [geepers-gpt](https://github.com/lukeslp/geepers-gpt)
+- **Gemini**: [geepers-gemini](https://github.com/lukeslp/geepers-gemini)
+- **Manus**: [geepers-manus](https://github.com/lukeslp/geepers-manus)
+- **ClawHub**: [geepers-api-skills](https://github.com/lukeslp/geepers-api-skills)
 
 ## Author
 

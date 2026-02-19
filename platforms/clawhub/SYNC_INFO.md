@@ -2,7 +2,7 @@
 
 - Platform: `clawhub`
 - Skills: `23`
-- Built: `2026-02-19T07:24:06.806482+00:00`
+- Built: `2026-02-19T07:41:19.853701+00:00`
 - Source: `geepers/manifests/skills-manifest.yaml`
 
 Rebuild:
