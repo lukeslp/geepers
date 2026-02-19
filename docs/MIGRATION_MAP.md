@@ -16,6 +16,6 @@
 - `dreamer-orchestrate` -> `geepers-orchestrate`
 
 ## Transition policy
-- New documentation and generated artifacts use canonical names.
+- New documentation and build artifacts use canonical names.
 - Legacy names remain documented as aliases for one release cycle.
 - Mirror repositories should consume generated artifacts only.

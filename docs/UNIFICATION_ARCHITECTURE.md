@@ -1,7 +1,7 @@
 # Skills Unification Architecture
 
 ## Goal
-Use `/home/coolhand/geepers` as the canonical source of skill content, then generate platform-specific distributions for Claude, Codex, Gemini, Manus, and ClawHub.
+Use `/home/coolhand/geepers` as the canonical source of skill content, then build platform-specific distributions for Claude, Codex, Gemini, Manus, and ClawHub.
 
 ## Layers
 1. Canonical content layer
@@ -11,10 +11,10 @@ Use `/home/coolhand/geepers` as the canonical source of skill content, then gene
 
 2. Platform adapter layer
 - Adapter config lives in `manifests/platforms.yaml`.
-- `scripts/build-platform-packages.py` generates platform outputs under `platforms/<platform>/`.
+- `scripts/build-platform-packages.py` builds platform outputs under `platforms/<platform>/`.
 
 3. Mirror synchronization layer
-- `scripts/sync-mirrors.sh` pushes generated outputs to mirror repos.
+- `scripts/sync-mirrors.sh` pushes built outputs to mirror repos.
 - `scripts/report-drift.sh` compares generated outputs with mirror repos.
 
 ## Read-only mirror policy
