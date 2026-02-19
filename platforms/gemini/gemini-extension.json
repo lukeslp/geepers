@@ -1,0 +1,122 @@
+{
+  "name": "geepers-gemini-generated",
+  "version": "1.0.0",
+  "description": "Generated Gemini extension package from canonical geepers skills.",
+  "generated_at": "2026-02-19T00:34:44.042855+00:00",
+  "skills": [
+    {
+      "name": "builder",
+      "path": "skills/builder"
+    },
+    {
+      "name": "data-fetch",
+      "path": "skills/data-fetch"
+    },
+    {
+      "name": "datavis",
+      "path": "skills/datavis"
+    },
+    {
+      "name": "dream-swarm",
+      "path": "skills/dream-swarm"
+    },
+    {
+      "name": "engineering",
+      "path": "skills/engineering"
+    },
+    {
+      "name": "executive",
+      "path": "skills/executive"
+    },
+    {
+      "name": "finance",
+      "path": "skills/finance"
+    },
+    {
+      "name": "git-hygiene-guardian",
+      "path": "skills/git-hygiene-guardian"
+    },
+    {
+      "name": "mcp-orchestration",
+      "path": "skills/mcp-orchestration"
+    },
+    {
+      "name": "planner",
+      "path": "skills/planner"
+    },
+    {
+      "name": "product",
+      "path": "skills/product"
+    },
+    {
+      "name": "quality",
+      "path": "skills/quality"
+    },
+    {
+      "name": "scout",
+      "path": "skills/scout"
+    },
+    {
+      "name": "server-deploy",
+      "path": "skills/server-deploy"
+    },
+    {
+      "name": "swarm",
+      "path": "skills/swarm"
+    },
+    {
+      "name": "team",
+      "path": "skills/team"
+    },
+    {
+      "name": "testing",
+      "path": "skills/testing"
+    },
+    {
+      "name": "validator",
+      "path": "skills/validator"
+    },
+    {
+      "name": "geepers-corpus",
+      "path": "skills/geepers-corpus"
+    },
+    {
+      "name": "geepers-data",
+      "path": "skills/geepers-data"
+    },
+    {
+      "name": "geepers-etymology",
+      "path": "skills/geepers-etymology"
+    },
+    {
+      "name": "geepers-llm",
+      "path": "skills/geepers-llm"
+    },
+    {
+      "name": "geepers-orchestrate",
+      "path": "skills/geepers-orchestrate"
+    }
+  ],
+  "aliases": [
+    {
+      "from": "dreamer-corpus",
+      "to": "geepers-corpus"
+    },
+    {
+      "from": "dreamer-data",
+      "to": "geepers-data"
+    },
+    {
+      "from": "dreamer-etymology",
+      "to": "geepers-etymology"
+    },
+    {
+      "from": "dreamer-llm",
+      "to": "geepers-llm"
+    },
+    {
+      "from": "dreamer-orchestrate",
+      "to": "geepers-orchestrate"
+    }
+  ]
+}

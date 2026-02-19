@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "repository_aliases": {
+    "dreamer-api-skills": "geepers-api-skills"
+  },
+  "env_var_aliases": {
+    "DREAMER_API_KEY": "GEEPERS_API_KEY"
+  },
+  "skill_aliases": [
+    {
+      "from": "dreamer-corpus",
+      "to": "geepers-corpus"
+    },
+    {
+      "from": "dreamer-data",
+      "to": "geepers-data"
+    },
+    {
+      "from": "dreamer-etymology",
+      "to": "geepers-etymology"
+    },
+    {
+      "from": "dreamer-llm",
+      "to": "geepers-llm"
+    },
+    {
+      "from": "dreamer-orchestrate",
+      "to": "geepers-orchestrate"
+    }
+  ]
+}

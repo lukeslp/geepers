@@ -1,0 +1,30 @@
+{
+  "platform": "codex",
+  "generated_at": "2026-02-19T00:34:44.026872+00:00",
+  "source_manifest": "manifests/skills-manifest.yaml",
+  "skills": [
+    "builder",
+    "data-fetch",
+    "datavis",
+    "dream-swarm",
+    "engineering",
+    "executive",
+    "finance",
+    "git-hygiene-guardian",
+    "mcp-orchestration",
+    "planner",
+    "product",
+    "quality",
+    "scout",
+    "server-deploy",
+    "swarm",
+    "team",
+    "testing",
+    "validator",
+    "geepers-corpus",
+    "geepers-data",
+    "geepers-etymology",
+    "geepers-llm",
+    "geepers-orchestrate"
+  ]
+}

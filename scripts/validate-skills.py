@@ -5,9 +5,8 @@ from __future__ import annotations
 
 import argparse
 import re
-import sys
 from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict, List
 
 import yaml
 
@@ -87,6 +86,7 @@ def main() -> int:
 
     errors: List[str] = []
     warnings: List[str] = []
+    notices: List[str] = []
 
     try:
         manifest = load_yaml(MANIFEST_PATH)
@@ -155,14 +155,14 @@ def main() -> int:
             elif not NAME_PATTERN.match(name):
                 msg = f"Skill '{skill_id}' frontmatter name '{name}' is not kebab-case."
                 if allow_legacy_name:
-                    warnings.append(msg + " (allowed by allow_legacy_name)")
+                    notices.append(msg + " (explicitly allowed)")
                 else:
                     errors.append(msg)
 
             if isinstance(name, str) and name.strip() and name != skill_id:
                 msg = f"Skill '{skill_id}' frontmatter name '{name}' does not match id."
                 if allow_legacy_name:
-                    warnings.append(msg + " (allowed by allow_legacy_name)")
+                    notices.append(msg + " (explicitly allowed)")
                 else:
                     warnings.append(msg)
 
@@ -217,6 +217,12 @@ def main() -> int:
     print(f"- Skills declared: {len(skills)}")
     print(f"- Errors: {len(errors)}")
     print(f"- Warnings: {len(warnings)}")
+    print(f"- Legacy notices: {len(notices)}")
+
+    if notices:
+        print("\nLegacy notices:")
+        for item in notices:
+            print(f"  - {item}")
 
     if warnings:
         print("\nWarnings:")
