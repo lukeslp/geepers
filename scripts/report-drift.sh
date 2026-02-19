@@ -2,6 +2,7 @@
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+export ROOT
 STRICT=0
 SKIP_MISSING=0
 BUILD_FIRST=0
