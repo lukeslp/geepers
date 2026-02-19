@@ -23,7 +23,7 @@ classifiers = [
 ]
 
 dependencies = [
-    "dr-eamer-ai-shared>=1.0.0",  # Core shared library for LLM providers, orchestration, data fetching
+    "geepers-kernel>=1.1.0",  # Core shared library for LLM providers, orchestration, data fetching
     "python-dotenv>=1.0.0",
     "pyyaml>=6.0.0",
     "aiohttp>=3.9.0",
