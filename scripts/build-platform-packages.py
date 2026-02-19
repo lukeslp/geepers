@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = ROOT / "manifests" / "skills-manifest.yaml"
 PLATFORMS_PATH = ROOT / "manifests" / "platforms.yaml"
 ALIASES_PATH = ROOT / "manifests" / "aliases.yaml"
+README_TEMPLATES = ROOT / "scripts" / "platform-readmes"
 
 
 def load_yaml(path: Path) -> dict:
@@ -200,6 +201,11 @@ def build_one(platform_name: str, manifest: dict, platforms_cfg: dict, aliases: 
 
     generate_platform_metadata(platform_name, output_root, selected, aliases)
     write_generated_readme(platform_name, output_root, len(copied))
+
+    # Copy the humanized README template (won't clobber — templates are the source of truth)
+    readme_template = README_TEMPLATES / f"{platform_name}.md"
+    if readme_template.exists():
+        shutil.copy2(readme_template, output_root / "README.md")
 
     print(f"Built {platform_name}: {len(copied)} skills -> {output_root}")
     return 0
