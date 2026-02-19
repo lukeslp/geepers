@@ -1,10 +1,10 @@
 # Agent Orchestration Patterns
 
-Comprehensive patterns for building hierarchical multi-agent systems extracted from the Beltalowda platform - a production-grade orchestration system for coordinating swarms of AI agents.
+Patterns for building hierarchical multi-agent systems extracted from the Beltalowda platform — a production-grade orchestration system for coordinating agent swarms.
 
 ## Overview
 
-These patterns enable scalable coordination of multiple AI agents working in parallel with hierarchical synthesis. The three-tier architecture (Workers → Synthesizers → Executive) automatically scales based on agent count and provides robust error handling, retry logic, and cost tracking.
+These patterns enable scalable coordination of multiple agents working in parallel with hierarchical synthesis. The three-tier architecture (Workers → Synthesizers → Executive) automatically scales based on agent count and provides reliable error handling, retry logic, and cost tracking.
 
 ## Patterns Included
 
@@ -116,7 +116,7 @@ orchestrator = HierarchicalOrchestrator(config)
 
 # Execute task
 result = await orchestrator.execute_task(
-    task="Analyze the impact of AI on healthcare",
+    task="Analyze the impact of language models on healthcare",
     stream_callback=my_progress_callback
 )
 
@@ -199,7 +199,7 @@ await pool.shutdown_all()
 3. **Parallel Execution:** Workers execute in parallel with semaphore-based rate limiting
 4. **Fault Tolerance:** Timeout handling, retry logic, and graceful degradation
 5. **Provider Agnostic:** Agents work with any LLM provider through abstraction layer
-6. **Metrics Tracking:** Comprehensive tracking of execution time, costs, and success rates
+6. **Metrics Tracking:** Full tracking of execution time, costs, and success rates
 7. **Progressive Synthesis:** Each tier uses lower temperature for more consistent synthesis
 
 ## Configuration Guidelines
