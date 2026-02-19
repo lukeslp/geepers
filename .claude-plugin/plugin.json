@@ -143,6 +143,7 @@
     {"id": "geepers_datavis_story", "source": "./agents/datavis/geepers_datavis_story.md"},
     {"id": "geepers_datavis_math", "source": "./agents/datavis/geepers_datavis_math.md"},
     {"id": "geepers_datavis_data", "source": "./agents/datavis/geepers_datavis_data.md"},
+    {"id": "geepers_poet", "source": "./agents/datavis/geepers_poet.md"},
     {"id": "geepers_system_help", "source": "./agents/system/geepers_system_help.md"},
     {"id": "geepers_system_onboard", "source": "./agents/system/geepers_system_onboard.md"},
     {"id": "geepers_system_diag", "source": "./agents/system/geepers_system_diag.md"},
