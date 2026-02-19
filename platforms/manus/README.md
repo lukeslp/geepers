@@ -6,7 +6,7 @@
 
 23 skills for planning, building, shipping, and researching — packaged for the Manus runtime.
 
-Part of the [geepers](https://github.com/lukeslp/geepers) skill collection.
+Part of the [geepers](https://github.com/lukeslp/geepers) ecosystem — [PyPI](https://pypi.org/project/geepers-llm/) · [MCP servers](https://github.com/lukeslp/geepers-kernel) · [Claude Code](https://github.com/lukeslp/geepers-skills) · [Codex CLI](https://github.com/lukeslp/geepers-gpt) · [Gemini](https://github.com/lukeslp/geepers-gemini) · [ClawHub](https://github.com/lukeslp/geepers-api-skills) · [beltalowda](https://github.com/lukeslp/beltalowda)
 
 ## Install
 
@@ -45,8 +45,11 @@ Reference `manus-skills.json` from your Manus config, or copy the `skills/` dire
 **Product**
 - `product` — PRD generation and product planning
 
-## Other Platforms
+## Ecosystem
 
+- **Python**: [`geepers-llm`](https://pypi.org/project/geepers-llm/) · [`geepers-kernel`](https://pypi.org/project/geepers-kernel/)
+- **MCP servers**: [`geepers-unified` · `geepers-providers` · `geepers-data` · `geepers-websearch`](https://github.com/lukeslp/geepers-kernel)
+- **Orchestration**: [beltalowda](https://github.com/lukeslp/beltalowda) · [multi-agent-orchestration](https://github.com/lukeslp/multi-agent-orchestration)
 - **Claude Code**: [geepers-skills](https://github.com/lukeslp/geepers-skills)
 - **Codex CLI**: [geepers-gpt](https://github.com/lukeslp/geepers-gpt)
 - **Gemini**: [geepers-gemini](https://github.com/lukeslp/geepers-gemini)
