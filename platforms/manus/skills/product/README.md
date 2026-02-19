@@ -25,7 +25,7 @@ The "Product Team in a Box". A specialized Product Management agent capable of b
 
 ### 3. 🚀 Go-To-Market Strategy
 *   **Tool**: `dream_product_market_plan`
-*   **Output**: Comprehensive GTM strategy (Audience, Pricing, Distribution).
+*   **Output**: Full GTM strategy (Audience, Pricing, Distribution).
 
 ### 4. ⚖️ Strategic Critique
 *   **Tool**: `dream_product_critique`
