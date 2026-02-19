@@ -83,3 +83,7 @@ search-log.md
 .aider.chat.history.md
 .aider.input.history
 temp_*
+
+# Platform build artifacts
+platforms/**/__pycache__/
+platforms/**/dist/
