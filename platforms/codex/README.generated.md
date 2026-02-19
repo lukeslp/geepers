@@ -4,7 +4,7 @@ This directory is generated from canonical source in `geepers/manifests/skills-m
 
 - Platform: `codex`
 - Skill count: `23`
-- Generated at: `2026-02-19T00:45:00.924697+00:00`
+- Generated at: `2026-02-19T00:50:59.825190+00:00`
 
 Regenerate with:
 
