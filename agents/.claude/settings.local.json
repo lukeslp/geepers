@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(pip3 show:*)",
+      "Bash(pip3 uninstall:*)"
+    ]
+  },
+  "disabledMcpjsonServers": [
+    "orchestrator"
+  ]
+}

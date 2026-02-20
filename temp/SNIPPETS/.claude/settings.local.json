@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "Bash(curl:*)",
+      "Bash(lsof:*)",
+      "Bash(sudo -S caddy reload:*)",
+      "Bash(for dir in /home/coolhand/SNIPPETS/*/)",
+      "Bash(sudo -S cp:*)",
+      "Bash(sudo -S sed:*)",
+      "Bash(sudo -S caddy validate:*)",
+      "Bash(sudo -S systemctl reload:*)",
+      "Bash(systemctl status:*)",
+      "Bash(sudo -S chown:*)",
+      "Bash(sudo -S chmod:*)",
+      "Bash(systemctl is-active:*)",
+      "Bash(cat:*)",
+      "Bash(sudo -S journalctl:*)",
+      "Bash(for service in panel studio terminal apops clinical populations skymarshal)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
