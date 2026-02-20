@@ -3,7 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PyPI](https://img.shields.io/pypi/v/geepers-llm.svg)](https://pypi.org/project/geepers-llm/)
 
-Multi-agent orchestration for LLM workflows — 73 Claude Code agents and a Python package for building orchestrated workflows.
+Multi-agent orchestration for LLM workflows — Claude Code agents and a Python package for building orchestrated pipelines.
 
 ## Ecosystem
 
@@ -36,7 +36,7 @@ pip install "geepers-llm[all]"      # everything
 
 ## Python Package
 
-Orchestration infrastructure for building multi-agent LLM systems:
+Orchestration infrastructure for LLM workflows:
 
 ```python
 from geepers import ConfigManager
@@ -59,11 +59,11 @@ async def execute_subtask(subtask, context=None) -> AgentResult
 async def synthesize_results(results, context=None) -> str
 ```
 
-Base class handles the grunt work: parallel execution, timeouts, retries, and streaming events.
+Base class handles parallel execution, timeouts, retries, and streaming events.
 
-Dream Cascade - Hierarchical research workflow. Breaks tasks into subtasks, farms them out to worker agents, synthesizes through a mid-level coordinator, produces executive summary.
+**Dream Cascade** — Hierarchical research workflow. Breaks tasks into subtasks, farms them to worker agents, synthesizes through a mid-level coordinator, produces executive summary.
 
-Dream Swarm - Parallel search across domains. Dispatches specialized agents (web search, academic, data analysis) simultaneously and merges results.
+**Dream Swarm** — Parallel search across domains. Dispatches specialized agents (web search, academic, data analysis) simultaneously and merges results.
 
 ### Config Management
 
@@ -79,14 +79,14 @@ Auto-discovers keys for 16 LLM providers from environment variables.
 
 ### MCP Server Bridges
 
-Entry points for STDIO-based MCP servers:
+STDIO-based MCP servers:
 
-- `geepers-unified` - All tools in one server
-- `geepers-providers` - LLM provider access
-- `geepers-data` - Data source clients
-- `geepers-cache` - Caching layer
-- `geepers-utility` - File and text utilities
-- `geepers-websearch` - Web search tools
+- `geepers-unified` — All tools in one server
+- `geepers-providers` — LLM provider access
+- `geepers-data` — Data source clients
+- `geepers-cache` — Caching layer
+- `geepers-utility` — File and text utilities
+- `geepers-websearch` — Web search tools
 
 ### Naming Registry
 
@@ -99,7 +99,7 @@ resolve_legacy("BeltalowdaOrchestrator")   # Maps to canonical name
 
 ## Claude Code Agents
 
-73 markdown-defined agents organized into 15 domains:
+Markdown-defined agents organized into 15 domains:
 
 | Domain | Orchestrator | Specialists |
 |--------|-------------|-------------|
@@ -119,7 +119,7 @@ resolve_legacy("BeltalowdaOrchestrator")   # Maps to canonical name
 | System | (standalone) | help, onboard, diag |
 | Standalone | (standalone) | api, scalpel, janitor, canary, dashboard, git, docs |
 
-Routing hierarchy: Conductor -> Orchestrators -> Specialists.
+Routing: Conductor → Orchestrators → Specialists.
 
 ```
 # Usage in Claude Code (via Task tool)
@@ -128,31 +128,15 @@ Task with subagent_type="geepers_orchestrator_frontend"
 Task with subagent_type="conductor_geepers"
 ```
 
+## Cross-Platform Skills
+
+Canonical skill content lives in `skills/source/` and gets packaged for each platform. Key manifests:
+
+- `manifests/skills-manifest.yaml` — canonical skill registry
+- `manifests/aliases.yaml` — command aliases per platform
+- `docs/UNIFICATION_ARCHITECTURE.md` — how the packaging works
+- `docs/MIGRATION_MAP.md` — skill naming migrations
+
 ## License
 
-MIT - Luke Steuber
-
-## Cross-Platform Skill Packaging
-
-Canonical skill content lives in `skills/source/` and is distributed via platform adapters.
-
-```bash
-# 1) Validate canonical manifests + SKILL frontmatter
-python3 scripts/validate-skills.py --strict
-
-# 2) Generate packages for Claude, Codex, Gemini, Manus, and ClawHub
-python3 scripts/build-platform-packages.py --platform all --clean
-
-# 3) Compare generated outputs against mirror repos
-bash scripts/report-drift.sh --strict --skip-missing
-
-# 4) Sync generated artifacts into configured mirror repos
-bash scripts/sync-mirrors.sh --delete
-```
-
-Key files:
-- `manifests/skills-manifest.yaml`
-- `manifests/platforms.yaml`
-- `manifests/aliases.yaml`
-- `docs/UNIFICATION_ARCHITECTURE.md`
-- `docs/MIGRATION_MAP.md`
+MIT — Luke Steuber
