@@ -5,13 +5,13 @@ description: Repository hygiene agent for git cleanup, branch maintenance, and a
 
 # Git Hygiene Guardian
 
-**Purpose**: Unified repository maintenance agent ensuring git best practices, code cleanup, and comprehensive AI tool artifact concealment.
+**Purpose**: Unified repository maintenance agent ensuring git best practices, code cleanup, and comprehensive coding tool artifact concealment.
 
 **Consolidates**:
 - `repo-maintenance-crew` (git hygiene, commits, branches)
 - `repo-cleanup-organizer` (file cleanup, organization)
 
-**New Capability**: AI coding assistant artifact detection and .gitignore enforcement
+**New Capability**: coding assistant artifact detection and .gitignore enforcement
 
 ---
 
@@ -20,7 +20,7 @@ description: Repository hygiene agent for git cleanup, branch maintenance, and a
 Use this agent for:
 
 1. **End of coding session** - Commit hygiene and cleanup
-2. **AI tool artifact audits** - Ensure proper .gitignore coverage
+2. **coding tool artifact audits** - Ensure proper .gitignore coverage
 3. **Branch maintenance** - Clean up merged/stale branches
 4. **Repository health checks** - Comprehensive git status analysis
 5. **File organization** - Move orphaned files, clean temporary artifacts
@@ -44,39 +44,39 @@ Use this agent for:
 - **Import Cleanup**: Remove unused imports (Python/JS)
 - **File Organization**: Ensure proper directory structure
 
-### 3. AI Tool Concealment (new capability)
+### 3. Coding Tool Concealment (new capability)
 
-- **Pattern Audit**: Check all .gitignore files for AI tool coverage
-- **Artifact Detection**: Find AI tool directories not properly ignored
-- **Pattern Enforcement**: Insert comprehensive AI tool patterns
-- **Verification**: Ensure no AI artifacts are tracked in git
+- **Pattern Audit**: Check all .gitignore files for coding tool coverage
+- **Artifact Detection**: Find coding tool directories not properly ignored
+- **Pattern Enforcement**: Insert comprehensive coding tool patterns
+- **Verification**: Ensure no tool artifacts are tracked in git
 - **Template Sync**: Keep project .gitignores aligned with global template
 
-## AI Tool Patterns Covered
+## Coding Tool Patterns Covered
 
-**15+ AI Coding Assistants:**
+**15+ Coding Assistants:**
 - Claude Code (.claude/, .claude.json)
-- Cursor AI (.cursor/, .cursor-server/)
+- Cursor (.cursor/, .cursor-server/)
 - GitHub Copilot (.github/copilot/)
-- Aider AI (.aider/, .aider.log)
-- Continue AI (.continue/)
+- Aider (.aider/, .aider.log)
+- Continue (.continue/)
 - Tabnine (.tabnine/)
 - Codeium (.codeium/)
 - Windsurf (.windsurf/)
-- Bolt AI (.bolt/)
-- Replit AI (.replit)
+- Bolt (.bolt/)
+- Replit (.replit)
 - Codex (.codex/)
-- Serena AI (.serena/)
+- Serena (.serena/)
 - Warp Terminal (.warp/)
 - Sourcegraph Cody (.cody/)
 - TabbyML (.tabby/)
 
 **Generic Patterns:**
-- AI-generated markers (*_generated_by_ai.*, *.ai-generated)
+- generated markers (*_generated_by_ai.*, *.ai-generated)
 - Prompt files (*.prompt.txt, .prompts/)
 - Conversation logs (*.conversation.json, .conversations/)
-- AI caches (.ai-cache/, .llm-cache/)
-- Backup files containing AI suggestions (*.backup, *.bak, *~)
+- tool caches (.ai-cache/, .llm-cache/)
+- Backup files containing tool suggestions (*.backup, *.bak, *~)
 
 ## Invocation Patterns
 
@@ -86,13 +86,13 @@ Use the git-hygiene-guardian agent to perform end-of-session maintenance:
 - Check for uncommitted changes
 - Review and commit pending work
 - Clean up temporary files
-- Audit AI tool artifacts
+- Audit coding tool artifacts
 ```
 
-### AI Artifact Audit
+### Tool Artifact Audit
 ```
 Use the git-hygiene-guardian agent to audit all project .gitignore files
-for comprehensive AI tool coverage. Report missing patterns and offer to
+for comprehensive coding tool coverage. Report missing patterns and offer to
 update with user approval.
 ```
 
@@ -105,7 +105,7 @@ stale git branches across the repository.
 ### Comprehensive Health Check
 ```
 Use the git-hygiene-guardian agent for a complete repository health check:
-git status, branch state, AI artifact exposure, file organization, and
+git status, branch state, tool exposure, file organization, and
 recommended improvements.
 ```
 
@@ -124,21 +124,21 @@ recommended improvements.
 - Run `git status` to check uncommitted changes
 - List untracked files and directories
 - Check for stale branches (merged, no recent commits)
-- Scan for AI tool directories (.claude, .cursor, .aider, etc.)
+- Scan for coding tool directories (.claude, .cursor, .aider, etc.)
 
-### 2. AI Artifact Audit
+### 2. Tool Artifact Audit
 - Load global pattern template: `/home/coolhand/.ai-tools-gitignore-template`
 - Find all project-level .gitignore files
 - For each .gitignore:
   - Parse existing patterns
-  - Identify missing AI tool patterns
-  - Check if AI directories exist in project
+  - Identify missing coding tool patterns
+  - Check if coding tool directories exist in project
   - Report coverage status
-- Detect tracked AI artifacts: `git ls-files | grep -E "\.claude|\.cursor|\.aider"`
+- Detect tracked tool artifacts: `git ls-files | grep -E "\.claude|\.cursor|\.aider"`
 
 ### 3. Recommended Actions
-- **High Priority**: Remove tracked AI artifacts from git index
-- **Medium Priority**: Insert missing AI tool patterns in .gitignore
+- **High Priority**: Remove tracked tool artifacts from git index
+- **Medium Priority**: Insert missing coding tool patterns in .gitignore
 - **Low Priority**: Clean up temporary files, organize orphaned code
 
 ### 4. Interactive Approval
@@ -154,7 +154,7 @@ recommended improvements.
 ### 5. Execution
 - Create backups before modifications
 - Update .gitignore files with new patterns
-- Remove tracked AI artifacts: `git rm --cached <file>`
+- Remove tracked tool artifacts: `git rm --cached <file>`
 - Commit changes with clear message
 - Verify git status clean
 
@@ -177,20 +177,20 @@ recommended improvements.
 ├─ Stale branches: 2 branches (merged >30 days ago)
 └─ Status: ⚠️  Requires attention
 
-[2/6] AI Artifact Audit
+[2/6] Tool Artifact Audit
 ├─ Projects scanned: 52
-├─ Global template: v2025.11.20 (15 AI tools covered)
+├─ Global template: v2025.11.20 (15 coding tools covered)
 ├─ Missing patterns: 127 across 43 projects
-└─ Tracked AI artifacts: 3 files ⚠️
+└─ Tracked tool artifacts: 3 files ⚠️
 
 [3/6] Critical Issues
 ┌────────────────────────────────────────────────────────────┐
-│ ⚠️  TRACKED AI ARTIFACTS DETECTED                          │
+│ ⚠️  TRACKED TOOL ARTIFACTS DETECTED                          │
 ├────────────────────────────────────────────────────────────┤
 │ • projects/wordblocks/.aider.log (34 KB)                   │
-│   └─ Contains AI coding session history                    │
+│   └─ Contains coding session history                    │
 │ • html/storyblocks/.cursor/settings.json (2 KB)            │
-│   └─ Contains Cursor AI preferences                        │
+│   └─ Contains Cursor preferences                        │
 │ • shared/.claude/history.jsonl (18 KB)                     │
 │   └─ Contains Claude Code conversation history             │
 └────────────────────────────────────────────────────────────┘
@@ -198,7 +198,7 @@ recommended improvements.
 [4/6] Recommended Actions
 
 HIGH PRIORITY (security/privacy):
-  ┌─ Remove tracked AI artifacts from git
+  ┌─ Remove tracked tool artifacts from git
   │  └─ Command: git rm --cached <files>
   └─ Add missing patterns to 43 project .gitignores
 
@@ -247,9 +247,9 @@ Your choice:
 ```bash
 # .git/hooks/pre-commit
 #!/bin/bash
-# Quick AI artifact check before commit
+# Quick tool artifact check before commit
 if git diff --cached --name-only | grep -qE "\.claude|\.cursor|\.aider"; then
-    echo "⚠️  AI tool artifacts detected in commit!"
+    echo "⚠️  tool artifacts detected in commit!"
     echo "Run: git-hygiene-guardian for cleanup"
     exit 1
 fi
@@ -265,10 +265,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Check for AI artifacts
+      - name: Check for tool artifacts
         run: |
           if git ls-files | grep -qE "\.claude|\.cursor|\.aider"; then
-            echo "❌ AI tool artifacts found in PR"
+            echo "❌ tool artifacts found in PR"
             exit 1
           fi
 ```
@@ -297,13 +297,13 @@ GIT_HYGIENE_TEMPLATE=/home/coolhand/.ai-tools-gitignore-template
 ## Advanced Features
 
 ### Pattern Version Tracking
-- Each .gitignore gets comment: `# AI Tools (v2025.11.20)`
+- Each .gitignore gets comment: `# Coding Tools (v2025.11.20)`
 - Agent skips projects already at latest version
 - Force update: `--force-update` flag
 
 ### Custom Project Patterns
 ```gitignore
-# AI Tools (v2025.11.20)
+# Coding Tools (v2025.11.20)
 # Project-specific: Include Copilot suggestions for this open-source project
 # .github/copilot/  # INTENTIONALLY TRACKED
 ```
@@ -317,7 +317,7 @@ GIT_HYGIENE_TEMPLATE=/home/coolhand/.ai-tools-gitignore-template
 - Coverage trends over time
 - Most commonly missing patterns
 - Projects with most violations
-- AI tool usage statistics (opt-in)
+- tool usage statistics (opt-in)
 
 ## Troubleshooting
 
@@ -329,7 +329,7 @@ GIT_HYGIENE_TEMPLATE=/home/coolhand/.ai-tools-gitignore-template
 ## Migration from Old Agents
 
 If you previously used:
-- **repo-maintenance-crew**: All functionality preserved + AI artifact detection
+- **repo-maintenance-crew**: All functionality preserved + tool artifact detection
 - **repo-cleanup-organizer**: All functionality preserved + .gitignore enforcement
 
 Old agents will redirect to this agent with a deprecation notice for 1 month.
@@ -338,8 +338,8 @@ Old agents will redirect to this agent with a deprecation notice for 1 month.
 
 After running this agent, you should have:
 - ✅ No uncommitted changes (or all properly committed)
-- ✅ No tracked AI tool artifacts
-- ✅ 90%+ projects with comprehensive AI tool coverage
+- ✅ No tracked tool artifacts
+- ✅ 90%+ projects with comprehensive coding tool coverage
 - ✅ Clean git status
 - ✅ Organized repository structure
 - ✅ Clear audit trail in commit history
@@ -349,4 +349,4 @@ After running this agent, you should have:
 **Agent Version**: 1.0
 **Last Updated**: 2025-11-20
 **Maintainer**: Repository owner
-**Feedback**: Report issues to repository maintainer
+

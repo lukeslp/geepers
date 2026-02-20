@@ -12,7 +12,7 @@ Launch parallel multi-agent search workflows across multiple domains.
 ```
               ┌────────────────────────┐
               │     SEARCH QUERY       │
-              │  "AI safety research"  │
+              │  "LLM safety research"  │
               └───────────┬────────────┘
                           │
         ┌─────────────────┼─────────────────┐
@@ -44,7 +44,7 @@ Launch parallel multi-agent search workflows across multiple domains.
 |--------|-------------|---------------|
 | `arxiv` | Academic papers | "quantum computing" |
 | `github` | Code repositories | "react components" |
-| `news` | Recent articles | "AI regulation 2024" |
+| `news` | Recent articles | "LLM regulation 2024" |
 | `wikipedia` | Encyclopedia | "machine learning" |
 | `pubmed` | Medical literature | "CRISPR therapy" |
 | `semantic_scholar` | Academic index | "transformer architectures" |
@@ -64,7 +64,7 @@ Launch parallel multi-agent search workflows across multiple domains.
 
 ### Start Search Workflow
 ```bash
-scripts/swarm-search.py "AI safety research" --domains arxiv github news
+scripts/swarm-search.py "LLM safety research" --domains arxiv github news
 scripts/swarm-search.py "climate change" --agents 10 --parallel 5
 scripts/swarm-search.py "quantum computing" --all-domains
 ```
@@ -98,7 +98,7 @@ scripts/swarm-search.py "WebAssembly optimization" \
 
 ### News + Social Monitoring
 ```bash
-scripts/swarm-search.py "AI regulation policy" \
+scripts/swarm-search.py "LLM regulation policy" \
   --domains news,wikipedia,youtube \
   --agents 5 --output markdown
 ```
