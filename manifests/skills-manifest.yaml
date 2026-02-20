@@ -13,97 +13,97 @@ defaults:
     - manus
     - clawhub
 skills:
-  - id: geepers-builder
-    source_path: skills/source/geepers-builder
+  - id: builder
+    source_path: skills/source/builder
     bundles: [core, workflow]
     description: Implementation execution specialist.
 
-  - id: geepers-fetch
-    source_path: skills/source/geepers-fetch
+  - id: data-fetch
+    source_path: skills/source/data-fetch
     bundles: [core, data]
     description: Structured data retrieval from external sources.
 
-  - id: geepers-datavis
-    source_path: skills/source/geepers-datavis
+  - id: datavis
+    source_path: skills/source/datavis
     bundles: [core, datavis]
     description: Data visualization design and implementation.
 
-  - id: geepers-dream-swarm
-    source_path: skills/source/geepers-dream-swarm
+  - id: dream-swarm
+    source_path: skills/source/dream-swarm
     bundles: [core, orchestration]
     description: Parallel multi-agent search workflows.
 
-  - id: geepers-engineering
-    source_path: skills/source/geepers-engineering
+  - id: engineering
+    source_path: skills/source/engineering
     bundles: [core, strategy]
     description: Engineering orchestrator skill.
     allow_legacy_name: true
 
-  - id: geepers-executive
-    source_path: skills/source/geepers-executive
+  - id: executive
+    source_path: skills/source/executive
     bundles: [core, strategy]
     description: Executive orchestration skill.
     allow_legacy_name: true
 
-  - id: geepers-finance
-    source_path: skills/source/geepers-finance
+  - id: finance
+    source_path: skills/source/finance
     bundles: [core, strategy]
     description: Finance and marketing orchestration skill.
     allow_legacy_name: true
 
-  - id: geepers-git
-    source_path: skills/source/geepers-git
+  - id: git-hygiene-guardian
+    source_path: skills/source/git-hygiene-guardian
     bundles: [core, maintenance]
     description: Repository hygiene and artifact concealment.
 
-  - id: geepers-mcp
-    source_path: skills/source/geepers-mcp
+  - id: mcp-orchestration
+    source_path: skills/source/mcp-orchestration
     bundles: [core, orchestration]
     description: Dream Cascade and Dream Swarm orchestration skill.
 
-  - id: geepers-planner
-    source_path: skills/source/geepers-planner
+  - id: planner
+    source_path: skills/source/planner
     bundles: [core, workflow]
     description: Plan and prioritize implementation tasks.
 
-  - id: geepers-product
-    source_path: skills/source/geepers-product
+  - id: product
+    source_path: skills/source/product
     bundles: [core, strategy]
     description: Product planning and PRD generation skill.
     allow_legacy_name: true
 
-  - id: geepers-quality
-    source_path: skills/source/geepers-quality
+  - id: quality
+    source_path: skills/source/quality
     bundles: [core, quality]
     description: Multi-agent quality review orchestration.
 
-  - id: geepers-scout
-    source_path: skills/source/geepers-scout
+  - id: scout
+    source_path: skills/source/scout
     bundles: [core, workflow]
     description: Project reconnaissance and quick-win analysis.
 
-  - id: geepers-deploy
-    source_path: skills/source/geepers-deploy
+  - id: server-deploy
+    source_path: skills/source/server-deploy
     bundles: [core, operations]
     description: Service deployment and routing operations.
 
-  - id: geepers-swarm
-    source_path: skills/source/geepers-swarm
+  - id: swarm
+    source_path: skills/source/swarm
     bundles: [core, orchestration]
     description: Parallel research swarm orchestration.
 
-  - id: geepers-team
-    source_path: skills/source/geepers-team
+  - id: team
+    source_path: skills/source/team
     bundles: [core, workflow]
     description: Master routing orchestrator for geepers skills.
 
-  - id: geepers-testing
-    source_path: skills/source/geepers-testing
+  - id: testing
+    source_path: skills/source/testing
     bundles: [core, quality]
     description: Test strategy and implementation guidance.
 
-  - id: geepers-validate
-    source_path: skills/source/geepers-validate
+  - id: validator
+    source_path: skills/source/validator
     bundles: [core, quality]
     description: Configuration and integration validation.
 
