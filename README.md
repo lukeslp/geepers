@@ -134,19 +134,19 @@ MIT - Luke Steuber
 
 ## Cross-Platform Skill Packaging
 
-Skills live in `skills/source/` and get built and synced to each platform mirror repo.
+Canonical skill content lives in `skills/source/` and is distributed via platform adapters.
 
 ```bash
-# 1) Validate skill manifests and SKILL.md frontmatter
+# 1) Validate canonical manifests + SKILL frontmatter
 python3 scripts/validate-skills.py --strict
 
-# 2) Build packages for Claude, Codex, Gemini, Manus, and ClawHub
+# 2) Generate packages for Claude, Codex, Gemini, Manus, and ClawHub
 python3 scripts/build-platform-packages.py --platform all --clean
 
-# 3) Check drift between built packages and mirror repos
+# 3) Compare generated outputs against mirror repos
 bash scripts/report-drift.sh --strict --skip-missing
 
-# 4) Push built packages to mirror repos
+# 4) Sync generated artifacts into configured mirror repos
 bash scripts/sync-mirrors.sh --delete
 ```
 
