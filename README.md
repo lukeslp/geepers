@@ -2,8 +2,19 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PyPI](https://img.shields.io/pypi/v/geepers-llm.svg)](https://pypi.org/project/geepers-llm/)
+[![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://pypi.org/project/geepers-llm/)
+[![Live](https://img.shields.io/badge/live-dr.eamer.dev-cyan.svg)](https://dr.eamer.dev/geepers/)
 
 Multi-agent orchestration for LLM workflows — Claude Code agents and a Python package for building orchestrated pipelines.
+
+## Features
+
+- Run hierarchical research workflows with Dream Cascade (3-tier decompose → synthesize → executive summary)
+- Dispatch parallel agents across domains with Dream Swarm (web, academic, data simultaneously)
+- Load config from any combination of defaults, `.env`, env vars, and CLI args — later always wins
+- Auto-discover API keys for 16 LLM providers from environment variables
+- Stream real-time progress via callbacks (terminal bars, WebSocket, SSE)
+- Install as a Claude Code plugin and invoke 52+ specialized agents from any session
 
 ## Ecosystem
 
@@ -130,13 +141,14 @@ Task with subagent_type="conductor_geepers"
 
 ## Cross-Platform Skills
 
-Canonical skill content lives in `skills/source/` and gets packaged for each platform. Key manifests:
+38 skill packs in `skills/source/` packaged for Claude, Codex, Gemini, Manus, and ClawHub. The canonical registry lives in `manifests/skills-manifest.yaml`.
 
-- `manifests/skills-manifest.yaml` — canonical skill registry
-- `manifests/aliases.yaml` — command aliases per platform
-- `docs/UNIFICATION_ARCHITECTURE.md` — how the packaging works
-- `docs/MIGRATION_MAP.md` — skill naming migrations
+## Author
+
+**Luke Steuber**
+- Website: [dr.eamer.dev](https://dr.eamer.dev)
+- Bluesky: [@lukesteuber.com](https://bsky.app/profile/lukesteuber.com)
 
 ## License
 
-MIT — Luke Steuber
+MIT — see [LICENSE](LICENSE)
