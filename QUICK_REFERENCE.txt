@@ -1,0 +1,220 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║              CODEX & MANUS ACCESSIBILITY SKILL QUICK REFERENCE             ║
+║                                                                            ║
+║  This file provides quick-lookup facts for implementing accessibility     ║
+║  skills on the Codex and Manus platforms.                                 ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+KEY FACTS
+═════════════════════════════════════════════════════════════════════════════
+
+Platform Structure:      Both identical (47 skill directories each)
+Single Source:          ~/geepers/manifests/skills-manifest.yaml
+Codex Skills Dir:       ~/geepers/platforms/codex/skills/
+Manus Skills Dir:       ~/geepers/platforms/manus/skills/
+Skill Definition:       SKILL.md (Markdown + YAML frontmatter)
+Build Script:           scripts/build-platform-packages.py
+Rebuild Command:        python3 scripts/build-platform-packages.py --platform {codex|manus} --clean
+Report Output:          ~/geepers/reports/by-date/YYYY-MM-DD/
+
+
+FILE LOCATIONS TO CREATE/UPDATE
+═════════════════════════════════════════════════════════════════════════════
+
+CREATE:
+  ✓ ~/geepers/platforms/codex/skills/geepers-accessibility/SKILL.md
+  ✓ ~/geepers/platforms/manus/skills/geepers-accessibility/SKILL.md
+
+UPDATE:
+  ✓ ~/geepers/manifests/skills-manifest.yaml
+  ✓ ~/geepers/platforms/codex/codex-package.json
+  ✓ ~/geepers/platforms/manus/manus-skills.json
+  ✓ ~/geepers/platforms/codex/aliases.json
+  ✓ ~/geepers/platforms/manus/aliases.json
+
+
+SKILL.MD FRONTMATTER FORMAT
+═════════════════════════════════════════════════════════════════════════════
+
+---
+name: geepers-accessibility
+description: "Comprehensive accessibility auditing for WCAG 2.1, keyboard
+navigation, color contrast, and screen reader support. <example>Context:
+Pre-release user: \"Make sure this is accessible\" assistant:
+\"Running geepers-accessibility.\"</example>"
+---
+
+
+CONFIGURATION FILE FORMATS
+═════════════════════════════════════════════════════════════════════════════
+
+codex-package.json / manus-skills.json:
+  {
+    "id": "geepers-accessibility",
+    "path": "skills/geepers-accessibility"
+  }
+
+aliases.json:
+  {
+    "geepers-accessibility": {
+      "name": "Accessibility Auditor",
+      "description": "WCAG compliance, keyboard access, color contrast..."
+    }
+  }
+
+
+SKILL DEFINITION SECTIONS
+═════════════════════════════════════════════════════════════════════════════
+
+Required in SKILL.md:
+  ✓ ## Mission
+  ✓ ## Codex Notes / ## Manus Notes (platform-specific)
+  ✓ ## Output Locations
+  ✓ ## Workflow
+  ✓ ## Coordination Protocol
+
+Optional:
+  ✓ ## Triggers
+  ✓ ## Standards
+  ✓ ## Scoring System
+  ✓ ## Report Format
+
+
+OUTPUT CONVENTION
+═════════════════════════════════════════════════════════════════════════════
+
+All reports go to:
+  ~/geepers/reports/by-date/YYYY-MM-DD/{skill-name}-{project}.md
+  ~/docs/geepers/{skill-name}-{project}.html (optional)
+
+Example:
+  ~/geepers/reports/by-date/2026-03-06/accessibility-mysite.md
+  ~/docs/geepers/accessibility-mysite.html
+
+
+BUILD & DEPLOY STEPS
+═════════════════════════════════════════════════════════════════════════════
+
+1. Create both SKILL.md files (use template from guide)
+2. Update ~/geepers/manifests/skills-manifest.yaml
+3. Run build script:
+   $ python3 ~/geepers/scripts/build-platform-packages.py --platform codex --clean
+   $ python3 ~/geepers/scripts/build-platform-packages.py --platform manus --clean
+4. Verify files created
+5. Test invocation
+6. Git commit
+
+
+TEMPLATE LOCATIONS (REFERENCE)
+═════════════════════════════════════════════════════════════════════════════
+
+Use these as templates for the new skill:
+  - Quality Orchestrator: ~/geepers/platforms/codex/skills/quality/SKILL.md
+  - Engineer Orchestrator: ~/geepers/platforms/codex/skills/engineering/SKILL.md
+  - Executive Orchestrator: ~/geepers/platforms/codex/skills/executive/SKILL.md
+
+
+ACCESSIBILITY SKILL DESIGN
+═════════════════════════════════════════════════════════════════════════════
+
+Pattern: Orchestrator (like Quality)
+Coordinates 4 check types:
+  1. WCAG Compliance (semantic HTML, ARIA)
+  2. Keyboard Navigation (tab order, focus)
+  3. Color Contrast (ratios)
+  4. Screen Reader Support (labels, live regions)
+
+Scoring: 0-100 overall score
+Output: MD report + HTML dashboard
+
+
+VALIDATION CHECKLIST
+═════════════════════════════════════════════════════════════════════════════
+
+Before committing:
+  ☐ SKILL.md created in both platforms
+  ☐ YAML frontmatter valid
+  ☐ Manifest entry added
+  ☐ aliases.json updated (both platforms)
+  ☐ Build script runs without errors
+  ☐ manifest.generated.json updated
+  ☐ Codex CLI recognizes skill
+  ☐ Manus runtime recognizes skill
+  ☐ No trailing whitespace
+  ☐ Markdown renders correctly
+
+
+RELATED DOCUMENTATION
+═════════════════════════════════════════════════════════════════════════════
+
+Full Details:
+  - CODEX_MANUS_PLATFORM_MAPPING.md       (platform structure)
+  - ACCESSIBILITY_SKILL_IMPLEMENTATION_GUIDE.md (complete implementation)
+  - SKILL_RESEARCH_SUMMARY.md              (research findings)
+
+References:
+  - ~/CLAUDE.md                            (system architecture)
+  - ~/geepers/CLAUDE.md                    (geepers architecture)
+
+
+QUICK COMMANDS
+═════════════════════════════════════════════════════════════════════════════
+
+Create directories:
+  $ mkdir -p ~/geepers/platforms/codex/skills/geepers-accessibility/
+  $ mkdir -p ~/geepers/platforms/manus/skills/geepers-accessibility/
+
+Check structure:
+  $ ls -la ~/geepers/platforms/codex/skills/geepers-accessibility/
+  $ ls -la ~/geepers/platforms/manus/skills/geepers-accessibility/
+
+Rebuild platforms:
+  $ cd ~/geepers
+  $ python3 scripts/build-platform-packages.py --platform codex --clean
+  $ python3 scripts/build-platform-packages.py --platform manus --clean
+
+Verify skill discovery:
+  $ grep geepers-accessibility ~/geepers/platforms/codex/codex-package.json
+  $ grep geepers-accessibility ~/geepers/platforms/manus/manus-skills.json
+
+
+COMMON PITFALLS
+═════════════════════════════════════════════════════════════════════════════
+
+❌ Forgetting to update both platforms (they're separate)
+✅ Use single source (manifest), rebuild both
+
+❌ Editing platform files directly (they get regenerated)
+✅ Edit manifest.yaml, which is the source
+
+❌ Missing aliases.json entries
+✅ Add to both platforms' aliases.json
+
+❌ Incorrect YAML frontmatter
+✅ Use provided template, validate with: python3 -c "import yaml; yaml.safe_load(open(...))"
+
+❌ Report output in wrong location
+✅ Always use: ~/geepers/reports/by-date/YYYY-MM-DD/
+
+
+SUPPORT RESOURCES
+═════════════════════════════════════════════════════════════════════════════
+
+Documentation:
+  - Implementation Guide: ~/geepers/ACCESSIBILITY_SKILL_IMPLEMENTATION_GUIDE.md
+  - Complete SKILL.md template included
+
+Templates:
+  - Quality Orchestrator: ~/geepers/platforms/codex/skills/quality/SKILL.md
+
+Build System:
+  - Script: ~/geepers/scripts/build-platform-packages.py
+  - Source Manifest: ~/geepers/manifests/skills-manifest.yaml
+
+Geepers Docs:
+  - Geepers CLAUDE.md: ~/geepers/CLAUDE.md
+  - Agent Domains: ~/geepers/agents/AGENT_DOMAINS.md
+
+
+═════════════════════════════════════════════════════════════════════════════
+Last Updated: 2026-03-06
