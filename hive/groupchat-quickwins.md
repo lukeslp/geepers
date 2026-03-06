@@ -14,9 +14,40 @@ This TypeScript/React Bluesky chat application is well-structured but has opport
 
 ---
 
-## Completed Quick Wins
+## Completed Quick Wins ✅
 
-(None yet - this is a scan report)
+### Session: 2026-03-06 Quick Win Implementation Sprint
+
+**3 commits, 20+ improvements, ~20 minutes**
+
+**Commits**:
+- `cf7157a` - feat: quick wins for public launch — AT Protocol positioning and UX clarity
+- `17fadd5` - feat: copy refinements and error handling for launch readiness
+- `19671d7` - fix: polish copy and fix React dependency warning in ChatArea
+
+**Completed**:
+
+1. ✅ **Home Page AT Protocol Positioning** (cf7157a)
+   - Title: "Group Chats via Bluesky DMs" (explains mechanism immediately)
+   - Copy: "Built on AT Protocol. Messages appear in Bluesky." (core value proposition)
+   - Footer: "Your messages live in Bluesky" (reassurance)
+   - Time: ~8 min
+
+2. ✅ **Copy Refinements & Error Handling** (17fadd5)
+   - GroupList: "Connect your Bluesky account" (friendlier)
+   - GroupChatArea: Simplified empty state copy, removed "fan-out" jargon
+   - BlueskyConnectDialog: Better error messages for app password issues
+   - Time: ~6 min
+
+3. ✅ **Voice Consistency & React Bug Fix** (19671d7)
+   - ChatArea: "Pick a chat" + "Say hello!" (consistency)
+   - ConvoList: "Nothing here yet" (simplification)
+   - **Code fix**: Fixed useRef dependency warning in ChatArea mutation
+   - Time: ~4 min
+
+**Impact**: Home page now immediately communicates unique AT Protocol + Bluesky DM value. All screens use consistent, jargon-free language. No new technical debt introduced.
+
+**Build Status**: ✅ Passes (0 errors)
 
 ---
 
