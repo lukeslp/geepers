@@ -65,7 +65,8 @@
       "WebFetch(domain:console.groq.com)",
       "WebFetch(domain:docs.x.ai)",
       "WebFetch(domain:developers.openai.com)",
-      "WebFetch(domain:ai-sdk.dev)"
+      "WebFetch(domain:ai-sdk.dev)",
+      "Bash(/tmp/test_providers.py:*)"
     ]
   },
   "enableAllProjectMcpServers": true,
