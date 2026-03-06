@@ -56,7 +56,10 @@
       "Bash(/dev/null -exec ls -la {} ;)",
       "Bash(for proj in antisocial blissAPI consensus screenshat)",
       "Bash(do echo \"=== $proj ===\" ls \"$HOME/projects/$proj\")",
-      "WebFetch(domain:platform.openai.com)"
+      "WebFetch(domain:platform.openai.com)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "WebFetch(domain:docs.mistral.ai)",
+      "WebFetch(domain:docs.cohere.com)"
     ]
   },
   "enableAllProjectMcpServers": true,
