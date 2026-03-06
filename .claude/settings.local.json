@@ -62,7 +62,10 @@
       "WebFetch(domain:docs.cohere.com)",
       "WebFetch(domain:ai.google.dev)",
       "WebFetch(domain:docs.perplexity.ai)",
-      "WebFetch(domain:console.groq.com)"
+      "WebFetch(domain:console.groq.com)",
+      "WebFetch(domain:docs.x.ai)",
+      "WebFetch(domain:developers.openai.com)",
+      "WebFetch(domain:ai-sdk.dev)"
     ]
   },
   "enableAllProjectMcpServers": true,
