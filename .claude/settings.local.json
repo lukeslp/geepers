@@ -67,7 +67,9 @@
       "WebFetch(domain:developers.openai.com)",
       "WebFetch(domain:ai-sdk.dev)",
       "Bash(/tmp/test_providers.py:*)",
-      "Bash(claude-cli rename:*)"
+      "Bash(claude-cli rename:*)",
+      "Bash(for repo in accessibility-devkit accessibility-devkit-llm)",
+      "Bash(do echo \"=== $repo ===\" cat ~/projects/$repo/.gitignore)"
     ]
   },
   "enableAllProjectMcpServers": true,
