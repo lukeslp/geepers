@@ -5,7 +5,7 @@
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://pypi.org/project/geepers-llm/)
 [![Live](https://img.shields.io/badge/live-dr.eamer.dev-cyan.svg)](https://dr.eamer.dev/geepers/)
 
-Multi-agent orchestration for LLM workflows. Ships as a Python package for building orchestrated pipelines and as a Claude Code plugin that puts 52 specialized agents a task invocation away.
+Multi-agent orchestration for LLM workflows. Ships as a Python package for building orchestrated pipelines and as a Claude Code plugin that puts 72 specialized agents a task invocation away.
 
 ## Features
 
@@ -14,7 +14,7 @@ Multi-agent orchestration for LLM workflows. Ships as a Python package for build
 - Load config from any combination of defaults, `.env`, env vars, and CLI args; later sources always win
 - Auto-discover API keys for 16 LLM providers from the environment with no extra setup
 - Stream real-time progress via callbacks — terminal progress bars, WebSocket, or SSE
-- Install as a Claude Code plugin and invoke 52 specialized agents across 15 domains from any session
+- Install as a Claude Code plugin and invoke 72 specialized agents across 15 domains from any session
 
 ## Ecosystem
 
@@ -24,7 +24,6 @@ Multi-agent orchestration for LLM workflows. Ships as a Python package for build
 | **Claude Code** | [`/plugin add lukeslp/geepers`](https://github.com/lukeslp/geepers-skills) |
 | **Codex CLI** | [`geepers-gpt`](https://github.com/lukeslp/geepers-gpt) |
 | **Gemini** | [`geepers-gemini`](https://github.com/lukeslp/geepers-gemini) |
-| **Manus** | [`geepers-manus`](https://github.com/lukeslp/geepers-manus) |
 | **ClawHub** | [`geepers-api-skills`](https://github.com/lukeslp/geepers-api-skills) |
 | **MCP servers** | [`geepers-unified` · `geepers-providers` · `geepers-data` · `geepers-websearch`](https://github.com/lukeslp/geepers-kernel) |
 | **Orchestration** | [`beltalowda`](https://github.com/lukeslp/beltalowda) · [`multi-agent-orchestration`](https://github.com/lukeslp/multi-agent-orchestration) |
@@ -43,6 +42,19 @@ pip install "geepers-llm[all]"      # everything
 
 # As Claude Code plugin (agents only)
 /plugin add lukeslp/geepers
+```
+
+## Quick Start
+
+```python
+from geepers import ConfigManager
+from geepers.orchestrators import DreamCascadeOrchestrator
+
+config = ConfigManager(app_name="myapp")
+
+orchestrator = DreamCascadeOrchestrator(config=config)
+result = await orchestrator.run("Summarize recent research on transformer efficiency")
+print(result.summary)
 ```
 
 ## Python Package
@@ -150,15 +162,13 @@ geepers_orchestrator_research   # coordinates research and data agents
 
 ## Cross-Platform Skills
 
-38 skill packs in `skills/source/` packaged for Claude Desktop, Codex CLI, Gemini, Manus, and ClawHub. The canonical registry lives in `manifests/skills-manifest.yaml`.
+38 skill packs in `skills/source/` packaged for Claude Desktop, Codex CLI, Gemini, and ClawHub. The canonical registry lives in `manifests/skills-manifest.yaml`.
 
 Skills fall into three categories: **Claude Desktop skills** for local workflows (datavis, engineering, finance, server-deploy, and others), **API skills** that wrap the public `dr.eamer.dev` REST API (geepers-llm, geepers-orchestrate, geepers-data, and related), and **platform adapters** that export the same skill definitions in the format each platform expects.
 
 ## Author
 
-**Luke Steuber**
-- Website: [dr.eamer.dev](https://dr.eamer.dev)
-- Bluesky: [@lukesteuber.com](https://bsky.app/profile/lukesteuber.com)
+**Luke Steuber** · [lukesteuber.com](https://lukesteuber.com) · [@lukesteuber.com](https://bsky.app/profile/lukesteuber.com)
 
 ## License
 
