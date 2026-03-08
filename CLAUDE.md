@@ -1,6 +1,13 @@
 # CLAUDE.md
+<!-- Navigation: ~/geepers/CLAUDE.md -->
+<!-- Parent: ~/CLAUDE.md -->
+<!-- Map: ~/CLAUDE_MAP.md -->
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Dependencies
+**Imports from**: `~/shared/` (mcp symlink, config)
+**Published as**: PyPI `geepers-llm`, Claude Code plugin
 
 ## What This Is
 

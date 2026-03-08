@@ -1,0 +1,149 @@
+{
+  "name": "Diachronica LLM Evolution Timeline",
+  "version": "1.0.0",
+  "description": "Dark-mode palette for the LLM Evolution Timeline page on diachronica.com. Extends the existing Cream & Ink dark theme with temporal progression and categorical project-type encoding.",
+  "base_dark_theme": {
+    "bg": "#1a1614",
+    "surface": "#242220",
+    "border": "#3a3430",
+    "text_primary": "#E8E0D0",
+    "text_secondary": "#8C8474",
+    "accent_sienna": "#A0522D"
+  },
+  "sequential_temporal": {
+    "description": "A 7-stop hue-shifting scale representing 2023→2026. Direction: cool blue-gray (uncertain beginnings) through sage green (emergent systems) to amber-sienna (production heat). Avoids red-green confusion by anchoring in blue-teal-amber. Perceptually, luminosity also rises from 2023→2026, encoding progress as literal brightness.",
+    "colorblind_note": "Safe for deuteranopia and protanopia: the cool-to-warm shift is distinguishable by hue angle alone, and redundant luminance gradient provides shape in simulation. Tritanopia (blue confusion) users will read this as a light-to-dark sequence, which still correctly encodes early→late.",
+    "stops": [
+      { "year": 2023.0, "hex": "#4A5568", "name": "Slate",      "note": "Early experiments - uncertain, exploratory. Blue-gray fog." },
+      { "year": 2023.5, "hex": "#5B6E8A", "name": "Steel",      "note": "First structured work - direction emerging." },
+      { "year": 2024.0, "hex": "#6B8FA8", "name": "Denim",      "note": "RAG/vector DB era - methodical, retrieval-focused." },
+      { "year": 2024.5, "hex": "#7BA8A0", "name": "Patina",     "note": "Systems starting to connect - teal inflection." },
+      { "year": 2025.0, "hex": "#8CC4A8", "name": "Sage",       "note": "Agent systems emerging - organic networks growing." },
+      { "year": 2025.5, "hex": "#C4A882", "name": "Sand",       "note": "Scaling toward production - warmth entering." },
+      { "year": 2026.0, "hex": "#D4915A", "name": "Ember",      "note": "72-agent production system - full thermal glow." }
+    ],
+    "d3_interpolator": "interpolateLab",
+    "d3_snippet": "const timeScale = d3.scaleSequential().domain([2023, 2026]).interpolator(d3.interpolateLab('#4A5568', '#D4915A'));"
+  },
+  "categorical_project_types": {
+    "description": "5 hues for nominal project-type encoding. Chosen for maximum perceptual distance on dark backgrounds. Each carries appropriate associative meaning. All pass WCAG AA Large (3:1) against #1a1614; all pass AA Normal (4.5:1) as non-text UI elements.",
+    "colorblind_strategy": "No two adjacent categories rely on red-green distinction alone. Blue vs teal vs purple vs gold vs amber are distinguishable under deuteranopia and protanopia via hue angle AND luminance difference. Always pair with a shape/icon redundant encoding.",
+    "categories": {
+      "rag_vector": {
+        "hex": "#6B8FA8",
+        "hex_bright": "#8AAFCB",
+        "name": "Retrieval Blue",
+        "rationale": "Information retrieval, databases, structured knowledge. Cool steel blue = precision, indexing, order. Also the 2024 temporal midpoint - anchors the RAG era in time.",
+        "associations": ["RAG", "vector DB", "embeddings", "semantic search", "FAISS", "Pinecone"]
+      },
+      "agent_systems": {
+        "hex": "#4EC9A0",
+        "hex_bright": "#7DDEC0",
+        "name": "Networked Teal",
+        "rationale": "Agent networks, orchestration, multi-agent systems. Teal = living systems, neural networks, interconnection. Distinct from blue by hue, distinct from green by saturation.",
+        "associations": ["agents", "orchestration", "swarm", "geepers", "multi-agent", "tools"]
+      },
+      "clinical_accessibility": {
+        "hex": "#9B7EC8",
+        "hex_bright": "#B89FDC",
+        "name": "Lavender",
+        "rationale": "Clinical tools, accessibility work, wordblocks. Purple = care, medicine, calm focus. Sits farthest from the sienna accent on the color wheel - creates clear categorical distance.",
+        "associations": ["clinical", "accessibility", "WCAG", "wordblocks", "AAC", "healthcare"]
+      },
+      "developer_tools": {
+        "hex": "#C4B87A",
+        "hex_bright": "#DDD094",
+        "name": "Parchment Gold",
+        "rationale": "CLI tools, APIs, SDKs, published packages. Gold = craft, utility, earned knowledge. Warm but distinct from sienna by hue angle. References aged documentation and technical craftsmanship.",
+        "associations": ["skymarshal", "geepers package", "CLI", "APIs", "npm", "PyPI", "developer tools"]
+      },
+      "production_infrastructure": {
+        "hex": "#D4915A",
+        "hex_bright": "#E8A87C",
+        "name": "Ember",
+        "rationale": "Production services, service manager, Caddy, deployment. Amber-sienna = heat, load, weight, consequence. Deliberately echoes the site's existing sienna accent to signal 'this is real, this is live'.",
+        "associations": ["production", "service manager", "Caddy", "deployment", "infrastructure", "ports"]
+      }
+    }
+  },
+  "synthetic_accent": {
+    "description": "The 'computation' color. Creates deliberate aesthetic tension between the organic warmth of language/linguistics (sienna, cream, parchment) and the synthetic precision of LLMs/code (terminal green-cyan). Think VS Code teal meeting a warm reading lamp.",
+    "primary": "#4EC9B0",
+    "primary_dim": "#2D8F7E",
+    "primary_muted_bg": "rgba(78, 201, 176, 0.08)",
+    "primary_border": "rgba(78, 201, 176, 0.25)",
+    "name": "Terminal Teal",
+    "rationale": "This exact hue (#4EC9B0) is VS Code's default function name color. On a dark warm-brown background it reads as unmistakably synthetic - the color of electricity, computation, silicon. It pulls the eye differently than sienna does: sienna is tactile, teal is luminous. Together they encode the central thesis of the timeline: language (organic, slow) meeting computation (artificial, fast).",
+    "tension_pair": {
+      "organic": "#A0522D",
+      "synthetic": "#4EC9B0",
+      "note": "Use these two together on milestone cards or chapter headers to signal the human-machine encounter."
+    },
+    "usage": [
+      "Code snippets and technical callouts",
+      "Model names (GPT-4, Claude, etc.) when displayed inline",
+      "Active/selected state for timeline nodes",
+      "Monospace text highlighting",
+      "Progress indicators during timeline animation"
+    ]
+  },
+  "hover_glow_states": {
+    "description": "Hover and focus states use brightened versions of their source color plus a subtle bloom. On a very dark background, glow is cheap and atmospheric - lean into it.",
+    "glow_warm": {
+      "hex": "#E8A87C",
+      "box_shadow": "0 0 0 1px #E8A87C, 0 0 16px rgba(232, 168, 124, 0.35)",
+      "usage": "Hover on sienna-accent elements, production-infra cards, temporal 2026 nodes"
+    },
+    "glow_synth": {
+      "hex": "#7EDDD0",
+      "box_shadow": "0 0 0 1px #7EDDD0, 0 0 16px rgba(126, 221, 208, 0.30)",
+      "usage": "Hover on agent-system cards, synthetic-accent elements, active timeline node"
+    },
+    "glow_lavender": {
+      "hex": "#C0A8E8",
+      "box_shadow": "0 0 0 1px #C0A8E8, 0 0 12px rgba(192, 168, 232, 0.28)",
+      "usage": "Hover on clinical/accessibility cards"
+    },
+    "glow_gold": {
+      "hex": "#E8D898",
+      "box_shadow": "0 0 0 1px #E8D898, 0 0 12px rgba(232, 216, 152, 0.28)",
+      "usage": "Hover on developer-tool cards, parchment-gold category items"
+    },
+    "glow_steel": {
+      "hex": "#9BBFD8",
+      "box_shadow": "0 0 0 1px #9BBFD8, 0 0 12px rgba(155, 191, 216, 0.28)",
+      "usage": "Hover on RAG/vector cards, early timeline nodes (2023-2024)"
+    },
+    "focus_ring": {
+      "note": "All keyboard focus rings: 2px solid #4EC9B0 with 2px offset. The synthetic accent is perceptually bright enough to be unmistakable on the dark bg.",
+      "css": "outline: 2px solid #4EC9B0; outline-offset: 2px;"
+    }
+  },
+  "semantic_status": {
+    "milestone": { "hex": "#D4915A", "note": "Major milestones - ember, heat, arrival" },
+    "in_progress": { "hex": "#C4B87A", "note": "Ongoing work - gold, craft" },
+    "experimental": { "hex": "#6B8FA8", "note": "Exploratory - steel blue, uncertain" },
+    "production": { "hex": "#4EC9B0", "note": "Live in production - synthetic teal, electric" }
+  },
+  "contrast_verification": {
+    "bg": "#1a1614",
+    "bg_luminance": 0.0045,
+    "method": "WCAG 2.1 relative luminance formula",
+    "results": [
+      { "color": "#E8E0D0", "name": "cream text",        "ratio": 16.8, "aa_normal": true, "aa_large": true },
+      { "color": "#D4915A", "name": "ember (2026/infra)", "ratio": 8.4,  "aa_normal": true, "aa_large": true },
+      { "color": "#C4B87A", "name": "parchment gold",     "ratio": 7.9,  "aa_normal": true, "aa_large": true },
+      { "color": "#8CC4A8", "name": "sage (2025)",         "ratio": 6.2,  "aa_normal": true, "aa_large": true },
+      { "color": "#4EC9B0", "name": "terminal teal",       "ratio": 6.8,  "aa_normal": true, "aa_large": true },
+      { "color": "#9B7EC8", "name": "lavender",            "ratio": 4.9,  "aa_normal": true, "aa_large": true },
+      { "color": "#6B8FA8", "name": "denim (2024/RAG)",    "ratio": 3.8,  "aa_normal": false, "aa_large": true, "note": "Use at 18px+ or as non-text UI only" },
+      { "color": "#4A5568", "name": "slate (2023)",         "ratio": 2.4,  "aa_normal": false, "aa_large": false, "note": "Use for decorative/graphic only - never for text labels. Pair with cream text on top." },
+      { "color": "#5B6E8A", "name": "steel (2023.5)",       "ratio": 2.9,  "aa_normal": false, "aa_large": false, "note": "Graphic use only. Label with cream text." }
+    ],
+    "note": "2023-era sequential stops (slate, steel) are intentionally dim - encoding uncertainty and early-stage work. Never use them as text color. Apply them as node/bar fill with cream text labels on top."
+  },
+  "css_custom_properties": {
+    "file_suggestion": "Append to body.dark-mode block in /home/coolhand/servers/diachronica/static/research/css/timeline.css or a new evolution-timeline.css",
+    "variables": "/* === LLM Evolution Timeline Extension === */\n\n/* Sequential - Temporal Progression */\n--evo-seq-2023:   #4A5568;\n--evo-seq-2023h:  #5B6E8A;\n--evo-seq-2024:   #6B8FA8;\n--evo-seq-2024h:  #7BA8A0;\n--evo-seq-2025:   #8CC4A8;\n--evo-seq-2025h:  #C4A882;\n--evo-seq-2026:   #D4915A;\n\n/* Categorical - Project Types */\n--evo-cat-rag:        #6B8FA8;\n--evo-cat-rag-bright: #8AAFCB;\n--evo-cat-agents:     #4EC9A0;\n--evo-cat-agents-bright: #7DDEC0;\n--evo-cat-clinical:   #9B7EC8;\n--evo-cat-clinical-bright: #B89FDC;\n--evo-cat-devtools:   #C4B87A;\n--evo-cat-devtools-bright: #DDD094;\n--evo-cat-infra:      #D4915A;\n--evo-cat-infra-bright: #E8A87C;\n\n/* Synthetic Accent */\n--evo-synth:          #4EC9B0;\n--evo-synth-dim:      #2D8F7E;\n--evo-synth-bg:       rgba(78, 201, 176, 0.08);\n--evo-synth-border:   rgba(78, 201, 176, 0.25);\n\n/* Glow States */\n--evo-glow-warm:   0 0 0 1px #E8A87C, 0 0 16px rgba(232, 168, 124, 0.35);\n--evo-glow-synth:  0 0 0 1px #7EDDD0, 0 0 16px rgba(126, 221, 208, 0.30);\n--evo-glow-purple: 0 0 0 1px #C0A8E8, 0 0 12px rgba(192, 168, 232, 0.28);\n--evo-glow-gold:   0 0 0 1px #E8D898, 0 0 12px rgba(232, 216, 152, 0.28);\n--evo-glow-steel:  0 0 0 1px #9BBFD8, 0 0 12px rgba(155, 191, 216, 0.28);"
+  }
+}

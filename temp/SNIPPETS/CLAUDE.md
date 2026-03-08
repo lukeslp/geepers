@@ -1,4 +1,7 @@
 # CLAUDE.md
+<!-- Navigation: ~/geepers/temp/SNIPPETS/CLAUDE.md -->
+<!-- Parent: ~/geepers/CLAUDE.md -->
+<!-- Map: ~/CLAUDE_MAP.md -->
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
