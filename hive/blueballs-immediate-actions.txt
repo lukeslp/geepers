@@ -1,0 +1,174 @@
+BLUEBALLS RELEASE PREP - IMMEDIATE ACTIONS
+===========================================
+
+Start here for the most impactful work:
+
+CRITICAL PRIORITIES (Must Complete)
+===================================
+
+1. HUMANIZE README.md
+   File: /home/coolhand/projects/blueballs/README.md
+   Current: Formal, technical tone
+   Target: Fun, playful (it's a joke project!)
+   Time: 30 min
+   Example fix:
+   FROM: "An interactive tool for exploring your Bluesky social network"
+   TO:   "See your Bluesky network in 20 different ways—because one isn't enough"
+
+2. HUMANIZE START_HERE.md
+   File: /home/coolhand/projects/blueballs/START_HERE.md
+   Current: Instructional
+   Target: Encouraging, friendly
+   Time: 20 min
+
+3. CREATE LICENSE FILE
+   File: /home/coolhand/projects/blueballs/LICENSE
+   Content: Standard MIT license (copy from template)
+   Time: 10 min
+
+4. PIN DEPENDENCIES
+   Files: backend/requirements.txt, frontend/package.json
+   Current: Uses >= ranges (unsafe for release)
+   Action: Run security audit, lock exact versions
+   Time: 1.5 hours
+   Commands:
+   - pip-audit && pip freeze > requirements.lock
+   - npm audit && npm ci
+
+5. CLEAN LEGACY DIRECTORIES
+   Action: Remove/organize old projects
+   Candidates for deletion:
+   - blueballs-migrating/ (old Bluesky firehose sentiment project)
+   - bluesky_dashboard/ (duplicate?)
+   - bluesky-network-viz/ (duplicate?)
+   - index_*.html (20+ old visualization files)
+   Time: 45 min
+
+QUICK WINS (15-30 min each)
+===========================
+
+6. Add .editorconfig
+   File: /home/coolhand/projects/blueballs/.editorconfig
+   Purpose: Consistent formatting across contributors
+
+7. Review .gitignore
+   File: /home/coolhand/projects/blueballs/.gitignore
+   Check: All build artifacts, env files, cache dirs excluded
+
+8. Update CHANGELOG.md
+   File: /home/coolhand/projects/blueballs/CHANGELOG.md
+   Add: Emojis (✨, 🐛, 📚), better formatting
+   Time: 30 min
+
+9. Add SECURITY.md
+   File: /home/coolhand/projects/blueballs/SECURITY.md (new)
+   Purpose: Vulnerability reporting policy
+   Time: 15 min
+
+CODE HUMANIZATION
+=================
+
+10. Humanize Backend Comments
+    Path: backend/app/services/, backend/app/routes/
+    Focus: Docstrings, function descriptions
+    Time: 1 hour
+
+11. Humanize Frontend Comments
+    Path: frontend/src/lib/components/, stores/
+    Focus: Component props, store descriptions
+    Time: 1 hour
+
+POLISH WITH AGENTS
+==================
+
+12. @geepers_humanizer
+    Input: README.md, START_HERE.md, CHANGELOG.md, code files
+    Output: Natural-sounding, jargon-free content
+    Time: Parallel execution
+
+13. @geepers_readme
+    Input: Humanized content + project structure
+    Output: Professional, engaging README
+    Prerequisites: Complete humanization first
+    Time: 30 min execution
+
+14. @geepers_security (optional)
+    Input: requirements.txt, package.json
+    Output: Audit report, pinned versions
+    Time: 20 min
+
+FINAL RELEASE
+=============
+
+15. Update GitHub Actions CI
+    File: .github/workflows/ci.yml
+    Verify: Python 3.11+, Node 20+, pytest flags correct
+    Time: 20 min
+
+16. Clean Git History
+    Action: Review commits, squash if needed
+    Target: Narrative commits with good messages
+    Time: 20 min
+
+17. Create Release Tag
+    Command: git tag -a v1.0.0 -m "Initial public release"
+    Command: git push origin v1.0.0
+    Time: 5 min
+
+ESTIMATED TIMELINE
+==================
+
+Phase 1 (Humanization):   3-4 hours
+Phase 2 (Polish):         2-3 hours
+Phase 3 (Technical):      2-3 hours
+Phase 4 (Release):        1 hour
+                          --------
+TOTAL:                    ~17 hours (2-3 days solo)
+
+PARALLEL OPTIONS
+================
+
+Run these together:
+- README humanization + START_HERE humanization + CHANGELOG humanization
+- Backend comments humanization + Frontend comments humanization
+- Dependency pinning + GitHub Actions update + .gitignore review
+- Directory cleanup + .editorconfig creation
+
+TASK QUEUE REFERENCE
+====================
+
+Full queue with all 24 tasks:
+/home/coolhand/geepers/hive/blueballs-queue.md
+
+Detailed planning report:
+/home/coolhand/geepers/reports/by-date/2026-03-07/planner-blueballs.md
+
+Quick summary:
+/home/coolhand/geepers/reports/by-date/2026-03-07/blueballs-release-summary.md
+
+KEY DECISION POINTS
+===================
+
+1. Legacy directories: DELETE or archive?
+   Recommendation: DELETE (they're old projects)
+
+2. Old index_*.html visualizations: KEEP or archive?
+   Recommendation: DELETE (SvelteKit frontend is the way forward)
+
+3. CLAUDE.md: Include in public release?
+   Recommendation: DELETE (internal instruction file, not for public)
+
+4. Dependency versions: EXACT pin or SEMVER ranges?
+   Recommendation: EXACT (more reproducible for release)
+
+CONTEXT
+=======
+
+Project: Bluesky Network Visualizer
+Type: Fun/joke project (tongue-in-cheek)
+Current: Nearly ready, needs humanization + cleanup
+Goal: Release on GitHub as public project
+Status: All code ready, just need polish + dependencies locked
+
+Created by: @geepers_planner
+Date: 2026-03-07
