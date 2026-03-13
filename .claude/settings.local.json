@@ -70,7 +70,10 @@
       "Bash(claude-cli rename:*)",
       "Bash(for repo in accessibility-devkit accessibility-devkit-llm)",
       "Bash(do echo \"=== $repo ===\" cat ~/projects/$repo/.gitignore)",
-      "Bash(/tmp/agent_analysis.sh:*)"
+      "Bash(/tmp/agent_analysis.sh:*)",
+      "Bash(for d in pr-review-toolkit hookify plugin-dev skill-creator)",
+      "Bash(do echo \"=== $d ===\")",
+      "Read(//home/coolhand/geepers/*/$d/*/**)"
     ]
   },
   "enableAllProjectMcpServers": true,
