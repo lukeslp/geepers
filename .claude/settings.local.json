@@ -69,7 +69,8 @@
       "Bash(/tmp/test_providers.py:*)",
       "Bash(claude-cli rename:*)",
       "Bash(for repo in accessibility-devkit accessibility-devkit-llm)",
-      "Bash(do echo \"=== $repo ===\" cat ~/projects/$repo/.gitignore)"
+      "Bash(do echo \"=== $repo ===\" cat ~/projects/$repo/.gitignore)",
+      "Bash(/tmp/agent_analysis.sh:*)"
     ]
   },
   "enableAllProjectMcpServers": true,
