@@ -1,109 +1,11 @@
 {
   "name": "geepers",
-<<<<<<< HEAD
-  "version": "1.0.1",
-  "description": "Multi-agent orchestration system with 73 specialized Claude Code agents for development workflows, code quality, deployment, research, data visualization, and more.",
-=======
   "version": "2.0.0",
   "description": "72 specialized development agents for Claude Code — accessibility, performance, deployment, corpus linguistics, data visualization, and more.",
->>>>>>> bc2147d (session checkpoint: 2026-03-14 14:17)
   "author": {
     "name": "Luke Steuber",
     "email": "luke@dr.eamer.dev"
   },
-<<<<<<< HEAD
-  "license": "MIT",
-  "homepage": "https://dr.eamer.dev/geepers/",
-  "repository": "https://github.com/lukeslp/geepers",
-  "agents": [
-    "../agents/master/geepers_conductor.md",
-
-    "../agents/checkpoint/geepers_orchestrator_checkpoint.md",
-    "../agents/checkpoint/geepers_scout.md",
-    "../agents/checkpoint/geepers_repo.md",
-    "../agents/checkpoint/geepers_status.md",
-    "../agents/checkpoint/geepers_snippets.md",
-
-    "../agents/corpus/geepers_orchestrator_corpus.md",
-    "../agents/corpus/geepers_corpus.md",
-    "../agents/corpus/geepers_corpus_ux.md",
-
-    "../agents/datavis/geepers_orchestrator_datavis.md",
-    "../agents/datavis/geepers_datavis_viz.md",
-    "../agents/datavis/geepers_datavis_color.md",
-    "../agents/datavis/geepers_datavis_story.md",
-    "../agents/datavis/geepers_datavis_math.md",
-    "../agents/datavis/geepers_datavis_data.md",
-    "../agents/datavis/geepers_poet.md",
-
-    "../agents/deploy/geepers_orchestrator_deploy.md",
-    "../agents/deploy/geepers_validator.md",
-    "../agents/deploy/geepers_caddy.md",
-    "../agents/deploy/geepers_services.md",
-
-    "../agents/frontend/geepers_orchestrator_frontend.md",
-    "../agents/frontend/geepers_css.md",
-    "../agents/frontend/geepers_design.md",
-    "../agents/frontend/geepers_motion.md",
-    "../agents/frontend/geepers_typescript.md",
-    "../agents/frontend/geepers_uxpert.md",
-    "../agents/frontend/geepers_webperf.md",
-
-    "../agents/fullstack/geepers_orchestrator_fullstack.md",
-    "../agents/fullstack/geepers_db.md",
-    "../agents/fullstack/geepers_react.md",
-
-    "../agents/games/geepers_orchestrator_games.md",
-    "../agents/games/geepers_gamedev.md",
-    "../agents/games/geepers_game.md",
-    "../agents/games/geepers_godot.md",
-
-    "../agents/hive/geepers_orchestrator_hive.md",
-    "../agents/hive/geepers_builder.md",
-    "../agents/hive/geepers_planner.md",
-    "../agents/hive/geepers_quickwin.md",
-    "../agents/hive/geepers_integrator.md",
-    "../agents/hive/geepers_refactor.md",
-
-    "../agents/python/geepers_orchestrator_python.md",
-    "../agents/python/geepers_pycli.md",
-
-    "../agents/quality/geepers_orchestrator_quality.md",
-    "../agents/quality/geepers_a11y.md",
-    "../agents/quality/geepers_perf.md",
-    "../agents/quality/geepers_deps.md",
-    "../agents/quality/geepers_critic.md",
-    "../agents/quality/geepers_testing.md",
-    "../agents/quality/geepers_security.md",
-
-    "../agents/research/geepers_orchestrator_research.md",
-    "../agents/research/geepers_fetcher.md",
-    "../agents/research/geepers_searcher.md",
-    "../agents/research/geepers_data.md",
-    "../agents/research/geepers_links.md",
-    "../agents/research/geepers_diag.md",
-    "../agents/research/geepers_citations.md",
-    "../agents/research/geepers_doublecheck.md",
-
-    "../agents/web/geepers_orchestrator_web.md",
-    "../agents/web/geepers_flask.md",
-    "../agents/web/geepers_express.md",
-
-    "../agents/standalone/geepers_api.md",
-    "../agents/standalone/geepers_scalpel.md",
-    "../agents/standalone/geepers_janitor.md",
-    "../agents/standalone/geepers_canary.md",
-    "../agents/standalone/geepers_dashboard.md",
-    "../agents/standalone/geepers_git.md",
-
-    "../agents/standalone/geepers_docs.md",
-    "../agents/standalone/geepers_humanizer.md",
-    "../agents/standalone/geepers_readme.md",
-
-    "../agents/system/geepers_system_help.md",
-    "../agents/system/geepers_system_onboard.md",
-    "../agents/system/geepers_system_diag.md"
-=======
   "homepage": "https://dr.eamer.dev/geepers/",
   "repository": "https://github.com/lukeslp/geepers",
   "license": "MIT",
@@ -132,6 +34,5 @@
     "./agents/standalone",
     "./agents/system",
     "./agents/web"
->>>>>>> bc2147d (session checkpoint: 2026-03-14 14:17)
   ]
 }
