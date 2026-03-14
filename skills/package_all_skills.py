@@ -13,7 +13,7 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).resolve().parent
 REPO_ROOT = SCRIPT_DIR.parent
 AGENTS_DIR = REPO_ROOT / "agents"
-SOURCE_DIR = SCRIPT_DIR / "source"
+SOURCE_DIR = SCRIPT_DIR
 
 # Mapping: skill-name -> { type, files, description_override }
 # type: "orchestrator" (category with orchestrator + sub-agents)
