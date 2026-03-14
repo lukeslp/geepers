@@ -1,11 +1,17 @@
 {
   "name": "geepers",
+<<<<<<< HEAD
   "version": "1.0.1",
   "description": "Multi-agent orchestration system with 73 specialized Claude Code agents for development workflows, code quality, deployment, research, data visualization, and more.",
+=======
+  "version": "2.0.0",
+  "description": "72 specialized development agents for Claude Code — accessibility, performance, deployment, corpus linguistics, data visualization, and more.",
+>>>>>>> bc2147d (session checkpoint: 2026-03-14 14:17)
   "author": {
     "name": "Luke Steuber",
     "email": "luke@dr.eamer.dev"
   },
+<<<<<<< HEAD
   "license": "MIT",
   "homepage": "https://dr.eamer.dev/geepers/",
   "repository": "https://github.com/lukeslp/geepers",
@@ -97,5 +103,35 @@
     "../agents/system/geepers_system_help.md",
     "../agents/system/geepers_system_onboard.md",
     "../agents/system/geepers_system_diag.md"
+=======
+  "homepage": "https://dr.eamer.dev/geepers/",
+  "repository": "https://github.com/lukeslp/geepers",
+  "license": "MIT",
+  "keywords": [
+    "orchestration",
+    "multi-agent",
+    "development-workflow",
+    "code-quality",
+    "deployment",
+    "geepers",
+    "claude-code"
+  ],
+  "agents": [
+    "./agents/master",
+    "./agents/checkpoint",
+    "./agents/corpus",
+    "./agents/datavis",
+    "./agents/deploy",
+    "./agents/frontend",
+    "./agents/fullstack",
+    "./agents/games",
+    "./agents/hive",
+    "./agents/python",
+    "./agents/quality",
+    "./agents/research",
+    "./agents/standalone",
+    "./agents/system",
+    "./agents/web"
+>>>>>>> bc2147d (session checkpoint: 2026-03-14 14:17)
   ]
 }
