@@ -89,7 +89,7 @@
     "../agents/standalone/geepers_canary.md",
     "../agents/standalone/geepers_dashboard.md",
     "../agents/standalone/geepers_git.md",
-    "../agents/standalone/geepers_todoist.md",
+
     "../agents/standalone/geepers_docs.md",
     "../agents/standalone/geepers_humanizer.md",
     "../agents/standalone/geepers_readme.md",
