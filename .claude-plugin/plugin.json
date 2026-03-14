@@ -17,22 +17,5 @@
     "deployment",
     "geepers",
     "claude-code"
-  ],
-  "agents": [
-    "./agents/master",
-    "./agents/checkpoint",
-    "./agents/corpus",
-    "./agents/datavis",
-    "./agents/deploy",
-    "./agents/frontend",
-    "./agents/fullstack",
-    "./agents/games",
-    "./agents/hive",
-    "./agents/python",
-    "./agents/quality",
-    "./agents/research",
-    "./agents/standalone",
-    "./agents/system",
-    "./agents/web"
   ]
 }

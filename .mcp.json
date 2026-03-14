@@ -1,0 +1,9 @@
+{
+  "geepers-orchestrator": {
+    "command": "python3",
+    "args": ["-m", "geepers_mcp"],
+    "env": {
+      "PYTHONUNBUFFERED": "1"
+    }
+  }
+}
