@@ -78,7 +78,7 @@ Source in `skills/source/`, built zips in `skills/zips/`. Run `python3 skills/pa
 - Python package depends on `dr-eamer-ai-shared` (shared library on PyPI)
 - `geepers/mcp/` is expected to be symlinked to `~/shared/mcp/` in dev; not committed
 
-## Publishing
+## ConfigManager Precedence
 
 ```bash
 # PyPI

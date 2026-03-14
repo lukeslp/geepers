@@ -1,7 +1,7 @@
 """
 Caminaå Central Coordinator
 
-The central orchestration engine for the Enterprise AI Orchestration Platform.
+The central orchestration engine for the Enterprise Orchestration Platform.
 Uses Mistral-small:22b for intelligent task routing and workflow management
 across specialized agent teams.
 
@@ -505,7 +505,7 @@ class CaminaCoordinator(SwarmModuleBase):
             elif agent.agent_type == AgentType.DEEPSEEK:
                 system_msg = "You are a complex reasoning and logical analysis specialist. Provide deep insights and synthesize information."
             else:
-                system_msg = "You are an AI assistant helping with task execution."
+                system_msg = "You are an assistant helping with task execution."
 
             # Build user message with task details
             user_msg = f"""Task Type: {task_type}

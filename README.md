@@ -2,7 +2,31 @@
 
 Multi-agent orchestration system with specialized Claude Code plugin agents and skills.
 
-## Installation
+Multi-agent orchestration for LLM workflows. Ships as a Python package for building orchestrated pipelines and as a Claude Code plugin that puts 72 specialized agents a task invocation away.
+
+## Features
+
+- Run hierarchical research workflows with Dream Cascade — tasks decompose into subtasks, flow through a mid-level coordinator, and arrive at an executive summary
+- Dispatch parallel agents across domains with Dream Swarm — web, academic, and data searches run simultaneously and merge into a unified result
+- Load config from any combination of defaults, `.env`, env vars, and CLI args; later sources always win
+- Auto-discover API keys for 16 LLM providers from the environment with no extra setup
+- Stream real-time progress via callbacks — terminal progress bars, WebSocket, or SSE
+- Install as a Claude Code plugin and invoke 72 specialized agents across 15 domains from any session
+
+## Ecosystem
+
+| | |
+|---|---|
+| **PyPI** | [`geepers-llm`](https://pypi.org/project/geepers-llm/) · [`geepers-kernel`](https://pypi.org/project/geepers-kernel/) |
+| **Claude Code** | [`/plugin add lukeslp/geepers`](https://github.com/lukeslp/geepers-skills) |
+| **Codex CLI** | [`geepers-gpt`](https://github.com/lukeslp/geepers-gpt) |
+| **Gemini** | [`geepers-gemini`](https://github.com/lukeslp/geepers-gemini) |
+| **ClawHub** | [`geepers-api-skills`](https://github.com/lukeslp/geepers-api-skills) |
+| **MCP servers** | [`geepers-unified` · `geepers-providers` · `geepers-data` · `geepers-websearch`](https://github.com/lukeslp/geepers-kernel) |
+| **Orchestration** | [`beltalowda`](https://github.com/lukeslp/beltalowda) · [`multi-agent-orchestration`](https://github.com/lukeslp/multi-agent-orchestration) |
+| **Data clients** | [`research-data-clients`](https://github.com/lukeslp/research-data-clients) — 17+ structured APIs |
+
+## Install
 
 ### As Claude Code Plugin (recommended)
 
@@ -26,11 +50,11 @@ for zip in ~/geepers/skills/zips/*.zip; do
 done
 ```
 
-## What's Included
+## Quick Start
 
 ### 70 Specialized Agents
 
-Markdown-defined agents for Claude Code that provide specialized workflows:
+config = ConfigManager(app_name="myapp")
 
 | Category | Agents | Purpose |
 |----------|--------|---------|
@@ -115,7 +139,7 @@ skills/
 └── package_all_skills.py  # Generate skills from agents
 ```
 
-## Usage
+### Orchestrators
 
 Agents are available via Claude Code's Task tool with `subagent_type`:
 
@@ -181,6 +205,73 @@ for zip in skills/zips/*.zip; do
 done
 ```
 
+Auto-discovers keys for 16 LLM providers from environment variables.
+
+### MCP Server Bridges
+
+Six STDIO-based MCP servers ship with the package, covering the most common tool categories:
+
+- `geepers-unified` — All tools in one server
+- `geepers-providers` — LLM provider access
+- `geepers-data` — Data source clients
+- `geepers-cache` — Caching layer
+- `geepers-utility` — File and text utilities
+- `geepers-websearch` — Web search tools
+
+### Naming Registry
+
+Maps roles to consistent identifiers across four scopes (internal, package, CLI, MCP) and resolves legacy class names to their canonical equivalents:
+
+```python
+from geepers.naming import get_identifier, resolve_legacy
+
+get_identifier("orchestrator", "cascade")  # Returns scoped identifier
+resolve_legacy("BeltalowdaOrchestrator")   # Maps to canonical name
+```
+
+## Claude Code Agents
+
+Markdown-defined agents organized into 15 domains. Each domain has an orchestrator that coordinates its specialists; the top-level conductor routes across all domains.
+
+| Domain | Orchestrator | Specialists |
+|--------|-------------|-------------|
+| Master | conductor_geepers | Routes to all domains |
+| Checkpoint | orchestrator_checkpoint | scout, repo, status, snippets |
+| Deploy | orchestrator_deploy | caddy, services, validator |
+| Quality | orchestrator_quality | a11y, perf, deps, critic, security, testing |
+| Frontend | orchestrator_frontend | css, design, motion, typescript, uxpert, webperf |
+| Fullstack | orchestrator_fullstack | db, react |
+| Hive | orchestrator_hive | builder, planner, integrator, quickwin, refactor |
+| Research | orchestrator_research | data, links, diag, citations, fetcher, searcher, doublecheck |
+| Web | orchestrator_web | flask, express |
+| Python | orchestrator_python | pycli |
+| Games | orchestrator_games | game, gamedev, godot |
+| Corpus | orchestrator_corpus | corpus, corpus_ux |
+| Datavis | orchestrator_datavis | viz, color, story, math, data |
+| System | (standalone) | help, onboard, diag |
+| Standalone | (standalone) | api, scalpel, janitor, canary, dashboard, git, docs |
+
+Routing: Conductor → Orchestrators → Specialists.
+
+To invoke an agent in Claude Code, use the `Task` tool with the agent's `subagent_type`:
+
+```
+conductor_geepers               # top-level router — when in doubt, start here
+geepers_orchestrator_frontend   # coordinates all frontend specialists
+geepers_scout                   # fast project reconnaissance
+geepers_orchestrator_research   # coordinates research and data agents
+```
+
+## Cross-Platform Skills
+
+38 skill packs in `skills/source/` packaged for Claude Desktop, Codex CLI, Gemini, and ClawHub. The canonical registry lives in `manifests/skills-manifest.yaml`.
+
+Skills fall into three categories: **Claude Desktop skills** for local workflows (datavis, engineering, finance, server-deploy, and others), **API skills** that wrap the public `dr.eamer.dev` REST API (geepers-llm, geepers-orchestrate, geepers-data, and related), and **platform adapters** that export the same skill definitions in the format each platform expects.
+
+## Author
+
+**Luke Steuber** · [lukesteuber.com](https://lukesteuber.com) · [@lukesteuber.com](https://bsky.app/profile/lukesteuber.com)
+
 ## License
 
-MIT License - Luke Steuber
+MIT — see [LICENSE](LICENSE)

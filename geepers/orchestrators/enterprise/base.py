@@ -1,5 +1,5 @@
 """
-Core Base Classes for Enterprise AI Orchestration Platform
+Core Base Classes for Enterprise Orchestration Platform
 
 This module provides the foundational SwarmModuleBase class that all agents and modules
 inherit from, ensuring consistent interfaces and standardized lifecycle management.

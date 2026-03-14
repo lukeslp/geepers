@@ -1,0 +1,352 @@
+================================================================================
+BLUEBALLS RELEASE PREPARATION - COMPLETE PLANNING PACKAGE
+================================================================================
+
+Generated: 2026-03-07
+Status: READY TO EXECUTE
+Total Tasks: 24
+Estimated Time: 17 hours (2-3 days solo, 1 day with agents)
+
+================================================================================
+DOCUMENTATION FILES (5 Total)
+================================================================================
+
+START HERE:
+───────────────────────────────────────────────────────────────────────────────
+1. /home/coolhand/geepers/hive/START-HERE-BLUEBALLS.md
+   ↳ Overview + quick decisions
+   ↳ Read this FIRST
+   ↳ Time: 5 minutes
+
+EXECUTION GUIDES:
+───────────────────────────────────────────────────────────────────────────────
+2. /home/coolhand/geepers/hive/blueballs-queue.md
+   ↳ 24 TASKS with priorities & estimates
+   ↳ Use for daily task management
+   ↳ Primary reference document
+   ↳ Time: Read once, reference often
+
+3. /home/coolhand/geepers/hive/blueballs-immediate-actions.txt
+   ↳ Quick checklist of critical items
+   ↳ Decision points
+   ↳ Agent calls
+   ↳ Time: 5 minutes to scan
+
+DETAILED PLANNING:
+───────────────────────────────────────────────────────────────────────────────
+4. /home/coolhand/geepers/reports/by-date/2026-03-07/planner-blueballs.md
+   ↳ Full context, analysis, risks
+   ↳ Detailed task breakdowns
+   ↳ Agent recommendations
+   ↳ Success criteria
+   ↳ Time: 15 minutes to read
+
+SUMMARIES & REFERENCE:
+───────────────────────────────────────────────────────────────────────────────
+5. /home/coolhand/geepers/reports/by-date/2026-03-07/blueballs-release-summary.md
+   ↳ One-page quick reference
+   ↳ Charts and timelines
+   ↳ Checklists
+   ↳ Time: 10 minutes
+
+6. /home/coolhand/geepers/reports/by-date/2026-03-07/blueballs-executive-summary.md
+   ↳ Executive overview
+   ↳ Current → Target state
+   ↳ Decision matrix
+   ↳ Time: 10 minutes
+
+================================================================================
+RECOMMENDED READING ORDER
+================================================================================
+
+For Busy People (15 minutes):
+  1. START-HERE-BLUEBALLS.md
+  2. blueballs-immediate-actions.txt
+  3. blueballs-executive-summary.md
+  → Then jump to Task #1
+
+For Thorough Review (45 minutes):
+  1. START-HERE-BLUEBALLS.md
+  2. blueballs-immediate-actions.txt
+  3. blueballs-release-summary.md
+  4. blueballs-queue.md (skim)
+  5. planner-blueballs.md (skim)
+
+For Complete Understanding (90 minutes):
+  1. START-HERE-BLUEBALLS.md
+  2. blueballs-executive-summary.md
+  3. blueballs-queue.md (full read)
+  4. planner-blueballs.md (full read)
+  5. blueballs-release-summary.md (reference)
+
+================================================================================
+KEY FACTS AT A GLANCE
+================================================================================
+
+Project: Bluesky Network Visualizer (blueballs)
+Type: Fun/joke project (tongue-in-cheek)
+Status: Code-ready for GitHub release
+
+Total Tasks: 24
+Quick Wins: 7
+Blocked Tasks: 0
+Critical Path: 5 tasks (~8-10 hours)
+
+Timeline:
+  Solo: 2-3 days
+  With agents: 1 day
+  Critical minimum: 1-1.5 days
+
+Status Breakdown:
+  ✅ Code: Clean, well-structured
+  ✅ Tests: Configured and passing
+  ✅ Design: Polished (Swiss Style)
+  ⚠️ Tone: Too formal (needs humanization)
+  ⚠️ Dependencies: Unpinned (need locking)
+  ❌ License: Missing file
+  ⚠️ Cleanup: Legacy directories present
+
+================================================================================
+WORK PHASES
+================================================================================
+
+Phase 1: HUMANIZATION (3-4 hours)
+  ├─ Humanize README.md ...................... 30 min
+  ├─ Humanize START_HERE.md .................. 20 min
+  ├─ Humanize CHANGELOG.md ................... 30 min
+  ├─ Humanize backend comments ............... 60 min
+  └─ Humanize frontend comments .............. 60 min
+
+  Agent: @geepers_humanizer (parallel)
+  Output: Natural-sounding content
+
+Phase 2: POLISH (2-3 hours)
+  ├─ Create LICENSE file ..................... 10 min
+  ├─ @geepers-readme ......................... 30 min
+  ├─ INSTALL.md cross-check .................. 20 min
+  ├─ Docs audit .............................. 20 min
+  ├─ Add SECURITY.md ......................... 15 min
+  └─ Other polish tasks ...................... 60 min
+
+  Agent: @geepers_readme (after Phase 1)
+  Output: Professional README
+
+Phase 3: TECHNICAL (2-3 hours)
+  ├─ Pin dependencies ........................ 90 min
+  ├─ Clean legacy directories ................ 45 min
+  ├─ Update GitHub Actions ................... 20 min
+  ├─ Review .gitignore ....................... 15 min
+  └─ Add .editorconfig ....................... 15 min
+
+  Agents: Parallel (independent tasks)
+  Output: Release-ready code
+
+Phase 4: RELEASE (1 hour)
+  ├─ Clean git history ....................... 20 min
+  ├─ Tag v1.0.0 ............................. 10 min
+  └─ Final checklist ......................... 30 min
+
+  Output: v1.0.0 tagged and pushed
+
+================================================================================
+TOP 5 ISSUES TO FIX
+================================================================================
+
+Priority 1: Humanize README.md
+  Impact: HIGH (first thing users see)
+  Effort: 30 minutes
+  Status: Task #1
+
+Priority 2: Create LICENSE file
+  Impact: HIGH (required for release)
+  Effort: 10 minutes
+  Status: Task #5
+
+Priority 3: Pin dependencies
+  Impact: HIGH (critical for stability)
+  Effort: 1.5 hours
+  Status: Task #19
+
+Priority 4: Clean legacy directories
+  Impact: MEDIUM (cleaner public repo)
+  Effort: 45 minutes
+  Status: Task #6
+
+Priority 5: Remove CLAUDE.md from public
+  Impact: MEDIUM (internal instructions only)
+  Effort: 10 minutes
+  Status: Task #3
+
+================================================================================
+DECISION POINTS (Need Your Input)
+================================================================================
+
+Decision 1: Legacy Directories
+  Current: blueballs-migrating/, bluesky_dashboard/, old index_*.html
+  Options: DELETE / ARCHIVE / KEEP
+  Recommendation: DELETE
+  Impact: Cleaner repo, clarified scope
+
+Decision 2: CLAUDE.md File
+  Current: Internal AI instruction file in public repo
+  Options: DELETE / MOVE / KEEP
+  Recommendation: DELETE
+  Impact: No internal tool references visible
+
+Decision 3: Dependency Versions
+  Current: Uses >= ranges (unsafe)
+  Options: EXACT (v1.2.3) / SEMVER (^1.2.3) / LOOSE (>=)
+  Recommendation: EXACT
+  Impact: More reproducible releases
+
+Decision 4: Old Visualizations
+  Current: 20+ index_*.html files
+  Options: DELETE / ARCHIVE / KEEP BEST
+  Recommendation: DELETE
+  Impact: Focus on SvelteKit frontend
+
+================================================================================
+SUCCESS CRITERIA
+================================================================================
+
+Release is ready when:
+  ✅ README reads naturally (no AI jargon)
+  ✅ START_HERE is encouraging
+  ✅ LICENSE file present
+  ✅ Dependencies pinned and audited
+  ✅ Legacy directories cleaned
+  ✅ GitHub Actions CI passes
+  ✅ No @geepers references in docs
+  ✅ SECURITY.md present
+  ✅ v1.0.0 tagged
+  ✅ Pushed to GitHub
+  ✅ No jargon in code comments
+  ✅ .gitignore complete
+  ✅ CHANGELOG formatted nicely
+  ✅ One-command setup works
+
+================================================================================
+AGENT RECOMMENDATIONS
+================================================================================
+
+When to use @geepers_humanizer:
+  → Humanize README, START_HERE, CHANGELOG
+  → Fix code comments
+  → Remove jargon
+  Time: ~30 minutes (parallel execution)
+
+When to use @geepers_readme:
+  → After humanization complete
+  → Generate polished README
+  → Add architecture section
+  Time: ~30 minutes execution
+
+When to use @geepers_security:
+  → Audit dependencies
+  → Generate lock files
+  → Check for vulnerabilities
+  Time: ~20 minutes (optional)
+
+================================================================================
+PROJECT FILES BEING MODIFIED
+================================================================================
+
+MUST CHANGE:
+  /home/coolhand/projects/blueballs/README.md
+  /home/coolhand/projects/blueballs/START_HERE.md
+  /home/coolhand/projects/blueballs/LICENSE (create)
+  /home/coolhand/projects/blueballs/backend/requirements.txt
+  /home/coolhand/projects/blueballs/frontend/package.json
+
+SHOULD CHANGE:
+  /home/coolhand/projects/blueballs/CHANGELOG.md
+  /home/coolhand/projects/blueballs/.gitignore
+  /home/coolhand/projects/blueballs/.github/workflows/ci.yml
+  /home/coolhand/projects/blueballs/backend/app/**/*.py (comments)
+  /home/coolhand/projects/blueballs/frontend/src/lib/**/*.svelte (comments)
+
+SHOULD DELETE:
+  /home/coolhand/projects/blueballs/blueballs-migrating/
+  /home/coolhand/projects/blueballs/bluesky_dashboard/
+  /home/coolhand/projects/blueballs/bluesky-network-viz/
+  /home/coolhand/projects/blueballs/index_*.html (old visualizations)
+  /home/coolhand/projects/blueballs/CLAUDE.md (from public release)
+
+================================================================================
+QUICK REFERENCE: NEXT STEPS
+================================================================================
+
+1. Read /home/coolhand/geepers/hive/START-HERE-BLUEBALLS.md (5 min)
+
+2. Read /home/coolhand/geepers/hive/blueballs-queue.md (15 min)
+   ↳ This is your primary task list
+
+3. Make decisions on:
+   ✓ Delete legacy directories? (Recommended: YES)
+   ✓ Delete CLAUDE.md? (Recommended: YES)
+   ✓ Pin dependencies exactly? (Recommended: YES)
+
+4. Start Phase 1: Humanization
+   Option A: Manual (3-4 hours)
+   Option B: @geepers_humanizer (parallel, 30 min)
+
+5. Follow phases 2, 3, 4 in sequence
+
+6. Ship it! 🎉
+
+================================================================================
+FILE LOCATIONS (Quick Lookup)
+================================================================================
+
+Task Queue:
+  /home/coolhand/geepers/hive/blueballs-queue.md
+
+Immediate Actions:
+  /home/coolhand/geepers/hive/blueballs-immediate-actions.txt
+
+Reports:
+  /home/coolhand/geepers/reports/by-date/2026-03-07/planner-blueballs.md
+  /home/coolhand/geepers/reports/by-date/2026-03-07/blueballs-release-summary.md
+  /home/coolhand/geepers/reports/by-date/2026-03-07/blueballs-executive-summary.md
+
+Start Here:
+  /home/coolhand/geepers/hive/START-HERE-BLUEBALLS.md
+
+Project:
+  /home/coolhand/projects/blueballs/
+
+================================================================================
+QUESTIONS?
+================================================================================
+
+"Where do I start?"
+  → Read START-HERE-BLUEBALLS.md
+
+"What are the top priorities?"
+  → See blueballs-immediate-actions.txt
+
+"How do I prioritize 24 tasks?"
+  → Sort by Priority score in blueballs-queue.md
+
+"Can I parallelize work?"
+  → Yes! See "Work Phases" above
+
+"Should I use agents?"
+  → Recommended for Phase 1 humanization (saves time)
+
+"What's the minimum to ship?"
+  → 5 critical tasks (~8-10 hours, 1-1.5 days)
+
+"Do I need to do all 24 tasks?"
+  → No. First 5 are critical, rest are polish
+
+"How long will this take?"
+  → 17 hours total (2-3 days solo, 1 day with agents)
+
+================================================================================
+GENERATED BY @geepers_planner
+READY FOR EXECUTION: YES ✅
+DATE: 2026-03-07
+================================================================================
+
+BEGIN HERE: /home/coolhand/geepers/hive/START-HERE-BLUEBALLS.md

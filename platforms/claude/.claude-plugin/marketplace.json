@@ -1,0 +1,45 @@
+{
+  "name": "geepers-marketplace",
+  "owner": {
+    "name": "Luke Steuber",
+    "email": "luke@dr.eamer.dev"
+  },
+  "metadata": {
+    "description": "23 skills for planning, building, shipping, and researching \u2014 for Claude Code.",
+    "version": "1.0.0",
+    "built_at": "2026-02-19T08:07:12.162097+00:00"
+  },
+  "plugins": [
+    {
+      "name": "geepers-skills-package",
+      "description": "23 geepers skills \u2014 planning, building, shipping, researching.",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/builder",
+        "./skills/data-fetch",
+        "./skills/datavis",
+        "./skills/dream-swarm",
+        "./skills/engineering",
+        "./skills/executive",
+        "./skills/finance",
+        "./skills/git-hygiene-guardian",
+        "./skills/mcp-orchestration",
+        "./skills/planner",
+        "./skills/product",
+        "./skills/quality",
+        "./skills/scout",
+        "./skills/server-deploy",
+        "./skills/swarm",
+        "./skills/team",
+        "./skills/testing",
+        "./skills/validator",
+        "./skills/geepers-corpus",
+        "./skills/geepers-data",
+        "./skills/geepers-etymology",
+        "./skills/geepers-llm",
+        "./skills/geepers-orchestrate"
+      ]
+    }
+  ]
+}

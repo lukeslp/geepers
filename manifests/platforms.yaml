@@ -1,0 +1,36 @@
+version: 1
+platforms:
+  claude:
+    output_root: platforms/claude
+    include_bundles: [core, workflow, data, datavis, orchestration, strategy, quality, maintenance, operations, api]
+    skills_dir: skills
+    metadata_file: .claude-plugin/marketplace.json
+    mirror_repo: /home/coolhand/servers/geepers-skills
+
+  codex:
+    output_root: platforms/codex
+    include_bundles: [core, workflow, data, datavis, orchestration, strategy, quality, maintenance, operations, api]
+    skills_dir: skills
+    metadata_file: codex-package.json
+    mirror_repo: /home/coolhand/servers/geepers-gpt
+
+  gemini:
+    output_root: platforms/gemini
+    include_bundles: [core, workflow, data, datavis, orchestration, strategy, quality, maintenance, operations, api]
+    skills_dir: skills
+    metadata_file: gemini-extension.json
+    mirror_repo: /home/coolhand/projects/packages/geepers-gemini
+
+  manus:
+    output_root: platforms/manus
+    include_bundles: [core, workflow, data, datavis, orchestration, strategy, quality, maintenance, operations, api]
+    skills_dir: skills
+    metadata_file: manus-skills.json
+    mirror_repo: /home/coolhand/projects/packages/geepers-manus
+
+  clawhub:
+    output_root: platforms/clawhub
+    include_bundles: [core, workflow, data, datavis, orchestration, strategy, quality, maintenance, operations, api]
+    skills_dir: skills
+    metadata_file: clawhub-package.json
+    mirror_repo: /home/coolhand/projects/dreamer-api-skills

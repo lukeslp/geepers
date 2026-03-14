@@ -1,0 +1,69 @@
+================================================================================
+DATASET PUBLISHING WORKFLOW - EXECUTIVE SUMMARY
+Generated: 2026-02-14
+================================================================================
+
+CRITICAL PATH (Must Do First):
+──────────────────────────────
+1. Fix accessibility-atlas licensing (1 hour) ← BLOCKS other tasks
+   └─→ Enables Kaggle publication (30 min)
+   └─→ Enables HuggingFace publication (30 min)
+
+QUICK WINS (Ready Now, 1.5 hours total):
+─────────────────────────────────────────
+✓ US Attention Data → HuggingFace (20 min) [HUGGINGFACE_README.md ready]
+✓ US Inequality Atlas → Fix YAML (10 min) [Just add frontmatter]
+✓ US Disasters Mashup → Verify Kaggle (5 min) [Check username]
+
+MEDIUM PRIORITY (2-3 days):
+──────────────────────────
+• Publish 4 geospatial datasets (2 hours) [YAML ready]
+• Complete world-languages Kaggle (40 min)
+• Plan language-data consolidation (1 hour)
+
+CURRENT STATUS:
+───────────────
+Platform Distribution:
+  GitHub:      4/4 repos ✓
+  HuggingFace: 3/4 published + 9 ready to publish
+  Kaggle:      2/4 published + 4 optional
+
+Total Datasets: 18
+  - Published: 5
+  - Ready to publish: 9
+  - Needs planning: 4
+
+TIME COMMITMENT:
+────────────────
+Minimum (critical path only):     2.5 hours
+Recommended (all quick wins):     8-12 hours
+Full ecosystem (with maintenance): 24-32 hours
+Optional enhancements:            6+ hours
+
+BLOCKING ISSUE:
+───────────────
+Accessibility Atlas licensing (2 deleted files)
+→ Prevents publication to Kaggle + HuggingFace
+→ SOLUTION IN QUEUE: Task #1 (1 hour to fix)
+
+TOP 3 ACTIONS THIS WEEK:
+────────────────────────
+1. Fix accessibility-atlas licensing (Task #1)
+2. Publish accessibility-atlas + us-attention-data (Tasks #2-4)
+3. Publish 4 geospatial datasets (Task #7)
+
+ESTIMATED COMPLETION:
+─────────────────────
+Critical path:    By EOD Monday
+Quick wins:       By Wed EOD
+Medium priority:  By Fri EOD
+Full ecosystem:   By end of Q1
+
+KEY FILES:
+──────────
+Task Queue:   /home/coolhand/geepers/hive/datasets-queue.md
+Report:       /home/coolhand/geepers/reports/by-date/2026-02-14/planner-datasets.md
+Audit:        /home/coolhand/datasets/DATASET_AUDIT_2026-02-14.md
+TODO:         /home/coolhand/datasets/accessibility-atlas/PRE_PUBLICATION_TODO.md
+
+================================================================================

@@ -1,0 +1,47 @@
+name: Skills Unification
+
+on:
+  push:
+    paths:
+      - "manifests/**"
+      - "schemas/**"
+      - "scripts/build-platform-packages.py"
+      - "scripts/validate-skills.py"
+      - "scripts/report-drift.sh"
+      - "skills/source/**"
+      - ".github/workflows/skills-unification.yml"
+  pull_request:
+    paths:
+      - "manifests/**"
+      - "schemas/**"
+      - "scripts/build-platform-packages.py"
+      - "scripts/validate-skills.py"
+      - "scripts/report-drift.sh"
+      - "skills/source/**"
+      - ".github/workflows/skills-unification.yml"
+
+jobs:
+  validate-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pyyaml
+
+      - name: Validate manifests and skills
+        run: python scripts/validate-skills.py --strict
+
+      - name: Build all platform packages
+        run: python scripts/build-platform-packages.py --platform all --clean
+
+      - name: Drift check (skip missing mirrors in CI)
+        run: bash scripts/report-drift.sh --strict --skip-missing
