@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geepers Reference</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #0a0a0f;
+  color: #e0e0e0;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+h1, h2, h3 { font-family: 'Libre Baskerville', serif; }
+a { color: #4fc3f7; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.header {
+  text-align: center;
+  padding: 48px 24px 24px;
+}
+.header h1 {
+  font-size: 2.4rem;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.header .subtitle {
+  color: #888;
+  font-size: 1rem;
+  font-weight: 300;
+}
+.header .accent { color: #4fc3f7; font-weight: 500; }
+
+.search-wrap {
+  max-width: 640px;
+  margin: 24px auto;
+  padding: 0 24px;
+}
+.search-wrap input {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-family: 'Work Sans', sans-serif;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  color: #e0e0e0;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.search-wrap input:focus {
+  border-color: #4fc3f7;
+  box-shadow: 0 0 0 3px rgba(79,195,247,0.15);
+}
+.search-wrap input::placeholder { color: #666; }
+
+.decision-tree {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 24px;
+  text-align: center;
+}
+.decision-tree h3 {
+  color: #888;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+}
+.dt-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+.dt-btn {
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  color: #ccc;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.dt-btn:hover { border-color: rgba(79,195,247,0.4); color: #4fc3f7; }
+.dt-btn.active { border-color: #4fc3f7; color: #4fc3f7; background: rgba(79,195,247,0.1); }
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin: 28px auto 20px;
+  max-width: 480px;
+  padding: 0 24px;
+}
+.tab-btn {
+  flex: 1;
+  padding: 12px 0;
+  text-align: center;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 3px solid transparent;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.tab-btn:first-child { border-radius: 10px 0 0 10px; }
+.tab-btn:last-child { border-radius: 0 10px 10px 0; }
+.tab-btn:hover { color: #bbb; }
+.tab-btn.active {
+  color: #4fc3f7;
+  border-bottom-color: #4fc3f7;
+  background: rgba(79,195,247,0.06);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 20px;
+  transition: border-color 0.2s;
+}
+.card:hover { border-color: rgba(79,195,247,0.3); }
+.card-name {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #4fc3f7;
+  margin-bottom: 6px;
+  word-break: break-word;
+}
+.card-title {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 6px;
+  font-style: italic;
+}
+.card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+.badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #111;
+  white-space: nowrap;
+}
+.card-desc {
+  font-size: 0.9rem;
+  color: #bbb;
+  line-height: 1.5;
+}
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #666;
+  padding: 60px 20px;
+  font-size: 1.1rem;
+}
+
+.count-bar {
+  text-align: center;
+  color: #555;
+  font-size: 0.82rem;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 640px) {
+  .header h1 { font-size: 1.6rem; }
+  .grid { grid-template-columns: 1fr; padding: 0 12px 40px; }
+  .tabs { flex-direction: column; gap: 6px; }
+  .tab-btn { border-radius: 8px !important; border-bottom-width: 2px; }
+  .dt-buttons { gap: 6px; }
+  .dt-btn { font-size: 0.8rem; padding: 6px 12px; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Geepers Reference</h1>
+  <p class="subtitle">
+    <span class="accent">40</span> skills,
+    <span class="accent">72</span> agents,
+    <span class="accent">24</span> commands
+  </p>
+</div>
+
+<div class="search-wrap">
+  <input type="text" id="search" placeholder="Search agents, skills, and commands..." autocomplete="off" spellcheck="false">
+</div>
+
+<div class="decision-tree">
+  <h3>I want to...</h3>
+  <div class="dt-buttons">
+    <button class="dt-btn" data-filter="swarm,hive,engineering,builder">Build something</button>
+    <button class="dt-btn" data-filter="hunt,research,dream-cascade">Search for info</button>
+    <button class="dt-btn" data-filter="quality,audit">Review quality</button>
+    <button class="dt-btn" data-filter="start,checkpoint,end">Start / end session</button>
+    <button class="dt-btn" data-filter="deploy,ship,canary">Deploy safely</button>
+    <button class="dt-btn" data-filter="consensus,thinktwice,thinkagain">Get second opinion</button>
+    <button class="dt-btn" data-filter="janitor,checkpoint">Clean up</button>
+    <button class="dt-btn" data-filter="system-onboard,scout">Understand codebase</button>
+  </div>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" data-tab="skill">Skills</button>
+  <button class="tab-btn" data-tab="agent">Agents</button>
+  <button class="tab-btn" data-tab="command">Commands</button>
+</div>
+
+<div class="count-bar" id="countBar"></div>
+<div class="grid" id="grid"></div>
+
+<script>
+const DATA = [
+  {type: "agent", name: "geepers_orchestrator_checkpoint", description: "Checkpoint orchestrator that coordinates session maintenance agents - scout, repo, status, and snippets. Use at session boundaries, after completing features, or for routine project maintenance. This is your \"wrap up and document\" orchestrator.", category: "checkpoint", model: "sonnet", agentColor: "red"},
+  {type: "agent", name: "geepers_repo", description: "Use this agent for git hygiene, repository cleanup, and commit organization. Invoke at session checkpoints, before ending work sessions, when uncommitted changes accumulate, after adding dependencies, or when preparing for code reviews.", category: "checkpoint", model: "sonnet", agentColor: "red"},
+  {type: "agent", name: "geepers_scout", description: "Use this agent for project reconnaissance, quick fixes, and generating improvement reports. Invoke at session checkpoints, when picking up a project after time away, after completing features, or when you want a fresh perspective on code quality. This is the primary \"what\'s going on here\" agent.", category: "checkpoint", model: "sonnet", agentColor: "red"},
+  {type: "agent", name: "geepers_snippets", description: "Use this agent to harvest reusable code patterns, maintain the snippet library, and deduplicate/enhance existing snippets. Invoke after completing features with reusable patterns, at session checkpoints, when consolidating similar code, or for snippet library maintenance.", category: "checkpoint", model: "sonnet", agentColor: "red"},
+  {type: "agent", name: "geepers_status", description: "Use this agent to log work accomplishments and maintain the project status dashboard. Invoke after making commits, at end of work sessions, when reviewing progress, or when updating project documentation.", category: "checkpoint", model: "sonnet", agentColor: "red"},
+  {type: "agent", name: "geepers_corpus", description: "Use this agent for corpus linguistics projects, language dataset management, computational linguistics, and NLP resource work. Invoke when working with COCA, Diachronica, language corpora, or linguistic data processing.", category: "corpus", model: "sonnet", agentColor: "cyan"},
+  {type: "agent", name: "geepers_corpus_ux", description: "Use this agent for corpus linguistics UI/UX design - KWIC displays, concordance viewers, frequency visualizations, and research tool interfaces. Invoke when designing or improving linguistic research interfaces.", category: "corpus", model: "sonnet", agentColor: "cyan"},
+  {type: "agent", name: "geepers_orchestrator_corpus", description: "Corpus orchestrator that coordinates linguistics agents - corpus, corpus_ux, and db. Use when working on corpus linguistics projects, NLP tools, or language data systems. This is your \"language data\" orchestrator.", category: "corpus", model: "sonnet", agentColor: "cyan"},
+  {type: "agent", name: "geepers_datavis_color", description: "Color theory, palette design, and perceptual uniformity for visualizations. Use when designing color schemes, ensuring colorblind accessibility, creating emotional palettes, or mapping data to color.", category: "datavis", model: "sonnet", agentColor: "magenta"},
+  {type: "agent", name: "geepers_datavis_data", description: "Data collection, validation, and pipeline management for visualizations. Use when fetching from APIs (Census, SEC, Wikipedia), cleaning datasets, documenting sources, or building reproducible data pipelines.", category: "datavis", model: "sonnet", agentColor: "blue"},
+  {type: "agent", name: "geepers_datavis_math", description: "Mathematical elegance in data visualization - scales, transforms, encodings, and algorithms. Use when designing perceptually accurate mappings, choosing between linear/log/sqrt scales, or implementing clever mathematical metaphors.", category: "datavis", model: "sonnet", agentColor: "yellow"},
+  {type: "agent", name: "geepers_datavis_story", description: "Narrative design and emotional resonance in data visualization. Use when crafting the story arc, designing the viewer\'s journey, choosing metaphors, or ensuring emotional impact. The \"life is beautiful\" aesthetic specialist.", category: "datavis", model: "sonnet", agentColor: "magenta"},
+  {type: "agent", name: "geepers_datavis_viz", description: "D3.js, Chart.js, and visualization pattern expertise. Use when implementing interactive visualizations, force-directed graphs, timelines, geographic maps, or custom chart types. Knows SVG, Canvas, and WebGL approaches.", category: "datavis", model: "sonnet", agentColor: "cyan"},
+  {type: "agent", name: "geepers_orchestrator_datavis", description: "Data visualization orchestrator coordinating agents for beautiful, mathematically elegant visualizations. Use when building D3.js/Chart.js visualizations, data pipelines, or narrative-driven data stories. Emphasizes \"life is beautiful\" aesthetics from minimalist to modern design.", category: "datavis", model: "sonnet", agentColor: "blue"},
+  {type: "agent", name: "geepers_poet", description: "Data poetry specialist that creates immersive, minimalist visualizations in the poems/ aesthetic. Use when creating new poem-style visualizations from data, converting existing vizs into the poems dark/glassmorphic style, or working at varying abstraction levels from literal charts to atmospheric experiences.", category: "datavis", model: "sonnet", agentColor: "violet"},
+  {type: "agent", name: "geepers_caddy", description: "Use this agent for ALL Caddy configuration changes, port allocation, and routing setup. This is the SOLE authority for /etc/caddy/Caddyfile. Invoke when adding new services, debugging 502 errors, checking port availability, or modifying any web routing.", category: "deploy", model: "opus", agentColor: "yellow"},
+  {type: "agent", name: "geepers_orchestrator_deploy", description: "Deployment orchestrator that coordinates infrastructure agents - validator, caddy, and services. Use before/during deployments, when changing infrastructure, or when services need coordination. This is your \"make it live safely\" orchestrator.", category: "deploy", model: "sonnet", agentColor: "yellow"},
+  {type: "agent", name: "geepers_services", description: "Use this agent for service lifecycle management - starting, stopping, restarting services, checking status, viewing logs, and managing the service manager. Delegates ALL Caddy work to geepers_caddy.", category: "deploy", model: "sonnet", agentColor: "yellow"},
+  {type: "agent", name: "geepers_validator", description: "Use this agent for comprehensive project validation - checking configurations, paths, permissions, integrations, and overall project health. Invoke before deployments, after significant changes, when troubleshooting cross-cutting issues, or for periodic health checks.", category: "deploy", model: "sonnet", agentColor: "yellow"},
+  {type: "agent", name: "geepers_css", description: "Use this agent for CSS architecture, Tailwind CSS patterns, responsive design, layout systems, and styling best practices. Invoke when building layouts, debugging styling issues, optimizing CSS bundles, or establishing CSS architecture.", category: "frontend", model: "sonnet", agentColor: "cyan"},
+  {type: "agent", name: "geepers_design", description: "Use this agent for visual design systems, typography, layout geometry, color palettes, and UI/UX evaluation. Invoke when creating design systems, reviewing visual consistency, or applying modernist design principles.", category: "frontend", model: "sonnet", agentColor: "green"},
+  {type: "agent", name: "geepers_motion", description: "Use this agent for animation design, Framer Motion patterns, CSS transitions, micro-interactions, and motion accessibility. Invoke when adding animations, debugging janky motion, or creating delightful user interactions.", category: "frontend", model: "sonnet", agentColor: "cyan"},
+  {type: "agent", name: "geepers_orchestrator_frontend", description: "Pure frontend orchestrator for UI work that doesn\'t require backend changes. Coordinates css, typescript, motion, webperf, react, design, a11y, uxpert. Use for React SPAs, static sites, or frontend-only work. For Flask backends, use geepers_orchestrator_web. For Node.js backends, use geepers_orchestrator_fullstack.", category: "frontend", model: "sonnet", agentColor: "cyan"},
+  {type: "agent", name: "geepers_typescript", description: "Use this agent for TypeScript patterns, type safety, JavaScript best practices, browser APIs, and frontend type architecture. Invoke when designing types, debugging type errors, implementing complex JavaScript logic, or establishing TypeScript configuration.", category: "frontend", model: "sonnet", agentColor: "cyan"},
+  {type: "agent", name: "geepers_uxpert", description: "Use this agent for UX interaction patterns - forms, navigation, feedback, and user flows. Focuses on human-centered interaction design while delegating visual design to geepers_design and accessibility to geepers_a11y.", category: "frontend", model: "sonnet", agentColor: "cyan"},
+  {type: "agent", name: "geepers_webperf", description: "Use this agent for frontend performance optimization, Core Web Vitals, bundle analysis, loading strategies, and runtime performance. Invoke when pages load slowly, interactions feel sluggish, or bundle sizes need reduction.", category: "frontend", model: "sonnet", agentColor: "cyan"},
+  {type: "agent", name: "geepers_db", description: "Use this agent for database optimization, query analysis, index recommendations, and schema review. Invoke when queries are slow, planning database changes, or diagnosing database bottlenecks.", category: "fullstack", model: "sonnet", agentColor: "green"},
+  {type: "agent", name: "geepers_orchestrator_fullstack", description: "Full-stack engineering orchestrator for NON-FLASK backends (Express, tRPC, custom Node.js) with React frontends. Coordinates api, db, services on backend + design, a11y, react on frontend. For Flask backends, use geepers_orchestrator_web. For pure frontend work, use geepers_orchestrator_frontend.", category: "fullstack", model: "sonnet", agentColor: "green"},
+  {type: "agent", name: "geepers_react", description: "Use this agent for React development expertise - component architecture, hooks, state management, performance optimization, and React ecosystem best practices. Invoke when building React applications, debugging React issues, or optimizing React performance.", category: "fullstack", model: "sonnet", agentColor: "green"},
+  {type: "agent", name: "geepers_game", description: "Use this agent for gamification design - reward systems, engagement loops, progress mechanics, and fun factor enhancement. Invoke when adding game-like elements to applications, improving engagement, or designing interactive experiences.", category: "games", model: "sonnet", agentColor: "red"},
+  {type: "agent", name: "geepers_gamedev", description: "Use this agent for video game development expertise - gameplay mechanics, level design, player psychology, game feel, and UX patterns specific to games. Invoke when creating games, designing game mechanics, or improving player experience.", category: "games", model: "sonnet", agentColor: "red"},
+  {type: "agent", name: "geepers_godot", description: "Use this agent for Godot Engine development - GDScript, scene architecture, node patterns, signals, physics, and Godot-specific best practices. Invoke when building games in Godot, debugging Godot issues, or optimizing Godot projects.", category: "games", model: "sonnet", agentColor: "red"},
+  {type: "agent", name: "geepers_orchestrator_games", description: "Games orchestrator that coordinates game development agents - gamedev, game, react, and godot. Use when working on games, gamification features, or interactive experiences. This is your \"make it fun\" orchestrator.", category: "games", model: "sonnet", agentColor: "red"},
+  {type: "agent", name: "geepers_builder", description: "Use this agent to execute implementation tasks from a prioritized queue. The builder writes code, makes changes, and completes work items. Invoke when ready to implement tasks identified by the planner.", category: "hive", model: "sonnet", agentColor: "yellow"},
+  {type: "agent", name: "geepers_integrator", description: "Use this agent to merge, integrate, and verify work from multiple build sessions. The integrator resolves conflicts, ensures coherence, and validates the combined output. Invoke after parallel work or before major commits.", category: "hive", model: "sonnet", agentColor: "yellow"},
+  {type: "agent", name: "geepers_orchestrator_hive", description: "Implementation factory orchestrator that coordinates agents to find, prioritize, and build from project plans, quality suggestions, and low-hanging fruit. Use when there\'s a backlog of tasks, implementation plans to execute, or quality improvements to make.", category: "hive", model: "sonnet", agentColor: "yellow"},
+  {type: "agent", name: "geepers_planner", description: "Use this agent to read, parse, and prioritize implementation plans, TODO files, suggestions, and code comments. Invoke when starting work on a project with existing plans or when you need to sequence tasks.", category: "hive", model: "haiku", agentColor: "yellow"},
+  {type: "agent", name: "geepers_quickwin", description: "Use this agent to find and fix low-hanging fruit - quick improvements that deliver high value with minimal effort. Invoke when you want fast, visible progress or need to warm up on a codebase.", category: "hive", model: "haiku", agentColor: "yellow"},
+  {type: "agent", name: "geepers_refactor", description: "Use this agent for code refactoring, restructuring, and modernization. Invoke when code needs cleanup, patterns need updating, or architecture needs improvement without changing functionality.", category: "hive", model: "sonnet", agentColor: "yellow"},
+  {type: "agent", name: "geepers_conductor", description: "Master orchestrator for coordinating geepers_* agents. Use this when you need to run multiple related agents or want intelligent routing to the right specialist. Invoke when starting a major coding session, performing comprehensive project review, or when unsure which geepers agent to use.", category: "master", model: "sonnet", agentColor: "blue"},
+  {type: "agent", name: "geepers_orchestrator_python", description: "Python project orchestrator that coordinates agents for Python development - Flask apps, CLI tools, APIs, and dependencies. Use when building or reviewing Python projects of any kind.", category: "python", model: "sonnet", agentColor: "green"},
+  {type: "agent", name: "geepers_pycli", description: "Python CLI tool specialist. Use when building command-line applications with argparse, click, typer, or similar. Knows CLI UX patterns, argument parsing, output formatting, and distribution. Invoke for CLI architecture or troubleshooting.", category: "python", model: "sonnet", agentColor: "green"},
+  {type: "agent", name: "geepers_a11y", description: "Use this agent for accessibility audits, WCAG compliance review, assistive technology testing, and inclusive design guidance. Invoke when creating UI components, reviewing web pages, or ensuring content is accessible to all users.", category: "quality", model: "sonnet", agentColor: "magenta"},
+  {type: "agent", name: "geepers_critic", description: "UX and architecture critic that generates CRITIC.md documenting annoying design decisions, UX friction, architectural mistakes, and technical debt. Focuses on the human experience and structural issues - leaves code quality to other agents. Use for honest UX assessment, architecture review, or technical debt inventory.", category: "quality", model: "sonnet", agentColor: "magenta"},
+  {type: "agent", name: "geepers_deps", description: "Use this agent for dependency audits, security vulnerability scanning, license compliance, and update recommendations. Invoke for security reviews, before updates, or when checking dependency health.", category: "quality", model: "sonnet", agentColor: "magenta"},
+  {type: "agent", name: "geepers_orchestrator_quality", description: "Quality orchestrator that coordinates audit agents - a11y, perf, api, and deps. Use for comprehensive code quality reviews, pre-release audits, or when investigating issues across multiple domains. This is your \"is it good enough?\" orchestrator.", category: "quality", model: "sonnet", agentColor: "magenta"},
+  {type: "agent", name: "geepers_perf", description: "Use this agent for performance profiling, bottleneck identification, resource analysis, and optimization recommendations. Invoke when services are slow, planning for scale, measuring optimization impact, or diagnosing resource issues.", category: "quality", model: "sonnet", agentColor: "magenta"},
+  {type: "agent", name: "geepers_security", description: "Use this agent for security audits, vulnerability scanning, and secure coding practices. Invoke when reviewing code for security issues, checking for OWASP vulnerabilities, or hardening applications.", category: "quality", model: "sonnet", agentColor: "red"},
+  {type: "agent", name: "geepers_testing", description: "Use this agent for test strategy, test writing, and test coverage analysis. Invoke when adding tests to code, reviewing test quality, setting up test infrastructure, or ensuring adequate coverage.", category: "quality", model: "sonnet", agentColor: "green"},
+  {type: "agent", name: "geepers_citations", description: "Data validation and citation checker. Use when verifying data accuracy, checking citations and references, or validating claims against sources. Essential for academic tools, documentation with references, and data-driven projects.", category: "research", model: "sonnet", agentColor: "cyan"},
+  {type: "agent", name: "geepers_data", description: "Use this agent for data quality auditing, validation, enrichment, and freshness monitoring. Invoke when working with datasets, updating data files, or checking data accuracy against sources.", category: "research", model: "sonnet", agentColor: "cyan"},
+  {type: "agent", name: "geepers_diag", description: "Use this agent for system diagnostics, error pattern detection, log analysis, and root cause investigation. Invoke when services are failing, experiencing errors, or behaving unexpectedly.", category: "research", model: "sonnet", agentColor: "cyan"},
+  {type: "agent", name: "geepers_doublecheck", description: "Data and dataset validation expert. Validates citations, detects synthetic data, manages data cards, and ensures publication consistency across HuggingFace, GitHub, and Kaggle.", category: "research", model: "sonnet", agentColor: "amber"},
+  {type: "agent", name: "geepers_fetcher", description: "Use this agent to fetch content from web pages, APIs, and remote sources. The fetcher retrieves, parses, and extracts relevant information from URLs. Invoke when you need to get content from external sources.", category: "research", model: "haiku", agentColor: "magenta"},
+  {type: "agent", name: "geepers_links", description: "Use this agent for link validation, broken link detection, URL enrichment, and resource list maintenance. Invoke when working with documentation containing external links or curated resource collections.", category: "research", model: "sonnet", agentColor: "cyan"},
+  {type: "agent", name: "geepers_orchestrator_research", description: "Research orchestrator that coordinates data gathering agents in swarm-style parallel execution - data, links, diag, plus web fetching. Use when you need to gather information from multiple sources, validate external resources, or build knowledge bases. This is your \"go find out\" orchestrator.", category: "research", model: "sonnet", agentColor: "cyan"},
+  {type: "agent", name: "geepers_searcher", description: "Use this agent to search codebases, find files, and locate patterns. The searcher uses grep, glob, and intelligent code navigation to find what you\'re looking for. Invoke for any code search task.", category: "research", model: "haiku", agentColor: "magenta"},
+  {type: "agent", name: "geepers_api", description: "Use this agent for API design review, REST compliance auditing, endpoint documentation, and breaking change detection. Invoke when designing new APIs, refactoring existing endpoints, reviewing API documentation, or before releasing API changes.", category: "standalone", model: "sonnet", agentColor: "yellow"},
+  {type: "agent", name: "geepers_canary", description: "Early warning system that spot-checks fragile and critical systems. Like a canary in a coal mine - quick checks on the things most likely to break. Use for health checks, pre-deployment verification, or periodic monitoring of critical paths.", category: "standalone", model: "haiku", agentColor: "yellow"},
+  {type: "agent", name: "geepers_dashboard", description: "Use this agent for dashboard synchronization, service persistence configuration, and admin panel updates. Invoke when deploying new services, after system reboots, or for dashboard maintenance.", category: "standalone", model: "sonnet", agentColor: "yellow"},
+  {type: "agent", name: "geepers_docs", description: "Use this agent for documentation generation, README creation, and API documentation. Invoke when code needs documentation, APIs need documenting, or project needs better README/guides.", category: "standalone", model: "sonnet", agentColor: "blue"},
+  {type: "agent", name: "geepers_git", description: "Use this agent for git operations, branch management, merge conflict resolution, and git workflow optimization. Invoke for complex git operations, history cleanup, or git workflow design.", category: "standalone", model: "sonnet", agentColor: "cyan"},
+  {type: "agent", name: "geepers_humanizer", description: "Documentation humanization specialist. Removes AI writing indicators (em-dashes, corporate jargon, passive voice, \"we\"→\"I\"). Use when cleaning up documentation, before publishing content, or preparing user-facing text. More focused than geepers_janitor - specifically for prose quality.", category: "standalone", model: "sonnet", agentColor: "magenta"},
+  {type: "agent", name: "geepers_janitor", description: "Aggressive cleanup and maintenance agent. Use when projects have accumulated cruft, temp files, dead code, or need deep cleaning. More thorough than geepers_repo - this agent actively hunts for and removes waste. Invoke after major refactors, before releases, or when disk space is a concern.", category: "standalone", model: "sonnet", agentColor: "yellow"},
+  {type: "agent", name: "geepers_readme", description: "Creates polished, humanized GitHub READMEs with proper badges, MIT license, and Luke Steuber credit. Use when generating READMEs for any project, ensuring humanized language and professional formatting.", category: "standalone", model: "sonnet", agentColor: "green"},
+  {type: "agent", name: "geepers_scalpel", description: "Use this agent for precise, surgical code modifications in complex or large files. Invoke when making targeted changes that require high precision, when previous edits introduced regressions, or when modifying delicate code with intricate dependencies.", category: "standalone", model: "sonnet", agentColor: "yellow"},
+  {type: "agent", name: "geepers_system_diag", description: "Comprehensive dr.eamer.dev system diagnostic. Checks all services, Caddy routes, ports, databases, and infrastructure health. Use for full system audit, troubleshooting cross-service issues, or periodic infrastructure review.", category: "system", model: "sonnet", agentColor: "red"},
+  {type: "agent", name: "geepers_system_help", description: "Reference guide for all geepers agents. Use when unsure which agent to use, want to see all available agents, or need to generate reference documentation. Creates an HTML index at ~/docs/geepers/index.html for mobile access.", category: "system", model: "haiku", agentColor: "red"},
+  {type: "agent", name: "geepers_system_onboard", description: "Project understanding agent for getting up to speed on unfamiliar codebases. Use when picking up a project after time away, joining an existing project, or trying to understand how something works. Creates an ONBOARD.md summary.", category: "system", model: "sonnet", agentColor: "red"},
+  {type: "agent", name: "geepers_express", description: "Use this agent for Express.js and Node.js backend development. Invoke when building Express APIs, Node.js servers, middleware, or tRPC backends. For Flask, use geepers_flask instead.", category: "web", model: "sonnet", agentColor: "yellow"},
+  {type: "agent", name: "geepers_flask", description: "Flask application specialist. Use when building, reviewing, or debugging Flask web applications. Knows Flask patterns, blueprints, extensions, deployment, and common pitfalls. Invoke for Flask-specific architecture decisions or troubleshooting.", category: "web", model: "sonnet", agentColor: "magenta"},
+  {type: "agent", name: "geepers_orchestrator_web", description: "Flask-specific web application orchestrator. Coordinates Flask backend + templates/React frontend + design + accessibility. Use for Flask apps (Jinja templates or Flask+React). For Node.js backends, use geepers_orchestrator_fullstack. For pure frontend, use geepers_orchestrator_frontend.", category: "web", model: "sonnet", agentColor: "magenta"},
+  {type: "skill", name: "geepers_api", description: "Use this agent for API design review, REST compliance auditing, endpoint documentation, and breaking change detection. Invoke when designing new APIs, refactoring existing endpoints, reviewing API documentation, or before releasing API changes.", category: "skills", skillId: "geepers-api-design"},
+  {type: "skill", name: "geepers_canary", description: "Early warning system that spot-checks fragile and critical systems. Like a canary in a coal mine - quick checks on the things most likely to break. Use for health checks, pre-deployment verification, or periodic monitoring of critical paths.", category: "skills", skillId: "geepers-canary"},
+  {type: "skill", name: "geepers_orchestrator_checkpoint", description: "Checkpoint orchestrator that coordinates session maintenance agents - scout, repo, status, and snippets. Use at session boundaries, after completing features, or for routine project maintenance. This is your \"wrap up and document\" orchestrator.", category: "skills", skillId: "geepers-checkpoint"},
+  {type: "skill", name: "geepers_conductor", description: "Master orchestrator for coordinating geepers_* agents. Use this when you need to run multiple related agents or want intelligent routing to the right specialist. Invoke when starting a major coding session, performing comprehensive project review, or when unsure which geepers agent to use.", category: "skills", skillId: "geepers-conductor"},
+  {type: "skill", name: "geepers_orchestrator_corpus", description: "Corpus orchestrator that coordinates linguistics agents - corpus, corpus_ux, and db. Use when working on corpus linguistics projects, NLP tools, or language data systems. This is your \"language data\" orchestrator.", category: "skills", skillId: "geepers-corpus"},
+  {type: "skill", name: "geepers_dashboard", description: "Use this agent for dashboard synchronization, service persistence configuration, and admin panel updates. Invoke when deploying new services, after system reboots, or for dashboard maintenance.", category: "skills", skillId: "geepers-dashboard"},
+  {type: "skill", name: "geepers-fetch", description: "Universal data fetching MCP server providing access to arXiv, Census, Weather, News, and GitHub.", category: "skills", skillId: "geepers-data-fetch"},
+  {type: "skill", name: "geepers-datavis", description: "Comprehensive data visualization toolkit for creating beautiful, mathematically elegant visualizations with D3.js, Chart.js, and custom SVG. Use when (1) building interactive data visualizations, (2) designing color palettes for charts, (3) choosing scales and visual encodings, (4) creating data pipelines from Census/SEC/Wikipedia APIs, (5) crafting narrative-driven data stories, (6) making perceptually accurate charts, or (7) implementing force-directed networks, timelines, or geographic maps.", category: "skills", skillId: "geepers-datavis"},
+  {type: "skill", name: "geepers_orchestrator_datavis", description: "Data visualization orchestrator coordinating agents for beautiful, mathematically elegant visualizations. Use when building D3.js/Chart.js visualizations, data pipelines, or narrative-driven data stories. Emphasizes \"life is beautiful\" aesthetics from minimalist to modern design.", category: "skills", skillId: "geepers-datavis-agents"},
+  {type: "skill", name: "geepers_orchestrator_deploy", description: "Deployment orchestrator that coordinates infrastructure agents - validator, caddy, and services. Use before/during deployments, when changing infrastructure, or when services need coordination. This is your \"make it live safely\" orchestrator.", category: "skills", skillId: "geepers-deploy"},
+  {type: "skill", name: "geepers_docs", description: "Use this agent for documentation generation, README creation, and API documentation. Invoke when code needs documentation, APIs need documenting, or project needs better README/guides.", category: "skills", skillId: "geepers-docs"},
+  {type: "skill", name: "geepers-doublecheck", description: "Dataset validation, synthetic data detection, citation checking, and cross-platform publishing consistency. Use when (1) validating datasets before publication, (2) detecting synthetic/fake data, (3) auditing published datasets across HuggingFace/Kaggle/GitHub, (4) generating data cards, or (5) syncing the data trove index.", category: "skills", skillId: "geepers-doublecheck"},
+  {type: "skill", name: "dream-cascade", description: "Launch hierarchical 3-tier research workflows using the Dream Cascade orchestrator. Use when (1) researching complex topics requiring multiple perspectives, (2) gathering information from multiple sources, (3) synthesizing findings into comprehensive reports, (4) running autonomous multi-agent research. Requires the MCP server to be running.", category: "skills", skillId: "geepers-dream-cascade"},
+  {type: "skill", name: "dream-swarm", description: "Launch parallel multi-domain search workflows using the Dream Swarm orchestrator. Use when (1) searching across multiple data sources simultaneously, (2) aggregating information from APIs, databases, and web sources, (3) comparing findings across domains, (4) rapid parallel data gathering. Requires the MCP server to be running.", category: "skills", skillId: "geepers-dream-swarm"},
+  {type: "skill", name: "geepers-engineering", description: "Engineering orchestrator. Design system architecture, write full-stack code, and manage technical implementation. Use for \'Build X\', \'Architect Y\', or \'Refactor Z\'.", category: "skills", skillId: "geepers-engineering"},
+  {type: "skill", name: "geepers-executive", description: "Executive orchestrator. High-level strategic planning and cross-team coordination. Delegates to Product, Finance, Engineering, etc. Use for complex, multi-stage business goals.", category: "skills", skillId: "geepers-executive"},
+  {type: "skill", name: "geepers-finance", description: "Finance and Marketing orchestrator. Analyzes monetization strategies, creates financial plans, and evaluates market opportunities. Use for \'How to monetize X\' or \'Marketing plan for Y\'.", category: "skills", skillId: "geepers-finance"},
+  {type: "skill", name: "geepers_orchestrator_frontend", description: "Pure frontend orchestrator for UI work that doesn\'t require backend changes. Coordinates css, typescript, motion, webperf, react, design, a11y, uxpert. Use for React SPAs, static sites, or frontend-only work. For Flask backends, use geepers_orchestrator_web. For Node.js backends, use geepers_orchestrator_fullstack.", category: "skills", skillId: "geepers-frontend"},
+  {type: "skill", name: "geepers_orchestrator_fullstack", description: "Full-stack engineering orchestrator for NON-FLASK backends (Express, tRPC, custom Node.js) with React frontends. Coordinates api, db, services on backend + design, a11y, react on frontend. For Flask backends, use geepers_orchestrator_web. For pure frontend work, use geepers_orchestrator_frontend.", category: "skills", skillId: "geepers-fullstack"},
+  {type: "skill", name: "geepers_orchestrator_games", description: "Games orchestrator that coordinates game development agents - gamedev, game, react, and godot. Use when working on games, gamification features, or interactive experiences. This is your \"make it fun\" orchestrator.", category: "skills", skillId: "geepers-games"},
+  {type: "skill", name: "geepers-git-hygiene-guardian", description: "", category: "skills", skillId: "geepers-git-hygiene-guardian"},
+  {type: "skill", name: "geepers_git", description: "Use this agent for git operations, branch management, merge conflict resolution, and git workflow optimization. Invoke for complex git operations, history cleanup, or git workflow design.", category: "skills", skillId: "geepers-git-ops"},
+  {type: "skill", name: "geepers_orchestrator_hive", description: "Implementation factory orchestrator that coordinates agents to find, prioritize, and build from project plans, quality suggestions, and low-hanging fruit. Use when there\'s a backlog of tasks, implementation plans to execute, or quality improvements to make.", category: "skills", skillId: "geepers-hive"},
+  {type: "skill", name: "geepers_humanizer", description: "Documentation humanization specialist. Removes AI writing indicators (em-dashes, corporate jargon, passive voice, \"we\"→\"I\"). Use when cleaning up documentation, before publishing content, or preparing user-facing text. More focused than geepers_janitor - specifically for prose quality.", category: "skills", skillId: "geepers-humanize"},
+  {type: "skill", name: "geepers_janitor", description: "Aggressive cleanup and maintenance agent. Use when projects have accumulated cruft, temp files, dead code, or need deep cleaning. More thorough than geepers_repo - this agent actively hunts for and removes waste. Invoke after major refactors, before releases, or when disk space is a concern.", category: "skills", skillId: "geepers-janitor"},
+  {type: "skill", name: "geepers-mcp-orchestration", description: "", category: "skills", skillId: "geepers-mcp-orchestration"},
+  {type: "skill", name: "geepers-poet", description: "Create immersive data poetry visualizations. Use when (1) building new poem-style visualizations from data, (2) converting existing charts/vizs into the dark/glassmorphic poems aesthetic, (3) choosing metaphors and abstraction levels for data, or (4) creating atmospheric/mathematical data experiences.", category: "skills", skillId: "geepers-poet"},
+  {type: "skill", name: "geepers-product", description: "Product management orchestrator. Conducts market research, generates PRDs, and defines product roadmaps. Use for \'Plan X\', \'Research Y\', or \'Create PRD for Z\'.", category: "skills", skillId: "geepers-product"},
+  {type: "skill", name: "geepers-publish", description: "Publish datasets to Kaggle, HuggingFace, and GitHub. Use when (1) uploading new datasets, (2) updating existing datasets, (3) checking dataset status, (4) generating metadata files, (5) validating before publish.", category: "skills", skillId: "geepers-publish"},
+  {type: "skill", name: "geepers_orchestrator_python", description: "Python project orchestrator that coordinates agents for Python development - Flask apps, CLI tools, APIs, and dependencies. Use when building or reviewing Python projects of any kind.", category: "skills", skillId: "geepers-python-dev"},
+  {type: "skill", name: "geepers_orchestrator_quality", description: "Quality orchestrator that coordinates audit agents - a11y, perf, api, and deps. Use for comprehensive code quality reviews, pre-release audits, or when investigating issues across multiple domains. This is your \"is it good enough?\" orchestrator.", category: "skills", skillId: "geepers-quality"},
+  {type: "skill", name: "geepers-readme", description: "Generate polished, humanized GitHub READMEs with badges, MIT license, and Luke Steuber credit. Use when (1) creating READMEs for new projects, (2) improving existing READMEs, (3) preparing projects for public release, or (4) humanizing robotic documentation.", category: "skills", skillId: "geepers-readme"},
+  {type: "skill", name: "geepers_orchestrator_research", description: "Research orchestrator that coordinates data gathering agents in swarm-style parallel execution - data, links, diag, plus web fetching. Use when you need to gather information from multiple sources, validate external resources, or build knowledge bases. This is your \"go find out\" orchestrator.", category: "skills", skillId: "geepers-research"},
+  {type: "skill", name: "geepers_scalpel", description: "Use this agent for precise, surgical code modifications in complex or large files. Invoke when making targeted changes that require high precision, when previous edits introduced regressions, or when modifying delicate code with intricate dependencies.", category: "skills", skillId: "geepers-scalpel"},
+  {type: "skill", name: "geepers-server-deploy", description: "Deploy and manage services on dr.eamer.dev server. Use when (1) starting, stopping, or restarting services, (2) checking service status and health, (3) managing Caddy reverse proxy routes, (4) deploying new services, (5) viewing service logs.", category: "skills", skillId: "geepers-server-deploy"},
+  {type: "skill", name: "geepers_system_diag", description: "Comprehensive dr.eamer.dev system diagnostic. Checks all services, Caddy routes, ports, databases, and infrastructure health. Use for full system audit, troubleshooting cross-service issues, or periodic infrastructure review.", category: "skills", skillId: "geepers-system-diag"},
+  {type: "skill", name: "geepers_system_help", description: "Reference guide for all geepers agents. Use when unsure which agent to use, want to see all available agents, or need to generate reference documentation. Creates an HTML index at ~/docs/geepers/index.html for mobile access.", category: "skills", skillId: "geepers-system-help"},
+  {type: "skill", name: "geepers_system_onboard", description: "Project understanding agent for getting up to speed on unfamiliar codebases. Use when picking up a project after time away, joining an existing project, or trying to understand how something works. Creates an ONBOARD.md summary.", category: "skills", skillId: "geepers-system-onboard"},
+  {type: "skill", name: "geepers-team", description: "All-hands parallel agent dispatch. Throws every relevant geepers agent at a problem simultaneously. Use when (1) starting a major project audit, (2) doing a comprehensive pre-release review, (3) you want maximum coverage fast, (4) onboarding to an unfamiliar codebase. Unlike /swarm (parallel data search) or geepers-cascade (hierarchical research), this dispatches code-focused agents in parallel.", category: "skills", skillId: "geepers-team"},
+  {type: "skill", name: "geepers_orchestrator_web", description: "Flask-specific web application orchestrator. Coordinates Flask backend + templates/React frontend + design + accessibility. Use for Flask apps (Jinja templates or Flask+React). For Node.js backends, use geepers_orchestrator_fullstack. For pure frontend, use geepers_orchestrator_frontend.", category: "skills", skillId: "geepers-web-dev"},
+  {type: "command", name: "/geepers-audit", description: "Comprehensive quality audit - accessibility, performance, security, dependencies", category: "commands", title: "Audit Mode"},
+  {type: "command", name: "/geepers-checkpoint", description: "Mid-session save - commit, harvest patterns, clean cruft, refresh docs", category: "commands", title: "Checkpoint"},
+  {type: "command", name: "/geepers-consensus", description: "Deliberation engine - gather opinions from CLI tools and agents, debate, vote", category: "commands", title: "Consensus"},
+  {type: "command", name: "/geepers-context", description: "Maintain and sculpt project context - audit CLAUDE.md files, cross-link documentation, track open questions", category: "commands", title: "Context Mode"},
+  {type: "command", name: "/geepers-corpus", description: "Corpus linguistics workflow - COCA, Diachronica, etymology, concordance, and language data", category: "commands", title: "Corpus Mode"},
+  {type: "command", name: "/geepers-datavis", description: "Data visualization workflow - D3.js, color palettes, narrative design, mathematical elegance", category: "commands", title: "Datavis Mode"},
+  {type: "command", name: "/geepers-end", description: "End session - full cleanup, critique, docs, commit, summary", category: "commands", title: "Session End"},
+  {type: "command", name: "/geepers-fix", description: "Quick fixes and surgical code changes - find low-hanging fruit and fix precisely", category: "commands", title: "Fix Mode"},
+  {type: "command", name: "/geepers-foresight", description: "Cross-project impact analysis - what breaks if you change X in shared code", category: "commands", title: "Foresight"},
+  {type: "command", name: "/geepers-game", description: "Game development workflow - engagement, mechanics, Godot, React games, gamification", category: "commands", title: "Game Mode"},
+  {type: "command", name: "/geepers-health", description: "Service health monitoring - check all 30+ services, identify issues, restart unhealthy", category: "commands", title: "Health Mode"},
+  {type: "command", name: "/geepers-help", description: "Quick reference for all geepers commands - what they do and when to use them", category: "commands", title: "Geepers Command Reference"},
+  {type: "command", name: "/geepers-hunt", description: "Parallel search - fan out across internet and resources for information", category: "commands", title: "Hunt"},
+  {type: "command", name: "/geepers-release", description: "Release management - version bump, changelog, publish to PyPI/npm, git tag", category: "commands", title: "Release"},
+  {type: "command", name: "/geepers-research", description: "Deep research using Dream Cascade (hierarchical) or Dream Swarm (parallel) multi-agent workflows", category: "commands", title: "Research Mode"},
+  {type: "command", name: "/geepers-scout", description: "Quick project reconnaissance - understand current state, find issues, identify quick wins", category: "commands", title: "Scout Mode"},
+  {type: "command", name: "/geepers-session", description: "Session lifecycle router - start, checkpoint, or end a work session", category: "commands", title: "Session"},
+  {type: "command", name: "/geepers-ship", description: "Deploy with full quality checks - validate, test, and ship safely", category: "commands", title: "Ship Mode"},
+  {type: "command", name: "/geepers-start", description: "Start a work session - full recon, context health, priorities, cruft scan", category: "commands", title: "Session Start"},
+  {type: "command", name: "/geepers-swarm", description: "Parallel build - fan out agents to accomplish tasks simultaneously", category: "commands", title: "Swarm"},
+  {type: "command", name: "/geepers-team", description: "Engage the full team of agents, orchestrators, and skills to accomplish tasks efficiently in parallel", category: "commands", title: "Team Mode Engaged"},
+  {type: "command", name: "/geepers-thinkagain", description: "Hard reset - re-derive your approach from first principles", category: "commands", title: "Think Again"},
+  {type: "command", name: "/geepers-thinktwice", description: "Step back and reconsider your approach - drop assumptions, find a simpler path", category: "commands", title: "Think Twice"},
+  {type: "command", name: "/geepers-validate", description: "Unified validation - links, data, APIs, configs, citations, services - routes to appropriate specialist", category: "commands", title: "Validate Mode"},
+];
+
+const BADGE_COLORS = {
+  checkpoint: "#4fc3f7",
+  quality: "#81c784",
+  frontend: "#ff8a65",
+  research: "#ce93d8",
+  deploy: "#ffb74d",
+  datavis: "#4dd0e1",
+  games: "#e57373",
+  standalone: "#90a4ae",
+  system: "#a1887f",
+  hive: "#fff176",
+  master: "#4fc3f7",
+  corpus: "#ce93d8",
+  fullstack: "#ff8a65",
+  web: "#ff8a65",
+  python: "#81c784",
+  commands: "#b0bec5",
+  skills: "#7986cb"
+};
+
+let activeTab = "skill";
+let searchQuery = "";
+let dtFilter = "";
+let debounceTimer = null;
+
+function badgeColor(cat) {
+  return BADGE_COLORS[cat] || "#90a4ae";
+}
+
+function matchesDT(item) {
+  if (!dtFilter) return true;
+  const terms = dtFilter.split(",");
+  const hay = (item.name + " " + item.description + " " + item.category + " " + (item.title || "") + " " + (item.skillId || "")).toLowerCase();
+  return terms.some(function(t) { return hay.includes(t.trim()); });
+}
+
+function matchesSearch(item) {
+  if (!searchQuery) return true;
+  const hay = (item.name + " " + item.description + " " + (item.title || "") + " " + item.category + " " + (item.skillId || "")).toLowerCase();
+  return hay.includes(searchQuery);
+}
+
+function escapeHtml(s) {
+  var d = document.createElement("div");
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+function renderCard(item) {
+  var extra = "";
+  if (item.type === "command" && item.title) {
+    extra = '<div class="card-title">' + escapeHtml(item.title) + '</div>';
+  }
+  var modelBadge = "";
+  if (item.type === "agent" && item.model) {
+    modelBadge = '<span class="badge" style="background:rgba(255,255,255,0.12);color:#aaa;font-size:0.7rem;">' + escapeHtml(item.model) + '</span>';
+  }
+  var bg = badgeColor(item.category);
+  return '<div class="card">' +
+    '<div class="card-name">' + escapeHtml(item.name) + '</div>' +
+    extra +
+    '<div class="card-meta">' +
+    '<span class="badge" style="background:' + bg + '">' + escapeHtml(item.category) + '</span>' +
+    modelBadge +
+    '</div>' +
+    '<div class="card-desc">' + escapeHtml(item.description) + '</div>' +
+    '</div>';
+}
+
+function render() {
+  var filtered = DATA.filter(function(item) {
+    return item.type === activeTab && matchesSearch(item) && matchesDT(item);
+  });
+  var grid = document.getElementById("grid");
+  var countBar = document.getElementById("countBar");
+  if (filtered.length === 0) {
+    grid.innerHTML = '<div class="no-results">No matches found.</div>';
+    countBar.textContent = "0 results";
+  } else {
+    grid.innerHTML = filtered.map(renderCard).join("");
+    var label = activeTab === "skill" ? "skills" : activeTab === "agent" ? "agents" : "commands";
+    countBar.textContent = filtered.length + " " + label;
+  }
+}
+
+// Tabs
+document.querySelectorAll(".tab-btn").forEach(function(btn) {
+  btn.addEventListener("click", function() {
+    document.querySelectorAll(".tab-btn").forEach(function(b) { b.classList.remove("active"); });
+    btn.classList.add("active");
+    activeTab = btn.dataset.tab;
+    render();
+  });
+});
+
+// Search (debounced)
+document.getElementById("search").addEventListener("input", function(e) {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(function() {
+    searchQuery = e.target.value.trim().toLowerCase();
+    if (searchQuery) {
+      dtFilter = "";
+      document.querySelectorAll(".dt-btn").forEach(function(b) { b.classList.remove("active"); });
+    }
+    render();
+  }, 150);
+});
+
+// Decision tree
+document.querySelectorAll(".dt-btn").forEach(function(btn) {
+  btn.addEventListener("click", function() {
+    var wasActive = btn.classList.contains("active");
+    document.querySelectorAll(".dt-btn").forEach(function(b) { b.classList.remove("active"); });
+    if (wasActive) {
+      dtFilter = "";
+    } else {
+      btn.classList.add("active");
+      dtFilter = btn.dataset.filter;
+      document.getElementById("search").value = "";
+      searchQuery = "";
+      // Switch to the most relevant tab
+      var types = ["agent", "skill", "command"];
+      for (var ti = 0; ti < types.length; ti++) {
+        var t = types[ti];
+        var terms = dtFilter.split(",");
+        var hasMatch = DATA.some(function(item) {
+          if (item.type !== t) return false;
+          var hay = (item.name + " " + item.description + " " + item.category + " " + (item.title || "") + " " + (item.skillId || "")).toLowerCase();
+          return terms.some(function(term) { return hay.includes(term.trim()); });
+        });
+        if (hasMatch) {
+          activeTab = t;
+          document.querySelectorAll(".tab-btn").forEach(function(b) {
+            b.classList.toggle("active", b.dataset.tab === t);
+          });
+          break;
+        }
+      }
+    }
+    render();
+  });
+});
+
+// Initial render
+render();
+
+</script>
+</body>
+</html>

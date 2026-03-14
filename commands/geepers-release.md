@@ -54,7 +54,7 @@ Format as:
 
 ### 3. Humanize Gate (MANDATORY)
 
-Before publishing, run `/humanize` on:
+Before publishing, run **@geepers_humanizer** on:
 - README.md (if modified)
 - CHANGELOG.md
 - Package description in pyproject.toml / package.json

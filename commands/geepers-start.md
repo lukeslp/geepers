@@ -1,83 +1,76 @@
 ---
-description: Start a full work session - reconnaissance agents, recommendations, context audit, task prioritization
+description: Start a work session - full recon, context health, priorities, cruft scan
 ---
 
 # Session Start
 
-Full session initialization with parallel reconnaissance agents, recommendations loading, context health check, and conversation naming.
+Full session initialization with parallel reconnaissance, context health check, and cruft scan.
 
-This is a self-contained version of `/geepers-session start`. Either command produces the same workflow.
+## Execute ALL Steps
 
-## Execute ALL of These in PARALLEL
+### 1. Git State
 
-### 1. Check Recommendations
+Run in parallel:
+```bash
+git status
+git log --oneline -5
+git diff --stat
+git remote show origin 2>/dev/null | head -5
 ```
-~/geepers/recommendations/by-project/<project-name>.md
-```
-Load any existing recommendations from previous sessions. Derive `<project-name>` from the current working directory basename.
 
-### 2. Reconnaissance Agents (PARALLEL — launch in the SAME message)
-- **@geepers_scout** - Project state, quick wins, code quality issues, technical debt, TODOs/FIXMEs
-- **@geepers_planner** - Parse existing plans (PROJECT_PLAN.md, TODO files, SUGGESTIONS.md), prioritize tasks by impact and effort
+Check for uncommitted changes (warn if significant). Note if local is ahead/behind remote.
 
-### 3. Git State
-- `git status` — check for uncommitted changes (warn if significant)
-- `git log --oneline -5` — review recent commits for context
-- `git diff --stat` — see what's changed since last commit
+### 2. Load Context
 
-### 4. Project Context
-- Load project CLAUDE.md if present
+- Read project CLAUDE.md if present
 - Check for PROJECT_PLAN.md, TODO.md, SUGGESTIONS.md
-- Note key files: requirements.txt, package.json, pyproject.toml, Makefile, start.sh
-- Check for venv/node_modules presence
+- Load recommendations: `~/geepers/recommendations/by-project/<project-name>.md`
 
-### 5. Context Audit (BACKGROUND agent)
+### 3. Parallel Recon (launch ALL in the SAME message)
+
+- **@geepers_scout** — Project state, quick wins, TODOs/FIXMEs, tech debt, code quality
+- **@geepers_planner** — Parse existing plans (PROJECT_PLAN.md, TODO files), prioritize tasks by impact and effort
+- **@geepers_critic** — Architectural critique, identify friction points and design concerns early
+
+### 4. Context Health (background)
+
 Launch `/geepers-context audit` as a **background** agent:
-- Runs `~/scripts/validate-claude-nav.sh` (nav headers + parent refs)
-- Checks for missing CLAUDE.md in new directories
-- Flags stale references and cruft files (SUGGESTIONS.md, CRITIC.md, ONBOARD.md, *_STATUS.md, temp_*)
-- Creates CLAUDE.md from template if missing
+- Validate CLAUDE.md navigation headers and parent refs
+- Check for missing CLAUDE.md in new directories
+- Flag stale references and cruft files
 
-## Output
+### 5. Cruft Scan
 
-After all parallel agents complete, present a concise session briefing:
+Launch **@geepers_janitor** in report-only mode:
+- Identify temp files, agent artifacts (SUGGESTIONS.md, CRITIC.md, ONBOARD.md, *_STATUS.md, temp_*)
+- Dead code, unused imports
+- Do NOT delete yet — just report findings
 
+### 6. Present Briefing
+
+After all agents complete, present:
 ```
 Session Start: <project>
 ---
-Git: <branch> | <uncommitted count> uncommitted changes
+Git: <branch> | <uncommitted count> uncommitted | <ahead/behind remote>
 Recent: <last 3 commits summary>
+
 Recommendations: <count> pending items
 Quick Wins: <from scout>
 Priority Tasks: <from planner>
+Design Concerns: <from critic>
+Cruft Found: <from janitor>
 CLAUDE.md: <healthy | needs update | missing>
 ```
 
-## Name This Conversation
-
-Run `/rename` with format: `<project>: <topic>` based on top priority task identified by planner/scout.
-
-## When to Use
-
-- Starting a dedicated work session on a project
-- Picking up a project after time away
-- When you need full awareness of project health, priorities, and opportunities
-
-For a faster start without agents, use `/init` instead.
-
 ## Cross-References
 
-- Quick init (no agents): `/init`
-- Canonical lifecycle: `/geepers-session` (start, cp, end — all three modes)
-- Mid-session save: `/geepers-checkpoint` or `/geepers-session cp`
-- End session: `/geepers-end` or `/geepers-session end`
+- Mid-session save: `/geepers-checkpoint`
+- End session: `/geepers-end`
+- Unified lifecycle: `/geepers-session`
 - Context health: `/geepers-context`
 - Quick recon only: `/geepers-scout`
-- Deeper audit: `/geepers-audit`
-- Deploy after session: `/geepers-ship`
-- Impact analysis: `/geepers-foresight`
-- Capture tasks to Todoist: `/geepers-todo wrap`
-- Full reference: `~/admin/workflow.html`
+- Full audit: `/geepers-audit`
 
 ## Target
 

@@ -89,7 +89,7 @@ Bootstrap context for a new project:
 ## Humanize Gate
 
 If "generate" mode was used (creating public-facing documentation):
-- Run `/humanize` on all generated docs
+- Run **@geepers_humanizer** on all generated docs
 
 ## Cross-References
 

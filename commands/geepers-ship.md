@@ -41,7 +41,7 @@ If issues detected post-deploy:
 ## Humanize Gate
 
 If release notes, changelogs, or README updates were created during deployment:
-- Run `/humanize` on all front-facing content before pushing
+- Run **@geepers_humanizer** on all front-facing content before pushing
 - Catches "AI" terminology, robotic phrasing, press-release tone
 
 ## Cross-References
