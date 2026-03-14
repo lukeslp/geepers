@@ -1,7 +1,7 @@
 {
   "name": "geepers",
   "version": "1.0.1",
-  "description": "Multi-agent orchestration system with 70 specialized Claude Code agents for development workflows, code quality, deployment, research, data visualization, and more.",
+  "description": "Multi-agent orchestration system with 73 specialized Claude Code agents for development workflows, code quality, deployment, research, data visualization, and more.",
   "author": {
     "name": "Luke Steuber",
     "email": "luke@dr.eamer.dev"
@@ -28,6 +28,7 @@
     "../agents/datavis/geepers_datavis_story.md",
     "../agents/datavis/geepers_datavis_math.md",
     "../agents/datavis/geepers_datavis_data.md",
+    "../agents/datavis/geepers_poet.md",
 
     "../agents/deploy/geepers_orchestrator_deploy.md",
     "../agents/deploy/geepers_validator.md",
@@ -76,6 +77,7 @@
     "../agents/research/geepers_links.md",
     "../agents/research/geepers_diag.md",
     "../agents/research/geepers_citations.md",
+    "../agents/research/geepers_doublecheck.md",
 
     "../agents/web/geepers_orchestrator_web.md",
     "../agents/web/geepers_flask.md",
@@ -90,6 +92,7 @@
     "../agents/standalone/geepers_todoist.md",
     "../agents/standalone/geepers_docs.md",
     "../agents/standalone/geepers_humanizer.md",
+    "../agents/standalone/geepers_readme.md",
 
     "../agents/system/geepers_system_help.md",
     "../agents/system/geepers_system_onboard.md",
