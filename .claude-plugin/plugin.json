@@ -34,6 +34,5 @@
     "./agents/standalone",
     "./agents/system",
     "./agents/web"
-  ],
-  "skills": "./skills/source"
+  ]
 }
