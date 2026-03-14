@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-Geepers is a Claude Code plugin providing 70 specialized markdown-defined agents, packaged skills, and a Python orchestration library. Three surface areas:
+Geepers is a Claude Code plugin providing 73 specialized markdown-defined agents, packaged skills, and a Python orchestration library. Three surface areas:
 
 1. **Claude Code Plugin** (`agents/` + `.claude-plugin/`) — Markdown agent definitions loaded via `subagent_type="geepers_*"` in Claude Code's Task tool
 2. **Packaged Skills** (`skills/`) — 39 skills built from agent definitions, installable as Claude Code skills
@@ -40,7 +40,7 @@ cd skills/source/<skill-name> && zip -r ../../zips/<skill-name>.zip .
 
 ### Agent System (the main product)
 
-Agents are markdown files in `agents/` with YAML frontmatter (`name`, `description`, `model`, `color`). They're registered in `.claude-plugin/plugin.json` and invoked via Claude Code's Task tool:
+Agents are markdown files in `agents/` (flat directory) with YAML frontmatter (`name`, `description`, `model`, `color`). Claude Code auto-discovers all `agents/*.md` files. Invoked via Claude Code's Task tool:
 
 ```
 Task with subagent_type="geepers_scout"
@@ -48,7 +48,7 @@ Task with subagent_type="geepers_scout"
 
 **Hierarchy**: `geepers_conductor` (master router) → domain orchestrators (`geepers_orchestrator_*`) → specialist agents (`geepers_*`).
 
-Key domains: checkpoint, deploy, quality, frontend, fullstack, hive, research, games, corpus, web, python, datavis, standalone, system. See `agents/AGENT_DOMAINS.md` for the full routing guide.
+Key domains: checkpoint, deploy, quality, frontend, fullstack, hive, research, games, corpus, web, python, datavis, standalone, system. See `agents/shared/AGENT_DOMAINS.md` for the full routing guide.
 
 ### Packaged Skills (`skills/`)
 
