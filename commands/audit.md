@@ -16,7 +16,7 @@ Launch ALL of these agents simultaneously:
 4. **@geepers_deps** - dependency audit, vulnerabilities, licenses
 5. **@geepers_api** - API design review and REST compliance
 6. **@geepers_critic** - UX friction and architectural critique
-7. **`/geepers-context audit`** - CLAUDE.md nav headers, cross-references, cruft
+7. **`/context audit`** - CLAUDE.md nav headers, cross-references, cruft
 
 ## Alternative
 
@@ -43,9 +43,9 @@ Save audit findings to `~/geepers/recommendations/by-project/<project>.md` for f
 
 ## Cross-References
 
-- Quick recon: `/geepers-scout`
-- Deploy after audit: `/geepers-ship`
-- Release workflow: `/geepers-release`
-- Impact analysis: `/geepers-foresight`
+- Quick recon: `/scout`
+- Deploy after audit: `/ship`
+- Release workflow: `/release`
+- Impact analysis: `/foresight`
 
 **Audit scope**: $ARGUMENTS

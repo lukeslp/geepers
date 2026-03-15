@@ -14,7 +14,7 @@ Launch these agents in PARALLEL:
 2. **@geepers_canary** - spot-check critical systems
 3. **@geepers_testing** - verify test coverage and run tests
 4. **@geepers_security** - security audit before deploy
-5. **`/geepers-context audit`** - verify CLAUDE.md nav headers and cross-references
+5. **`/context audit`** - verify CLAUDE.md nav headers and cross-references
 
 ## Deployment
 
@@ -46,9 +46,9 @@ If release notes, changelogs, or README updates were created during deployment:
 
 ## Cross-References
 
-- Pre-release checks: `/geepers-release` (version bump, changelog, publish)
-- Impact analysis: `/geepers-foresight` (check what this deploy affects)
-- Session management: `/geepers-session`
+- Pre-release checks: `/release` (version bump, changelog, publish)
+- Impact analysis: `/foresight` (check what this deploy affects)
+- Session management: `/session`
 - Alternative: `/server-deploy` skill
 
 **What to ship**: $ARGUMENTS

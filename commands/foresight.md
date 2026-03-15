@@ -118,9 +118,9 @@ grep -r "<module_or_path>" ~/*/CLAUDE.md ~/html/*/CLAUDE.md ~/servers/*/CLAUDE.m
 
 ## Cross-References
 
-- After changes: run `/geepers-session cp` to save state
-- Before deploy: run `/geepers-ship` for full safety checks
-- If things break: run `/geepers-thinktwice` to reconsider approach
+- After changes: run `/session cp` to save state
+- Before deploy: run `/ship` for full safety checks
+- If things break: run `/thinktwice` to reconsider approach
 
 ## Target
 

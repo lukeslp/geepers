@@ -34,7 +34,7 @@ Check for uncommitted changes (warn if significant). Note if local is ahead/behi
 
 ### 4. Context Health (background)
 
-Launch `/geepers-context audit` as a **background** agent:
+Launch `/context audit` as a **background** agent:
 - Validate CLAUDE.md navigation headers and parent refs
 - Check for missing CLAUDE.md in new directories
 - Flag stale references and cruft files
@@ -65,12 +65,12 @@ CLAUDE.md: <healthy | needs update | missing>
 
 ## Cross-References
 
-- Mid-session save: `/geepers-checkpoint`
-- End session: `/geepers-end`
-- Unified lifecycle: `/geepers-session`
-- Context health: `/geepers-context`
-- Quick recon only: `/geepers-scout`
-- Full audit: `/geepers-audit`
+- Mid-session save: `/checkpoint`
+- End session: `/end`
+- Unified lifecycle: `/session`
+- Context health: `/context`
+- Quick recon only: `/scout`
+- Full audit: `/audit`
 
 ## Target
 

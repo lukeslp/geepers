@@ -4,7 +4,7 @@ description: Hard reset - re-derive your approach from first principles
 
 # Think Again
 
-Throw away your current approach entirely and rebuild from first principles. Not "are you sure?" (that's `/geepers-thinktwice`) and not "what do others think?" (that's `/geepers-consensus`). This is a paradigm shift.
+Throw away your current approach entirely and rebuild from first principles. Not "are you sure?" (that's `/thinktwice`) and not "what do others think?" (that's `/consensus`). This is a paradigm shift.
 
 ## Execute
 
@@ -70,9 +70,9 @@ Risk: <rating>                | Risk: <rating>
 
 | Command | Purpose |
 |---------|---------|
-| `/geepers-thinktwice` | "Pause, are you sure?" — caution check |
-| `/geepers-thinkagain` | "Start over from scratch mentally" — paradigm shift |
-| `/geepers-consensus` | "What do others think?" — external deliberation |
+| `/thinktwice` | "Pause, are you sure?" — caution check |
+| `/thinkagain` | "Start over from scratch mentally" — paradigm shift |
+| `/consensus` | "What do others think?" — external deliberation |
 
 ## Topic
 

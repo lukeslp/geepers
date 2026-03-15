@@ -12,9 +12,9 @@ Unified session lifecycle command. Routes to the appropriate workflow.
 
 | Input | Action |
 |-------|--------|
-| (empty) or `start` | Run `/geepers-start` workflow |
-| `checkpoint` or `cp` or `save` | Run `/geepers-checkpoint` workflow |
-| `end` or `wrap` or `done` | Run `/geepers-end` workflow |
+| (empty) or `start` | Run `/start` workflow |
+| `checkpoint` or `cp` or `save` | Run `/checkpoint` workflow |
+| `end` or `wrap` or `done` | Run `/end` workflow |
 | `status` | Show current session state: git status, uncommitted changes, time since last commit |
 
 ## Quick Reference
@@ -25,8 +25,8 @@ Unified session lifecycle command. Routes to the appropriate workflow.
 
 ## Cross-References
 
-- `/geepers-start` — Full session start workflow
-- `/geepers-checkpoint` — Mid-session save
-- `/geepers-end` — End session workflow
-- `/geepers-context` — Context health separately
-- `/geepers-scout` — Quick recon without full session
+- `/start` — Full session start workflow
+- `/checkpoint` — Mid-session save
+- `/end` — End session workflow
+- `/context` — Context health separately
+- `/scout` — Quick recon without full session

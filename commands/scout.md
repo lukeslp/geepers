@@ -30,8 +30,8 @@ Launch these agents simultaneously:
 
 ## Cross-References
 
-- Session lifecycle: `/geepers-session` (start, cp, end)
-- Deeper audit: `/geepers-audit`
-- Quick fixes: `/geepers-fix`
+- Session lifecycle: `/session` (start, cp, end)
+- Deeper audit: `/audit`
+- Quick fixes: `/fix`
 
 **Focus area** (optional): $ARGUMENTS

@@ -6,7 +6,7 @@ description: Parallel build - fan out agents to accomplish tasks simultaneously
 
 Parallel building mode. Takes plans, tasks, or backlog items and dispatches multiple builder agents simultaneously to implement them.
 
-**Swarm builds things. For searching, use `/geepers-hunt`. For everything at once, use `/geepers-team`.**
+**Swarm builds things. For searching, use `/hunt`. For everything at once, use `/team`.**
 
 ## Execute
 

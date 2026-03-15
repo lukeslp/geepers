@@ -10,7 +10,7 @@ Button up for the night. Everything committed, documented, critiqued, and clean.
 
 ### Phase 1: Full Checkpoint
 
-Run the complete `/geepers-checkpoint` workflow first:
+Run the complete `/checkpoint` workflow first:
 1. Git review (status, diff, log)
 2. Stage and commit (prefix `checkpoint:`)
 3. Parallel maintenance: @geepers_snippets + @geepers_janitor
@@ -36,7 +36,7 @@ Run the complete `/geepers-checkpoint` workflow first:
    - Public-facing code comments
    - Any content that will be seen by humans outside the dev environment
 
-3. **Context audit** — Full `/geepers-context audit`:
+3. **Context audit** — Full `/context audit`:
    - Validate all CLAUDE.md nav headers and parent refs
    - If issues found, fix them immediately
 
@@ -67,11 +67,11 @@ Recommendations saved: ~/geepers/recommendations/by-project/<project>.md
 
 ## Cross-References
 
-- Session start: `/geepers-start`
-- Mid-session save: `/geepers-checkpoint`
-- Unified lifecycle: `/geepers-session`
-- Context health: `/geepers-context`
-- Deploy after session: `/geepers-ship`
+- Session start: `/start`
+- Mid-session save: `/checkpoint`
+- Unified lifecycle: `/session`
+- Context health: `/context`
+- Deploy after session: `/ship`
 
 ## Target
 

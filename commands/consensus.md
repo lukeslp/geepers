@@ -78,16 +78,16 @@ Flag anything where the vote was close or where a minority argument was particul
 
 ## Usage Examples
 
-- `/geepers-consensus "should we use tRPC or REST for this API?"`
-- `/geepers-consensus "is this refactor worth the risk?"`
-- `/geepers-consensus "should we split this into microservices?"`
-- `/geepers-consensus` (no args) — deliberate on current task or plan
+- `/consensus "should we use tRPC or REST for this API?"`
+- `/consensus "is this refactor worth the risk?"`
+- `/consensus "should we split this into microservices?"`
+- `/consensus` (no args) — deliberate on current task or plan
 
 ## Distinction
 
-- `/geepers-consensus` — "What do others think?" (external deliberation)
-- `/geepers-thinkagain` — "Start over from scratch mentally" (paradigm shift)
-- `/geepers-thinktwice` — "Pause, are you sure?" (caution check)
+- `/consensus` — "What do others think?" (external deliberation)
+- `/thinkagain` — "Start over from scratch mentally" (paradigm shift)
+- `/thinktwice` — "Pause, are you sure?" (caution check)
 
 ## Topic
 

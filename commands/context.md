@@ -93,8 +93,8 @@ If "generate" mode was used (creating public-facing documentation):
 
 ## Cross-References
 
-- Session lifecycle: `/geepers-session` (start/cp/end — all trigger context audit)
-- Quality audit: `/geepers-audit`
+- Session lifecycle: `/session` (start/cp/end — all trigger context audit)
+- Quality audit: `/audit`
 - Nav validation: `~/scripts/validate-claude-nav.sh`
 - Templates: `~/documentation/resources/development-patterns/claude-md-templates/`
 - System map: `~/CLAUDE_MAP.md`

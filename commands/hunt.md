@@ -6,7 +6,7 @@ description: Parallel search - fan out across internet and resources for informa
 
 Parallel search mode. Fans out across multiple data sources simultaneously to gather information, research topics, and find answers.
 
-**Hunt searches for things. For building, use `/geepers-swarm`. For everything at once, use `/geepers-team`.**
+**Hunt searches for things. For building, use `/swarm`. For everything at once, use `/team`.**
 
 ## Execute
 

@@ -27,7 +27,7 @@ For EACH assumption, ask:
 
 ### Step 4: Find the Lazy Path
 The best solution is usually the laziest one that still works. Ask:
-- Can I use something that already exists? (`/geepers-reuse`)
+- Can I use something that already exists? (`/reuse`)
 - Can I delete code instead of adding it?
 - Can I configure instead of code?
 - Can I use a library instead of building?
@@ -44,7 +44,7 @@ Present both approaches (original + alternative) to the user with honest tradeof
 
 ## Red Flags That Trigger This Skill
 
-Use `/geepers-thinktwice` when you notice:
+Use `/thinktwice` when you notice:
 - You're on your 3rd attempt at something
 - The solution keeps getting more complex
 - You're fighting the framework/system

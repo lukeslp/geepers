@@ -35,7 +35,7 @@ git log --oneline -3
 ### 4. Context Audit (if structural changes)
 
 If files or directories were added or removed since last checkpoint:
-- Run `/geepers-context audit` as a **background** agent
+- Run `/context audit` as a **background** agent
 - Validates CLAUDE.md nav headers and parent refs
 - Skip if no structural changes
 
@@ -59,10 +59,10 @@ Brief summary:
 
 ## Cross-References
 
-- Session start: `/geepers-start`
-- End session: `/geepers-end`
-- Unified lifecycle: `/geepers-session`
-- Context health: `/geepers-context`
+- Session start: `/start`
+- End session: `/end`
+- Unified lifecycle: `/session`
+- Context health: `/context`
 
 ## Target
 
