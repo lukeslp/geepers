@@ -5,7 +5,16 @@ description: Universal data fetching MCP server providing access to arXiv, Censu
 
 # Data Fetch MCP Server
 
-A specialized MCP server that provides tools for fetching data from various external sources.
+Fetches structured data from external APIs via MCP tools.
+
+## Prerequisites
+
+Requires `geepers-mcp` to be installed:
+```bash
+pip install geepers-mcp[all]
+```
+
+If MCP tools aren't appearing, install the package and restart Claude Code.
 
 ## Tools
 
@@ -13,7 +22,7 @@ A specialized MCP server that provides tools for fetching data from various exte
 Search arXiv for academic papers.
 - **query**: Search terms
 - **max_results**: Number of results (default: 5)
-- **category**: Filter by category (e.g., `cs.AI`, `physics.gen-ph`)
+- **category**: Filter by category (e.g., `cs.CL`, `physics.gen-ph`)
 
 ### `dream_of_census_acs`
 Fetch US Census American Community Survey (ACS) data.
@@ -36,28 +45,17 @@ Search for GitHub repositories.
 - **query**: Search keywords
 - **sort**: Sort by stars, forks, or updated
 
-## Configuration
+## API Keys
 
-Add this to your `claude_desktop_config.json`:
+Set in your environment for the data sources you want to use:
+- `CENSUS_API_KEY` — US Census Bureau
+- `NEWS_API_KEY` — NewsAPI
+- `OPENWEATHER_API_KEY` — OpenWeatherMap
+- `GITHUB_TOKEN` — GitHub API
+- `NASA_API_KEY` — NASA APIs
+- `YOUTUBE_API_KEY` — YouTube Data API
 
-```json
-{
-  "mcpServers": {
-    "data-fetch": {
-      "command": "python3",
-      "args": [
-        "/absolute/path/to/geepers/skills/source/data-fetch/src/server.py"
-      ],
-      "env": {
-        "CENSUS_API_KEY": "your_key",
-        "NEWS_API_KEY": "your_key",
-        "OPENWEATHER_KEY": "your_key",
-        "GITHUB_TOKEN": "your_token"
-      }
-    }
-  }
-}
-```
+## Related
 
-## Underlying Library
-This server is built on top of the `data_fetching` library, which supports additional sources (NASA, Finance, etc.). These can be exposed by extending `server.py`.
+- `geepers:data` — Skill for fetching from 17 structured APIs
+- `/geepers:research` — Research workflows using these data sources

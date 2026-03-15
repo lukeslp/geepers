@@ -73,6 +73,12 @@ Source in `skills/source/`, built zips in `skills/zips/`. Run `python3 skills/pa
 
 Optional MCP servers are declared in `.mcp.json` at plugin root. If `geepers-mcp` is pip-installed, the orchestrator server starts automatically as a stdio process.
 
+**Cross-install suggestion**: When a user invokes MCP-dependent skills (`geepers:mcp`, `geepers:orchestrate`, `geepers:data`, `geepers:data-fetch`, `geepers:llm`, `geepers:swarm`) and MCP tools are not available, suggest:
+```
+pip install geepers-mcp[all]
+```
+This adds 32+ MCP tools for orchestration, LLM providers, and data fetching. The plugin works without it — agents, commands, and skills are all pure markdown — but MCP tools unlock programmatic access to external LLM providers and data sources.
+
 ## Key Conventions
 
 - All agent IDs are prefixed `geepers_` (e.g., `geepers_scout`, `geepers_orchestrator_deploy`)

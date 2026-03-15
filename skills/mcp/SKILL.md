@@ -3,81 +3,58 @@ name: geepers-mcp
 description: Launch MCP orchestration workflows (Dream Cascade and Dream Swarm) for multi-agent coordination and synthesis.
 ---
 
-# MCP Orchestration Skill (formerly Dream Cascade)
+# MCP Orchestration Skill
 
-The **MCP Orchestration** skill provides advanced multi-agent coordination patterns for Claude. It allows you to launch massive, hierarchical research swarms or task-specific agent teams to solve complex problems that require multiple perspectives or large-scale data processing.
+Multi-agent orchestration via MCP protocol. Launch hierarchical research swarms or parallel domain searches.
+
+## Prerequisites
+
+Requires `geepers-mcp` to be installed:
+```bash
+pip install geepers-mcp[all]
+```
+
+If MCP tools aren't appearing, install the package and restart Claude Code.
 
 ## Architecture: Dream Cascade
 
-The primary pattern is the **Dream Cascade**, a 3-tier hierarchical swarm:
+3-tier hierarchical research swarm:
 
-1.  **Tier 1: Belters (Workers)**
-    *   Parallel agents (1-30+) that execute specific subtasks.
-    *   Each Belter has a unique specialization (Research, Analysis, Technical, etc.).
-2.  **Tier 2: Drummers (Synthesizers)**
-    *   Aggregation agents that synthesize every 5 Belter responses.
-    *   They filter noise and highlight key findings from the worker tier.
-3.  **Tier 3: Camina (Executive)**
-    *   Final synthesis agent that provides a high-level strategic report based on Drummer syntheses.
+1. **Tier 1: Belters (Workers)** — Parallel agents (1-30+) with unique specializations
+2. **Tier 2: Drummers (Synthesizers)** — Aggregate every 5 Belter responses, filter noise
+3. **Tier 3: Camina (Executive)** — Final strategic synthesis report
 
-## Features
+## Architecture: Dream Swarm
 
-*   **Hierarchical Synthesis**: Automatic aggregation of insights from large swarms.
-*   **Multi-Provider Support**: Switch between Anthropic, OpenAI, Gemini, etc.
-*   **Cost Optimization**: Uses `ProviderFactory` to select models based on tier and task complexity.
-*   **Structured Reporting**: Generates Markdown, PDF, and DOCX reports via the `reporting` library.
-*   **Parallel Execution**: Handled with `asyncio` and semaphore-based rate limiting.
+Parallel multi-domain search:
 
-## Setup
+- Fan out across academic, news, code, financial, and web sources simultaneously
+- Merge results into a unified synthesis
 
-### Environment Variables
-Ensure the following API keys are set:
-*   `ANTHROPIC_API_KEY`
-*   `OPENAI_API_KEY`
-*   `GEMINI_API_KEY`
-*   (Other providers defined in `src/core/llm/factory.py`)
+## Available MCP Tools
 
-### Claude Desktop Configuration
-Add the following to your `claude_desktop_config.json`:
+| Tool | What it does |
+|------|-------------|
+| `orchestrate_research` | Beltalowda: 8 agents, Drummer synthesis, Camina summary |
+| `orchestrate_search` | Swarm: 5+ parallel domain agents |
+| `get_orchestration_status` | Check progress of a running workflow |
+| `cancel_orchestration` | Stop mid-execution |
+| `list_orchestrator_patterns` | List available patterns |
+| `list_registered_tools` | Browse all tool modules |
+| `execute_registered_tool` | Run any tool directly |
 
-```json
-{
-  "mcpServers": {
-    "orchestration": {
-      "command": "python3",
-      "args": ["/home/coolhand/geepers/skills/source/mcp-orchestration/scripts/server.py"]
-    }
-  }
-}
-```
+## Parameters
 
-## Available Tools
+### `orchestrate_research`
+- `task` (string, required): The research topic or question
+- `num_agents` (integer): Total number of Belters (default: 5)
+- `enable_drummer` (boolean): Enable synthesis tier (default: true)
+- `enable_camina` (boolean): Enable executive tier (default: false)
+- `provider_name` (string): LLM provider to use (default: "anthropic")
 
-### `dream_orchestrate_research`
-Starts a hierarchical 3-tier research workflow.
+## Related
 
-**Parameters:**
-*   `task` (string, required): The research topic or question.
-*   `num_agents` (integer): Total number of Belters (default: 5).
-*   `enable_drummer` (boolean): Whether to enable synthesis tier (default: true).
-*   `enable_camina` (boolean): Whether to enable executive tier (default: false).
-*   `provider_name` (string): LLM provider to use (default: "anthropic").
-
-## CLI Usage
-
-You can also run the orchestrator directly from the command line:
-
-```bash
-# Basic run with 5 belters
-python3 scripts/orchestrator.py "What is the future of AGIs?"
-
-# Advanced run with 15 belters, 3 drummers, and 1 camina
-python3 scripts/orchestrator.py "Analyze the global semiconductor supply chain" --belters 15 --drummers 3 --caminas 1 --pdf
-```
-
-## Internal Structure
-*   `scripts/`: Executable entry points (CLI and Server).
-*   `src/core/orchestration/`: Core logic and patterns.
-*   `src/core/llm/`: Unified provider factory.
-*   `src/core/reporting/`: Multi-format report generation.
-*   `reference/`: Examples and templates.
+- `/geepers:research` — Command that uses these MCP tools
+- `/geepers:hunt` — Parallel search across sources
+- `geepers:orchestrate` — Skill for direct orchestration
+- `geepers:data` — Data fetching from 17 APIs

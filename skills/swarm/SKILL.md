@@ -13,9 +13,12 @@ Default behavior: fan out, gather/validate quickly, then synthesize.
 
 # Dream Swarm Search Skill
 
-## Codex Notes
-This is a Codex CLI skill; treat geepers_* mentions as related skills to invoke explicitly.
+## Prerequisites
 
+Requires `geepers-mcp` for MCP data tools:
+```bash
+pip install geepers-mcp[all]
+```
 
 Launch parallel multi-agent search workflows across multiple domains.
 
@@ -24,7 +27,7 @@ Launch parallel multi-agent search workflows across multiple domains.
 ```
               ┌────────────────────────┐
               │     SEARCH QUERY       │
-              │  "AI safety research"  │
+              │  "language model safety research"  │
               └───────────┬────────────┘
                           │
         ┌─────────────────┼─────────────────┐
@@ -56,7 +59,7 @@ Launch parallel multi-agent search workflows across multiple domains.
 |--------|-------------|---------------|
 | `arxiv` | Academic papers | "quantum computing" |
 | `github` | Code repositories | "react components" |
-| `news` | Recent articles | "AI regulation 2024" |
+| `news` | Recent articles | "technology regulation 2024" |
 | `wikipedia` | Encyclopedia | "machine learning" |
 | `pubmed` | Medical literature | "CRISPR therapy" |
 | `semantic_scholar` | Academic index | "transformer architectures" |
@@ -76,7 +79,7 @@ Launch parallel multi-agent search workflows across multiple domains.
 
 ### Start Search Workflow
 ```bash
-scripts/swarm-search.py "AI safety research" --domains arxiv github news
+scripts/swarm-search.py "language model safety research" --domains arxiv github news
 scripts/swarm-search.py "climate change" --agents 10 --parallel 5
 scripts/swarm-search.py "quantum computing" --all-domains
 ```
@@ -110,7 +113,7 @@ scripts/swarm-search.py "WebAssembly optimization" \
 
 ### News + Social Monitoring
 ```bash
-scripts/swarm-search.py "AI regulation policy" \
+scripts/swarm-search.py "technology regulation policy" \
   --domains news,wikipedia,youtube \
   --agents 5 --output markdown
 ```
@@ -164,9 +167,9 @@ scripts/swarm-search.py "CRISPR gene therapy" \
 
 ## Prerequisites
 
-- MCP server running on port 5060
+- `pip install geepers-mcp[all]` for MCP tools
 - Valid API keys for data sources
-- Python 3.10+ with requests library
+- Python 3.10+
 
 ## Troubleshooting
 
@@ -178,6 +181,6 @@ scripts/swarm-search.py "CRISPR gene therapy" \
 
 ## Related Skills
 
-- **dream-cascade** - Hierarchical deep research
-- **data-fetch** - Single domain direct access
-- **code-quality** - Code-specific searches
+- `geepers:mcp` — MCP orchestration tools
+- `geepers:data-fetch` — Single domain direct access
+- `/geepers:research` — Research command (Dream Cascade + Swarm)
