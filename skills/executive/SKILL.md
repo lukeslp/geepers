@@ -1,5 +1,5 @@
 ---
-name: geepers_executive
+name: geepers-executive
 description: "Executive orchestrator. High-level strategic planning and cross-team coordination. Delegates to Product, Finance, Engineering, etc. Use for complex, multi-stage business goals."
 ---
 
