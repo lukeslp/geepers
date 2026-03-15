@@ -76,13 +76,18 @@ def build_clawhub(skills, version):
 
 
 def update_marketplace(skills):
-    """Update .claude-plugin/marketplace.json with current skill list."""
+    """Update .claude-plugin/marketplace.json description with current skill count.
+
+    The marketplace schema doesn't allow arbitrary keys like 'skills' or
+    'skill_count' on plugin entries, so we only update the description text.
+    """
     data = json.loads(MARKETPLACE_JSON.read_text())
 
-    # Add skill listing to the first plugin entry
     if data.get("plugins"):
-        data["plugins"][0]["skills"] = [s["id"] for s in skills]
-        data["plugins"][0]["skill_count"] = len(skills)
+        plugin = data["plugins"][0]
+        # Remove any invalid keys that may have been added previously
+        plugin.pop("skills", None)
+        plugin.pop("skill_count", None)
 
     MARKETPLACE_JSON.write_text(json.dumps(data, indent=2) + "\n")
     return data
