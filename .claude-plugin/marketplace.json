@@ -21,32 +21,7 @@
         "url": "https://github.com/lukeslp/geepers.git"
       },
       "category": "development",
-      "homepage": "https://github.com/lukeslp/geepers",
-      "skills": [
-        "geepers-builder",
-        "geepers-corpus",
-        "geepers-data",
-        "geepers-data-fetch",
-        "geepers-datavis",
-        "geepers-deploy",
-        "geepers-engineering",
-        "geepers-etymology",
-        "geepers-executive",
-        "geepers-finance",
-        "geepers-git",
-        "geepers-llm",
-        "geepers-mcp",
-        "geepers-orchestrate",
-        "geepers-planner",
-        "geepers-product",
-        "geepers-quality",
-        "geepers-scout",
-        "geepers-swarm",
-        "geepers-team",
-        "geepers-testing",
-        "geepers-validate"
-      ],
-      "skill_count": 22
+      "homepage": "https://github.com/lukeslp/geepers"
     }
   ]
 }
