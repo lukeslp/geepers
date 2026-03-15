@@ -16,11 +16,11 @@ Multi-agent orchestration for LLM workflows. Ships as a Python package for build
 | | |
 |---|---|
 | **PyPI** | [`geepers-llm`](https://pypi.org/project/geepers-llm/) · [`geepers-kernel`](https://pypi.org/project/geepers-kernel/) |
-| **Claude Code** | [`/plugin add lukeslp/geepers`](https://github.com/lukeslp/geepers) |
-| **Codex CLI** | [`geepers-gpt`](https://github.com/lukeslp/geepers-gpt) |
-| **Gemini** | [`geepers-gemini`](https://github.com/lukeslp/geepers-gemini) |
-| **ClawHub** | [`geepers-api-skills`](https://github.com/lukeslp/geepers-api-skills) |
-| **MCP servers** | [`geepers-unified` · `geepers-providers` · `geepers-data` · `geepers-websearch`](https://github.com/lukeslp/geepers-kernel) |
+| **Claude Code** | `/plugin add lukeslp/geepers` |
+| **Manus** | `manus-skills.json` in this repo |
+| **Codex** | `codex-package.json` in this repo |
+| **Clawhub** | `clawhub-package.json` in this repo |
+| **MCP servers** | [`geepers-mcp`](https://github.com/lukeslp/geepers-mcp) — `pip install geepers-mcp[all]` |
 | **Orchestration** | [`beltalowda`](https://github.com/lukeslp/beltalowda) · [`multi-agent-orchestration`](https://github.com/lukeslp/multi-agent-orchestration) |
 | **Data clients** | [`research-data-clients`](https://github.com/lukeslp/research-data-clients) — 17+ structured APIs |
 
@@ -258,9 +258,19 @@ geepers_orchestrator_research   # coordinates research and data agents
 
 ## Cross-Platform Skills
 
-38 skill packs in `skills/source/` packaged for Claude Desktop, Codex CLI, Gemini, and ClawHub. The canonical registry lives in `manifests/skills-manifest.yaml`.
+22 skills in `skills/` shared across all platforms. One repo, multiple manifests — each platform gets its own manifest file generated from the same skill directories:
 
-Skills fall into three categories: **Claude Desktop skills** for local workflows (datavis, engineering, finance, server-deploy, and others), **API skills** that wrap the public `dr.eamer.dev` REST API (geepers-llm, geepers-orchestrate, geepers-data, and related), and **platform adapters** that export the same skill definitions in the format each platform expects.
+| Platform | Manifest | Install |
+|----------|----------|---------|
+| **Claude Code** | `.claude-plugin/plugin.json` | `/plugin add lukeslp/geepers` |
+| **Manus** | `manus-skills.json` | Copy skills/ and manus-skills.json |
+| **Codex** | `codex-package.json` | Copy skills/ and codex-package.json |
+| **Clawhub** | `clawhub-package.json` | `bash scripts/publish-clawhub.sh` |
+
+Regenerate all manifests after adding/removing skills:
+```bash
+python3 scripts/build-manifests.py
+```
 
 ## Author
 
