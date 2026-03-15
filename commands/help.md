@@ -40,7 +40,12 @@ All commands are prefixed with `geepers:` automatically by the plugin.
 | Command | When to Use |
 |---------|-------------|
 | `/fix` | Quick wins or surgical code fixes |
-| `/ship` | Deploy with safety checks |
+| `/planner` | Parse plans, TODOs, suggestions — prioritize by impact |
+| `/testing` | Test strategy, coverage analysis, write tests |
+| `/docs` | Generate documentation (API docs, inline, full project) |
+| `/readme` | Generate or rewrite a polished README |
+| `/deploy` | Service deployment, routing, port allocation |
+| `/ship` | Deploy with full quality checks |
 | `/release` | Version bump, changelog, publish to PyPI/npm, git tag |
 | `/research` | Deep research (Dream Cascade/Swarm) |
 | `/context` | Documentation and CLAUDE.md maintenance |
@@ -65,7 +70,12 @@ Research a topic?        → /hunt
 Maximum parallel power?  → /team
 Want other opinions?     → /consensus
 Approach not working?    → /thinkagain
-Deploy something?        → /ship
+Plan next work?          → /planner
+Write tests?             → /testing
+Generate docs?           → /docs
+Generate README?         → /readme
+Deploy a service?        → /deploy
+Ship with checks?        → /ship
 Publish a package?       → /release
 Services unhealthy?      → /health
 Fix bugs quickly?        → /fix

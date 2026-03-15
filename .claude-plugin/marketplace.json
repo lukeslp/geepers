@@ -11,7 +11,7 @@
     {
       "name": "geepers",
       "description": "70 specialized agents for development workflows: orchestrators for quality, deploy, frontend, fullstack, hive, research, datavis, games, corpus, web, and Python. Includes conductor routing, session management, code audits, infrastructure, and more.",
-      "version": "1.0.1",
+      "version": "2.0.0",
       "author": {
         "name": "Luke Steuber",
         "email": "luke@dr.eamer.dev"
@@ -21,7 +21,32 @@
         "url": "https://github.com/lukeslp/geepers.git"
       },
       "category": "development",
-      "homepage": "https://github.com/lukeslp/geepers"
+      "homepage": "https://github.com/lukeslp/geepers",
+      "skills": [
+        "geepers-builder",
+        "geepers-corpus",
+        "geepers-data",
+        "geepers-data-fetch",
+        "geepers-datavis",
+        "geepers-deploy",
+        "geepers-engineering",
+        "geepers-etymology",
+        "geepers-executive",
+        "geepers-finance",
+        "geepers-git",
+        "geepers-llm",
+        "geepers-mcp",
+        "geepers-orchestrate",
+        "geepers-planner",
+        "geepers-product",
+        "geepers-quality",
+        "geepers-scout",
+        "geepers-swarm",
+        "geepers-team",
+        "geepers-testing",
+        "geepers-validate"
+      ],
+      "skill_count": 22
     }
   ]
 }

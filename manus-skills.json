@@ -1,0 +1,96 @@
+{
+  "name": "geepers-manus-package",
+  "version": "2.0.0",
+  "runtime": "manus",
+  "built_at": "2026-03-15T09:56:15.638927+00:00",
+  "skills": [
+    {
+      "id": "geepers-builder",
+      "path": "skills/builder"
+    },
+    {
+      "id": "geepers-corpus",
+      "path": "skills/corpus"
+    },
+    {
+      "id": "geepers-data",
+      "path": "skills/data"
+    },
+    {
+      "id": "geepers-data-fetch",
+      "path": "skills/data-fetch"
+    },
+    {
+      "id": "geepers-datavis",
+      "path": "skills/datavis"
+    },
+    {
+      "id": "geepers-deploy",
+      "path": "skills/deploy"
+    },
+    {
+      "id": "geepers-engineering",
+      "path": "skills/engineering"
+    },
+    {
+      "id": "geepers-etymology",
+      "path": "skills/etymology"
+    },
+    {
+      "id": "geepers-executive",
+      "path": "skills/executive"
+    },
+    {
+      "id": "geepers-finance",
+      "path": "skills/finance"
+    },
+    {
+      "id": "geepers-git",
+      "path": "skills/git"
+    },
+    {
+      "id": "geepers-llm",
+      "path": "skills/llm"
+    },
+    {
+      "id": "geepers-mcp",
+      "path": "skills/mcp"
+    },
+    {
+      "id": "geepers-orchestrate",
+      "path": "skills/orchestrate"
+    },
+    {
+      "id": "geepers-planner",
+      "path": "skills/planner"
+    },
+    {
+      "id": "geepers-product",
+      "path": "skills/product"
+    },
+    {
+      "id": "geepers-quality",
+      "path": "skills/quality"
+    },
+    {
+      "id": "geepers-scout",
+      "path": "skills/scout"
+    },
+    {
+      "id": "geepers-swarm",
+      "path": "skills/swarm"
+    },
+    {
+      "id": "geepers-team",
+      "path": "skills/team"
+    },
+    {
+      "id": "geepers-testing",
+      "path": "skills/testing"
+    },
+    {
+      "id": "geepers-validate",
+      "path": "skills/validate"
+    }
+  ]
+}
