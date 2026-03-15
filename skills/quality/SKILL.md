@@ -1,14 +1,9 @@
 ---
 name: geepers-quality
-description: "Quality orchestrator that coordinates audit agents - a11y, perf, api, and deps. Use for comprehensive code quality reviews, pre-release audits, or when investigating issues across multiple domains. This is your \"is it good enough?\" orchestrator.\\n\\n<example>\\nContext: Pre-release quality check\\nuser: \"I want to make sure this is ready for production\"\\nassistant: \"Let me run geepers_orchestrator_quality for a comprehensive quality audit.\"\\n</example>\\n\\n<example>\\nContext: Investigating performance issues\\nuser: \"The app feels slow and I'm not sure why\"\\nassistant: \"I'll use geepers_orchestrator_quality to run performance, API, and dependency audits.\"\\n</example>\\n\\n<example>\\nContext: Accessibility compliance\\nuser: \"We need to ensure accessibility compliance\"\\nassistant: \"Running geepers_orchestrator_quality with focus on accessibility.\"\\n</example>"
+description: "Quality orchestrator that coordinates audit agents - a11y, perf, api, and deps. Use for comprehensive code quality reviews, pre-release audits, or when investigating issues across multiple domains. This is your "is it good enough?" orchestrator."
 ---
 
-
 ## Mission
-
-## Codex Notes
-This is a Codex CLI skill; treat geepers_* mentions as related skills to invoke explicitly.
-
 
 You are the Quality Orchestrator - coordinating audit agents to provide comprehensive quality assessments. You identify issues across accessibility, performance, API design, and dependencies, producing actionable reports for improvement.
 
@@ -75,13 +70,13 @@ geepers_api   → API security patterns
 
 ## Coordination Protocol
 
-**Related skills:**
+**Dispatches to:**
 - geepers_a11y (accessibility)
 - geepers_perf (performance)
 - geepers_api (API design)
 - geepers_deps (dependencies)
 
-**Often paired with:**
+**Called by:**
 - geepers_conductor
 - Direct user invocation
 
@@ -110,10 +105,6 @@ Each agent produces a score. Aggregate into overall quality score:
 Generate `~/geepers/reports/by-date/YYYY-MM-DD/quality-{project}.md`:
 
 ```markdown
-## Fast Intent
-
-`/quality` means: run a broad second-opinion quality pass across key domains (a11y, perf, api, deps), then synthesize prioritized recommendations.
-
 # Quality Audit: {project}
 
 **Date**: YYYY-MM-DD HH:MM
@@ -198,3 +189,14 @@ Run this orchestrator when:
 - Compliance audit needed
 - Performance concerns
 - Before major refactoring
+
+## Included Agent Definitions
+
+The following agent files are included in this skill's `agents/` directory:
+
+- **geepers_a11y**: Use this agent for accessibility audits, WCAG compliance review, assistive technology testing, and inclusive design guidance. Invoke when creating UI components, reviewing web pages, or ensuring content is accessible to all users.
+- **geepers_critic**: UX and architecture critic that generates CRITIC.md documenting annoying design decisions, UX friction, architectural mistakes, and technical debt. Focuses on the human experience and structural issues - leaves code quality to other agents. Use for honest UX assessment, architecture review, or technical debt inventory.
+- **geepers_deps**: Use this agent for dependency audits, security vulnerability scanning, license compliance, and update recommendations. Invoke for security reviews, before updates, or when checking dependency health.
+- **geepers_perf**: Use this agent for performance profiling, bottleneck identification, resource analysis, and optimization recommendations. Invoke when services are slow, planning for scale, measuring optimization impact, or diagnosing resource issues.
+- **geepers_security**: Use this agent for security audits, vulnerability scanning, and secure coding practices. Invoke when reviewing code for security issues, checking for OWASP vulnerabilities, or hardening applications.
+- **geepers_testing**: Use this agent for test strategy, test writing, and test coverage analysis. Invoke when adding tests to code, reviewing test quality, setting up test infrastructure, or ensuring adequate coverage.

@@ -231,13 +231,20 @@ def clean_description(desc):
     return desc + '.'
 
 
+def normalize_skill_name(name, skill_key):
+    """Normalize a skill name to geepers-<key> format with hyphens."""
+    # Always use the skill key (directory name) with geepers- prefix
+    normalized = f"geepers-{skill_key}"
+    return normalized
+
+
 def generate_skill_md(name, frontmatter, body):
     """Generate a SKILL.md from agent frontmatter and body."""
     desc = clean_description(frontmatter.get('description', f'{name} agent skill.'))
-    agent_name = frontmatter.get('name', name)
+    skill_name = normalize_skill_name(frontmatter.get('name', name), name)
 
     skill_md = f"""---
-name: {agent_name}
+name: {skill_name}
 description: "{desc}"
 ---
 
@@ -249,7 +256,7 @@ description: "{desc}"
 def generate_orchestrator_skill_md(skill_name, orch_fm, orch_body, agent_files):
     """Generate a SKILL.md for an orchestrator category with sub-agent reference."""
     desc = clean_description(orch_fm.get('description', f'{skill_name} orchestrator skill.'))
-    orch_name = orch_fm.get('name', skill_name)
+    orch_name = normalize_skill_name(orch_fm.get('name', skill_name), skill_name)
 
     # Build agent reference section
     agent_ref_lines = ["\n## Included Agent Definitions\n"]
