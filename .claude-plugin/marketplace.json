@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "geepers-marketplace",
-  "description": "Multi-agent orchestration system with 70 specialized Claude Code agents for development workflows, code quality, deployment, research, data visualization, and more.",
+  "description": "Multi-agent orchestration system with 73 specialized Claude Code agents for development workflows, code quality, deployment, research, data visualization, and more.",
   "owner": {
     "name": "Luke Steuber",
     "email": "luke@dr.eamer.dev",
@@ -10,7 +10,7 @@
   "plugins": [
     {
       "name": "geepers",
-      "description": "70 specialized agents for development workflows: orchestrators for quality, deploy, frontend, fullstack, hive, research, datavis, games, corpus, web, and Python. Includes conductor routing, session management, code audits, infrastructure, and more.",
+      "description": "73 specialized agents for development workflows: orchestrators for quality, deploy, frontend, fullstack, hive, research, datavis, games, corpus, web, and Python. Includes conductor routing, session management, code audits, infrastructure, and more.",
       "version": "2.0.0",
       "author": {
         "name": "Luke Steuber",
