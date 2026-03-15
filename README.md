@@ -1,8 +1,6 @@
 # Geepers
 
-Multi-agent orchestration system with specialized Claude Code plugin agents and skills.
-
-Multi-agent orchestration for LLM workflows. Ships as a Python package for building orchestrated pipelines and as a Claude Code plugin that puts 72 specialized agents a task invocation away.
+Multi-agent orchestration for LLM workflows. Ships as a Python package for building orchestrated pipelines and as a Claude Code plugin with 73 specialized agents across 15 domains.
 
 ## Features
 
@@ -11,14 +9,14 @@ Multi-agent orchestration for LLM workflows. Ships as a Python package for build
 - Load config from any combination of defaults, `.env`, env vars, and CLI args; later sources always win
 - Auto-discover API keys for 16 LLM providers from the environment with no extra setup
 - Stream real-time progress via callbacks — terminal progress bars, WebSocket, or SSE
-- Install as a Claude Code plugin and invoke 72 specialized agents across 15 domains from any session
+- Install as a Claude Code plugin and invoke 73 specialized agents across 15 domains from any session
 
 ## Ecosystem
 
 | | |
 |---|---|
 | **PyPI** | [`geepers-llm`](https://pypi.org/project/geepers-llm/) · [`geepers-kernel`](https://pypi.org/project/geepers-kernel/) |
-| **Claude Code** | [`/plugin add lukeslp/geepers`](https://github.com/lukeslp/geepers-skills) |
+| **Claude Code** | [`/plugin add lukeslp/geepers`](https://github.com/lukeslp/geepers) |
 | **Codex CLI** | [`geepers-gpt`](https://github.com/lukeslp/geepers-gpt) |
 | **Gemini** | [`geepers-gemini`](https://github.com/lukeslp/geepers-gemini) |
 | **ClawHub** | [`geepers-api-skills`](https://github.com/lukeslp/geepers-api-skills) |
@@ -32,11 +30,7 @@ Multi-agent orchestration for LLM workflows. Ships as a Python package for build
 
 In Claude Code CLI:
 ```bash
-# 1. Add the marketplace (one-time)
-/plugin marketplace add lukeslp/geepers
-
-# 2. Install the plugin
-/plugin install geepers@geepers-marketplace
+/plugin add lukeslp/geepers
 ```
 
 ### Manual Installation (skills only)
@@ -52,7 +46,7 @@ done
 
 ## Quick Start
 
-### 70 Specialized Agents
+### 73 Specialized Agents
 
 config = ConfigManager(app_name="myapp")
 
@@ -108,7 +102,7 @@ All agents are packaged as Claude Code skills in `skills/zips/` (39 zips):
 | **janitor** | Standalone | Project cleanup |
 | **scalpel** | Standalone | Surgical code edits |
 | **todoist** | Standalone | Todoist task management |
-| **humanize** | Standalone | Remove AI writing indicators from documentation |
+| **humanize** | Standalone | Clean up docs — fix terminology, tone, formatting |
 | **system-diag** | Standalone | Full system diagnostics |
 | **system-help** | Standalone | Agent discovery and help |
 | **system-onboard** | Standalone | Project onboarding |
@@ -162,7 +156,7 @@ Task with subagent_type="geepers_orchestrator_frontend"
 
 ## Agent Categories
 
-See [AGENT_DOMAINS.md](agents/AGENT_DOMAINS.md) for the full routing guide.
+See [AGENT_DOMAINS.md](agents/shared/AGENT_DOMAINS.md) for the full routing guide.
 
 **Orchestrators** coordinate multiple specialists:
 - `geepers_conductor` - Master router
@@ -235,7 +229,7 @@ Markdown-defined agents organized into 15 domains. Each domain has an orchestrat
 
 | Domain | Orchestrator | Specialists |
 |--------|-------------|-------------|
-| Master | conductor_geepers | Routes to all domains |
+| Master | geepers_conductor | Routes to all domains |
 | Checkpoint | orchestrator_checkpoint | scout, repo, status, snippets |
 | Deploy | orchestrator_deploy | caddy, services, validator |
 | Quality | orchestrator_quality | a11y, perf, deps, critic, security, testing |
@@ -256,7 +250,7 @@ Routing: Conductor → Orchestrators → Specialists.
 To invoke an agent in Claude Code, use the `Task` tool with the agent's `subagent_type`:
 
 ```
-conductor_geepers               # top-level router — when in doubt, start here
+geepers_conductor               # top-level router — when in doubt, start here
 geepers_orchestrator_frontend   # coordinates all frontend specialists
 geepers_scout                   # fast project reconnaissance
 geepers_orchestrator_research   # coordinates research and data agents

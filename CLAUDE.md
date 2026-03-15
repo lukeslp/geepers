@@ -66,8 +66,12 @@ Source in `skills/source/`, built zips in `skills/zips/`. Run `python3 skills/pa
 
 ### Plugin Manifests (`.claude-plugin/`)
 
-- `plugin.json` — Claude Code plugin manifest. Lists all 70 agents by path string. Fields: name, version, description, author, license, homepage, repository, agents.
+- `plugin.json` — Claude Code plugin manifest. Agents are auto-discovered from `agents/*.md`. Fields: name, version, description, author, license, homepage, repository.
 - `marketplace.json` — Marketplace listing for `claude plugin marketplace add`. Single plugin entry pointing to the GitHub repo.
+
+### MCP Integration (`.mcp.json`)
+
+Optional MCP servers are declared in `.mcp.json` at plugin root. If `geepers-mcp` is pip-installed, the orchestrator server starts automatically as a stdio process.
 
 ## Key Conventions
 
